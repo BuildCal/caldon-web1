@@ -5,14 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Caldon – Building Consultancy & Construction</title>
   <style>
-    /* Font Import - Montserrat for architectural feel */
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+    /* Modern, Sophisticated Typography */
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
     
     :root {
-      --text: #111;
-      --background: #fff;
-      --border: #eaeaea;
-      --transition: all 0.3s ease;
+      --text-primary: #111111;
+      --text-secondary: #555555;
+      --background: #ffffff;
+      --subtle-accent: #f7f7f7;
+      --border: #e0e0e0;
+      --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     
     * {
@@ -22,35 +24,57 @@
     }
     
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: var(--background);
-      color: var(--text);
+      color: var(--text-primary);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
     
-    /* Minimalist Container */
+    /* Refined Container */
     .container {
       width: 90%;
-      max-width: 1000px;
+      max-width: 1140px;
       margin: 0 auto;
       padding: 0 20px;
     }
     
-    /* Clean, Sparse Header */
+    /* Sophisticated Header */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       z-index: 1000;
-      padding: 20px 0;
+      padding: 25px 0;
+      transition: var(--transition);
+    }
+    
+    header.scrolled {
+      padding: 15px 0;
+      box-shadow: 0 1px 15px rgba(0, 0, 0, 0.03);
     }
     
     nav {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-logo {
+      max-height: 30px;
+      opacity: 0;
+      transform: translateY(-5px);
+      transition: var(--transition);
+    }
+    
+    header.scrolled .nav-logo {
+      opacity: 1;
+      transform: translateY(0);
     }
     
     nav ul {
@@ -61,145 +85,334 @@
     
     nav a {
       text-decoration: none;
-      color: var(--text);
-      font-weight: 300;
-      font-size: 0.9rem;
+      color: var(--text-primary);
+      font-weight: 400;
+      font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--text-primary);
       transition: var(--transition);
     }
     
-    nav a:hover {
-      opacity: 0.7;
+    nav a:hover::after {
+      width: 100%;
     }
     
-    /* Minimalist Hero with Generous Whitespace */
+    /* Elegant Hero Section */
     .hero {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
       padding: 0 20px;
+      position: relative;
     }
     
     .hero-content {
       text-align: center;
+      z-index: 2;
     }
     
     .hero img {
       max-width: 180px;
       height: auto;
-      margin-bottom: 60px;
+      margin-bottom: 70px;
+      transition: var(--transition);
     }
     
     .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: 1rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #555;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
       max-width: 500px;
       margin: 0 auto;
+      line-height: 1.4;
     }
     
-    /* Architectural Section Style */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      opacity: 0.7;
+    }
+    
+    .scroll-indicator::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 50px;
+      background-color: var(--text-secondary);
+      margin: 15px auto 0;
+      opacity: 0.3;
+    }
+    
+    /* Refined Section Styling */
     section {
       padding: 120px 0;
+      position: relative;
+    }
+    
+    section:nth-child(even) {
+      background-color: var(--subtle-accent);
     }
     
     .section-title {
-      font-size: 0.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-bottom: 80px;
+      text-align: center;
+      color: var(--text-primary);
+    }
+    
+    .section-subtitle {
+      font-size: 0.75rem;
       font-weight: 400;
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 60px;
-      color: #777;
+      margin-bottom: 15px;
+      color: var(--text-secondary);
+      text-align: center;
     }
     
-    /* Minimal Services Layout */
+    /* Sophisticated Services Layout */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 80px 40px;
+      gap: 50px;
+      margin-top: 50px;
+    }
+    
+    .service-item {
+      text-align: center;
+      padding: 40px 30px;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .service-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid transparent;
+      transition: var(--transition);
+      pointer-events: none;
+    }
+    
+    .service-item:hover::before {
+      border-color: var(--border);
+      transform: scale(1.05);
     }
     
     .service-item h3 {
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
     }
     
     .service-item p {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 300;
-      color: #777;
+      color: var(--text-secondary);
+      line-height: 1.7;
     }
     
-    /* Contact - Clean Layout */
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      align-items: center;
+    /* Philosophy Section */
+    .philosophy {
       text-align: center;
+    }
+    
+    .philosophy-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .philosophy-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      color: var(--text-primary);
+    }
+    
+    .philosophy-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+    
+    /* Elegant Contact Section */
+    .contact {
+      padding-bottom: 80px;
+    }
+    
+    .contact-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 50px;
+      margin: 0 auto;
+      max-width: 900px;
     }
     
     .contact-item {
-      margin-bottom: 10px;
+      text-align: center;
     }
     
     .contact-label {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #777;
-      margin-bottom: 5px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
     }
     
     .contact-value {
-      font-size: 0.9rem;
-      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.7;
     }
     
-    /* Minimalist Footer */
+    .contact-value.credential {
+      font-size: 0.85rem;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    
+    /* Refined Footer */
     footer {
-      padding: 40px 0;
+      padding: 50px 0;
       text-align: center;
-      margin-top: 60px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .footer-logo {
+      max-height: 28px;
+      opacity: 0.9;
     }
     
     .copyright {
-      font-size: 0.7rem;
-      color: #999;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
       letter-spacing: 1px;
     }
     
-    /* Subtle Animations */
+    /* Sophisticated Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
     
-    .fade-in {
-      animation: fadeIn 1.5s ease-out;
+    @keyframes fadeUp {
+      from { 
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     
-    /* Media Queries */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+    
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      animation-delay: 0.5s;
+    }
+    
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                  transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Refined Media Queries */
+    @media (max-width: 992px) {
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .services-grid {
+        gap: 30px;
+      }
+    }
+    
     @media (max-width: 768px) {
       nav ul {
         gap: 20px;
       }
       
-      .hero {
-        align-items: center;
+      .hero-tagline {
+        font-size: 1.4rem;
       }
       
       section {
         padding: 80px 0;
       }
       
-      .services-grid {
+      .philosophy-quote {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero img {
+        max-width: 150px;
+        margin-bottom: 50px;
+      }
+      
+      .hero-tagline {
+        font-size: 1.2rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 60px;
+      }
+      
+      .contact-details {
         grid-template-columns: 1fr;
         gap: 40px;
       }
@@ -207,58 +420,75 @@
   </style>
 </head>
 <body>
-  <!-- Minimal Header -->
+  <!-- Sophisticated Header -->
   <header>
     <div class="container">
       <nav>
+        <img src="logo.png" alt="Caldon Logo" class="nav-logo">
         <ul>
           <li><a href="#services">Services</a></li>
+          <li><a href="#philosophy">Philosophy</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Centered Logo Hero -->
+  <!-- Elegant Hero -->
   <div class="hero">
-    <div class="hero-content fade-in">
-      <img src="logo.png" alt="Caldon Logo">
-      <p class="hero-tagline">Building Consultancy & Construction</p>
+    <div class="hero-content">
+      <img src="logo.png" alt="Caldon Logo" class="fade-in">
+      <p class="hero-tagline fade-up">Refined building consultancy and construction crafted with precision and vision</p>
     </div>
+    <div class="scroll-indicator">Discover</div>
   </div>
 
-  <!-- Services Section - Minimal -->
-  <section id="services">
+  <!-- Sophisticated Services -->
+  <section id="services" class="reveal">
     <div class="container">
-      <h2 class="section-title">Services</h2>
+      <div class="section-subtitle">Our Expertise</div>
+      <h2 class="section-title">Building Excellence</h2>
       <div class="services-grid">
         <div class="service-item">
           <h3>Residential Design & Construction</h3>
-          <p>Custom home design and construction services with attention to detail and quality craftsmanship.</p>
+          <p>Bespoke home design and construction delivered with meticulous attention to detail and uncompromising quality craftsmanship.</p>
         </div>
         <div class="service-item">
           <h3>Class 2 Building Construction</h3>
-          <p>Specialized construction of multi-residential buildings as registered Building Practitioners.</p>
+          <p>Specialized construction of multi-residential buildings executed with technical precision as registered Building Practitioners.</p>
         </div>
         <div class="service-item">
           <h3>Building Surveying</h3>
-          <p>Professional assessment of building conditions and compliance with regulatory standards.</p>
+          <p>Comprehensive assessment of building conditions conducted with exacting standards and thorough compliance verification.</p>
         </div>
         <div class="service-item">
           <h3>Quantity Surveying</h3>
-          <p>Detailed cost analysis and financial planning for construction projects.</p>
+          <p>Sophisticated cost analysis and strategic financial planning for construction projects to optimize investment and outcomes.</p>
         </div>
         <div class="service-item">
           <h3>Project Management</h3>
-          <p>End-to-end coordination with focus on quality and timeline adherence.</p>
+          <p>Refined end-to-end coordination focused on exceptional quality, precise timeline adherence, and seamless delivery.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section - Minimal -->
-  <section id="contact">
+  <!-- Philosophy Section -->
+  <section id="philosophy" class="philosophy reveal">
     <div class="container">
+      <div class="section-subtitle">Our Approach</div>
+      <h2 class="section-title">Philosophy</h2>
+      <div class="philosophy-content">
+        <p class="philosophy-quote">"Architecture is the learned game, correct and magnificent, of forms assembled in the light."</p>
+        <p class="philosophy-text">At Caldon, we approach each project as a unique opportunity to create spaces that harmonize form and function. Our work is guided by a commitment to architectural integrity, sustainable practices, and meticulous attention to detail. We believe that exceptional building is achieved through a thoughtful balance of innovative design, quality craftsmanship, and transparent client collaboration.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Elegant Contact -->
+  <section id="contact" class="contact reveal">
+    <div class="container">
+      <div class="section-subtitle">Connect With Us</div>
       <h2 class="section-title">Contact</h2>
       <div class="contact-details">
         <div class="contact-item">
@@ -271,26 +501,56 @@
         </div>
         <div class="contact-item">
           <div class="contact-label">Location</div>
-          <div class="contact-value">Taree, NSW 2345</div>
+          <div class="contact-value">Taree, NSW 2345<br>Australia</div>
         </div>
         <div class="contact-item">
-          <div class="contact-label">Registration</div>
-          <div class="contact-value">Registered Building Practitioners under the Design and Building Practitioners Act</div>
+          <div class="contact-label">Credentials</div>
+          <div class="contact-value credential">Registered Building Practitioners under the Design and Building Practitioners Act</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Minimal Footer -->
+  <!-- Refined Footer -->
   <footer>
     <div class="container">
-      <p class="copyright">&copy; 2025 Caldon Pty Ltd</p>
+      <div class="footer-content">
+        <img src="logo.png" alt="Caldon Logo" class="footer-logo">
+        <p class="copyright">&copy; 2025 CALDON PTY LTD · ALL RIGHTS RESERVED</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Minimal Scripts -->
+  <!-- Sophisticated Scripts -->
   <script>
-    // Smooth scrolling for navigation
+    // Scroll Animations
+    window.addEventListener('scroll', function() {
+      // Header transform
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      
+      // Reveal elements on scroll
+      const reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementPosition < windowHeight - 100) {
+          element.classList.add('active');
+        }
+      });
+    });
+    
+    // Initialize reveals
+    setTimeout(function() {
+      window.dispatchEvent(new Event('scroll'));
+    }, 200);
+    
+    // Smooth scrolling
     document.querySelectorAll('nav a').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -298,7 +558,7 @@
         const targetSection = document.querySelector(targetId);
         
         window.scrollTo({
-          top: targetSection.offsetTop - 70,
+          top: targetSection.offsetTop - 80,
           behavior: 'smooth'
         });
       });
