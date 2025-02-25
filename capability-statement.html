@@ -104,7 +104,7 @@
       font-size: 10pt;
       margin: 0;
       padding: 0;
-      height: 100vh; /* Full viewport height */
+      height: 100vh;
       display: flex;
       flex-direction: column;
     }
@@ -126,8 +126,10 @@
     }
     
     .doc-header .logo {
-      max-height: 15mm;
-      width: auto;
+      height: auto; /* Allow natural scaling */
+      max-height: 15mm; /* Maintain max height for desktop */
+      width: auto; /* Ensure aspect ratio is preserved */
+      max-width: 100%; /* Prevent overflow */
     }
     
     .doc-header .title {
@@ -163,11 +165,11 @@
     /* Container */
     .container {
       width: 100%;
-      max-width: 190mm; /* A4 width minus margins */
-      margin: 20mm auto 15mm; /* Space for header and footer */
+      max-width: 190mm;
+      margin: 20mm auto 15mm;
       padding: 15mm 10mm;
-      flex: 1; /* Allows container to grow and scroll */
-      overflow-y: auto; /* Enables scrolling within container */
+      flex: 1;
+      overflow-y: auto;
       position: relative;
     }
     
@@ -319,8 +321,8 @@
         margin: 0;
         padding: 0;
         width: 210mm;
-        height: 297mm; /* A4 size */
-        display: block; /* Revert to block for print */
+        height: 297mm;
+        display: block;
       }
       .doc-header, .doc-footer {
         position: fixed;
@@ -336,9 +338,9 @@
         width: 100%;
         max-width: none;
         padding: 15mm 10mm;
-        margin: 20mm 0 15mm; /* Matches screen spacing */
-        height: auto; /* Full content height for print */
-        overflow-y: visible; /* No scrolling in print */
+        margin: 20mm 0 15mm;
+        height: auto;
+        overflow-y: visible;
       }
       section {
         break-inside: avoid;
@@ -370,7 +372,7 @@
       }
     }
     
-    /* Screen Adjustments */
+    /* Screen Adjustments with Mobile Logo Fix */
     @media screen and (max-width: 768mm) {
       .service-list {
         grid-template-columns: 1fr;
@@ -378,6 +380,11 @@
       .contact-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 5mm;
+      }
+      .doc-header .logo {
+        max-height: 12mm; /* Slightly smaller for mobile */
+        width: auto; /* Maintain aspect ratio */
+        max-width: 50mm; /* Limit width to prevent overflow */
       }
     }
     
@@ -387,6 +394,11 @@
       }
       .contact-grid {
         grid-template-columns: 1fr;
+      }
+      .doc-header .logo {
+        max-height: 10mm; /* Further reduced for smaller screens */
+        width: auto;
+        max-width: 40mm; /* Adjusted for very small screens */
       }
     }
   </style>
