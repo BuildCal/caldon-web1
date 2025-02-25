@@ -170,42 +170,16 @@
       height: auto;
     }
     
-    /* Download Section */
-    .download-section {
-      text-align: center;
-      margin-top: 40px;
-      padding-top: 30px;
-      border-top: 1px solid var(--border);
-    }
-    
-    .download-button {
-      display: inline-block;
-      padding: 12px 28px;
-      background-color: var(--text-primary);
-      color: var(--background);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-bottom: 20px;
-    }
-    
-    .download-button:hover {
-      background-color: var(--text-secondary);
-    }
-    
+    /* Download Note */
     .download-note {
       font-size: 0.85rem;
       font-style: italic;
       color: var(--text-secondary);
       text-align: center;
+      padding-top: 30px;
     }
     
-    /* For PDF download only - won't affect normal viewing */
+    /* Print Styles for PDF */
     @media print {
       body, html {
         margin: 0;
@@ -218,9 +192,6 @@
         max-width: none;
         padding: 20mm;
       }
-      .download-section {
-        display: none;
-      }
       section {
         break-inside: avoid;
         page-break-inside: avoid;
@@ -232,6 +203,9 @@
       .contact-grid {
         break-inside: avoid;
         page-break-inside: avoid;
+      }
+      .download-note {
+        display: none;
       }
     }
     
@@ -269,6 +243,7 @@
   <div class="container">
     <!-- Header -->
     <header>
+      <img src="logo.png" alt="Caldon Logo" class="logo">
       <h1>Caldon Homes Pty Limited</h1>
       <p class="tagline">Exceptional Homes. Expert Consultancy.</p>
     </header>
@@ -402,116 +377,13 @@
         </div>
         <div class="contact-item">
           <div class="contact-label">Membership</div>
-          <div class="contact-value">HIA Member</div>
+          <div class="contact-value"><img src="hialogo.png" alt="HIA Member"></div>
         </div>
       </div>
     </section>
-  </div>
 
-  <!-- Download Section - Outside the PDF content -->
-  <div class="download-section">
-    <button id="download-pdf" class="download-button">Download Capability Statement</button>
-    <p class="download-note">Download our capability statement as a PDF for your reference or to share with your team.</p>
+    <!-- Download Note -->
+    <div class="download-note">To download this capability statement as a PDF, please use your browser's Print function (Ctrl+P or Cmd+P) and select "Save as PDF".</div>
   </div>
-
-  <!-- Script for PDF Download -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script>
-    document.getElementById('download-pdf').addEventListener('click', function() {
-      const { jsPDF } = window.jspdf;
-      
-      // Hide download section during capture
-      const downloadSection = document.querySelector('.download-section');
-      downloadSection.style.display = 'none';
-      
-      // Show loading status
-      alert('PDF generation started. This may take a few moments. Please wait...');
-      
-      // Initialize PDF with A4 dimensions (210mm × 297mm)
-      const pdf = new jsPDF('p', 'mm', 'a4');
-      
-      // Get container for consistent capture
-      const container = document.querySelector('.container');
-      
-      // Set scale for better quality
-      const scale = 2;
-      const options = {
-        scale: scale,
-        useCORS: true,
-        allowTaint: true,
-        letterRendering: true,
-        scrollY: 0,
-        windowWidth: 1100, // Force consistent width
-      };
-      
-      // Function to capture the content in chunks to avoid memory issues
-      async function captureContent() {
-        // Create a document title page
-        const titlePage = document.createElement('div');
-        titlePage.innerHTML = `
-          <div style="text-align: center; margin: 100px auto; width: 100%;">
-            <h1 style="font-size: 36px; margin-bottom: 10px;">CALDON</h1>
-            <h2 style="font-size: 30px; font-weight: normal; margin-bottom: 20px;">Caldon Homes Pty Limited</h2>
-            <p style="font-size: 18px;">Exceptional Homes. Expert Consultancy.</p>
-          </div>
-        `;
-        document.body.appendChild(titlePage);
-        
-        // Capture title page
-        const titleCanvas = await html2canvas(titlePage, options);
-        const titleImgData = titleCanvas.toDataURL('image/jpeg', 1.0);
-        pdf.addImage(titleImgData, 'JPEG', 0, 0, 210, 297);
-        document.body.removeChild(titlePage);
-        
-        // Add the actual content pages
-        const sections = document.querySelectorAll('section');
-        let currentPage = 1;
-        
-        // Create a temporary element to hold each section for capture
-        const tempElement = document.createElement('div');
-        tempElement.style.width = '900px';
-        tempElement.style.padding = '40px';
-        tempElement.style.backgroundColor = 'white';
-        document.body.appendChild(tempElement);
-        
-        // Process each section
-        for (const section of sections) {
-          tempElement.innerHTML = '';
-          tempElement.appendChild(section.cloneNode(true));
-          
-          const canvas = await html2canvas(tempElement, options);
-          const imgData = canvas.toDataURL('image/jpeg', 1.0);
-          
-          // Add new page after the first section
-          if (currentPage > 0) {
-            pdf.addPage();
-          }
-          
-          // Add image to PDF
-          pdf.addImage(imgData, 'JPEG', 10, 10, 190, 0);
-          currentPage++;
-        }
-        
-        // Clean up
-        document.body.removeChild(tempElement);
-        
-        // Save the PDF
-        pdf.save('Caldon_Homes_Capability_Statement.pdf');
-        
-        // Show the download section again
-        downloadSection.style.display = 'block';
-        
-        alert('PDF has been generated successfully!');
-      }
-      
-      // Start capturing process
-      captureContent().catch(error => {
-        console.error('Error generating PDF:', error);
-        downloadSection.style.display = 'block';
-        alert('There was an error generating the PDF. Please try again.');
-      });
-    });
-  </script>
 </body>
 </html>
