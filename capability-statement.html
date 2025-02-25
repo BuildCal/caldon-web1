@@ -170,13 +170,39 @@
       height: auto;
     }
     
-    /* Download Note */
+    /* Download Section */
+    .download-section {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .download-button {
+      display: inline-block;
+      padding: 12px 28px;
+      background-color: var(--text-primary);
+      color: var(--background);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+    
+    .download-button:hover {
+      background-color: var(--text-secondary);
+    }
+    
     .download-note {
       font-size: 0.85rem;
       font-style: italic;
       color: var(--text-secondary);
       text-align: center;
-      padding-top: 30px;
     }
     
     /* Print Styles for PDF */
@@ -195,7 +221,7 @@
       section {
         padding: 30px 0;
       }
-      .download-note {
+      .download-section {
         display: none;
       }
       h1 {
@@ -382,8 +408,39 @@
       </div>
     </section>
 
-    <!-- Download Note -->
-    <div class="download-note">To download this capability statement as a PDF, please use your browser's Print function (Ctrl+P or Cmd+P) and select "Save as PDF".</div>
+    <!-- Download Section -->
+    <div class="download-section">
+      <button id="download-pdf" class="download-button">Download Capability Statement</button>
+      <p class="download-note">Download our capability statement as a PDF for your reference or to share with your team.</p>
+    </div>
   </div>
+
+  <!-- Script for PDF Download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('download-pdf').addEventListener('click', function() {
+      // Define element to convert
+      const element = document.body;
+      
+      // Hide download section before generating PDF
+      const downloadSection = document.querySelector('.download-section');
+      downloadSection.style.display = 'none';
+      
+      // html2pdf options
+      const opt = {
+        margin:       [10, 10, 10, 10],
+        filename:     'Caldon_Homes_Capability_Statement.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      
+      // Generate PDF
+      html2pdf().set(opt).from(element).save().then(function() {
+        // Show download section again after PDF generation
+        downloadSection.style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>
