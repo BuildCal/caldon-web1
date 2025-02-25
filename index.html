@@ -309,7 +309,8 @@
     }
     
     .contact-form input,
-    .contact-form textarea {
+    .contact-form textarea,
+    .contact-form select {
       width: 100%;
       padding: 12px;
       border: 1px solid transparent;
@@ -321,9 +322,17 @@
     }
 
     .contact-form input:focus,
-    .contact-form textarea:focus {
+    .contact-form textarea:focus,
+    .contact-form select:focus {
       border: 1px solid var(--text-primary);
       outline: none;
+    }
+    
+    .contact-form select {
+      appearance: none;
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%23555555" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 12px center;
     }
     
     .contact-form textarea {
@@ -556,15 +565,26 @@
     </div>
   </section>
 
-  <!-- Elegant Contact -->
+  <!-- Elegant Contact with Dropdown -->
   <section id="contact" class="contact">
     <div class="container">
       <div class="section-subtitle">Connect With Us</div>
       <h2 class="section-title">Contact</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
+      <form class="contact-form" id="contact-form" method="POST" action="/submit-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <select name="service" required>
+          <option value="" disabled selected>Select a Service</option>
+          <option value="Residential Design & Construction">Residential Design & Construction</option>
+          <option value="Class 2 Building Construction">Class 2 Building Construction</option>
+          <option value="Estimating Services">Estimating Services</option>
+          <option value="Expert Witness">Expert Witness</option>
+          <option value="Commercial Procurement">Commercial Procurement</option>
+          <option value="Building Surveying">Building Surveying</option>
+          <option value="Quantity Surveying">Quantity Surveying</option>
+          <option value="Project Management">Project Management</option>
+        </select>
+        <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit" class="cta-button">Send Inquiry</button>
       </form>
       <div class="contact-details">
@@ -612,19 +632,17 @@
       const ctaButton = document.querySelector('.hero .cta-button');
       const scrollPosition = window.scrollY;
 
-      // Header scroll effect
       if (scrollPosition > 50) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
 
-      // Hero parallax-like animation
-      const maxScroll = window.innerHeight * 0.5; // Limit effect to half viewport height
+      const maxScroll = window.innerHeight * 0.5;
       if (scrollPosition <= maxScroll) {
-        const translateFactor = scrollPosition * 0.2; // Subtle movement
+        const translateFactor = scrollPosition * 0.2;
         heroLogo.style.transform = `translateY(${translateFactor}px)`;
-        heroTagline.style.transform = `translateY(${translateFactor * 0.8}px)`; // Slightly less movement
+        heroTagline.style.transform = `translateY(${translateFactor * 0.8}px)`;
         heroSubtext.style.opacity = Math.max(0.9 - scrollPosition / maxScroll, 0);
         ctaButton.style.opacity = Math.max(1 - scrollPosition / maxScroll, 0);
       }
@@ -639,6 +657,25 @@
           top: targetSection.offsetTop - 80,
           behavior: 'smooth'
         });
+      });
+    });
+
+    // Client-side form submission handling
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      fetch('/submit-form', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('Thank you for your inquiry! We’ll get back to you soon.');
+        this.reset();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('There was an issue submitting your form. Please try again.');
       });
     });
   </script>
