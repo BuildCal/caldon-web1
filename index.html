@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caldon – Building Consultancy</title>
+  <style>
+    /* Font Import - Montserrat for architectural feel */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+    
+    :root {
+      --text: #111;
+      --background: #fff;
+      --border: #eaeaea;
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Minimalist Container */
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Clean, Sparse Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      z-index: 1000;
+      padding: 20px 0;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 300;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition);
+    }
+    
+    nav a:hover {
+      opacity: 0.7;
+    }
+    
+    /* Minimalist Hero with Generous Whitespace */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 0 20px;
+    }
+    
+    .hero-content {
+      text-align: center;
+    }
+    
+    .hero img {
+      max-width: 180px;
+      height: auto;
+      margin-bottom: 60px;
+    }
+    
+    .hero-tagline {
+      font-weight: 300;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #555;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    /* Architectural Section Style */
+    section {
+      padding: 120px 0;
+    }
+    
+    .section-title {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 60px;
+      color: #777;
+    }
+    
+    /* Minimal Services Layout */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 80px 40px;
+    }
+    
+    .service-item h3 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+    
+    .service-item p {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #777;
+    }
+    
+    /* Contact - Clean Layout */
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .contact-item {
+      margin-bottom: 10px;
+    }
+    
+    .contact-label {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #777;
+      margin-bottom: 5px;
+    }
+    
+    .contact-value {
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+    
+    /* Minimalist Footer */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      margin-top: 60px;
+    }
+    
+    .copyright {
+      font-size: 0.7rem;
+      color: #999;
+      letter-spacing: 1px;
+    }
+    
+    /* Subtle Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .fade-in {
+      animation: fadeIn 1.5s ease-out;
+    }
+    
+    /* Media Queries */
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 20px;
+      }
+      
+      .hero {
+        align-items: center;
+      }
+      
+      section {
+        padding: 80px 0;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Minimal Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Centered Logo Hero -->
+  <div class="hero">
+    <div class="hero-content fade-in">
+      <img src="logo.png" alt="Caldon Logo">
+      <p class="hero-tagline">Building Consultancy</p>
+    </div>
+  </div>
+
+  <!-- Services Section - Minimal -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Expertise</h2>
+      <div class="services-grid">
+        <div class="service-item">
+          <h3>Building Surveying</h3>
+          <p>Professional assessment of building conditions and compliance.</p>
+        </div>
+        <div class="service-item">
+          <h3>Quantity Surveying</h3>
+          <p>Detailed cost analysis and financial planning for construction projects.</p>
+        </div>
+        <div class="service-item">
+          <h3>Project Management</h3>
+          <p>End-to-end coordination with focus on quality and timeline adherence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section - Minimal -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-details">
+        <div class="contact-item">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">info@caldon.com.au</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">+61 2 1234 5678</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Taree, NSW 2345</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minimal Footer -->
+  <footer>
+    <div class="container">
+      <p class="copyright">&copy; 2025 Caldon Pty Ltd</p>
+    </div>
+  </footer>
+
+  <!-- Minimal Scripts -->
+  <script>
+    // Smooth scrolling for navigation
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetSection.offsetTop - 70,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
