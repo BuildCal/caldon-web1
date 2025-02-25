@@ -221,7 +221,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Building Surveying",
-              "description": "Detailed compliance checks for properties in Port Macquarie, Taree, and major NSW centres."
+              "description": "Detailed compliance checks for properties in Port Macquarie, Taree, and major NSW centers."
             }
           },
           {
@@ -309,7 +309,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Duplex Construction",
-              "description": "Specialised duplex construction in Tamworth, Forster Tuncurry, and beyond."
+              "description": "Specialized duplex construction in Tamworth, Forster Tuncurry, and beyond."
             }
           },
           {
@@ -317,7 +317,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Luxury Home Building",
-              "description": "Premium luxury homes in Port Macquarie, Sydney, and major NSW centres."
+              "description": "Premium luxury homes in Port Macquarie, Sydney, and major NSW centers."
             }
           }
         ]
@@ -343,7 +343,7 @@
           "name": "What areas does CALDON™ serve for consultancy services?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "CALDON™ serves Taree, Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, Forster Tuncurry, Wingham, Kempsey, Maitland, and other major NSW centres."
+            "text": "CALDON™ serves Taree, Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, Forster Tuncurry, Wingham, Kempsey, Maitland, and other major NSW centers."
           }
         },
         {
@@ -362,7 +362,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Updated Styles with Improved Mobile Menu -->
+  <!-- Original Styles with Fixed Mobile Menu -->
   <style>
     /* Modern, Sophisticated Typography */
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
@@ -384,8 +384,8 @@
     
     body {
       font-family: 'Inter', sans-serif;
-      background-colour: var(--background);
-      colour: var(--text-primary);
+      background-color: var(--background);
+      color: var(--text-primary);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
@@ -405,7 +405,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-colour: rgba(255, 255, 255, 0.95);
+      background-color: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
       z-index: 1000;
       padding: 25px 0;
@@ -420,7 +420,7 @@
     nav {
       display: flex;
       justify-content: space-between;
-      align-items: centre;
+      align-items: center;
       position: relative;
     }
     
@@ -429,7 +429,7 @@
       opacity: 0;
       transform: translateY(-5px);
       transition: var(--transition);
-      z-index: 10; /* Ensure logo stays above menu */
+      z-index: 2;
     }
     
     header.scrolled .nav-logo {
@@ -439,12 +439,12 @@
     
     /* Mobile Menu Button */
     .menu-toggle {
-      display: none; /* Hidden by default, shown on mobile */
+      display: none;
       background: none;
       border: none;
       cursor: pointer;
       padding: 10px;
-      z-index: 1100; /* Higher than nav ul */
+      z-index: 2;
     }
     
     .menu-toggle span {
@@ -452,23 +452,20 @@
       width: 24px;
       height: 2px;
       margin: 5px 0;
-      background-colour: var(--text-primary);
+      background-color: var(--text-primary);
       transition: var(--transition);
     }
     
-    /* Desktop Menu */
+    /* Desktop menu */
     nav ul {
       display: flex;
       list-style: none;
       gap: 40px;
-      margin: 0;
-      padding: 0;
-      z-index: 1000; /* Ensure menu stays above content */
     }
     
     nav a {
       text-decoration: none;
-      colour: var(--text-primary);
+      color: var(--text-primary);
       font-weight: 400;
       font-size: 0.85rem;
       text-transform: uppercase;
@@ -484,7 +481,7 @@
       height: 1px;
       bottom: -4px;
       left: 0;
-      background-colour: var(--text-primary);
+      background-color: var(--text-primary);
       transition: var(--transition);
     }
     
@@ -497,11 +494,11 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      align-items: centre;
-      justify-content: centre;
+      align-items: center;
+      justify-content: center;
       height: 100vh;
       padding: 0 20px;
-      text-align: centre;
+      text-align: center;
       overflow: hidden;
     }
     
@@ -523,7 +520,7 @@
       font-weight: 300;
       font-size: 2rem;
       letter-spacing: 1px;
-      colour: var(--text-primary);
+      color: var(--text-primary);
       margin-bottom: 20px;
       line-height: 1.4;
       transition: transform 0.1s ease-out;
@@ -531,7 +528,7 @@
     
     .hero-subtext {
       font-size: 1rem;
-      colour: var(--text-secondary);
+      color: var(--text-secondary);
       max-width: 500px;
       margin: 0 auto 30px;
       opacity: 0.9;
@@ -541,8 +538,8 @@
     .cta-button {
       display: inline-block;
       padding: 12px 36px;
-      background-colour: var(--text-primary);
-      colour: var(--background);
+      background-color: var(--text-primary);
+      color: var(--background);
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 400;
@@ -554,7 +551,7 @@
     }
     
     .cta-button:hover {
-      background-colour: var(--text-secondary);
+      background-color: var(--text-secondary);
     }
     
     .scroll-indicator {
@@ -565,7 +562,7 @@
       font-size: 11px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      colour: var(--text-secondary);
+      color: var(--text-secondary);
       opacity: 0.7;
     }
     
@@ -574,7 +571,7 @@
       display: block;
       width: 1px;
       height: 40px;
-      background-colour: var(--text-secondary);
+      background-color: var(--text-secondary);
       margin: 10px auto 0;
       opacity: 0.3;
     }
@@ -585,7 +582,7 @@
     }
     
     section:nth-child(even) {
-      background-colour: var(--subtle-accent);
+      background-color: var(--subtle-accent);
     }
     
     .section-title {
@@ -593,8 +590,8 @@
       font-size: 2.4rem;
       font-weight: 300;
       margin-bottom: 60px;
-      text-align: centre;
-      colour: var(--text-primary);
+      text-align: center;
+      color: var(--text-primary);
     }
     
     .section-subtitle {
@@ -603,8 +600,8 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       margin-bottom: 15px;
-      colour: var(--text-secondary);
-      text-align: centre;
+      color: var(--text-secondary);
+      text-align: center;
     }
     
     /* Sophisticated Services Layout */
@@ -617,7 +614,7 @@
     }
     
     .service-item {
-      text-align: centre;
+      text-align: center;
       padding: 30px;
       transition: var(--transition);
       position: relative;
@@ -635,7 +632,7 @@
     }
     
     .service-item:hover::before {
-      border-colour: var(--border);
+      border-color: var(--border);
     }
     
     .service-item h3 {
@@ -649,13 +646,13 @@
     .service-item p {
       font-size: 0.9rem;
       font-weight: 300;
-      colour: var(--text-secondary);
+      color: var(--text-secondary);
       line-height: 1.7;
     }
     
     /* Philosophy Section */
     .philosophy {
-      text-align: centre;
+      text-align: center;
     }
     
     .philosophy-content {
@@ -670,13 +667,13 @@
       font-style: italic;
       line-height: 1.5;
       margin-bottom: 30px;
-      colour: var(--text-primary);
+      color: var(--text-primary);
     }
     
     .philosophy-text {
       font-size: 0.95rem;
       line-height: 1.8;
-      colour: var(--text-secondary);
+      color: var(--text-secondary);
       margin-bottom: 20px;
     }
     
@@ -701,7 +698,7 @@
       background: var(--subtle-accent);
       font-family: 'Inter', sans-serif;
       font-size: 0.9rem;
-      colour: var(--text-primary);
+      color: var(--text-primary);
       transition: var(--transition);
     }
 
@@ -716,7 +713,7 @@
       appearance: none;
       background-image: url('data:image/svg+xml;utf8,<svg fill="%23555555" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
       background-repeat: no-repeat;
-      background-position: right 12px centre;
+      background-position: right 12px center;
     }
     
     .contact-form textarea {
@@ -725,7 +722,7 @@
     }
     
     .contact-form button {
-      justify-self: centre;
+      justify-self: center;
     }
     
     .contact-details {
@@ -737,10 +734,10 @@
     }
     
     .contact-item {
-      text-align: centre;
+      text-align: center;
       display: flex;
       flex-direction: column;
-      align-items: centre;
+      align-items: center;
       justify-content: flex-start;
       min-height: 100px;
     }
@@ -749,19 +746,19 @@
       font-size: 0.75rem;
       letter-spacing: 2px;
       text-transform: uppercase;
-      colour: var(--text-secondary);
+      color: var(--text-secondary);
       margin-bottom: 8px;
     }
     
     .contact-value {
       font-size: 0.95rem;
       line-height: 1.5;
-      colour: var(--text-primary);
+      color: var(--text-primary);
     }
     
     .contact-value.credential {
       font-size: 0.85rem;
-      colour: var(--text-secondary);
+      color: var(--text-secondary);
     }
     
     .contact-value img {
@@ -772,9 +769,9 @@
     /* Condensed Footer */
     footer {
       padding: 40px 0;
-      text-align: centre;
+      text-align: center;
       border-top: 1px solid var(--border);
-      background-colour: var(--subtle-accent);
+      background-color: var(--subtle-accent);
     }
     
     .footer-content {
@@ -795,14 +792,14 @@
     
     .footer-nav ul {
       display: flex;
-      justify-content: centre;
+      justify-content: center;
       list-style: none;
       gap: 20px;
     }
     
     .footer-nav a {
       text-decoration: none;
-      colour: var(--text-secondary);
+      color: var(--text-secondary);
       font-size: 0.7rem;
       font-weight: 400;
       text-transform: uppercase;
@@ -811,7 +808,7 @@
     }
     
     .footer-nav a:hover {
-      colour: var(--text-primary);
+      color: var(--text-primary);
     }
     
     .footer-logo {
@@ -824,26 +821,26 @@
       grid-area: credentials;
       display: flex;
       flex-wrap: wrap;
-      justify-content: centre;
+      justify-content: center;
       gap: 20px;
     }
     
     .credential-item {
       display: flex;
-      align-items: centre;
+      align-items: center;
       gap: 8px;
     }
     
     .credential-label {
       font-size: 0.7rem;
-      colour: var(--text-secondary);
+      color: var(--text-secondary);
       letter-spacing: 1px;
       text-transform: uppercase;
     }
     
     .credential-value {
       font-size: 0.7rem;
-      colour: var(--text-primary);
+      color: var(--text-primary);
     }
     
     .credential-item img {
@@ -854,7 +851,7 @@
     .copyright {
       grid-area: copyright;
       font-size: 0.7rem;
-      colour: var(--text-secondary);
+      color: var(--text-secondary);
       letter-spacing: 1.2px;
       text-transform: uppercase;
     }
@@ -886,7 +883,7 @@
       animation: fadeUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     }
     
-    /* Media Queries with Improved Mobile Menu */
+    /* Media Queries with Fixed Mobile Menu */
     @media (max-width: 992px) {
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -898,6 +895,7 @@
       .section-title {
         font-size: 2.2rem;
       }
+      /* Menu adjustments for tablet */
       nav ul {
         gap: 20px;
       }
@@ -923,24 +921,23 @@
       }
       
       nav ul {
-        display: none; /* Hide desktop menu by default on mobile */
         position: fixed;
         top: 0;
-        right: -250px; /* Off-screen initially */
+        right: -100%;
         width: 250px;
         height: 100vh;
-        background-colour: rgba(255, 255, 255, 0.98);
+        background-color: var(--background);
         flex-direction: column;
         gap: 0;
+        justify-content: flex-start;
         padding-top: 80px;
         transition: right 0.3s ease;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        z-index: 1000; /* Above content */
+        z-index: 1;
       }
       
       nav.menu-open ul {
-        display: flex; /* Show menu when open */
-        right: 0; /* Slide in from right */
+        right: 0; /* Slide in when menu-open is toggled */
       }
       
       nav ul li {
@@ -952,14 +949,13 @@
         padding: 15px 25px;
         font-size: 1rem;
         border-bottom: 1px solid var(--border);
-        colour: var(--text-primary);
       }
       
       nav a::after {
-        display: none; /* No underline effect on mobile */
+        display: none;
       }
       
-      /* Menu Toggle Animation */
+      /* Menu toggle animation */
       nav.menu-open .menu-toggle span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 6px);
       }
@@ -970,11 +966,6 @@
       
       nav.menu-open .menu-toggle span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -6px);
-      }
-      
-      /* Prevent body scroll when menu is open */
-      body.menu-active {
-        overflow: hidden;
       }
       
       /* Footer improvements */
@@ -1032,16 +1023,16 @@
       /* Further mobile footer improvements */
       .footer-nav ul {
         grid-template-columns: 1fr;
-        text-align: centre;
+        text-align: center;
       }
       
       .footer-credentials {
         grid-template-columns: 1fr;
-        text-align: centre;
+        text-align: center;
       }
       
       .credential-item {
-        justify-content: centre;
+        justify-content: center;
       }
       
       /* Extra space for mobile menu items */
@@ -1206,7 +1197,6 @@
           <span class="credential-label">Practitioner:</span>
           <span class="credential-value">BUP0002873</span>
         </div>
-        <!-- Placeholder for additional credentials -->
         <div class="credential-item">
           <span class="credential-label">HIA Member:</span>
           <span class="credential-value">1376011</span>
@@ -1216,7 +1206,7 @@
           <span class="credential-value">377088C</span>
         </div>
       </div>
-      <p class="copyright">© 2025 CALDON™ · All Rights Reserved</p>
+      <p class="copyright">© 2025 CALDON Homes Pty Limited · All Rights Reserved</p>
     </div>
   </footer>
 
@@ -1273,7 +1263,7 @@
           const targetSection = document.querySelector(targetId);
           window.scrollTo({
             top: targetSection.offsetTop - 80,
-            behaviour: 'smooth'
+            behavior: 'smooth'
           });
         }
         // External links open normally in new tab
@@ -1290,7 +1280,7 @@
           const targetSection = document.querySelector(targetId);
           window.scrollTo({
             top: targetSection.offsetTop - 80,
-            behaviour: 'smooth'
+            behavior: 'smooth'
           });
         }
       });
