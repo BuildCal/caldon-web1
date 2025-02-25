@@ -346,14 +346,19 @@
     
     .contact-details {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
     }
     
     .contact-item {
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100px; /* Ensures consistent height */
     }
     
     .contact-label {
@@ -361,19 +366,26 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--text-secondary);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     
     .contact-value {
       font-size: 0.95rem;
-      line-height: 1.7;
+      line-height: 1.5;
+      color: var(--text-primary);
     }
     
     .contact-value.credential {
       font-size: 0.85rem;
+      color: var(--text-secondary);
     }
     
-    /* Condensed and Efficient Footer */
+    .contact-value img {
+      max-width: 120px;
+      height: auto;
+    }
+    
+    /* Condensed Footer */
     footer {
       padding: 40px 0;
       text-align: center;
@@ -496,6 +508,9 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
       }
+      .contact-details {
+        grid-template-columns: repeat(2, 1fr);
+      }
       .section-title {
         font-size: 2.2rem;
       }
@@ -547,7 +562,7 @@
       }
       .contact-details {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
       }
       .footer-nav ul {
         flex-direction: column;
@@ -640,7 +655,7 @@
     </div>
   </section>
 
-  <!-- Elegant Contact -->
+  <!-- Elegant Contact with Improved Details -->
   <section id="contact" class="contact">
     <div class="container">
       <div class="section-subtitle">Connect With Us</div>
@@ -676,12 +691,16 @@
           <div class="contact-value">Taree, NSW 2430<br>Australia</div>
         </div>
         <div class="contact-item">
-          <div class="contact-label">Practitioner Number</div>
+          <div class="contact-label">Building Practitioner</div>
           <div class="contact-value credential">BUP0002873</div>
         </div>
         <div class="contact-item">
+          <div class="contact-label">Builders Licence</div>
+          <div class="contact-value credential">377088C</div>
+        </div>
+        <div class="contact-item">
           <div class="contact-label">Membership</div>
-          <div class="contact-value"><img src="hialogo.png" alt="HIA Member" style="max-width: 180px; height: auto;"></div>
+          <div class="contact-value"><img src="hialogo.png" alt="HIA Member"></div>
         </div>
       </div>
     </div>
