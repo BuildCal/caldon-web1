@@ -362,7 +362,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Original Styles with Fixed Mobile Menu -->
+  <!-- Original Styles with Fixed Mobile Menu and Improved Logo -->
   <style>
     /* Modern, Sophisticated Typography */
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
@@ -425,7 +425,9 @@
     }
     
     .nav-logo {
-      max-height: 30px;
+      height: 30px; /* Fixed height for consistency */
+      max-width: 120px; /* Prevent stretching */
+      width: auto; /* Maintain aspect ratio */
       opacity: 0;
       transform: translateY(-5px);
       transition: var(--transition);
@@ -883,7 +885,7 @@
       animation: fadeUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     }
     
-    /* Media Queries with Fixed Mobile Menu */
+    /* Media Queries with Fixed Mobile Menu and Improved Logo */
     @media (max-width: 992px) {
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -918,6 +920,11 @@
       /* Mobile Menu Styling */
       .menu-toggle {
         display: block; /* Show hamburger on mobile */
+      }
+      
+      .nav-logo {
+        height: 25px; /* Slightly smaller for mobile */
+        max-width: 100px; /* Ensure it fits well */
       }
       
       nav ul {
@@ -1018,6 +1025,11 @@
       .contact-details {
         grid-template-columns: 1fr;
         gap: 20px;
+      }
+      
+      .nav-logo {
+        height: 20px; /* Smaller for very small screens */
+        max-width: 90px;
       }
       
       /* Further mobile footer improvements */
@@ -1134,7 +1146,7 @@
     <div class="container">
       <div class="section-subtitle">Connect With Us</div>
       <h2 class="section-title">Contact</h2>
-      <form class="contact-form" id="contact-form" method="POST" action="/submit-form">
+      <form class="contact-form" id="contact-form">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <select name="service" required>
@@ -1286,12 +1298,23 @@
       });
     });
 
+    // Form submission to Google Apps Script
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
       const formData = new FormData(this);
-      fetch('/submit-form', {
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        service: formData.get('service'),
+        message: formData.get('message')
+      };
+
+      fetch('https://script.google.com/macros/s/AKfycbyEcqwx03C6dW8X3BD4W0MoMbK6bOiymEbq0foI62B64lxaoojT8Ardl4x5OtJYIHH6/exec', {
         method: 'POST',
-        body: formData
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
       })
       .then(response => response.json())
       .then(data => {
