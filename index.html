@@ -373,9 +373,9 @@
       font-size: 0.85rem;
     }
     
-    /* Improved Footer */
+    /* Condensed and Efficient Footer */
     footer {
-      padding: 60px 0;
+      padding: 40px 0;
       text-align: center;
       border-top: 1px solid var(--border);
       background-color: var(--subtle-accent);
@@ -383,48 +383,84 @@
     
     .footer-content {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: 40px;
+      grid-template-areas: 
+        "nav"
+        "logo"
+        "credentials"
+        "copyright";
+      gap: 16px;
       max-width: 1200px;
       margin: 0 auto;
     }
     
-    .footer-logo {
-      max-height: 28px;
-      justify-self: end;
-    }
-    
-    .copyright {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      justify-self: center;
-    }
-    
     .footer-nav {
-      justify-self: start;
+      grid-area: nav;
     }
     
     .footer-nav ul {
       display: flex;
+      justify-content: center;
       list-style: none;
-      gap: 24px;
+      gap: 20px;
     }
     
     .footer-nav a {
       text-decoration: none;
       color: var(--text-secondary);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 400;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       transition: var(--transition);
     }
     
     .footer-nav a:hover {
       color: var(--text-primary);
+    }
+    
+    .footer-logo {
+      grid-area: logo;
+      max-height: 24px;
+      margin: 0 auto;
+    }
+    
+    .footer-credentials {
+      grid-area: credentials;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .credential-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .credential-label {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .credential-value {
+      font-size: 0.7rem;
+      color: var(--text-primary);
+    }
+    
+    .credential-item img {
+      max-height: 20px;
+      max-width: 100px;
+    }
+    
+    .copyright {
+      grid-area: copyright;
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
     }
     
     /* Animations */
@@ -463,15 +499,6 @@
       .section-title {
         font-size: 2.2rem;
       }
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .footer-logo,
-      .copyright,
-      .footer-nav {
-        justify-self: center;
-      }
     }
     
     @media (max-width: 768px) {
@@ -489,6 +516,9 @@
       }
       .philosophy-quote {
         font-size: 1.6rem;
+      }
+      .footer-nav ul {
+        gap: 16px;
       }
     }
     
@@ -520,6 +550,10 @@
         gap: 30px;
       }
       .footer-nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .footer-credentials {
         flex-direction: column;
         gap: 12px;
       }
@@ -653,7 +687,7 @@
     </div>
   </section>
 
-  <!-- Improved Footer -->
+  <!-- Condensed Footer -->
   <footer>
     <div class="footer-content">
       <div class="footer-nav">
@@ -664,6 +698,25 @@
         </ul>
       </div>
       <img src="logo.png" alt="Caldon Logo" class="footer-logo">
+      <div class="footer-credentials">
+        <div class="credential-item">
+          <span class="credential-label">Practitioner:</span>
+          <span class="credential-value">BUP0002873</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">Member:</span>
+          <img src="hialogo.png" alt="HIA Member">
+        </div>
+        <!-- Placeholder for additional credentials -->
+        <div class="credential-item">
+          <span class="credential-label">Member:</span>
+          <span class="credential-value">[Additional Org]</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">Cert:</span>
+          <span class="credential-value">[Cert ID]</span>
+        </div>
+      </div>
       <p class="copyright">© 2025 Caldon Homes Pty Limited · All Rights Reserved</p>
     </div>
   </footer>
