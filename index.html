@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caldon Homes – Building Construction & Consultancy</title>
+  <title>Caldon Homes – Building & Consultancy Excellence</title>
   <style>
-    /* Modern, Sophisticated Typography */
+    /* Sophisticated Typography */
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
     
     :root {
-      --text-primary: #111111;
-      --text-secondary: #555555;
+      --text-primary: #1a1a1a;
+      --text-secondary: #666666;
       --background: #ffffff;
-      --subtle-accent: #f7f7f7;
-      --border: #e0e0e0;
+      --accent-light: #f8f8f8;
+      --border: #e5e5e5;
       --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     
@@ -32,31 +32,30 @@
       overflow-x: hidden;
     }
     
-    /* Refined Container */
+    /* Container */
     .container {
       width: 90%;
-      max-width: 1140px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
     
-    /* Sophisticated Header */
+    /* Header */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       background-color: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       z-index: 1000;
-      padding: 25px 0;
+      padding: 20px 0;
       transition: var(--transition);
     }
     
     header.scrolled {
       padding: 15px 0;
-      box-shadow: 0 1px 15px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
     }
     
     nav {
@@ -66,7 +65,7 @@
     }
     
     .nav-logo {
-      max-height: 30px;
+      height: 32px;
       opacity: 0;
       transform: translateY(-5px);
       transition: var(--transition);
@@ -77,94 +76,74 @@
       transform: translateY(0);
     }
     
-    .credentials-badge {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      letter-spacing: 1px;
-      opacity: 0;
-      transition: var(--transition);
-    }
-    
-    header.scrolled .credentials-badge {
-      opacity: 1;
-    }
-    
     nav ul {
       display: flex;
       list-style: none;
-      gap: 40px;
+      gap: 48px;
     }
     
     nav a {
       text-decoration: none;
       color: var(--text-primary);
-      font-weight: 400;
       font-size: 0.85rem;
+      font-weight: 400;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.8px;
       transition: var(--transition);
       position: relative;
     }
     
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 1px;
-      bottom: -4px;
-      left: 0;
-      background-color: var(--text-primary);
-      transition: var(--transition);
+    nav a:hover {
+      color: var(--text-secondary);
     }
     
-    nav a:hover::after {
-      width: 100%;
-    }
-    
-    /* Elegant Hero Section */
+    /* Hero Section */
     .hero {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      padding: 0 20px;
-      position: relative;
+      min-height: 100vh;
+      padding: 80px 20px 60px;
+      text-align: center;
     }
     
     .hero-content {
-      text-align: center;
-      z-index: 2;
+      max-width: 700px;
     }
     
     .hero img {
-      max-width: 180px;
-      height: auto;
-      margin-bottom: 70px;
-      transition: var(--transition);
+      height: 60px;
+      margin-bottom: 40px;
     }
     
     .hero-tagline {
       font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
       font-weight: 300;
-      font-size: 1.6rem;
-      letter-spacing: 1px;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    
+    .hero-subtext {
+      font-size: 1rem;
       color: var(--text-secondary);
       max-width: 500px;
-      margin: 0 auto;
-      line-height: 1.4;
+      margin: 0 auto 30px;
     }
     
     .cta-button {
       display: inline-block;
-      margin-top: 40px;
-      padding: 12px 30px;
+      padding: 12px 36px;
       background-color: var(--text-primary);
       color: var(--background);
       text-decoration: none;
       font-size: 0.85rem;
+      font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 2px;
+      border: none;
       transition: var(--transition);
     }
     
@@ -172,178 +151,66 @@
       background-color: var(--text-secondary);
     }
     
-    .scroll-indicator {
-      position: absolute;
-      bottom: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      opacity: 0.7;
-    }
-    
-    .scroll-indicator::after {
-      content: '';
-      display: block;
-      width: 1px;
-      height: 50px;
-      background-color: var(--text-secondary);
-      margin: 15px auto 0;
-      opacity: 0.3;
-    }
-    
-    /* Refined Section Styling */
+    /* Section Styling */
     section {
       padding: 120px 0;
-      position: relative;
     }
     
     section:nth-child(even) {
-      background-color: var(--subtle-accent);
+      background-color: var(--accent-light);
     }
     
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       font-weight: 300;
-      margin-bottom: 80px;
       text-align: center;
-      color: var(--text-primary);
+      margin-bottom: 60px;
     }
     
     .section-subtitle {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 400;
-      letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 15px;
+      letter-spacing: 2.5px;
       color: var(--text-secondary);
       text-align: center;
+      margin-bottom: 16px;
     }
     
-    /* Sophisticated Services Layout */
+    /* Services */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 50px;
-      margin-top: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
       max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
     }
     
     .service-item {
       text-align: center;
-      padding: 40px 30px;
+      padding: 30px;
       transition: var(--transition);
-      position: relative;
-    }
-    
-    .service-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 1px solid transparent;
-      transition: var(--transition);
-      pointer-events: none;
-    }
-    
-    .service-item:hover::before {
-      border-color: var(--border);
-      transform: scale(1.03);
-    }
-    
-    .service-icon {
-      display: block;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      opacity: 0.8;
     }
     
     .service-item h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 400;
-      margin-bottom: 20px;
-      letter-spacing: 0.5px;
+      margin-bottom: 16px;
     }
     
     .service-item p {
-      font-size: 0.9rem;
-      font-weight: 300;
+      font-size: 0.95rem;
       color: var(--text-secondary);
       line-height: 1.7;
     }
     
-    /* Portfolio Section */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-    
-    .portfolio-item {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    
-    .portfolio-item img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      display: block;
-    }
-    
-    .portfolio-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: var(--transition);
-      padding: 20px;
-      text-align: center;
-    }
-    
-    .portfolio-item:hover .portfolio-overlay {
-      opacity: 1;
-    }
-    
-    .portfolio-overlay h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-bottom: 10px;
-    }
-    
-    .portfolio-overlay p {
-      font-size: 0.9rem;
-      font-weight: 300;
-    }
-    
-    /* Philosophy Section */
-    .philosophy {
-      text-align: center;
-    }
-    
+    /* Philosophy */
     .philosophy-content {
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
+      text-align: center;
     }
     
     .philosophy-quote {
@@ -351,22 +218,17 @@
       font-size: 1.8rem;
       font-weight: 300;
       font-style: italic;
-      line-height: 1.5;
-      margin-bottom: 30px;
       color: var(--text-primary);
+      margin-bottom: 32px;
     }
     
     .philosophy-text {
-      font-size: 0.95rem;
-      line-height: 1.8;
+      font-size: 1rem;
       color: var(--text-secondary);
+      margin-bottom: 24px;
     }
     
-    /* Elegant Contact Section */
-    .contact {
-      padding-bottom: 80px;
-    }
-    
+    /* Contact */
     .contact-form {
       max-width: 600px;
       margin: 0 auto 60px;
@@ -377,29 +239,30 @@
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      padding: 12px;
+      padding: 14px;
       border: 1px solid var(--border);
-      background: var(--subtle-accent);
+      background: var(--accent-light);
       font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--text-primary);
     }
     
     .contact-form textarea {
-      min-height: 120px;
+      min-height: 140px;
       resize: vertical;
     }
     
     .contact-form button {
       justify-self: center;
+      cursor: pointer;
     }
     
     .contact-details {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      max-width: 1000px;
       margin: 0 auto;
-      max-width: 900px;
     }
     
     .contact-item {
@@ -407,195 +270,123 @@
     }
     
     .contact-label {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--text-secondary);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
     
     .contact-value {
-      font-size: 0.95rem;
-      line-height: 1.7;
+      font-size: 1rem;
+      line-height: 1.6;
     }
     
-    .contact-value.credential {
-      font-size: 0.85rem;
-      max-width: 300px;
-      margin: 0 auto;
-    }
-    
-    /* Refined Footer */
+    /* Footer */
     footer {
-      padding: 50px 0;
+      padding: 60px 0;
       text-align: center;
       border-top: 1px solid var(--border);
     }
     
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-    
     .footer-logo {
-      max-height: 28px;
-      opacity: 0.9;
+      height: 28px;
+      margin-bottom: 16px;
     }
     
     .copyright {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      letter-spacing: 1px;
-    }
-    
-    /* Sticky Contact Button */
-    .sticky-contact {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      background-color: var(--text-primary);
-      color: var(--background);
-      text-decoration: none;
       font-size: 0.8rem;
+      color: var(--text-secondary);
       letter-spacing: 1.5px;
-      border-radius: 5px;
-      z-index: 1000;
-      transition: var(--transition);
     }
     
-    /* Sophisticated Animations */
+    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
     
     @keyframes fadeUp {
-      from { 
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to { 
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
     .fade-in {
       opacity: 0;
-      animation: fadeIn 1.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      animation: fadeIn 1.6s var(--transition) forwards;
     }
     
     .fade-up {
       opacity: 0;
-      animation: fadeUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      animation: fadeUp 1.2s var(--transition) forwards;
     }
     
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                  transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-    
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    /* Refined Media Queries */
+    /* Media Queries */
     @media (max-width: 992px) {
       .section-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
-      
       .services-grid {
         gap: 30px;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       }
     }
     
     @media (max-width: 768px) {
       nav ul {
-        gap: 20px;
+        gap: 32px;
       }
-      
       .hero-tagline {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
       }
-      
       section {
         padding: 80px 0;
       }
-      
       .philosophy-quote {
-        font-size: 1.5rem;
-      }
-      
-      .credentials-badge {
-        display: none;
-      }
-      
-      .portfolio-item img {
-        height: 250px;
-      }
-      
-      .sticky-contact {
-        display: block;
+        font-size: 1.6rem;
       }
     }
     
     @media (max-width: 576px) {
       .hero {
-        height: 80vh;
-        padding-top: 80px;
+        min-height: 80vh;
+        padding-top: 100px;
       }
-      
       .hero img {
-        max-width: 150px;
-        margin-bottom: 50px;
+        height: 50px;
+        margin-bottom: 30px;
       }
-      
       .hero-tagline {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
       }
-      
+      .hero-subtext {
+        font-size: 0.9rem;
+      }
       .section-title {
         font-size: 1.8rem;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
       }
-      
       .services-grid {
         grid-template-columns: 1fr;
         gap: 20px;
       }
-      
       .service-item {
-        padding: 30px 20px;
+        padding: 20px;
       }
-      
       .contact-details {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Sophisticated Header -->
+  <!-- Header -->
   <header>
     <div class="container">
       <nav>
-        <img src="logo.png" alt="Caldon Logo" class="nav-logo">
-        <div class="credentials-badge">
-          <span>HIA Member • Building Licence 377088C</span>
-        </div>
+        <img src="logo.png" alt="Caldon Homes Logo" class="nav-logo">
         <ul>
           <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#philosophy">Philosophy</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -603,116 +394,65 @@
     </div>
   </header>
 
-  <!-- Elegant Hero -->
+  <!-- Hero -->
   <div class="hero">
     <div class="hero-content">
-      <img src="logo.png" alt="Caldon Logo" class="fade-in">
-      <p class="hero-tagline fade-up">Crafting bespoke homes for families.<br>Delivering expert consultancy for commercial success.</p>
-      <a href="#contact" class="cta-button fade-up" style="animation-delay: 0.8s;">Get Started</a>
+      <img src="logo.png" alt="Caldon Homes Logo" class="fade-in">
+      <h1 class="hero-tagline fade-up">Precision in Homes. Expertise in Consultancy.</h1>
+      <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Building custom residences with care and delivering strategic commercial solutions with authority.</p>
+      <a href="#contact" class="cta-button fade-up" style="animation-delay: 0.6s;">Connect With Us</a>
     </div>
-    <div class="scroll-indicator">Discover</div>
   </div>
 
-  <!-- Sophisticated Services -->
-  <section id="services" class="reveal">
+  <!-- Services -->
+  <section id="services" class="services">
     <div class="container">
-      <div class="section-subtitle">Our Expertise</div>
-      <h2 class="section-title">Building Excellence</h2>
+      <div class="section-subtitle">What We Offer</div>
+      <h2 class="section-title">Our Expertise</h2>
       <div class="services-grid">
         <div class="service-item">
-          <span class="service-icon">🏠</span>
-          <h3>Residential Design & Construction</h3>
-          <p>Bespoke home design and construction delivered with meticulous attention to detail and uncompromising quality craftsmanship.</p>
+          <h3>Residential Construction</h3>
+          <p>Designing and building custom homes with exceptional craftsmanship, tailored to your vision and lifestyle.</p>
         </div>
         <div class="service-item">
-          <span class="service-icon">🏠</span>
-          <h3>Class 2 Building Construction</h3>
-          <p>Specialized construction of multi-residential buildings executed with technical precision as registered Building Practitioners.</p>
+          <h3>Commercial Consultancy</h3>
+          <p>Providing expert guidance, from cost estimation to litigation support, rooted in decades of industry experience.</p>
         </div>
         <div class="service-item">
-          <span class="service-icon">💼</span>
-          <h3>Estimating Services</h3>
-          <p>Precise cost forecasting and detailed estimation services to provide clarity and financial certainty for construction projects of all scales.</p>
-        </div>
-        <div class="service-item">
-          <span class="service-icon">💼</span>
-          <h3>Expert Witness</h3>
-          <p>Professional litigation support and expert testimony services for construction and building-related legal matters backed by extensive industry experience.</p>
-        </div>
-        <div class="service-item">
-          <span class="service-icon">💼</span>
-          <h3>Commercial Procurement</h3>
-          <p>Strategic tender management and procurement services that optimize commercial outcomes through established industry networks and negotiation expertise.</p>
-        </div>
-        <div class="service-item">
-          <span class="service-icon">💼</span>
-          <h3>Building Surveying</h3>
-          <p>Comprehensive assessment of building conditions conducted with exacting standards and thorough compliance verification.</p>
-        </div>
-        <div class="service-item">
-          <span class="service-icon">💼</span>
-          <h3>Quantity Surveying</h3>
-          <p>Sophisticated cost analysis and strategic financial planning for construction projects to optimize investment and outcomes.</p>
-        </div>
-        <div class="service-item">
-          <span class="service-icon">💼</span>
           <h3>Project Management</h3>
-          <p>Refined end-to-end coordination focused on exceptional quality, precise timeline adherence, and seamless delivery.</p>
+          <p>Overseeing every detail to ensure timelines, budgets, and quality exceed expectations.</p>
+        </div>
+        <div class="service-item">
+          <h3>Building Compliance</h3>
+          <p>Ensuring structural integrity and regulatory adherence with meticulous surveying and assessment.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio reveal">
+  <!-- Philosophy -->
+  <section id="philosophy" class="philosophy">
     <div class="container">
-      <div class="section-subtitle">Our Work</div>
-      <h2 class="section-title">Portfolio</h2>
-      <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="residential1.jpg" alt="Custom Coastal Residence">
-          <div class="portfolio-overlay">
-            <h3>Custom Coastal Residence</h3>
-            <p>Taree, NSW – Bespoke design with sustainable materials</p>
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <img src="commercial1.jpg" alt="Commercial Office Complex">
-          <div class="portfolio-overlay">
-            <h3>Commercial Office Complex</h3>
-            <p>Sydney, NSW – Expert consultancy & construction</p>
-          </div>
-        </div>
-        <!-- Add more items as needed -->
-      </div>
-      <a href="#contact" class="cta-button">Start Your Project</a>
-    </div>
-  </section>
-
-  <!-- Philosophy Section -->
-  <section id="philosophy" class="philosophy reveal">
-    <div class="container">
-      <div class="section-subtitle">Our Approach</div>
-      <h2 class="section-title">Philosophy</h2>
+      <div class="section-subtitle">Our Commitment</div>
+      <h2 class="section-title">Our Philosophy</h2>
       <div class="philosophy-content">
-        <p class="philosophy-quote">"We create spaces where quality construction meets thoughtful design, building homes for families and providing expertise that commercial clients trust."</p>
-        <p class="philosophy-text">At Caldon Homes, we believe your dream home should be built with the same precision and expertise that guides our commercial projects. For homeowners, we transform visions into thoughtfully designed living spaces that reflect your lifestyle while ensuring structural integrity and superior craftsmanship at every stage.</p>
-        <p class="philosophy-text" style="margin-top: 20px;">For our commercial clients, we offer strategic consultancy that combines technical knowledge with practical construction experience. This dual expertise provides invaluable insights that optimize project outcomes, mitigate risks, and deliver solutions that stand the test of time.</p>
-        <p class="philosophy-text" style="margin-top: 20px;">Whether constructing a family home or providing expert testimony in complex construction matters, our approach integrates meticulous planning, transparent communication, and unwavering commitment to quality. This foundation has established our reputation for excellence across both residential construction and commercial consultancy sectors.</p>
+        <p class="philosophy-quote">"Excellence is not an act, but a habit—built into every home and every consultation."</p>
+        <p class="philosophy-text">At Caldon Homes, we bring precision and passion to residential construction, crafting homes that reflect individuality and endure over time. Simultaneously, our commercial consultancy leverages deep expertise to solve complex challenges, offering clarity and confidence to clients across Australia.</p>
+        <p class="philosophy-text">As proud members of the Housing Industry Association (HIA) and holders of Building Licence 377088C, we uphold the highest standards of quality, integrity, and professionalism in every project we undertake.</p>
       </div>
     </div>
   </section>
 
-  <!-- Elegant Contact -->
-  <section id="contact" class="contact reveal">
+  <!-- Contact -->
+  <section id="contact" class="contact">
     <div class="container">
-      <div class="section-subtitle">Connect With Us</div>
-      <h2 class="section-title">Contact</h2>
+      <div class="section-subtitle">Reach Out</div>
+      <h2 class="section-title">Contact Us</h2>
       <form class="contact-form">
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
         <textarea placeholder="Your Message" required></textarea>
-        <button type="submit" class="cta-button">Send Inquiry</button>
+        <button type="submit" class="cta-button">Send Message</button>
       </form>
       <div class="contact-details">
         <div class="contact-item">
@@ -728,31 +468,22 @@
           <div class="contact-value">Taree, NSW 2430<br>Australia</div>
         </div>
         <div class="contact-item">
-          <div class="contact-label">Accreditations</div>
-          <div class="contact-value credential">Building Licence: 377088C<br>HIA Member</div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-label">Professional Membership</div>
-          <div class="contact-value"><img src="hialogo.png" alt="HIA Member" style="max-width: 180px; height: auto;"></div>
+          <div class="contact-label">Credentials</div>
+          <div class="contact-value">Building Licence: 377088C<br>HIA Member</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Refined Footer -->
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="footer-content">
-        <img src="logo.png" alt="Caldon Logo" class="footer-logo">
-        <p class="copyright">© 2025 CALDON HOMES PTY LIMITED · ALL RIGHTS RESERVED</p>
-      </div>
+      <img src="logo.png" alt="Caldon Homes Logo" class="footer-logo">
+      <p class="copyright">© 2025 Caldon Homes Pty Limited · All Rights Reserved</p>
     </div>
   </footer>
 
-  <!-- Sticky Contact Button -->
-  <a href="#contact" class="sticky-contact">Contact Us</a>
-
-  <!-- Sophisticated Scripts -->
+  <!-- Scripts -->
   <script>
     window.addEventListener('scroll', function() {
       const header = document.querySelector('header');
@@ -761,28 +492,13 @@
       } else {
         header.classList.remove('scrolled');
       }
-      
-      const reveals = document.querySelectorAll('.reveal');
-      reveals.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (elementPosition < windowHeight - 100) {
-          element.classList.add('active');
-        }
-      });
     });
-    
-    setTimeout(function() {
-      window.dispatchEvent(new Event('scroll'));
-    }, 200);
     
     document.querySelectorAll('nav a').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetSection = document.querySelector(targetId);
-        
         window.scrollTo({
           top: targetSection.offsetTop - 80,
           behavior: 'smooth'
