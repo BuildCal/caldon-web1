@@ -101,16 +101,12 @@
       colour: var(--text-primary);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
-      font-size: 10pt; /* Standard document size */
-    }
-    
-    /* Container */
-    .container {
-      width: 100%;
-      max-width: 190mm; /* A4 width minus margins */
-      margin: 0 auto;
-      padding: 15mm 10mm;
-      position: relative;
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      height: 100vh; /* Full viewport height */
+      display: flex;
+      flex-direction: column;
     }
     
     /* Document Header */
@@ -119,7 +115,6 @@
       top: 0;
       left: 0;
       width: 100%;
-      max-width: 210mm;
       height: 20mm;
       background-colour: var(--subtle-accent);
       border-bottom: 1px solid var(--border);
@@ -143,12 +138,44 @@
       align-self: centre;
     }
     
+    /* Document Footer */
+    .doc-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 15mm;
+      background-colour: var(--subtle-accent);
+      border-top: 1px solid var(--border);
+      padding: 3mm 10mm;
+      font-size: 8pt;
+      colour: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: centre;
+      z-index: 1000;
+    }
+    
+    .doc-footer .page-number::before {
+      content: "Page " counter(page) " of " counter(pages);
+    }
+    
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 190mm; /* A4 width minus margins */
+      margin: 20mm auto 15mm; /* Space for header and footer */
+      padding: 15mm 10mm;
+      flex: 1; /* Allows container to grow and scroll */
+      overflow-y: auto; /* Enables scrolling within container */
+      position: relative;
+    }
+    
     /* Main Header (Cover Page) */
     .main-header {
       text-align: centre;
       padding: 30mm 0 20mm;
       border-bottom: 2px solid var(--highlight);
-      margin-top: 20mm; /* Space for doc-header */
     }
     
     .main-header .logo {
@@ -277,29 +304,6 @@
       height: auto;
     }
     
-    /* Document Footer */
-    .doc-footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      max-width: 210mm;
-      height: 15mm;
-      background-colour: var(--subtle-accent);
-      border-top: 1px solid var(--border);
-      padding: 3mm 10mm;
-      font-size: 8pt;
-      colour: var(--text-secondary);
-      display: flex;
-      justify-content: space-between;
-      align-items: centre;
-      z-index: 1000;
-    }
-    
-    .doc-footer .page-number::before {
-      content: "Page " counter(page) " of " counter(pages);
-    }
-    
     /* Download Note */
     .download-note {
       font-size: 9pt;
@@ -316,12 +320,7 @@
         padding: 0;
         width: 210mm;
         height: 297mm; /* A4 size */
-      }
-      .container {
-        width: 100%;
-        max-width: none;
-        padding: 15mm 10mm;
-        min-height: 267mm; /* Content area minus header/footer */
+        display: block; /* Revert to block for print */
       }
       .doc-header, .doc-footer {
         position: fixed;
@@ -332,6 +331,14 @@
       }
       .doc-footer {
         bottom: 0;
+      }
+      .container {
+        width: 100%;
+        max-width: none;
+        padding: 15mm 10mm;
+        margin: 20mm 0 15mm; /* Matches screen spacing */
+        height: auto; /* Full content height for print */
+        overflow-y: visible; /* No scrolling in print */
       }
       section {
         break-inside: avoid;
