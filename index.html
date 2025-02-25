@@ -200,6 +200,9 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 50px;
       margin-top: 50px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
     .service-item {
@@ -223,7 +226,7 @@
     
     .service-item:hover::before {
       border-color: var(--border);
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
     
     .service-item h3 {
@@ -376,6 +379,7 @@
       
       .services-grid {
         gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       }
     }
     
@@ -438,7 +442,7 @@
   <div class="hero">
     <div class="hero-content">
       <img src="logo.png" alt="Caldon Logo" class="fade-in">
-      <p class="hero-tagline fade-up">Refined building consultancy and construction crafted with precision and vision</p>
+      <p class="hero-tagline fade-up">Refined building consultancy and construction crafted with precision, expertise, and vision</p>
     </div>
     <div class="scroll-indicator">Discover</div>
   </div>
@@ -456,6 +460,18 @@
         <div class="service-item">
           <h3>Class 2 Building Construction</h3>
           <p>Specialized construction of multi-residential buildings executed with technical precision as registered Building Practitioners.</p>
+        </div>
+        <div class="service-item">
+          <h3>Estimating Services</h3>
+          <p>Precise cost forecasting and detailed estimation services to provide clarity and financial certainty for construction projects of all scales.</p>
+        </div>
+        <div class="service-item">
+          <h3>Expert Witness</h3>
+          <p>Professional litigation support and expert testimony services for construction and building-related legal matters backed by extensive industry experience.</p>
+        </div>
+        <div class="service-item">
+          <h3>Commercial Procurement</h3>
+          <p>Strategic tender management and procurement services that optimize commercial outcomes through established industry networks and negotiation expertise.</p>
         </div>
         <div class="service-item">
           <h3>Building Surveying</h3>
@@ -481,6 +497,7 @@
       <div class="philosophy-content">
         <p class="philosophy-quote">"Architecture is the learned game, correct and magnificent, of forms assembled in the light."</p>
         <p class="philosophy-text">At Caldon, we approach each project as a unique opportunity to create spaces that harmonize form and function. Our work is guided by a commitment to architectural integrity, sustainable practices, and meticulous attention to detail. We believe that exceptional building is achieved through a thoughtful balance of innovative design, quality craftsmanship, and transparent client collaboration.</p>
+        <p class="philosophy-text" style="margin-top: 20px;">Our comprehensive service portfolio spans from initial concept through to completion and beyond, including expert witness services for construction matters. With extensive experience in commercial procurement and tender management, we bring unparalleled expertise to every project, ensuring optimal outcomes for our clients.</p>
       </div>
     </div>
   </section>
