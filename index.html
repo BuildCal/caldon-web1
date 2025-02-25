@@ -1,115 +1,9 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caldon Homes | Custom Home Builder & Construction Consultancy Taree NSW</title>
-  <meta name="description" content="Caldon Homes is a premier custom home builder and construction consultancy in Taree, NSW. Crafting bespoke residences and delivering comprehensive commercial solutions with precision and expertise.">
-  <meta name="keywords" content="custom home builder, residential construction, Taree builders, NSW construction, building consultancy, custom homes, bespoke homes">
-  <meta name="author" content="Caldon Homes Pty Limited">
-  
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="Caldon Homes | Custom Home Builder & Construction Consultancy Taree NSW">
-  <meta property="og:description" content="Crafting bespoke residences and delivering comprehensive commercial solutions with precision and expertise in Taree, NSW.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://caldon.com.au">
-  <meta property="og:image" content="https://caldon.com.au/images/logo.png">
-  
-  <!-- Canonical URL to prevent duplicate content issues -->
-  <link rel="canonical" href="https://caldon.com.au">
-  
-  <!-- Structured Data for Local Business -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Caldon Homes Pty Limited",
-    "image": "https://caldon.com.au/images/logo.png",
-    "url": "https://caldon.com.au",
-    "telephone": "(02) 6550 1924",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "",
-      "addressLocality": "Taree",
-      "addressRegion": "NSW",
-      "postalCode": "2430",
-      "addressCountry": "AU"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "-31.9099",
-      "longitude": "152.4578"
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "09:00",
-      "closes": "17:00"
-    },
-    "sameAs": [
-      "https://www.facebook.com/caldonhomes",
-      "https://www.instagram.com/caldonhomes"
-    ],
-    "priceRange": "$$$"
-  }
-  </script>
-  
-  <!-- Structured Data for Services -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Caldon Homes Pty Limited",
-    "image": "https://caldon.com.au/images/logo.png",
-    "url": "https://caldon.com.au",
-    "telephone": "(02) 6550 1924",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Taree",
-      "addressRegion": "NSW",
-      "postalCode": "2430",
-      "addressCountry": "AU"
-    },
-    "priceRange": "$$$",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Construction Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Residential Design & Construction",
-            "description": "Custom home design and construction, from concept to completion, with a focus on bespoke aesthetics, structural integrity, and premium craftsmanship."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Class 2 Building Construction",
-            "description": "Specialised construction of multi-residential buildings, including apartments and townhouses."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Building Consultancy",
-            "description": "Professional consulting services including estimating, expert witness, commercial procurement, and quantity surveying."
-          }
-        }
-      ]
-    }
-  }
-  </script>
-  
+  <title>Caldon Homes – Building Construction & Consultancy</title>
   <style>
     /* Modern, Sophisticated Typography */
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
@@ -258,6 +152,25 @@
       margin: 0 auto 30px;
       opacity: 0.9;
       transition: opacity 0.3s ease-out;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 12px 36px;
+      background-color: var(--text-primary);
+      color: var(--background);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+    
+    .cta-button:hover {
+      background-color: var(--text-secondary);
     }
     
     .scroll-indicator {
@@ -431,25 +344,6 @@
       justify-self: center;
     }
     
-    .cta-button {
-      display: inline-block;
-      padding: 12px 36px;
-      background-color: var(--text-primary);
-      color: var(--background);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-    }
-    
-    .cta-button:hover {
-      background-color: var(--text-secondary);
-    }
-    
     .contact-details {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -489,15 +383,6 @@
     .contact-value img {
       max-width: 120px;
       height: auto;
-    }
-    
-    .contact-value a {
-      color: var(--text-primary);
-      text-decoration: none;
-    }
-    
-    .contact-value a:hover {
-      text-decoration: underline;
     }
     
     /* Condensed Footer */
@@ -695,7 +580,7 @@
   <header>
     <div class="container">
       <nav>
-        <img src="logo.png" alt="Caldon Homes - Custom Home Builder in Taree NSW" class="nav-logo">
+        <img src="logo.png" alt="Caldon Logo" class="nav-logo">
         <ul>
           <li><a href="#services">Services</a></li>
           <li><a href="#philosophy">Philosophy</a></li>
@@ -709,9 +594,9 @@
   <!-- Elegant Hero without Button -->
   <div class="hero">
     <div class="hero-content">
-      <img src="logo.png" alt="Caldon Homes - Premier Builder in Mid North Coast NSW" class="hero-logo fade-in">
-      <h1 class="hero-tagline fade-up">Exceptional Homes. Expert Consultancy.</h1>
-      <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Crafting bespoke residences and delivering comprehensive commercial solutions with precision and expertise in Taree, NSW.</p>
+      <img src="logo.png" alt="Caldon Logo" class="hero-logo fade-in">
+      <p class="hero-tagline fade-up">Exceptional Homes. Expert Consultancy.</p>
+      <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Crafting bespoke residences and delivering comprehensive commercial solutions with precision and expertise.</p>
     </div>
     <div class="scroll-indicator">Discover</div>
   </div>
@@ -796,11 +681,11 @@
       <div class="contact-details">
         <div class="contact-item">
           <div class="contact-label">Email</div>
-          <div class="contact-value"><a href="mailto:admin@caldon.com.au">admin@caldon.com.au</a></div>
+          <div class="contact-value">admin@caldon.com.au</div>
         </div>
         <div class="contact-item">
           <div class="contact-label">Phone</div>
-          <div class="contact-value"><a href="tel:0265501924">(02) 6550 1924</a></div>
+          <div class="contact-value">(02) 6550 1924</div>
         </div>
         <div class="contact-item">
           <div class="contact-label">Location</div>
@@ -816,7 +701,7 @@
         </div>
         <div class="contact-item">
           <div class="contact-label">Membership</div>
-          <div class="contact-value"><img src="hialogo.png" alt="Housing Industry Association Member - Caldon Homes"></div>
+          <div class="contact-value"><img src="hialogo.png" alt="HIA Member"></div>
         </div>
       </div>
     </div>
