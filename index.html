@@ -77,6 +77,18 @@
       transform: translateY(0);
     }
     
+    .credentials-badge {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      letter-spacing: 1px;
+      opacity: 0;
+      transition: var(--transition);
+    }
+    
+    header.scrolled .credentials-badge {
+      opacity: 1;
+    }
+    
     nav ul {
       display: flex;
       list-style: none;
@@ -141,6 +153,23 @@
       max-width: 500px;
       margin: 0 auto;
       line-height: 1.4;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 30px;
+      background-color: var(--text-primary);
+      color: var(--background);
+      text-decoration: none;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: var(--transition);
+    }
+    
+    .cta-button:hover {
+      background-color: var(--text-secondary);
     }
     
     .scroll-indicator {
@@ -229,6 +258,13 @@
       transform: scale(1.03);
     }
     
+    .service-icon {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+    
     .service-item h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.3rem;
@@ -242,6 +278,62 @@
       font-weight: 300;
       color: var(--text-secondary);
       line-height: 1.7;
+    }
+    
+    /* Portfolio Section */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .portfolio-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: var(--transition);
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+    
+    .portfolio-overlay h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    
+    .portfolio-overlay p {
+      font-size: 0.9rem;
+      font-weight: 300;
     }
     
     /* Philosophy Section */
@@ -273,6 +365,33 @@
     /* Elegant Contact Section */
     .contact {
       padding-bottom: 80px;
+    }
+    
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto 60px;
+      display: grid;
+      gap: 20px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border);
+      background: var(--subtle-accent);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+    }
+    
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .contact-form button {
+      justify-self: center;
     }
     
     .contact-details {
@@ -331,6 +450,23 @@
       letter-spacing: 1px;
     }
     
+    /* Sticky Contact Button */
+    .sticky-contact {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: var(--text-primary);
+      color: var(--background);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      border-radius: 5px;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+    
     /* Sophisticated Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -356,7 +492,6 @@
     .fade-up {
       opacity: 0;
       animation: fadeUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-      animation-delay: 0.5s;
     }
     
     .reveal {
@@ -399,9 +534,26 @@
       .philosophy-quote {
         font-size: 1.5rem;
       }
+      
+      .credentials-badge {
+        display: none;
+      }
+      
+      .portfolio-item img {
+        height: 250px;
+      }
+      
+      .sticky-contact {
+        display: block;
+      }
     }
     
     @media (max-width: 576px) {
+      .hero {
+        height: 80vh;
+        padding-top: 80px;
+      }
+      
       .hero img {
         max-width: 150px;
         margin-bottom: 50px;
@@ -414,6 +566,15 @@
       .section-title {
         font-size: 1.8rem;
         margin-bottom: 60px;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .service-item {
+        padding: 30px 20px;
       }
       
       .contact-details {
@@ -429,8 +590,12 @@
     <div class="container">
       <nav>
         <img src="logo.png" alt="Caldon Logo" class="nav-logo">
+        <div class="credentials-badge">
+          <span>HIA Member • Building Licence 377088C</span>
+        </div>
         <ul>
           <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#philosophy">Philosophy</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -442,7 +607,8 @@
   <div class="hero">
     <div class="hero-content">
       <img src="logo.png" alt="Caldon Logo" class="fade-in">
-      <p class="hero-tagline fade-up">Premier building construction and consultancy services delivered with precision, expertise, and vision</p>
+      <p class="hero-tagline fade-up">Crafting bespoke homes for families.<br>Delivering expert consultancy for commercial success.</p>
+      <a href="#contact" class="cta-button fade-up" style="animation-delay: 0.8s;">Get Started</a>
     </div>
     <div class="scroll-indicator">Discover</div>
   </div>
@@ -454,38 +620,72 @@
       <h2 class="section-title">Building Excellence</h2>
       <div class="services-grid">
         <div class="service-item">
+          <span class="service-icon">🏠</span>
           <h3>Residential Design & Construction</h3>
           <p>Bespoke home design and construction delivered with meticulous attention to detail and uncompromising quality craftsmanship.</p>
         </div>
         <div class="service-item">
+          <span class="service-icon">🏠</span>
           <h3>Class 2 Building Construction</h3>
           <p>Specialized construction of multi-residential buildings executed with technical precision as registered Building Practitioners.</p>
         </div>
         <div class="service-item">
+          <span class="service-icon">💼</span>
           <h3>Estimating Services</h3>
           <p>Precise cost forecasting and detailed estimation services to provide clarity and financial certainty for construction projects of all scales.</p>
         </div>
         <div class="service-item">
+          <span class="service-icon">💼</span>
           <h3>Expert Witness</h3>
           <p>Professional litigation support and expert testimony services for construction and building-related legal matters backed by extensive industry experience.</p>
         </div>
         <div class="service-item">
+          <span class="service-icon">💼</span>
           <h3>Commercial Procurement</h3>
           <p>Strategic tender management and procurement services that optimize commercial outcomes through established industry networks and negotiation expertise.</p>
         </div>
         <div class="service-item">
+          <span class="service-icon">💼</span>
           <h3>Building Surveying</h3>
           <p>Comprehensive assessment of building conditions conducted with exacting standards and thorough compliance verification.</p>
         </div>
         <div class="service-item">
+          <span class="service-icon">💼</span>
           <h3>Quantity Surveying</h3>
           <p>Sophisticated cost analysis and strategic financial planning for construction projects to optimize investment and outcomes.</p>
         </div>
         <div class="service-item">
+          <span class="service-icon">💼</span>
           <h3>Project Management</h3>
           <p>Refined end-to-end coordination focused on exceptional quality, precise timeline adherence, and seamless delivery.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio reveal">
+    <div class="container">
+      <div class="section-subtitle">Our Work</div>
+      <h2 class="section-title">Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="residential1.jpg" alt="Custom Coastal Residence">
+          <div class="portfolio-overlay">
+            <h3>Custom Coastal Residence</h3>
+            <p>Taree, NSW – Bespoke design with sustainable materials</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="commercial1.jpg" alt="Commercial Office Complex">
+          <div class="portfolio-overlay">
+            <h3>Commercial Office Complex</h3>
+            <p>Sydney, NSW – Expert consultancy & construction</p>
+          </div>
+        </div>
+        <!-- Add more items as needed -->
+      </div>
+      <a href="#contact" class="cta-button">Start Your Project</a>
     </div>
   </section>
 
@@ -508,6 +708,12 @@
     <div class="container">
       <div class="section-subtitle">Connect With Us</div>
       <h2 class="section-title">Contact</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="cta-button">Send Inquiry</button>
+      </form>
       <div class="contact-details">
         <div class="contact-item">
           <div class="contact-label">Email</div>
@@ -522,8 +728,8 @@
           <div class="contact-value">Taree, NSW 2430<br>Australia</div>
         </div>
         <div class="contact-item">
-          <div class="contact-label">Licence</div>
-          <div class="contact-value">Building Licence: 377088C</div>
+          <div class="contact-label">Accreditations</div>
+          <div class="contact-value credential">Building Licence: 377088C<br>HIA Member</div>
         </div>
         <div class="contact-item">
           <div class="contact-label">Professional Membership</div>
@@ -538,16 +744,17 @@
     <div class="container">
       <div class="footer-content">
         <img src="logo.png" alt="Caldon Logo" class="footer-logo">
-        <p class="copyright">&copy; 2025 CALDON HOMES PTY LIMITED · ALL RIGHTS RESERVED</p>
+        <p class="copyright">© 2025 CALDON HOMES PTY LIMITED · ALL RIGHTS RESERVED</p>
       </div>
     </div>
   </footer>
 
+  <!-- Sticky Contact Button -->
+  <a href="#contact" class="sticky-contact">Contact Us</a>
+
   <!-- Sophisticated Scripts -->
   <script>
-    // Scroll Animations
     window.addEventListener('scroll', function() {
-      // Header transform
       const header = document.querySelector('header');
       if (window.scrollY > 50) {
         header.classList.add('scrolled');
@@ -555,7 +762,6 @@
         header.classList.remove('scrolled');
       }
       
-      // Reveal elements on scroll
       const reveals = document.querySelectorAll('.reveal');
       reveals.forEach(element => {
         const elementPosition = element.getBoundingClientRect().top;
@@ -567,12 +773,10 @@
       });
     });
     
-    // Initialize reveals
     setTimeout(function() {
       window.dispatchEvent(new Event('scroll'));
     }, 200);
     
-    // Smooth scrolling
     document.querySelectorAll('nav a').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
