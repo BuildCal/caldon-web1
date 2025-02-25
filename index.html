@@ -164,7 +164,7 @@
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 2px;
-      transition: var(--transition), opacity 0.3s ease-out;
+      transition: var(--transition);
       border: none;
       cursor: pointer;
     }
@@ -373,29 +373,58 @@
       font-size: 0.85rem;
     }
     
-    /* Footer */
+    /* Improved Footer */
     footer {
-      padding: 50px 0;
+      padding: 60px 0;
       text-align: center;
       border-top: 1px solid var(--border);
+      background-color: var(--subtle-accent);
     }
     
     .footer-content {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      gap: 20px;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     
     .footer-logo {
       max-height: 28px;
-      opacity: 0.9;
+      justify-self: end;
     }
     
     .copyright {
       font-size: 0.75rem;
       color: var(--text-secondary);
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      justify-self: center;
+    }
+    
+    .footer-nav {
+      justify-self: start;
+    }
+    
+    .footer-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+    }
+    
+    .footer-nav a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: var(--transition);
+    }
+    
+    .footer-nav a:hover {
+      color: var(--text-primary);
     }
     
     /* Animations */
@@ -433,6 +462,15 @@
       }
       .section-title {
         font-size: 2.2rem;
+      }
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .footer-logo,
+      .copyright,
+      .footer-nav {
+        justify-self: center;
       }
     }
     
@@ -481,6 +519,10 @@
         grid-template-columns: 1fr;
         gap: 30px;
       }
+      .footer-nav ul {
+        flex-direction: column;
+        gap: 12px;
+      }
     }
   </style>
 </head>
@@ -499,13 +541,12 @@
     </div>
   </header>
 
-  <!-- Elegant Hero with Animation -->
+  <!-- Elegant Hero without Button -->
   <div class="hero">
     <div class="hero-content">
       <img src="logo.png" alt="Caldon Logo" class="hero-logo fade-in">
       <p class="hero-tagline fade-up">Exceptional Homes. Expert Consultancy.</p>
       <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Crafting bespoke residences and delivering comprehensive commercial solutions with precision and expertise.</p>
-      <a href="#contact" class="cta-button fade-up" style="animation-delay: 0.6s;">Get in Touch</a>
     </div>
     <div class="scroll-indicator">Discover</div>
   </div>
@@ -565,7 +606,7 @@
     </div>
   </section>
 
-  <!-- Elegant Contact with Dropdown -->
+  <!-- Elegant Contact -->
   <section id="contact" class="contact">
     <div class="container">
       <div class="section-subtitle">Connect With Us</div>
@@ -612,13 +653,18 @@
     </div>
   </section>
 
-  <!-- Refined Footer -->
+  <!-- Improved Footer -->
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <img src="logo.png" alt="Caldon Logo" class="footer-logo">
-        <p class="copyright">© 2025 CALDON HOMES PTY LIMITED · ALL RIGHTS RESERVED</p>
+    <div class="footer-content">
+      <div class="footer-nav">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#philosophy">Philosophy</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </div>
+      <img src="logo.png" alt="Caldon Logo" class="footer-logo">
+      <p class="copyright">© 2025 Caldon Homes Pty Limited · All Rights Reserved</p>
     </div>
   </footer>
 
@@ -629,7 +675,6 @@
       const heroLogo = document.querySelector('.hero-logo');
       const heroTagline = document.querySelector('.hero-tagline');
       const heroSubtext = document.querySelector('.hero-subtext');
-      const ctaButton = document.querySelector('.hero .cta-button');
       const scrollPosition = window.scrollY;
 
       if (scrollPosition > 50) {
@@ -644,11 +689,10 @@
         heroLogo.style.transform = `translateY(${translateFactor}px)`;
         heroTagline.style.transform = `translateY(${translateFactor * 0.8}px)`;
         heroSubtext.style.opacity = Math.max(0.9 - scrollPosition / maxScroll, 0);
-        ctaButton.style.opacity = Math.max(1 - scrollPosition / maxScroll, 0);
       }
     });
     
-    document.querySelectorAll('nav a').forEach(anchor => {
+    document.querySelectorAll('nav a, .footer-nav a').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
@@ -660,7 +704,6 @@
       });
     });
 
-    // Client-side form submission handling
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
       const formData = new FormData(this);
