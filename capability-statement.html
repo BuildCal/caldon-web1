@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caldon Homes – Capability Statement</title>
+  <style>
+    /* Sophisticated Typography */
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
+    
+    :root {
+      --text-primary: #111111;
+      --text-secondary: #555555;
+      --background: #ffffff;
+      --subtle-accent: #f7f7f7;
+      --border: #e0e0e0;
+      --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 800px; /* Optimized for A4 PDF */
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    /* Header */
+    header {
+      text-align: center;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .logo {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--text-primary);
+    }
+    
+    .tagline {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-top: 10px;
+    }
+    
+    /* Sections */
+    section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    section:last-child {
+      border-bottom: none;
+    }
+    
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+    
+    p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+    }
+    
+    ul {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    
+    ul li {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+    
+    ul li strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    
+    /* Contact Details */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .contact-item {
+      text-align: left;
+    }
+    
+    .contact-label {
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 5px;
+    }
+    
+    .contact-value {
+      font-size: 0.9rem;
+      color: var(--text-primary);
+    }
+    
+    .contact-value.credential {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    
+    .contact-value img {
+      max-width: 100px;
+      height: auto;
+    }
+    
+    /* Download Note */
+    .download-note {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-align: center;
+      padding-top: 20px;
+    }
+    
+    /* Print Styles for PDF */
+    @media print {
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        padding: 20px;
+      }
+      header {
+        padding-bottom: 20px;
+      }
+      section {
+        padding: 20px 0;
+        page-break-inside: avoid;
+      }
+      .download-note {
+        display: none;
+      }
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <img src="logo.png" alt="Caldon Homes Logo" class="logo">
+      <h1>Caldon Homes Pty Limited</h1>
+      <p class="tagline">Exceptional Homes. Expert Consultancy.</p>
+    </header>
+
+    <!-- About Us -->
+    <section>
+      <h2>About Us</h2>
+      <p>At Caldon Homes, we combine artistry and precision to create custom homes that fulfill your vision while meeting the highest standards of durability and design. For commercial clients, we offer unrivaled consultancy services that mitigate risks and optimize outcomes, drawing on our deep industry experience.</p>
+      <p>As registered practitioners (Building Practitioner Number BUP0002873) and proud members of the Housing Industry Association (HIA), we ensure every project reflects our commitment to excellence and professionalism.</p>
+    </section>
+
+    <!-- Our Services -->
+    <section>
+      <h2>Our Services</h2>
+      <ul>
+        <li><strong>Residential Design & Construction:</strong> Custom home design and construction, from concept to completion, with a focus on bespoke aesthetics, structural integrity, and premium craftsmanship tailored to your unique needs.</li>
+        <li><strong>Class 2 Building Construction:</strong> Specialized construction of multi-residential buildings, including apartments and townhouses, adhering to stringent codes and delivering durable, high-quality outcomes.</li>
+        <li><strong>Estimating Services:</strong> Detailed cost estimation and budgeting for residential and commercial projects, ensuring transparency, accuracy, and financial control.</li>
+        <li><strong>Expert Witness:</strong> Authoritative litigation support and expert testimony for construction disputes, leveraging extensive industry knowledge.</li>
+        <li><strong>Commercial Procurement:</strong> Strategic procurement and tender management for commercial projects, securing optimal materials and subcontractor services.</li>
+        <li><strong>Building Surveying:</strong> Thorough building inspections and compliance assessments, ensuring safety and adherence to Australian standards.</li>
+        <li><strong>Quantity Surveying:</strong> Comprehensive cost management and financial planning, including bills of quantities and value engineering.</li>
+        <li><strong>Project Management:</strong> End-to-end project oversight, coordinating timelines, budgets, and teams to deliver precision and quality.</li>
+      </ul>
+    </section>
+
+    <!-- Contact Information -->
+    <section>
+      <h2>Contact Information</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">admin@caldon.com.au</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">(02) 6550 1924</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Taree, NSW 2430<br>Australia</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Building Practitioner</div>
+          <div class="contact-value credential">BUP0002873</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Builders Licence</div>
+          <div class="contact-value credential">377088C</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Membership</div>
+          <div class="contact-value"><img src="hialogo.png" alt="HIA Member"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Note -->
+    <div class="download-note">To download as PDF, use your browser’s Print function (Ctrl+P or Cmd+P) and select "Save as PDF".</div>
+  </div>
+</body>
+</html>
