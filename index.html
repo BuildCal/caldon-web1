@@ -1225,108 +1225,105 @@
   <!-- Sophisticated Scripts -->
   <script>
     window.addEventListener('scroll', function() {
-      const header = document.querySelector('header');
-      const heroLogo = document.querySelector('.hero-logo');
-      const heroTagline = document.querySelector('.hero-tagline');
-      const heroSubtext = document.querySelector('.hero-subtext');
-      const scrollPosition = window.scrollY;
+    const header = document.querySelector('header');
+    const heroLogo = document.querySelector('.hero-logo');
+    const heroTagline = document.querySelector('.hero-tagline');
+    const heroSubtext = document.querySelector('.hero-subtext');
+    const scrollPosition = window.scrollY;
 
-      if (scrollPosition > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-
-      const maxScroll = window.innerHeight * 0.5;
-      if (scrollPosition <= maxScroll) {
-        const translateFactor = scrollPosition * 0.2;
-        heroLogo.style.transform = `translateY(${translateFactor}px)`;
-        heroTagline.style.transform = `translateY(${translateFactor * 0.8}px)`;
-        heroSubtext.style.opacity = Math.max(0.9 - scrollPosition / maxScroll, 0);
-      }
-    });
-    
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-    
-    if (menuToggle) {
-      menuToggle.addEventListener('click', function() {
-        nav.classList.toggle('menu-open');
-        document.body.classList.toggle('menu-active');
-      });
+    if (scrollPosition > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
     }
-    
-    // Close mobile menu when link is clicked
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        
-        // Close mobile menu if it's open
-        if (nav.classList.contains('menu-open')) {
-          nav.classList.remove('menu-open');
-          document.body.classList.remove('menu-active');
-        }
-        
-        // Handle smooth scrolling for internal links
-        if (href.startsWith('#')) {
-          e.preventDefault();
-          const targetId = href;
-          const targetSection = document.querySelector(targetId);
-          window.scrollTo({
-            top: targetSection.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-        // External links open normally in new tab
-      });
-    });
-    
-    // Footer navigation smooth scrolling
-    document.querySelectorAll('.footer-nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href.startsWith('#')) {
-          e.preventDefault();
-          const targetId = href;
-          const targetSection = document.querySelector(targetId);
-          window.scrollTo({
-            top: targetSection.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
 
-    // Form submission to Google Apps Script
-   document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(this);
-  const data = {
-    name: formData.get('name'),
-    email: formData.get('email'),
-    service: formData.get('service'),
-    message: formData.get('message')
-  };
-
-  fetch('https://script.google.com/macros/s/AKfycbyEcqwx03C6dW8X3BD4W0MoMbK6bOiymEbq0foI62B64lxaoojT8Ardl4x5OtJYIHH6/exec', {
-    method: 'POST',
-    mode: 'cors',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-Type': 'application/json'
+    const maxScroll = window.innerHeight * 0.5;
+    if (scrollPosition <= maxScroll) {
+      const translateFactor = scrollPosition * 0.2;
+      heroLogo.style.transform = `translateY(${translateFactor}px)`;
+      heroTagline.style.transform = `translateY(${translateFactor * 0.8}px)`;
+      heroSubtext.style.opacity = Math.max(0.9 - scrollPosition / maxScroll, 0);
     }
-  })
-  .then(response => response.json())
-  .then(data => {
-    alert('Thank you for your enquiry! We\'ll get back to you soon.');
-    this.reset();
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    alert('There was an issue submitting your form. Please try again.');
   });
-});
+  
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+  
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+      nav.classList.toggle('menu-open');
+      document.body.classList.toggle('menu-active');
+    });
+  }
+  
+  // Close mobile menu when link is clicked
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      
+      if (nav.classList.contains('menu-open')) {
+        nav.classList.remove('menu-open');
+        document.body.classList.remove('menu-active');
+      }
+      
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const targetId = href;
+        const targetSection = document.querySelector(targetId);
+        window.scrollTo({
+          top: targetSection.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  // Footer navigation smooth scrolling
+  document.querySelectorAll('.footer-nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const targetId = href;
+        const targetSection = document.querySelector(targetId);
+        window.scrollTo({
+          top: targetSection.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Form submission to Google Apps Script with no-cors mode
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      service: formData.get('service'),
+      message: formData.get('message')
+    };
+
+    fetch('https://script.google.com/macros/s/AKfycbyEcqwx03C6dW8X3BD4W0MoMbK6bOiymEbq0foI62B64lxaoojT8Ardl4x5OtJYIHH6/exec', {
+      method: 'POST',
+      mode: 'no-cors', // Disable CORS checks
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(() => {
+      // Since no-cors mode returns an opaque response, we assume success if no error
+      alert('Thank you for your enquiry! We\'ll get back to you soon.');
+      this.reset();
+    })
+    .catch(error => {
+      console.error('Submission Error:', error);
+      alert('There was an issue submitting your form. Please try again.');
+    });
+  });
   </script>
 </body>
 </html>
