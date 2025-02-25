@@ -108,8 +108,9 @@
       width: 100%;
     }
     
-    /* Elegant Hero Section */
+    /* Elegant Hero Section with Animation */
     .hero {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -117,16 +118,20 @@
       height: 100vh;
       padding: 0 20px;
       text-align: center;
+      overflow: hidden;
     }
     
     .hero-content {
       max-width: 700px;
+      position: relative;
+      z-index: 2;
     }
     
-    .hero img {
+    .hero-logo {
       max-width: 180px;
       height: auto;
       margin-bottom: 40px;
+      transition: transform 0.1s ease-out;
     }
     
     .hero-tagline {
@@ -137,6 +142,7 @@
       color: var(--text-primary);
       margin-bottom: 20px;
       line-height: 1.4;
+      transition: transform 0.1s ease-out;
     }
     
     .hero-subtext {
@@ -144,6 +150,8 @@
       color: var(--text-secondary);
       max-width: 500px;
       margin: 0 auto 30px;
+      opacity: 0.9;
+      transition: opacity 0.3s ease-out;
     }
     
     .cta-button {
@@ -156,7 +164,7 @@
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 2px;
-      transition: var(--transition);
+      transition: var(--transition), opacity 0.3s ease-out;
       border: none;
       cursor: pointer;
     }
@@ -304,11 +312,18 @@
     .contact-form textarea {
       width: 100%;
       padding: 12px;
-      border: 1px solid var(--border);
+      border: 1px solid transparent;
       background: var(--subtle-accent);
       font-family: 'Inter', sans-serif;
       font-size: 0.9rem;
       color: var(--text-primary);
+      transition: var(--transition);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border: 1px solid var(--text-primary);
+      outline: none;
     }
     
     .contact-form textarea {
@@ -435,7 +450,7 @@
         height: 80vh;
         padding-top: 80px;
       }
-      .hero img {
+      .hero-logo {
         max-width: 150px;
         margin-bottom: 30px;
       }
@@ -475,10 +490,10 @@
     </div>
   </header>
 
-  <!-- Elegant Hero -->
+  <!-- Elegant Hero with Animation -->
   <div class="hero">
     <div class="hero-content">
-      <img src="logo.png" alt="Caldon Logo" class="fade-in">
+      <img src="logo.png" alt="Caldon Logo" class="hero-logo fade-in">
       <p class="hero-tagline fade-up">Exceptional Homes. Expert Consultancy.</p>
       <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Crafting bespoke residences and delivering comprehensive commercial solutions with precision and expertise.</p>
       <a href="#contact" class="cta-button fade-up" style="animation-delay: 0.6s;">Get in Touch</a>
@@ -591,10 +606,27 @@
   <script>
     window.addEventListener('scroll', function() {
       const header = document.querySelector('header');
-      if (window.scrollY > 50) {
+      const heroLogo = document.querySelector('.hero-logo');
+      const heroTagline = document.querySelector('.hero-tagline');
+      const heroSubtext = document.querySelector('.hero-subtext');
+      const ctaButton = document.querySelector('.hero .cta-button');
+      const scrollPosition = window.scrollY;
+
+      // Header scroll effect
+      if (scrollPosition > 50) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
+      }
+
+      // Hero parallax-like animation
+      const maxScroll = window.innerHeight * 0.5; // Limit effect to half viewport height
+      if (scrollPosition <= maxScroll) {
+        const translateFactor = scrollPosition * 0.2; // Subtle movement
+        heroLogo.style.transform = `translateY(${translateFactor}px)`;
+        heroTagline.style.transform = `translateY(${translateFactor * 0.8}px)`; // Slightly less movement
+        heroSubtext.style.opacity = Math.max(0.9 - scrollPosition / maxScroll, 0);
+        ctaButton.style.opacity = Math.max(1 - scrollPosition / maxScroll, 0);
       }
     });
     
