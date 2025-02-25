@@ -260,25 +260,6 @@
       transition: opacity 0.3s ease-out;
     }
     
-    .cta-button {
-      display: inline-block;
-      padding: 12px 36px;
-      background-color: var(--text-primary);
-      color: var(--background);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-    }
-    
-    .cta-button:hover {
-      background-color: var(--text-secondary);
-    }
-    
     .scroll-indicator {
       position: absolute;
       bottom: 40px;
@@ -450,6 +431,25 @@
       justify-self: center;
     }
     
+    .cta-button {
+      display: inline-block;
+      padding: 12px 36px;
+      background-color: var(--text-primary);
+      color: var(--background);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+    
+    .cta-button:hover {
+      background-color: var(--text-secondary);
+    }
+    
     .contact-details {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -500,45 +500,9 @@
       text-decoration: underline;
     }
     
-    /* Testimonials Section (New) */
-    .testimonials {
-      background-color: var(--subtle-accent);
-      padding: 100px 0;
-    }
-    
-    .testimonial-slider {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .testimonial-item {
-      text-align: center;
-      padding: 0 40px;
-    }
-    
-    .testimonial-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-style: italic;
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
-    
-    .testimonial-author {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text-primary);
-    }
-    
-    .testimonial-location {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      margin-top: 5px;
-    }
-    
-    /* Footer (Enhanced) */
+    /* Condensed Footer */
     footer {
-      padding: 60px 0 40px;
+      padding: 40px 0;
       text-align: center;
       border-top: 1px solid var(--border);
       background-color: var(--subtle-accent);
@@ -550,9 +514,8 @@
         "nav"
         "logo"
         "credentials"
-        "links"
         "copyright";
-      gap: 20px;
+      gap: 16px;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -619,61 +582,12 @@
       max-width: 100px;
     }
     
-    /* Footer Links (New) */
-    .footer-links {
-      grid-area: links;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      text-align: left;
-      gap: 30px;
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-    }
-    
-    .footer-links h4 {
-      font-size: 0.8rem;
-      color: var(--text-primary);
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    
-    .footer-links ul {
-      list-style: none;
-    }
-    
-    .footer-links li {
-      margin-bottom: 8px;
-    }
-    
-    .footer-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.8rem;
-      transition: var(--transition);
-    }
-    
-    .footer-links a:hover {
-      color: var(--text-primary);
-    }
-    
     .copyright {
       grid-area: copyright;
       font-size: 0.7rem;
       color: var(--text-secondary);
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      margin-top: 20px;
-    }
-    
-    .copyright a {
-      color: var(--text-secondary);
-      text-decoration: none;
-    }
-    
-    .copyright a:hover {
-      text-decoration: underline;
     }
     
     /* Animations */
@@ -714,10 +628,6 @@
       }
       .section-title {
         font-size: 2.2rem;
-      }
-      .footer-links {
-        grid-template-columns: 1fr;
-        text-align: center;
       }
     }
     
@@ -802,7 +712,6 @@
       <img src="logo.png" alt="Caldon Homes - Premier Builder in Mid North Coast NSW" class="hero-logo fade-in">
       <h1 class="hero-tagline fade-up">Exceptional Homes. Expert Consultancy.</h1>
       <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Crafting bespoke residences and delivering comprehensive commercial solutions with precision and expertise in Taree, NSW.</p>
-      <a href="#contact" class="cta-button fade-up" style="animation-delay: 0.5s;">Get in Touch</a>
     </div>
     <div class="scroll-indicator">Discover</div>
   </div>
@@ -844,21 +753,6 @@
         <div class="service-item">
           <h3>Project Management</h3>
           <p>End-to-end project oversight, coordinating timelines, budgets, and teams to deliver residential and commercial builds with precision, quality, and client satisfaction.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section (New) -->
-  <section class="testimonials">
-    <div class="container">
-      <div class="section-subtitle">What Our Clients Say</div>
-      <h2 class="section-title">Client Testimonials</h2>
-      <div class="testimonial-slider">
-        <div class="testimonial-item">
-          <p class="testimonial-text">"Caldon Homes exceeded our expectations with their attention to detail and commitment to quality. Our custom home is everything we dreamed of and more."</p>
-          <p class="testimonial-author">Michael & Sarah Thompson</p>
-          <p class="testimonial-location">Taree, NSW</p>
         </div>
       </div>
     </div>
@@ -928,9 +822,9 @@
     </div>
   </section>
 
-  <!-- Enhanced Footer -->
+  <!-- Condensed Footer -->
   <footer>
-    <div class="footer-content container">
+    <div class="footer-content">
       <div class="footer-nav">
         <ul>
           <li><a href="#services">Services</a></li>
@@ -939,7 +833,7 @@
           <li><a href="https://buildcal.github.io/caldon-web1/capability-statement.html" target="_blank">Capability</a></li>
         </ul>
       </div>
-      <img src="logo.png" alt="Caldon Homes Logo" class="footer-logo">
+      <img src="logo.png" alt="Caldon Logo" class="footer-logo">
       <div class="footer-credentials">
         <div class="credential-item">
           <span class="credential-label">Practitioner:</span>
@@ -949,44 +843,17 @@
           <span class="credential-label">Member:</span>
           <img src="hialogo.png" alt="HIA Member">
         </div>
+        <!-- Placeholder for additional credentials -->
         <div class="credential-item">
-          <span class="credential-label">Builders Licence:</span>
-          <span class="credential-value">377088C</span>
+          <span class="credential-label">Member:</span>
+          <span class="credential-value">[Additional Org]</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">Cert:</span>
+          <span class="credential-value">[Cert ID]</span>
         </div>
       </div>
-      
-      <!-- SEO-Enhanced Footer Links -->
-      <div class="footer-links">
-        <div>
-          <h4>Regions We Serve</h4>
-          <ul>
-            <li><a href="/regions/taree">Taree</a></li>
-            <li><a href="/regions/port-macquarie">Port Macquarie</a></li>
-            <li><a href="/regions/forster">Forster</a></li>
-            <li><a href="/regions/mid-north-coast">Mid North Coast</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="/services/custom-homes">Custom Home Building</a></li>
-            <li><a href="/services/multi-residential">Multi-Residential Projects</a></li>
-            <li><a href="/services/commercial-consultancy">Commercial Consultancy</a></li>
-            <li><a href="/services/building-surveying">Building Surveying</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="/projects">Our Projects</a></li>
-            <li><a href="/blog">Construction Blog</a></li>
-            <li><a href="/faq">FAQs</a></li>
-            <li><a href="/careers">Careers</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <p class="copyright">© 2025 Caldon Homes Pty Limited · All Rights Reserved · <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms">Terms of Service</a></p>
+      <p class="copyright">© 2025 Caldon Homes Pty Limited · All Rights Reserved</p>
     </div>
   </footer>
 
@@ -1046,18 +913,6 @@
         console.error('Error:', error);
         alert('There was an issue submitting your form. Please try again.');
       });
-    });
-    
-    // Structured data helper for Google
-    document.addEventListener('DOMContentLoaded', function() {
-      // Add specific page viewed to analytics
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'page_view', {
-          'page_title': document.title,
-          'page_location': window.location.href,
-          'page_path': window.location.pathname
-        });
-      }
     });
   </script>
 </body>
