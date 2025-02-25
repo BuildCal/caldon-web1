@@ -1,11 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caldon Homes – Building Construction & Consultancy</title>
+  <title>Caldon Homes Capability Statement | Custom Home Builder Taree NSW</title>
+  <meta name="description" content="Caldon Homes is a premier custom home builder and construction consultancy in Taree, NSW. View our capability statement for residential and commercial construction services.">
+  <meta name="keywords" content="custom home builder, residential construction, Taree builders, NSW construction, building consultancy, Class 2 Building Construction, expert witness construction">
+  <meta name="author" content="Caldon Homes Pty Limited">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Caldon Homes | Custom Home Builder & Construction Consultancy Taree NSW">
+  <meta property="og:description" content="Premier provider of residential construction and commercial building consultancy services based in Taree, NSW. Building quality homes with precision and professionalism.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://caldon.com.au/capability-statement">
+  <meta property="og:image" content="https://caldon.com.au/images/logo.png">
+  
+  <!-- Canonical URL to prevent duplicate content issues -->
+  <link rel="canonical" href="https://caldon.com.au/capability-statement">
+  
+  <!-- Structured Data for Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Caldon Homes Pty Limited",
+    "image": "https://caldon.com.au/images/logo.png",
+    "url": "https://caldon.com.au",
+    "telephone": "(02) 6550 1924",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "",
+      "addressLocality": "Taree",
+      "addressRegion": "NSW",
+      "postalCode": "2430",
+      "addressCountry": "AU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-31.9099",
+      "longitude": "152.4578"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.facebook.com/caldonhomes",
+      "https://www.instagram.com/caldonhomes"
+    ],
+    "priceRange": "$$$",
+    "servesCuisine": "Construction Services"
+  }
+  </script>
+  
+  <!-- Structured Data for Services -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Custom Home Building",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Caldon Homes Pty Limited"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Taree NSW and surrounding areas"
+    },
+    "description": "Custom home design and construction, from concept to completion, with a focus on bespoke aesthetics, structural integrity, and premium craftsmanship."
+  }
+  </script>
+  
   <style>
-    /* Modern, Sophisticated Typography */
+    /* Base styles */
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
     
     :root {
@@ -14,7 +89,6 @@
       --background: #ffffff;
       --subtle-accent: #f7f7f7;
       --border: #e0e0e0;
-      --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     
     * {
@@ -29,341 +103,129 @@
       color: var(--text-primary);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
     }
     
-    /* Refined Container */
+    /* Container */
     .container {
       width: 90%;
-      max-width: 1200px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 40px 30px;
     }
     
-    /* Sophisticated Header */
+    /* Header */
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      padding: 25px 0;
-      transition: var(--transition);
-    }
-    
-    header.scrolled {
-      padding: 15px 0;
-      box-shadow: 0 1px 15px rgba(0, 0, 0, 0.03);
-    }
-    
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .nav-logo {
-      max-height: 30px;
-      opacity: 0;
-      transform: translateY(-5px);
-      transition: var(--transition);
-    }
-    
-    header.scrolled .nav-logo {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 40px;
-    }
-    
-    nav a {
-      text-decoration: none;
-      color: var(--text-primary);
-      font-weight: 400;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      transition: var(--transition);
-      position: relative;
-    }
-    
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 1px;
-      bottom: -4px;
-      left: 0;
-      background-color: var(--text-primary);
-      transition: var(--transition);
-    }
-    
-    nav a:hover::after {
-      width: 100%;
-    }
-    
-    /* Elegant Hero Section with Animation */
-    .hero {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      padding: 0 20px;
       text-align: center;
-      overflow: hidden;
+      padding-bottom: 30px;
+      border-bottom: 2px solid var(--border);
     }
     
-    .hero-content {
-      max-width: 700px;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .hero-logo {
-      max-width: 180px;
+    .logo {
+      max-width: 220px;
       height: auto;
-      margin-bottom: 40px;
-      transition: transform 0.1s ease-out;
-    }
-    
-    .hero-tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: 2rem;
-      letter-spacing: 1px;
-      color: var(--text-primary);
       margin-bottom: 20px;
-      line-height: 1.4;
-      transition: transform 0.1s ease-out;
+      alt: "Caldon Homes Logo - Custom Home Builder in Taree NSW";
     }
     
-    .hero-subtext {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      max-width: 500px;
-      margin: 0 auto 30px;
-      opacity: 0.9;
-      transition: opacity 0.3s ease-out;
-    }
-    
-    .cta-button {
-      display: inline-block;
-      padding: 12px 36px;
-      background-color: var(--text-primary);
-      color: var(--background);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-    }
-    
-    .cta-button:hover {
-      background-color: var(--text-secondary);
-    }
-    
-    .scroll-indicator {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      opacity: 0.7;
-    }
-    
-    .scroll-indicator::after {
-      content: '';
-      display: block;
-      width: 1px;
-      height: 40px;
-      background-color: var(--text-secondary);
-      margin: 10px auto 0;
-      opacity: 0.3;
-    }
-    
-    /* Refined Section Styling */
-    section {
-      padding: 120px 0;
-    }
-    
-    section:nth-child(even) {
-      background-color: var(--subtle-accent);
-    }
-    
-    .section-title {
+    h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       font-weight: 300;
-      margin-bottom: 60px;
-      text-align: center;
       color: var(--text-primary);
+      margin-bottom: 10px;
     }
     
-    .section-subtitle {
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
+    .tagline {
+      font-size: 1.1rem;
+      font-weight: 300;
       color: var(--text-secondary);
-      text-align: center;
     }
     
-    /* Sophisticated Services Layout */
-    .services-grid {
+    /* Sections */
+    section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    section:last-child {
+      border-bottom: none;
+    }
+    
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 25px;
+      border-bottom: 1px solid var(--text-secondary);
+      padding-bottom: 10px;
+    }
+    
+    p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    
+    /* Service List */
+    .service-list {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
+      gap: 30px;
     }
     
     .service-item {
-      text-align: center;
-      padding: 30px;
-      transition: var(--transition);
-      position: relative;
-    }
-    
-    .service-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 1px solid transparent;
-      transition: var(--transition);
-    }
-    
-    .service-item:hover::before {
-      border-color: var(--border);
+      break-inside: avoid;
     }
     
     .service-item h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-bottom: 20px;
-      letter-spacing: 0.5px;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 10px;
     }
     
     .service-item p {
       font-size: 0.9rem;
-      font-weight: 300;
       color: var(--text-secondary);
-      line-height: 1.7;
+      margin-bottom: 15px;
     }
     
-    /* Philosophy Section */
-    .philosophy {
-      text-align: center;
+    .service-item ul {
+      list-style: none;
+      margin-left: 20px;
     }
     
-    .philosophy-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .philosophy-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      font-weight: 300;
-      font-style: italic;
-      line-height: 1.5;
-      margin-bottom: 30px;
-      color: var(--text-primary);
-    }
-    
-    .philosophy-text {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      margin-bottom: 20px;
-    }
-    
-    /* Contact Section */
-    .contact {
-      padding-bottom: 80px;
-    }
-    
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto 60px;
-      display: grid;
-      gap: 20px;
-    }
-    
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid transparent;
-      background: var(--subtle-accent);
-      font-family: 'Inter', sans-serif;
+    .service-item ul li {
       font-size: 0.9rem;
+      color: var(--text-secondary);
+      position: relative;
+      margin-bottom: 8px;
+      padding-left: 15px;
+    }
+    
+    .service-item ul li::before {
+      content: '•';
       color: var(--text-primary);
-      transition: var(--transition);
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus,
-    .contact-form select:focus {
-      border: 1px solid var(--text-primary);
-      outline: none;
+      position: absolute;
+      left: 0;
     }
     
-    .contact-form select {
-      appearance: none;
-      background-image: url('data:image/svg+xml;utf8,<svg fill="%23555555" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-      background-repeat: no-repeat;
-      background-position: right 12px center;
-    }
-    
-    .contact-form textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    
-    .contact-form button {
-      justify-self: center;
-    }
-    
-    .contact-details {
+    /* Contact Details */
+    .contact-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
+      gap: 25px;
+      margin-top: 25px;
     }
     
     .contact-item {
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100px;
     }
     
     .contact-label {
       font-size: 0.75rem;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--text-secondary);
       margin-bottom: 8px;
@@ -371,7 +233,6 @@
     
     .contact-value {
       font-size: 0.95rem;
-      line-height: 1.5;
       color: var(--text-primary);
     }
     
@@ -385,307 +246,264 @@
       height: auto;
     }
     
-    /* Condensed Footer */
-    footer {
-      padding: 40px 0;
-      text-align: center;
-      border-top: 1px solid var(--border);
-      background-color: var(--subtle-accent);
-    }
-    
-    .footer-content {
-      display: grid;
-      grid-template-areas: 
-        "nav"
-        "logo"
-        "credentials"
-        "copyright";
-      gap: 16px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .footer-nav {
-      grid-area: nav;
-    }
-    
-    .footer-nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      gap: 20px;
-    }
-    
-    .footer-nav a {
-      text-decoration: none;
+    /* Download Note */
+    .download-note {
+      font-size: 0.85rem;
+      font-style: italic;
       color: var(--text-secondary);
-      font-size: 0.7rem;
+      text-align: center;
+      padding-top: 30px;
+    }
+    
+    /* Breadcrumbs for SEO */
+    .breadcrumbs {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    
+    .breadcrumbs a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+    
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background-color: var(--subtle-accent);
+      padding: 30px;
+      text-align: center;
+      margin: 40px 0;
+      border-radius: 4px;
+    }
+    
+    .cta-section h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 12px 28px;
+      background-color: var(--text-primary);
+      color: var(--background);
+      text-decoration: none;
+      font-size: 0.85rem;
       font-weight: 400;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
-      transition: var(--transition);
+      letter-spacing: 2px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 15px;
     }
     
-    .footer-nav a:hover {
-      color: var(--text-primary);
+    .cta-button:hover {
+      background-color: var(--text-secondary);
     }
     
-    .footer-logo {
-      grid-area: logo;
-      max-height: 24px;
-      margin: 0 auto;
-    }
-    
-    .footer-credentials {
-      grid-area: credentials;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    
-    .credential-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    .credential-label {
-      font-size: 0.7rem;
-      color: var(--text-secondary);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    
-    .credential-value {
-      font-size: 0.7rem;
-      color: var(--text-primary);
-    }
-    
-    .credential-item img {
-      max-height: 20px;
-      max-width: 100px;
-    }
-    
-    .copyright {
-      grid-area: copyright;
-      font-size: 0.7rem;
-      color: var(--text-secondary);
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-    
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    @keyframes fadeUp {
-      from { 
-        opacity: 0;
-        transform: translateY(30px);
+    /* Print Styles for PDF */
+    @media print {
+      body, html {
+        margin: 0;
+        padding: 0;
+        width: 210mm;
+        height: auto;
       }
-      to { 
-        opacity: 1;
-        transform: translateY(0);
+      .container {
+        width: 100%;
+        max-width: none;
+        padding: 20mm;
       }
-    }
-    
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-    }
-    
-    .fade-up {
-      opacity: 0;
-      animation: fadeUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-    }
-    
-    /* Media Queries */
-    @media (max-width: 992px) {
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-      }
-      .contact-details {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .section-title {
-        font-size: 2.2rem;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      nav ul {
-        gap: 20px;
-      }
-      .hero-tagline {
-        font-size: 1.8rem;
-      }
-      .hero-subtext {
-        font-size: 0.9rem;
+      .breadcrumbs, .cta-section {
+        display: none;
       }
       section {
-        padding: 80px 0;
+        break-inside: avoid;
+        page-break-inside: avoid;
       }
-      .philosophy-quote {
-        font-size: 1.6rem;
+      .service-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
       }
-      .footer-nav ul {
-        gap: 16px;
+      .contact-grid {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .download-note {
+        display: none;
       }
     }
     
-    @media (max-width: 576px) {
-      .hero {
-        height: 80vh;
-        padding-top: 80px;
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
       }
-      .hero-logo {
-        max-width: 150px;
-        margin-bottom: 30px;
+      .tagline {
+        font-size: 1rem;
       }
-      .hero-tagline {
-        font-size: 1.5rem;
+      h2 {
+        font-size: 1.6rem;
       }
-      .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 40px;
+      .service-item h3 {
+        font-size: 1.2rem;
       }
-      .services-grid {
-        grid-template-columns: 1fr;
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
       }
-      .service-item {
+    }
+    
+    @media (max-width: 480px) {
+      .container {
         padding: 20px;
       }
-      .contact-details {
+      .contact-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .footer-nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .footer-credentials {
-        flex-direction: column;
-        gap: 12px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Sophisticated Header -->
-  <header>
-    <div class="container">
-      <nav>
-        <img src="logo.png" alt="Caldon Logo" class="nav-logo">
-        <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#philosophy">Philosophy</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="https://buildcal.github.io/caldon-web1/capability-statement.html" target="_blank">Capability</a></li>
-        </ul>
-      </nav>
+  <div class="container">
+    <!-- Breadcrumbs for SEO -->
+    <div class="breadcrumbs">
+      <a href="https://caldon.com.au">Home</a> &gt; <span>Capability Statement</span>
     </div>
-  </header>
+  
+    <!-- Header -->
+    <header>
+      <img src="logo.png" alt="Caldon Homes - Premier Home Builder in Taree NSW" class="logo">
+      <h1>Caldon Homes Pty Limited</h1>
+      <p class="tagline">Exceptional Homes. Expert Consultancy.</p>
+    </header>
 
-  <!-- Elegant Hero without Button -->
-  <div class="hero">
-    <div class="hero-content">
-      <img src="logo.png" alt="Caldon Logo" class="hero-logo fade-in">
-      <p class="hero-tagline fade-up">Exceptional Homes. Expert Consultancy.</p>
-      <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Crafting bespoke residences and delivering comprehensive commercial solutions with precision and expertise.</p>
-    </div>
-    <div class="scroll-indicator">Discover</div>
-  </div>
+    <!-- Introduction -->
+    <section>
+      <h2>Who We Are</h2>
+      <p>Caldon Homes Pty Limited is a premier provider of residential construction and commercial building consultancy services, based in Taree, NSW. With a steadfast commitment to quality, precision, and professionalism, we deliver bespoke solutions that exceed client expectations. Our dual expertise in crafting custom homes and providing strategic commercial guidance sets us apart as a trusted partner in the building industry.</p>
+      <p>As holders of Building Practitioner Number BUP0002873 and Builders Licence 377088C, and proud members of the Housing Industry Association (HIA), we uphold the highest standards of integrity and excellence across all projects.</p>
+    </section>
 
-  <!-- Sophisticated Services -->
-  <section id="services" class="services">
-    <div class="container">
-      <div class="section-subtitle">Our Expertise</div>
-      <h2 class="section-title">What We Do</h2>
-      <div class="services-grid">
+    <!-- Capabilities and Services -->
+    <section>
+      <h2>Our Capabilities and Services</h2>
+      <p>Our comprehensive service offerings span residential construction and commercial consultancy, leveraging decades of industry experience to deliver exceptional results. Below is a detailed overview of our capabilities:</p>
+      <div class="service-list">
         <div class="service-item">
           <h3>Residential Design & Construction</h3>
-          <p>Custom home design and construction, from concept to completion, with a focus on bespoke aesthetics, structural integrity, and premium craftsmanship tailored to your unique needs.</p>
+          <p>We specialise in designing and constructing custom homes tailored to individual lifestyles. From initial concept through to final handover, we ensure every detail reflects our clients' vision while adhering to superior standards of craftsmanship and durability.</p>
+          <ul>
+            <li>Architectural design and planning tailored to client specifications</li>
+            <li>Construction of single-storey and multi-storey residences</li>
+            <li>Use of premium, sustainable materials for longevity and aesthetics</li>
+            <li>Full compliance with Australian Building Codes and local regulations</li>
+          </ul>
         </div>
+        
         <div class="service-item">
           <h3>Class 2 Building Construction</h3>
-          <p>Specialised construction of multi-residential buildings, including apartments and townhouses, adhering to stringent codes and delivering durable, high-quality outcomes as registered practitioners.</p>
+          <p>Our expertise extends to multi-residential projects, including apartments and townhouses. As registered practitioners, we deliver structurally sound, high-quality buildings that meet the complex demands of Class 2 constructions.</p>
+          <ul>
+            <li>Construction of multi-unit residential developments</li>
+            <li>Expertise in managing multi-level structural and compliance requirements</li>
+            <li>Integration of modern design with functional living spaces</li>
+            <li>Coordination with architects, engineers, and regulatory bodies</li>
+          </ul>
         </div>
+        
         <div class="service-item">
           <h3>Estimating Services</h3>
-          <p>Detailed cost estimation and budgeting for residential and commercial projects, ensuring transparency, accuracy, and financial control from planning through execution.</p>
+          <p>We provide precise cost estimation and budgeting services for both residential and commercial projects, ensuring financial transparency and control from inception to completion.</p>
+          <ul>
+            <li>Detailed cost breakdowns and feasibility studies</li>
+            <li>Accurate forecasting of material, labour, and overhead costs</li>
+            <li>Risk assessment and contingency planning</li>
+            <li>Ongoing cost monitoring and reporting</li>
+          </ul>
         </div>
+        
         <div class="service-item">
           <h3>Expert Witness</h3>
-          <p>Authoritative litigation support and expert testimony for construction disputes, leveraging extensive industry knowledge to provide credible, evidence-based insights in legal proceedings.</p>
+          <p>Our deep industry knowledge positions us as authoritative expert witnesses in construction-related legal disputes, offering credible, evidence-based testimony to support litigation processes.</p>
+          <ul>
+            <li>Preparation of detailed technical reports and assessments</li>
+            <li>Expert testimony in court or mediation proceedings</li>
+            <li>Analysis of construction defects, delays, and disputes</li>
+            <li>Support for builders, developers, and legal teams</li>
+          </ul>
         </div>
+        
         <div class="service-item">
           <h3>Commercial Procurement</h3>
-          <p>Strategic procurement and tender management for commercial projects, securing optimal materials and subcontractor services through established networks and expert negotiation.</p>
+          <p>We manage procurement and tender processes for commercial projects, securing optimal resources and subcontractor services through strategic negotiation and established industry networks.</p>
+          <ul>
+            <li>Tender preparation, evaluation, and award management</li>
+            <li>Sourcing of high-quality materials and specialised trades</li>
+            <li>Cost optimisation without compromising quality</li>
+            <li>Contract negotiation and supplier coordination</li>
+          </ul>
         </div>
+        
         <div class="service-item">
           <h3>Building Surveying</h3>
-          <p>Thorough building inspections and compliance assessments, identifying defects, ensuring safety, and verifying adherence to Australian standards and regulations.</p>
+          <p>Our building surveying services ensure compliance and safety through meticulous inspections and assessments, identifying issues and verifying adherence to regulatory standards.</p>
+          <ul>
+            <li>Comprehensive building condition assessments</li>
+            <li>Defect identification and rectification recommendations</li>
+            <li>Compliance verification with Australian Standards</li>
+            <li>Pre-purchase and due diligence inspections</li>
+          </ul>
         </div>
+        
         <div class="service-item">
           <h3>Quantity Surveying</h3>
-          <p>Comprehensive cost management and financial planning, including bills of quantities and value engineering, to maximise efficiency and profitability across all project scales.</p>
+          <p>We offer sophisticated cost management and financial planning, maximising efficiency and profitability through detailed analysis and strategic oversight.</p>
+          <ul>
+            <li>Preparation of bills of quantities and cost plans</li>
+            <li>Value engineering to optimise project budgets</li>
+            <li>Cost control and variation management</li>
+            <li>Financial reporting and cash flow projections</li>
+          </ul>
         </div>
+        
         <div class="service-item">
           <h3>Project Management</h3>
-          <p>End-to-end project oversight, coordinating timelines, budgets, and teams to deliver residential and commercial builds with precision, quality, and client satisfaction.</p>
+          <p>Our end-to-end project management ensures seamless delivery of residential and commercial builds, coordinating all aspects to meet timelines, budgets, and quality benchmarks.</p>
+          <ul>
+            <li>Full project planning and scheduling</li>
+            <li>Stakeholder coordination and communication</li>
+            <li>Quality assurance and risk management</li>
+            <li>Post-construction support and handover</li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Philosophy Section -->
-  <section id="philosophy" class="philosophy">
-    <div class="container">
-      <div class="section-subtitle">Our Approach</div>
-      <h2 class="section-title">Our Philosophy</h2>
-      <div class="philosophy-content">
-        <p class="philosophy-quote">"Building trust through quality, expertise, and integrity."</p>
-        <p class="philosophy-text">At Caldon Homes, we combine artistry and precision to create custom homes that fulfil your vision while meeting the highest standards of durability and design. For commercial clients, we offer unrivalled consultancy services that mitigate risks and optimise outcomes, drawing on our deep industry experience.</p>
-        <p class="philosophy-text">As registered practitioners (Building Practitioner Number BUP0002873) and proud members of the Housing Industry Association (HIA), we ensure every project—whether a family residence or a complex commercial endeavour—reflects our commitment to excellence and professionalism.</p>
-      </div>
+    <!-- CTA Section for better conversion -->
+    <div class="cta-section">
+      <h3>Ready to Start Your Building Project?</h3>
+      <p>Contact our team today to discuss your residential or commercial construction needs.</p>
+      <a href="https://caldon.com.au/contact" class="cta-button">Get in Touch</a>
     </div>
-  </section>
 
-  <!-- Elegant Contact -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <div class="section-subtitle">Connect With Us</div>
-      <h2 class="section-title">Contact</h2>
-      <form class="contact-form" id="contact-form" method="POST" action="/submit-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <select name="service" required>
-          <option value="" disabled selected>Select a Service</option>
-          <option value="Residential Design & Construction">Residential Design & Construction</option>
-          <option value="Class 2 Building Construction">Class 2 Building Construction</option>
-          <option value="Estimating Services">Estimating Services</option>
-          <option value="Expert Witness">Expert Witness</option>
-          <option value="Commercial Procurement">Commercial Procurement</option>
-          <option value="Building Surveying">Building Surveying</option>
-          <option value="Quantity Surveying">Quantity Surveying</option>
-          <option value="Project Management">Project Management</option>
-        </select>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="cta-button">Send Enquiry</button>
-      </form>
-      <div class="contact-details">
+    <!-- Contact Information -->
+    <section>
+      <h2>Contact Us</h2>
+      <p>For enquiries or to discuss your project needs, please reach out to our team. We are committed to delivering tailored solutions with professionalism and expertise.</p>
+      <div class="contact-grid">
         <div class="contact-item">
           <div class="contact-label">Email</div>
-          <div class="contact-value">admin@caldon.com.au</div>
+          <div class="contact-value"><a href="mailto:admin@caldon.com.au">admin@caldon.com.au</a></div>
         </div>
         <div class="contact-item">
           <div class="contact-label">Phone</div>
-          <div class="contact-value">(02) 6550 1924</div>
+          <div class="contact-value"><a href="tel:0265501924">(02) 6550 1924</a></div>
         </div>
         <div class="contact-item">
           <div class="contact-label">Location</div>
@@ -701,104 +519,51 @@
         </div>
         <div class="contact-item">
           <div class="contact-label">Membership</div>
-          <div class="contact-value"><img src="hialogo.png" alt="HIA Member"></div>
+          <div class="contact-value"><img src="hialogo.png" alt="Housing Industry Association Member - Caldon Homes"></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Condensed Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-nav">
-        <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#philosophy">Philosophy</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="https://buildcal.github.io/caldon-web1/capability-statement.html" target="_blank">Capability</a></li>
-        </ul>
+    <!-- Download Note -->
+    <div class="download-note">To download this capability statement as a PDF, please use your browser's Print function (Ctrl+P or Cmd+P) and select "Save as PDF".</div>
+  </div>
+  
+  <!-- Additional SEO Footer Links -->
+  <footer style="background-color: var(--subtle-accent); padding: 40px 0; margin-top: 40px;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+        <div>
+          <h4 style="margin-bottom: 15px; font-size: 1rem;">Serving Regions</h4>
+          <ul style="list-style: none;">
+            <li><a href="https://caldon.com.au/regions/taree" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; line-height: 1.8;">Taree</a></li>
+            <li><a href="https://caldon.com.au/regions/port-macquarie" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; line-height: 1.8;">Port Macquarie</a></li>
+            <li><a href="https://caldon.com.au/regions/forster" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; line-height: 1.8;">Forster</a></li>
+            <li><a href="https://caldon.com.au/regions/mid-north-coast" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; line-height: 1.8;">Mid North Coast</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="margin-bottom: 15px; font-size: 1rem;">Our Services</h4>
+          <ul style="list-style: none;">
+            <li><a href="https://caldon.com.au/services/custom-homes" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; line-height: 1.8;">Custom Home Building</a></li>
+            <li><a href="https://caldon.com.au/services/apartment-construction" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; line-height: 1.8;">Apartment Construction</a></li>
+            <li><a href="https://caldon.com.au/services/commercial-consultancy" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; line-height: 1.8;">Commercial Consultancy</a></li>
+            <li><a href="https://caldon.com.au/services/renovation" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; line-height: 1.8;">Renovations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="margin-bottom: 15px; font-size: 1rem;">Resources</h4>
+          <ul style="list-style: none;">
+            <li><a href="https://caldon.com.au/blog" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; line-height: 1.8;">Blog</a></li>
+            <li><a href="https://caldon.com.au/projects" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; line-height: 1.8;">Our Projects</a></li>
+            <li><a href="https://caldon.com.au/faq" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; line-height: 1.8;">FAQs</a></li>
+            <li><a href="https://caldon.com.au/testimonials" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; line-height: 1.8;">Testimonials</a></li>
+          </ul>
+        </div>
       </div>
-      <img src="logo.png" alt="Caldon Logo" class="footer-logo">
-      <div class="footer-credentials">
-        <div class="credential-item">
-          <span class="credential-label">Practitioner:</span>
-          <span class="credential-value">BUP0002873</span>
-        </div>
-        <div class="credential-item">
-          <span class="credential-label">Member:</span>
-          <img src="hialogo.png" alt="HIA Member">
-        </div>
-        <!-- Placeholder for additional credentials -->
-        <div class="credential-item">
-          <span class="credential-label">HIA Membership No.:</span>
-          <span class="credential-value">1376011</span>
-        </div>
-        <div class="credential-item">
-          <span class="credential-label">Licence:</span>
-          <span class="credential-value">377088C</span>
-        </div>
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-secondary);">
+        <p>&copy; 2025 Caldon Homes Pty Limited. All Rights Reserved. <a href="https://caldon.com.au/privacy-policy" style="color: var(--text-secondary);">Privacy Policy</a> | <a href="https://caldon.com.au/terms-of-service" style="color: var(--text-secondary);">Terms of Service</a></p>
       </div>
-      <p class="copyright">© 2025 Caldon Homes Pty Limited · All Rights Reserved</p>
     </div>
   </footer>
-
-  <!-- Sophisticated Scripts -->
-  <script>
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('header');
-      const heroLogo = document.querySelector('.hero-logo');
-      const heroTagline = document.querySelector('.hero-tagline');
-      const heroSubtext = document.querySelector('.hero-subtext');
-      const scrollPosition = window.scrollY;
-
-      if (scrollPosition > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-
-      const maxScroll = window.innerHeight * 0.5;
-      if (scrollPosition <= maxScroll) {
-        const translateFactor = scrollPosition * 0.2;
-        heroLogo.style.transform = `translateY(${translateFactor}px)`;
-        heroTagline.style.transform = `translateY(${translateFactor * 0.8}px)`;
-        heroSubtext.style.opacity = Math.max(0.9 - scrollPosition / maxScroll, 0);
-      }
-    });
-    
-    document.querySelectorAll('nav a, .footer-nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href.startsWith('#')) {
-          e.preventDefault();
-          const targetId = href;
-          const targetSection = document.querySelector(targetId);
-          window.scrollTo({
-            top: targetSection.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-        // External links (like capability-statement.html) open normally in new tab
-      });
-    });
-
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      fetch('/submit-form', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-        alert('Thank you for your enquiry! We'll get back to you soon.');
-        this.reset();
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('There was an issue submitting your form. Please try again.');
-      });
-    });
-  </script>
 </body>
 </html>
