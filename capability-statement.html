@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caldon Homes – Capability Statement</title>
+  <title>CALDON™ – Capability Statement</title>
+  <meta name="description" content="CALDON™ Capability Statement: Expert custom home builders and building consultancy services across NSW, including Taree, Port Macquarie, Sydney, Newcastle, and more. Comprehensive residential and commercial solutions." />
+  <meta name="keywords" content="CALDON™, capability statement, custom home builders, building consultancy NSW, Taree construction, Port Macquarie builder, Sydney building consultant, Newcastle project management" />
+  <meta name="author" content="CALDON™" />
+  
   <style>
     /* Base styles */
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
@@ -14,6 +18,7 @@
       --background: #ffffff;
       --subtle-accent: #f7f7f7;
       --border: #e0e0e0;
+      --highlight: #2a2a2a;
     }
     
     * {
@@ -26,48 +31,49 @@
       font-family: 'Inter', sans-serif;
       background-color: var(--background);
       color: var(--text-primary);
-      line-height: 1.6;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
     
     /* Container */
     .container {
       width: 90%;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 40px 30px;
+      padding: 50px 35px;
     }
     
     /* Header */
     header {
       text-align: center;
-      padding-bottom: 30px;
-      border-bottom: 2px solid var(--border);
+      padding-bottom: 40px;
+      border-bottom: 2px solid var(--highlight);
     }
     
     .logo {
-      max-width: 220px;
+      max-width: 250px;
       height: auto;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
     
     h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 300;
       color: var(--text-primary);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
     
     .tagline {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 300;
       color: var(--text-secondary);
+      letter-spacing: 0.5px;
     }
     
     /* Sections */
     section {
-      padding: 40px 0;
+      padding: 50px 0;
       border-bottom: 1px solid var(--border);
     }
     
@@ -77,70 +83,76 @@
     
     h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 400;
-      color: var(--text-primary);
-      margin-bottom: 25px;
+      color: var(--highlight);
+      margin-bottom: 30px;
       border-bottom: 1px solid var(--text-secondary);
-      padding-bottom: 10px;
+      padding-bottom: 12px;
     }
     
     p {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: var(--text-secondary);
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
     
     /* Service List */
     .service-list {
       display: grid;
-      gap: 30px;
+      gap: 40px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
     
     .service-item {
       break-inside: avoid;
+      background: var(--subtle-accent);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     }
     
     .service-item h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 500;
       color: var(--text-primary);
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
     
     .service-item p {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--text-secondary);
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
     
     .service-item ul {
       list-style: none;
-      margin-left: 20px;
+      margin-left: 25px;
     }
     
     .service-item ul li {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--text-secondary);
       position: relative;
-      margin-bottom: 8px;
-      padding-left: 15px;
+      margin-bottom: 10px;
+      padding-left: 20px;
     }
     
     .service-item ul li::before {
       content: '•';
-      color: var(--text-primary);
+      color: var(--highlight);
       position: absolute;
       left: 0;
+      font-size: 1.2rem;
     }
     
     /* Contact Details */
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      margin-top: 25px;
+      gap: 30px;
+      margin-top: 30px;
     }
     
     .contact-item {
@@ -148,35 +160,35 @@
     }
     
     .contact-label {
-      font-size: 0.75rem;
-      letter-spacing: 1.5px;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--text-secondary);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     
     .contact-value {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: var(--text-primary);
     }
     
     .contact-value.credential {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--text-secondary);
     }
     
     .contact-value img {
-      max-width: 120px;
+      max-width: 130px;
       height: auto;
     }
     
     /* Download Note */
     .download-note {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-style: italic;
       color: var(--text-secondary);
       text-align: center;
-      padding-top: 30px;
+      padding-top: 40px;
     }
     
     /* Print Styles for PDF */
@@ -196,9 +208,13 @@
         break-inside: avoid;
         page-break-inside: avoid;
       }
+      .service-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
       .service-item {
         break-inside: avoid;
         page-break-inside: avoid;
+        box-shadow: none;
       }
       .contact-grid {
         break-inside: avoid;
@@ -212,26 +228,29 @@
     /* Responsive Adjustments */
     @media (max-width: 768px) {
       h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
       }
       .tagline {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
       h2 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
       .service-item h3 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+      }
+      .service-list {
+        grid-template-columns: 1fr;
       }
       .contact-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 25px;
       }
     }
     
     @media (max-width: 480px) {
       .container {
-        padding: 20px;
+        padding: 25px;
       }
       .contact-grid {
         grid-template-columns: 1fr;
@@ -243,108 +262,140 @@
   <div class="container">
     <!-- Header -->
     <header>
-      <img src="logo.png" alt="Caldon Logo" class="logo">
-      <h1>Caldon Homes Pty Limited</h1>
-      <p class="tagline">Exceptional Homes. Expert Consultancy.</p>
+      <img src="logo.png" alt="CALDON™ Logo" class="logo">
+      <h1>CALDON™ Pty Limited</h1>
+      <p class="tagline">Delivering Excellence in Residential Construction and Commercial Consultancy Across NSW</p>
     </header>
 
     <!-- Introduction -->
     <section>
-      <h2>Who We Are</h2>
-      <p>Caldon Homes Pty Limited is a premier provider of residential construction and commercial building consultancy services, based in Taree, NSW. With a steadfast commitment to quality, precision, and professionalism, we deliver bespoke solutions that exceed client expectations. Our dual expertise in crafting custom homes and providing strategic commercial guidance sets us apart as a trusted partner in the building industry.</p>
-      <p>As holders of Building Practitioner Number BUP0002873 and Builders Licence 377088C, and proud members of the Housing Industry Association (HIA), we uphold the highest standards of integrity and excellence across all projects.</p>
+      <h2>About CALDON™</h2>
+      <p>CALDON™ Pty Limited is a leading NSW-based firm specializing in high-quality residential construction and advanced commercial building consultancy. Headquartered in Taree, we extend our expertise across the state, serving key regions including Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, Forster Tuncurry, and beyond. With a legacy of precision, innovation, and client-centric service, we are your trusted partner for bespoke homes and strategic commercial solutions.</p>
+      <p>Our credentials—Building Practitioner Number BUP0002873, Builders Licence 377088C, and membership in the Housing Industry Association (HIA)—underscore our commitment to industry-leading standards. CALDON™ combines decades of experience with a forward-thinking approach, ensuring every project reflects excellence in craftsmanship, compliance, and value.</p>
     </section>
 
     <!-- Capabilities and Services -->
     <section>
       <h2>Our Capabilities and Services</h2>
-      <p>Our comprehensive service offerings span residential construction and commercial consultancy, leveraging decades of industry experience to deliver exceptional results. Below is a detailed overview of our capabilities:</p>
+      <p>CALDON™ offers an extensive suite of capabilities tailored to meet the diverse needs of residential and commercial clients across New South Wales. From custom home construction to sophisticated consultancy for multi-million-dollar developments, our services are designed to deliver exceptional outcomes with efficiency and expertise. Below is a comprehensive overview of our offerings:</p>
       <div class="service-list">
         <div class="service-item">
           <h3>Residential Design & Construction</h3>
-          <p>We specialise in designing and constructing custom homes tailored to individual lifestyles. From initial concept through to final handover, we ensure every detail reflects our clients' vision while adhering to superior standards of craftsmanship and durability.</p>
+          <p>We craft custom residences that blend aesthetic vision with structural integrity, serving clients from Taree to Sydney. Our end-to-end approach ensures seamless delivery of homes that exceed expectations in design, functionality, and sustainability.</p>
           <ul>
-            <li>Architectural design and planning tailored to client specifications</li>
-            <li>Construction of single-storey and multi-storey residences</li>
-            <li>Use of premium, sustainable materials for longevity and aesthetics</li>
-            <li>Full compliance with Australian Building Codes and local regulations</li>
+            <li>Architectural design and 3D modeling for bespoke homes</li>
+            <li>Construction of single-storey, multi-storey, and luxury residences</li>
+            <li>Integration of energy-efficient and eco-friendly materials</li>
+            <li>Compliance with NSW Building Codes and local council requirements</li>
+            <li>Renovations and extensions with minimal disruption</li>
           </ul>
         </div>
         
         <div class="service-item">
-          <h3>Class 2 Building Construction</h3>
-          <p>Our expertise extends to multi-residential projects, including apartments and townhouses. As registered practitioners, we deliver structurally sound, high-quality buildings that meet the complex demands of Class 2 constructions.</p>
+          <h3>Class 2 & Multi-Residential Construction</h3>
+          <p>Specializing in Class 2 buildings, we deliver multi-residential projects such as apartments, townhouses, and mixed-use developments across Newcastle, Sydney, and the Mid North Coast, meeting stringent regulatory and client specifications.</p>
           <ul>
-            <li>Construction of multi-unit residential developments</li>
-            <li>Expertise in managing multi-level structural and compliance requirements</li>
-            <li>Integration of modern design with functional living spaces</li>
-            <li>Coordination with architects, engineers, and regulatory bodies</li>
+            <li>Design and construction of multi-unit residential complexes</li>
+            <li>Management of fire safety, accessibility, and structural compliance</li>
+            <li>Collaboration with architects, engineers, and strata managers</li>
+            <li>High-rise and medium-density development expertise</li>
+            <li>Post-construction maintenance planning</li>
           </ul>
         </div>
         
         <div class="service-item">
-          <h3>Estimating Services</h3>
-          <p>We provide precise cost estimation and budgeting services for both residential and commercial projects, ensuring financial transparency and control from inception to completion.</p>
+          <h3>Commercial Construction Management</h3>
+          <p>We oversee commercial builds, from retail spaces in Coffs Harbour to office developments in Sydney, ensuring projects are completed on time, within budget, and to the highest quality standards.</p>
           <ul>
-            <li>Detailed cost breakdowns and feasibility studies</li>
-            <li>Accurate forecasting of material, labour, and overhead costs</li>
-            <li>Risk assessment and contingency planning</li>
-            <li>Ongoing cost monitoring and reporting</li>
+            <li>Construction of commercial offices, retail, and industrial facilities</li>
+            <li>Fit-out and refurbishment for business premises</li>
+            <li>Coordination of large-scale trades and subcontractor teams</li>
+            <li>Adherence to workplace health and safety standards</li>
+            <li>Turnkey solutions from planning to occupancy</li>
           </ul>
         </div>
         
         <div class="service-item">
-          <h3>Expert Witness</h3>
-          <p>Our deep industry knowledge positions us as authoritative expert witnesses in construction-related legal disputes, offering credible, evidence-based testimony to support litigation processes.</p>
+          <h3>Estimating & Cost Consulting</h3>
+          <p>Our precise estimating services provide financial clarity for projects in Port Macquarie, Tamworth, and beyond, supporting clients with detailed budgets and cost-effective strategies.</p>
           <ul>
-            <li>Preparation of detailed technical reports and assessments</li>
-            <li>Expert testimony in court or mediation proceedings</li>
-            <li>Analysis of construction defects, delays, and disputes</li>
-            <li>Support for builders, developers, and legal teams</li>
+            <li>Comprehensive cost estimates and feasibility analyses</li>
+            <li>Material take-offs and labour cost projections</li>
+            <li>Risk assessment and contingency budgeting</li>
+            <li>Value management to optimize project economics</li>
+            <li>Real-time cost tracking and variance reporting</li>
           </ul>
         </div>
         
         <div class="service-item">
-          <h3>Commercial Procurement</h3>
-          <p>We manage procurement and tender processes for commercial projects, securing optimal resources and subcontractor services through strategic negotiation and established industry networks.</p>
+          <h3>Expert Witness & Dispute Resolution</h3>
+          <p>We provide authoritative expert witness services for construction disputes, offering technical insights and testimony in legal proceedings across NSW, including Sydney and Newcastle.</p>
           <ul>
-            <li>Tender preparation, evaluation, and award management</li>
-            <li>Sourcing of high-quality materials and specialised trades</li>
-            <li>Cost optimisation without compromising quality</li>
-            <li>Contract negotiation and supplier coordination</li>
+            <li>Detailed forensic analysis of construction defects and delays</li>
+            <li>Preparation of expert reports for courts and tribunals</li>
+            <li>Mediation and arbitration support for dispute resolution</li>
+            <li>Consultation on contract breaches and compliance issues</li>
+            <li>Trusted by legal firms, developers, and insurers</li>
           </ul>
         </div>
         
         <div class="service-item">
-          <h3>Building Surveying</h3>
-          <p>Our building surveying services ensure compliance and safety through meticulous inspections and assessments, identifying issues and verifying adherence to regulatory standards.</p>
+          <h3>Commercial Procurement & Supply Chain Management</h3>
+          <p>We streamline procurement for commercial projects, securing top-tier resources and trades for developments in Forster Tuncurry, Sydney, and regional NSW through robust industry networks.</p>
           <ul>
-            <li>Comprehensive building condition assessments</li>
-            <li>Defect identification and rectification recommendations</li>
-            <li>Compliance verification with Australian Standards</li>
-            <li>Pre-purchase and due diligence inspections</li>
+            <li>Competitive tendering and supplier selection</li>
+            <li>Procurement of specialized materials and equipment</li>
+            <li>Supply chain optimization for cost and efficiency</li>
+            <li>Contract management and performance monitoring</li>
+            <li>Sustainable sourcing options</li>
           </ul>
         </div>
         
         <div class="service-item">
-          <h3>Quantity Surveying</h3>
-          <p>We offer sophisticated cost management and financial planning, maximising efficiency and profitability through detailed analysis and strategic oversight.</p>
+          <h3>Building Surveying & Compliance</h3>
+          <p>Our surveying services ensure safety and regulatory adherence for properties in Taree, Port Macquarie, and Sydney, delivering thorough inspections and actionable recommendations.</p>
           <ul>
-            <li>Preparation of bills of quantities and cost plans</li>
-            <li>Value engineering to optimise project budgets</li>
-            <li>Cost control and variation management</li>
-            <li>Financial reporting and cash flow projections</li>
+            <li>Pre-purchase, PCI, and defect inspections</li>
+            <li>Building code and Australian Standards compliance audits</li>
+            <li>Dilapidation reports and condition assessments</li>
+            <li>Certification support for occupancy and construction</li>
+            <li>Heritage building assessments</li>
           </ul>
         </div>
         
         <div class="service-item">
-          <h3>Project Management</h3>
-          <p>Our end-to-end project management ensures seamless delivery of residential and commercial builds, coordinating all aspects to meet timelines, budgets, and quality benchmarks.</p>
+          <h3>Quantity Surveying & Cost Management</h3>
+          <p>We offer advanced quantity surveying to maximize project value, serving clients from Coffs Harbour to Tamworth with detailed financial oversight and strategic planning.</p>
           <ul>
-            <li>Full project planning and scheduling</li>
-            <li>Stakeholder coordination and communication</li>
-            <li>Quality assurance and risk management</li>
-            <li>Post-construction support and handover</li>
+            <li>Bills of quantities and detailed cost breakdowns</li>
+            <li>Value engineering and cost-benefit analysis</li>
+            <li>Change order management and cost control</li>
+            <li>Cash flow forecasting and financial risk mitigation</li>
+            <li>Post-completion cost audits</li>
+          </ul>
+        </div>
+        
+        <div class="service-item">
+          <h3>Project Management & Delivery</h3>
+          <p>Our project management expertise ensures seamless execution of residential and commercial builds across NSW, from initial planning in Newcastle to handover in Sydney.</p>
+          <ul>
+            <li>Project scheduling, resource allocation, and milestone tracking</li>
+            <li>Stakeholder engagement and communication</li>
+            <li>Quality assurance and defect management</li>
+            <li>Risk identification and mitigation strategies</li>
+            <li>Post-construction support and client training</li>
+          </ul>
+        </div>
+        
+        <div class="service-item">
+          <h3>Sustainability & Innovation Consulting</h3>
+          <p>We integrate sustainable practices and innovative technologies into projects, offering consultancy to clients in Sydney, Port Macquarie, and beyond for future-ready builds.</p>
+          <ul>
+            <li>Green building design and certification (e.g., BASIX, NatHERS)</li>
+            <li>Integration of smart home and building management systems</li>
+            <li>Renewable energy solutions (solar, geothermal)</li>
+            <li>Life-cycle cost analysis for sustainable materials</li>
+            <li>Consulting on Net Zero and carbon-neutral goals</li>
           </ul>
         </div>
       </div>
@@ -353,7 +404,7 @@
     <!-- Contact Information -->
     <section>
       <h2>Contact Us</h2>
-      <p>For enquiries or to discuss your project needs, please reach out to our team. We are committed to delivering tailored solutions with professionalism and expertise.</p>
+      <p>We invite you to connect with CALDON™ to explore how our expertise can support your next residential or commercial project. Our team is ready to deliver tailored, high-value solutions across Taree, Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, Forster Tuncurry, and throughout NSW.</p>
       <div class="contact-grid">
         <div class="contact-item">
           <div class="contact-label">Email</div>
@@ -383,7 +434,7 @@
     </section>
 
     <!-- Download Note -->
-    <div class="download-note">To download this capability statement as a PDF, please use your browser's Print function (Ctrl+P or Cmd+P) and select "Save as PDF".</div>
+    <div class="download-note">To download this capability statement as a PDF, use your browser's Print function (Ctrl+P or Cmd+P) and select "Save as PDF".</div>
   </div>
 </body>
 </html>
