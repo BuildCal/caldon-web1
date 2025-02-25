@@ -30,6 +30,13 @@
       -webkit-font-smoothing: antialiased;
     }
     
+    /* For PDF Generation */
+    #content-for-pdf {
+      background-color: white;
+      width: 210mm;  /* A4 width */
+      margin: 0 auto;
+    }
+    
     /* Container */
     .container {
       width: 90%;
@@ -205,33 +212,48 @@
       text-align: center;
     }
     
-    /* Print Styles for PDF */
+    /* A4 Print Styles for PDF */
     @media print {
       body {
         margin: 0;
         padding: 0;
+        background: white;
+        width: 210mm;
+        height: 297mm;
       }
       .container {
-        padding: 20px;
+        width: 180mm;
+        padding: 15mm;
         max-width: 100%;
       }
       header {
-        padding-bottom: 20px;
+        padding-bottom: 10mm;
       }
       section {
-        padding: 30px 0;
+        padding: 8mm 0;
+        page-break-inside: avoid;
+      }
+      .service-item {
+        page-break-inside: avoid;
       }
       .download-section {
         display: none;
       }
       h1 {
-        font-size: 2.5rem;
+        font-size: 24pt;
       }
       h2 {
-        font-size: 1.8rem;
+        font-size: 18pt;
+        margin-bottom: 5mm;
       }
       .service-item h3 {
-        font-size: 1.3rem;
+        font-size: 14pt;
+      }
+      p, .service-item p, .service-item ul li {
+        font-size: 11pt;
+      }
+      .contact-grid {
+        page-break-inside: avoid;
       }
     }
     
@@ -266,180 +288,211 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Header -->
-    <header>
-      <img src="logo.png" alt="Caldon Homes Logo" class="logo">
-      <h1>Caldon Homes Pty Limited</h1>
-      <p class="tagline">Exceptional Homes. Expert Consultancy.</p>
-    </header>
+  <div id="content-for-pdf">
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <img src="logo.png" alt="Caldon Homes Logo" class="logo">
+        <h1>Caldon Homes Pty Limited</h1>
+        <p class="tagline">Exceptional Homes. Expert Consultancy.</p>
+      </header>
 
-    <!-- Introduction -->
-    <section>
-      <h2>Who We Are</h2>
-      <p>Caldon Homes Pty Limited is a premier provider of residential construction and commercial building consultancy services, based in Taree, NSW. With a steadfast commitment to quality, precision, and professionalism, we deliver bespoke solutions that exceed client expectations. Our dual expertise in crafting custom homes and providing strategic commercial guidance sets us apart as a trusted partner in the building industry.</p>
-      <p>As holders of Building Practitioner Number BUP0002873 and Builders Licence 377088C, and proud members of the Housing Industry Association (HIA), we uphold the highest standards of integrity and excellence across all projects.</p>
-    </section>
+      <!-- Introduction -->
+      <section>
+        <h2>Who We Are</h2>
+        <p>Caldon Homes Pty Limited is a premier provider of residential construction and commercial building consultancy services, based in Taree, NSW. With a steadfast commitment to quality, precision, and professionalism, we deliver bespoke solutions that exceed client expectations. Our dual expertise in crafting custom homes and providing strategic commercial guidance sets us apart as a trusted partner in the building industry.</p>
+        <p>As holders of Building Practitioner Number BUP0002873 and Builders Licence 377088C, and proud members of the Housing Industry Association (HIA), we uphold the highest standards of integrity and excellence across all projects.</p>
+      </section>
 
-    <!-- Capabilities and Services -->
-    <section>
-      <h2>Our Capabilities and Services</h2>
-      <p>Our comprehensive service offerings span residential construction and commercial consultancy, leveraging decades of industry experience to deliver exceptional results. Below is a detailed overview of our capabilities:</p>
-      <div class="service-list">
-        <div class="service-item">
-          <h3>Residential Design & Construction</h3>
-          <p>We specialise in designing and constructing custom homes tailored to individual lifestyles. From initial concept through to final handover, we ensure every detail reflects our clients' vision while adhering to superior standards of craftsmanship and durability.</p>
-          <ul>
-            <li>Architectural design and planning tailored to client specifications</li>
-            <li>Construction of single-storey and multi-storey residences</li>
-            <li>Use of premium, sustainable materials for longevity and aesthetics</li>
-            <li>Full compliance with Australian Building Codes and local regulations</li>
-          </ul>
+      <!-- Capabilities and Services -->
+      <section>
+        <h2>Our Capabilities and Services</h2>
+        <p>Our comprehensive service offerings span residential construction and commercial consultancy, leveraging decades of industry experience to deliver exceptional results. Below is a detailed overview of our capabilities:</p>
+        <div class="service-list">
+          <div class="service-item">
+            <h3>Residential Design & Construction</h3>
+            <p>We specialise in designing and constructing custom homes tailored to individual lifestyles. From initial concept through to final handover, we ensure every detail reflects our clients' vision while adhering to superior standards of craftsmanship and durability.</p>
+            <ul>
+              <li>Architectural design and planning tailored to client specifications</li>
+              <li>Construction of single-storey and multi-storey residences</li>
+              <li>Use of premium, sustainable materials for longevity and aesthetics</li>
+              <li>Full compliance with Australian Building Codes and local regulations</li>
+            </ul>
+          </div>
+          
+          <div class="service-item">
+            <h3>Class 2 Building Construction</h3>
+            <p>Our expertise extends to multi-residential projects, including apartments and townhouses. As registered practitioners, we deliver structurally sound, high-quality buildings that meet the complex demands of Class 2 constructions.</p>
+            <ul>
+              <li>Construction of multi-unit residential developments</li>
+              <li>Expertise in managing multi-level structural and compliance requirements</li>
+              <li>Integration of modern design with functional living spaces</li>
+              <li>Coordination with architects, engineers, and regulatory bodies</li>
+            </ul>
+          </div>
+          
+          <div class="service-item">
+            <h3>Estimating Services</h3>
+            <p>We provide precise cost estimation and budgeting services for both residential and commercial projects, ensuring financial transparency and control from inception to completion.</p>
+            <ul>
+              <li>Detailed cost breakdowns and feasibility studies</li>
+              <li>Accurate forecasting of material, labour, and overhead costs</li>
+              <li>Risk assessment and contingency planning</li>
+              <li>Ongoing cost monitoring and reporting</li>
+            </ul>
+          </div>
+          
+          <div class="service-item">
+            <h3>Expert Witness</h3>
+            <p>Our deep industry knowledge positions us as authoritative expert witnesses in construction-related legal disputes, offering credible, evidence-based testimony to support litigation processes.</p>
+            <ul>
+              <li>Preparation of detailed technical reports and assessments</li>
+              <li>Expert testimony in court or mediation proceedings</li>
+              <li>Analysis of construction defects, delays, and disputes</li>
+              <li>Support for builders, developers, and legal teams</li>
+            </ul>
+          </div>
+          
+          <div class="service-item">
+            <h3>Commercial Procurement</h3>
+            <p>We manage procurement and tender processes for commercial projects, securing optimal resources and subcontractor services through strategic negotiation and established industry networks.</p>
+            <ul>
+              <li>Tender preparation, evaluation, and award management</li>
+              <li>Sourcing of high-quality materials and specialised trades</li>
+              <li>Cost optimisation without compromising quality</li>
+              <li>Contract negotiation and supplier coordination</li>
+            </ul>
+          </div>
+          
+          <div class="service-item">
+            <h3>Building Surveying</h3>
+            <p>Our building surveying services ensure compliance and safety through meticulous inspections and assessments, identifying issues and verifying adherence to regulatory standards.</p>
+            <ul>
+              <li>Comprehensive building condition assessments</li>
+              <li>Defect identification and rectification recommendations</li>
+              <li>Compliance verification with Australian Standards</li>
+              <li>Pre-purchase and due diligence inspections</li>
+            </ul>
+          </div>
+          
+          <div class="service-item">
+            <h3>Quantity Surveying</h3>
+            <p>We offer sophisticated cost management and financial planning, maximising efficiency and profitability through detailed analysis and strategic oversight.</p>
+            <ul>
+              <li>Preparation of bills of quantities and cost plans</li>
+              <li>Value engineering to optimise project budgets</li>
+              <li>Cost control and variation management</li>
+              <li>Financial reporting and cash flow projections</li>
+            </ul>
+          </div>
+          
+          <div class="service-item">
+            <h3>Project Management</h3>
+            <p>Our end-to-end project management ensures seamless delivery of residential and commercial builds, coordinating all aspects to meet timelines, budgets, and quality benchmarks.</p>
+            <ul>
+              <li>Full project planning and scheduling</li>
+              <li>Stakeholder coordination and communication</li>
+              <li>Quality assurance and risk management</li>
+              <li>Post-construction support and handover</li>
+            </ul>
+          </div>
         </div>
-        
-        <div class="service-item">
-          <h3>Class 2 Building Construction</h3>
-          <p>Our expertise extends to multi-residential projects, including apartments and townhouses. As registered practitioners, we deliver structurally sound, high-quality buildings that meet the complex demands of Class 2 constructions.</p>
-          <ul>
-            <li>Construction of multi-unit residential developments</li>
-            <li>Expertise in managing multi-level structural and compliance requirements</li>
-            <li>Integration of modern design with functional living spaces</li>
-            <li>Coordination with architects, engineers, and regulatory bodies</li>
-          </ul>
-        </div>
-        
-        <div class="service-item">
-          <h3>Estimating Services</h3>
-          <p>We provide precise cost estimation and budgeting services for both residential and commercial projects, ensuring financial transparency and control from inception to completion.</p>
-          <ul>
-            <li>Detailed cost breakdowns and feasibility studies</li>
-            <li>Accurate forecasting of material, labour, and overhead costs</li>
-            <li>Risk assessment and contingency planning</li>
-            <li>Ongoing cost monitoring and reporting</li>
-          </ul>
-        </div>
-        
-        <div class="service-item">
-          <h3>Expert Witness</h3>
-          <p>Our deep industry knowledge positions us as authoritative expert witnesses in construction-related legal disputes, offering credible, evidence-based testimony to support litigation processes.</p>
-          <ul>
-            <li>Preparation of detailed technical reports and assessments</li>
-            <li>Expert testimony in court or mediation proceedings</li>
-            <li>Analysis of construction defects, delays, and disputes</li>
-            <li>Support for builders, developers, and legal teams</li>
-          </ul>
-        </div>
-        
-        <div class="service-item">
-          <h3>Commercial Procurement</h3>
-          <p>We manage procurement and tender processes for commercial projects, securing optimal resources and subcontractor services through strategic negotiation and established industry networks.</p>
-          <ul>
-            <li>Tender preparation, evaluation, and award management</li>
-            <li>Sourcing of high-quality materials and specialised trades</li>
-            <li>Cost optimisation without compromising quality</li>
-            <li>Contract negotiation and supplier coordination</li>
-          </ul>
-        </div>
-        
-        <div class="service-item">
-          <h3>Building Surveying</h3>
-          <p>Our building surveying services ensure compliance and safety through meticulous inspections and assessments, identifying issues and verifying adherence to regulatory standards.</p>
-          <ul>
-            <li>Comprehensive building condition assessments</li>
-            <li>Defect identification and rectification recommendations</li>
-            <li>Compliance verification with Australian Standards</li>
-            <li>Pre-purchase and due diligence inspections</li>
-          </ul>
-        </div>
-        
-        <div class="service-item">
-          <h3>Quantity Surveying</h3>
-          <p>We offer sophisticated cost management and financial planning, maximising efficiency and profitability through detailed analysis and strategic oversight.</p>
-          <ul>
-            <li>Preparation of bills of quantities and cost plans</li>
-            <li>Value engineering to optimise project budgets</li>
-            <li>Cost control and variation management</li>
-            <li>Financial reporting and cash flow projections</li>
-          </ul>
-        </div>
-        
-        <div class="service-item">
-          <h3>Project Management</h3>
-          <p>Our end-to-end project management ensures seamless delivery of residential and commercial builds, coordinating all aspects to meet timelines, budgets, and quality benchmarks.</p>
-          <ul>
-            <li>Full project planning and scheduling</li>
-            <li>Stakeholder coordination and communication</li>
-            <li>Quality assurance and risk management</li>
-            <li>Post-construction support and handover</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Contact Information -->
-    <section>
-      <h2>Contact Us</h2>
-      <p>For enquiries or to discuss your project needs, please reach out to our team. We are committed to delivering tailored solutions with professionalism and expertise.</p>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <div class="contact-label">Email</div>
-          <div class="contact-value">admin@caldon.com.au</div>
+      <!-- Contact Information -->
+      <section>
+        <h2>Contact Us</h2>
+        <p>For enquiries or to discuss your project needs, please reach out to our team. We are committed to delivering tailored solutions with professionalism and expertise.</p>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">admin@caldon.com.au</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">(02) 6550 1924</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Taree, NSW 2430<br>Australia</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Building Practitioner</div>
+            <div class="contact-value credential">BUP0002873</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Builders Licence</div>
+            <div class="contact-value credential">377088C</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Membership</div>
+            <div class="contact-value"><img src="hialogo.png" alt="HIA Member"></div>
+          </div>
         </div>
-        <div class="contact-item">
-          <div class="contact-label">Phone</div>
-          <div class="contact-value">(02) 6550 1924</div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-label">Location</div>
-          <div class="contact-value">Taree, NSW 2430<br>Australia</div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-label">Building Practitioner</div>
-          <div class="contact-value credential">BUP0002873</div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-label">Builders Licence</div>
-          <div class="contact-value credential">377088C</div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-label">Membership</div>
-          <div class="contact-value"><img src="hialogo.png" alt="HIA Member"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Download Section -->
-    <div class="download-section">
-      <button id="download-pdf" class="download-button">Download Capability Statement</button>
-      <p class="download-note">Download our capability statement as a PDF for your reference or to share with your team.</p>
+      </section>
     </div>
+  </div>
+
+  <!-- Download Section - Outside the PDF content -->
+  <div class="download-section">
+    <button id="download-pdf" class="download-button">Download Capability Statement</button>
+    <p class="download-note">Download our capability statement as a PDF for your reference or to share with your team.</p>
   </div>
 
   <!-- Script for PDF Download -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     document.getElementById('download-pdf').addEventListener('click', function() {
-      // Define element to convert
-      const element = document.body;
+      // Get only the PDF content
+      const element = document.getElementById('content-for-pdf');
       
-      // Hide download section before generating PDF
-      const downloadSection = document.querySelector('.download-section');
-      downloadSection.style.display = 'none';
-      
-      // html2pdf options
+      // html2pdf options with specific A4 settings
       const opt = {
-        margin:       [10, 10, 10, 10],
-        filename:     'Caldon_Homes_Capability_Statement.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2, useCORS: true },
-        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        margin: [15, 15, 15, 15], // Top, right, bottom, left margins in mm
+        filename: 'Caldon_Homes_Capability_Statement.pdf',
+        image: { type: 'jpeg', quality: 1.0 },
+        html2canvas: { 
+          scale: 2, 
+          useCORS: true,
+          letterRendering: true,
+          scrollY: 0
+        },
+        jsPDF: { 
+          unit: 'mm', 
+          format: 'a4', 
+          orientation: 'portrait',
+          compress: true,
+          precision: 16
+        },
+        pagebreak: { 
+          mode: ['avoid-all', 'css', 'legacy'],
+          before: '.page-break-before',
+          after: '.page-break-after'
+        }
       };
       
+      // Show loading indicator
+      const downloadButton = document.getElementById('download-pdf');
+      const originalButtonText = downloadButton.textContent;
+      downloadButton.textContent = 'Generating PDF...';
+      downloadButton.disabled = true;
+      
       // Generate PDF
-      html2pdf().set(opt).from(element).save().then(function() {
-        // Show download section again after PDF generation
-        downloadSection.style.display = 'block';
-      });
+      html2pdf()
+        .from(element)
+        .set(opt)
+        .save()
+        .then(function() {
+          // Restore button
+          downloadButton.textContent = originalButtonText;
+          downloadButton.disabled = false;
+        })
+        .catch(function(error) {
+          console.error('PDF generation error:', error);
+          downloadButton.textContent = originalButtonText;
+          downloadButton.disabled = false;
+          alert('There was an error generating the PDF. Please try again.');
+        });
     });
   </script>
 </body>
