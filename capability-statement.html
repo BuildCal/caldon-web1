@@ -3,27 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CALDON™ Capability Statement | Architectural Construction & Consultancy</title>
+  <title>CALDON™ Capability Statement</title>
   <meta name="description" content="CALDON™ delivers exceptional residential and commercial construction alongside expert consultancy across New South Wales." />
-  <meta name="keywords" content="CALDON, architecture, construction, consultancy, NSW, residential, commercial, sustainability" />
+  <meta name="keywords" content="CALDON, construction, consultancy, NSW, residential, commercial" />
   <meta name="author" content="CALDON™" />
-  <meta name="robots" content="index, follow" />
-  <meta name="date" content="2025-02-26" />
   <link rel="canonical" href="https://caldon.com.au/capability-statement" />
-
-  <!-- Favicon (optional, update paths as needed) -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto:wght@300;400&display=swap');
 
     :root {
-      --primary: #1A1A1A; /* Deep charcoal */
-      --secondary: #4A4A4A; /* Soft gray */
-      --background: #FFFFFF; /* Pure white */
-      --accent: #D4A017; /* Subtle gold for architectural flair */
-      --border: #E5E5E5; /* Light gray */
-      --spacing-unit: 24px; /* Consistent spacing */
+      --primary: #000000; /* Black */
+      --secondary: #666666; /* Mid grey */
+      --background: #FFFFFF; /* White */
+      --subtle-grey: #F5F5F5; /* Light grey */
+      --border: #CCCCCC; /* Light grey border */
+      --spacing-unit: 20px; /* Consistent spacing */
+      --sidebar-width: 200px;
       --a4-width: 794px; /* A4 at 96 DPI */
       --a4-height: 1123px;
     }
@@ -40,47 +36,103 @@
       background: var(--background);
       line-height: 1.6;
       font-size: 10pt;
-      padding: var(--spacing-unit);
-      max-width: var(--a4-width);
-      margin: 0 auto;
     }
 
     /* Header */
     .header {
+      position: fixed;
+      top: 0;
+      left: var(--sidebar-width);
+      right: 0;
+      padding: var(--spacing-unit);
+      background: var(--background);
+      border-bottom: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: var(--spacing-unit);
-      border-bottom: 1px solid var(--border);
+      z-index: 10;
     }
 
     .header img.logo {
-      height: 36px;
+      height: 30px;
       width: auto;
     }
 
-    .header h1 {
-      font-family: 'Libre Baskerville', serif;
-      font-size: 18pt;
-      font-weight: 400;
+    .header-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      background: var(--primary);
+      color: var(--background);
+      border: 1px solid var(--primary);
+      font-size: 10pt;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--background);
       color: var(--primary);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: var(--sidebar-width);
+      height: 100vh;
+      background: var(--subtle-grey);
+      padding: var(--spacing-unit);
+      overflow-y: auto;
+    }
+
+    .sidebar-nav {
+      list-style: none;
+    }
+
+    .sidebar-nav li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar-nav a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-size: 10pt;
+      display: block;
+      padding: 5px 10px;
+    }
+
+    .sidebar-nav a:hover,
+    .sidebar-nav a.active {
+      color: var(--primary);
+      background: var(--background);
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: var(--sidebar-width);
+      padding: calc(var(--spacing-unit) * 3) var(--spacing-unit) var(--spacing-unit);
+      max-width: calc(var(--a4-width) - var(--sidebar-width));
     }
 
     /* Cover Page */
     .cover-page {
       text-align: center;
-      padding: calc(var(--spacing-unit) * 3) 0;
+      padding: calc(var(--spacing-unit) * 2) 0;
       page-break-after: always;
     }
 
     .cover-page img.logo {
-      max-width: 120px;
+      max-width: 100px;
       margin-bottom: var(--spacing-unit);
     }
 
     .cover-page h1 {
       font-family: 'Libre Baskerville', serif;
-      font-size: 32pt;
+      font-size: 28pt;
       font-weight: 400;
       color: var(--primary);
       margin-bottom: var(--spacing-unit);
@@ -89,7 +141,7 @@
     .cover-page p {
       font-size: 11pt;
       color: var(--secondary);
-      max-width: 60%;
+      max-width: 70%;
       margin: 0 auto;
     }
 
@@ -101,12 +153,12 @@
 
     h2 {
       font-family: 'Libre Baskerville', serif;
-      font-size: 18pt;
+      font-size: 16pt;
       font-weight: 400;
       color: var(--primary);
       margin-bottom: var(--spacing-unit);
-      border-bottom: 1px solid var(--accent);
-      padding-bottom: 8px;
+      border-bottom: 1px solid var(--primary);
+      padding-bottom: 6px;
     }
 
     p {
@@ -122,43 +174,43 @@
     }
 
     .service-item {
-      border-left: 2px solid var(--accent);
-      padding-left: calc(var(--spacing-unit) / 2);
+      background: var(--subtle-grey);
+      padding: var(--spacing-unit);
       page-break-inside: avoid;
     }
 
     .service-item h3 {
       font-family: 'Libre Baskerville', serif;
-      font-size: 14pt;
+      font-size: 12pt;
       font-weight: 400;
       color: var(--primary);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .service-item ul {
       list-style: none;
-      margin-left: 12px;
+      margin-left: 10px;
     }
 
     .service-item ul li {
       font-size: 10pt;
       color: var(--secondary);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       position: relative;
-      padding-left: 12px;
+      padding-left: 10px;
     }
 
     .service-item ul li:before {
-      content: '—';
+      content: '–';
       position: absolute;
       left: 0;
-      color: var(--accent);
+      color: var(--primary);
     }
 
     /* Contact Grid */
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: var(--spacing-unit);
       margin-top: var(--spacing-unit);
       page-break-inside: avoid;
@@ -187,17 +239,8 @@
     }
 
     .contact-value img {
-      max-width: 80px;
+      max-width: 70px;
       height: auto;
-    }
-
-    /* Footer */
-    .footer {
-      font-size: 8pt;
-      color: var(--secondary);
-      text-align: center;
-      padding-top: var(--spacing-unit);
-      border-top: 1px solid var(--border);
     }
 
     /* Page Breaks */
@@ -215,16 +258,44 @@
       }
 
       body {
-        max-width: 100%;
+        margin: 0;
         padding: 0;
       }
 
-      .header {
-        position: running(header);
+      .header, .sidebar {
+        display: none;
       }
 
-      .footer {
+      .main-content {
+        margin-left: 0;
+        padding: 0;
+        max-width: 100%;
+      }
+
+      .cover-page {
+        page-break-after: always;
+      }
+
+      section, .service-item, .contact-grid {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .print-header {
+        position: running(header);
+        text-align: center;
+        font-size: 8pt;
+        color: var(--secondary);
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 5pt;
+      }
+
+      .print-footer {
         position: running(footer);
+        text-align: center;
+        font-size: 8pt;
+        color: var(--secondary);
+        padding-top: 5pt;
       }
 
       @page {
@@ -235,34 +306,25 @@
           content: element(footer);
         }
       }
-
-      .cover-page {
-        page-break-after: always;
-      }
-
-      section {
-        break-inside: avoid;
-      }
-
-      .service-item {
-        break-inside: avoid;
-      }
     }
 
     /* Responsive Adjustments */
     @media (max-width: 768px) {
-      .contact-grid {
-        grid-template-columns: 1fr 1fr;
+      .sidebar {
+        width: 150px;
       }
-    }
 
-    @media (max-width: 576px) {
+      .header {
+        left: 150px;
+      }
+
+      .main-content {
+        margin-left: 150px;
+        max-width: calc(var(--a4-width) - 150px);
+      }
+
       .contact-grid {
         grid-template-columns: 1fr;
-      }
-
-      .cover-page p {
-        max-width: 80%;
       }
     }
   </style>
@@ -271,201 +333,230 @@
   <!-- Header -->
   <div class="header">
     <img src="logo.png" alt="CALDON™ Logo" class="logo" />
-    <h1>Capability Statement</h1>
+    <div class="header-actions">
+      <button class="btn" onclick="window.print()">Print</button>
+      <button class="btn" onclick="window.print()">Download PDF</button>
+    </div>
   </div>
 
-  <!-- Cover Page -->
-  <div class="cover-page">
-    <img src="logo.png" alt="CALDON™ Logo" class="logo" />
-    <h1>Capability Statement</h1>
-    <p>Your Partner for Residential & Commercial Construction and Expert Consultancy Across New South Wales</p>
-  </div>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <ul class="sidebar-nav">
+      <li><a href="#cover" class="active">Cover Page</a></li>
+      <li><a href="#about">About CALDON™</a></li>
+      <li><a href="#capabilities">Capabilities</a></li>
+      <li><a href="#residential">Residential Construction</a></li>
+      <li><a href="#multi-residential">Multi-Residential</a></li>
+      <li><a href="#commercial">Commercial Construction</a></li>
+      <li><a href="#estimating">Cost Consulting</a></li>
+      <li><a href="#expert-witness">Expert Witness</a></li>
+      <li><a href="#procurement">Procurement</a></li>
+      <li><a href="#surveying">Building Surveying</a></li>
+      <li><a href="#quantity-surveying">Quantity Surveying</a></li>
+      <li><a href="#project-management">Project Management</a></li>
+      <li><a href="#sustainability">Sustainability</a></li>
+      <li><a href="#contact">Contact Details</a></li>
+    </ul>
+  </aside>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About CALDON™</h2>
-    <p>
-      CALDON™ is a distinguished building consultancy and construction firm based in New South Wales, delivering bespoke residential and commercial solutions alongside strategic advisory services. From our headquarters in Taree, we extend our expertise to Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, Forster Tuncurry, and beyond.
-    </p>
-    <p>
-      Holding Building Practitioner Number BUP0002873, Builders Licence 377088C, and membership in the Housing Industry Association (HIA), we are committed to excellence, compliance, and innovation in every project we undertake.
-    </p>
-  </section>
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Print Elements -->
+    <div class="print-header">CALDON™ Capability Statement</div>
+    <div class="print-footer">© 2025 CALDON™ – All Rights Reserved</div>
 
-  <!-- Capabilities and Services -->
-  <section id="capabilities">
-    <h2>Capabilities and Services</h2>
-    <p>
-      CALDON™ offers a comprehensive range of services, seamlessly integrating construction and consultancy to deliver exceptional outcomes across residential and commercial projects.
-    </p>
-    <div class="service-list">
-      <div class="service-item" id="residential">
-        <h3>Residential Design & Construction</h3>
-        <p>Crafting unique homes tailored to your vision with precision and sustainability.</p>
-        <ul>
-          <li>Architectural design and 3D modeling</li>
-          <li>Bespoke single and multi-storey builds</li>
-          <li>Sustainable material integration</li>
-          <li>NSW Building Code compliance</li>
-          <li>Renovations and extensions</li>
-        </ul>
-      </div>
-
-      <div class="service-item" id="multi-residential">
-        <h3>Class 2 & Multi-Residential</h3>
-        <p>Expertise in multi-residential developments, ensuring compliance and quality execution.</p>
-        <ul>
-          <li>Design and construction of multi-unit complexes</li>
-          <li>Fire safety, accessibility, and structural compliance</li>
-          <li>Coordination with architects and engineers</li>
-          <li>Mid-rise and high-rise capabilities</li>
-          <li>Maintenance planning</li>
-        </ul>
-      </div>
-
-      <div class="page-break"></div>
-
-      <div class="service-item" id="commercial">
-        <h3>Commercial Construction</h3>
-        <p>Delivering functional and innovative commercial spaces with meticulous oversight.</p>
-        <ul>
-          <li>Offices, retail, and industrial facilities</li>
-          <li>Turnkey fit-outs and refurbishments</li>
-          <li>Subcontractor coordination</li>
-          <li>Safety and compliance adherence</li>
-          <li>Timely and budget-conscious delivery</li>
-        </ul>
-      </div>
-
-      <div class="service-item" id="estimating">
-        <h3>Estimating & Cost Consulting</h3>
-        <p>Providing clarity and control over project costs from inception to completion.</p>
-        <ul>
-          <li>Feasibility analyses and cost breakdowns</li>
-          <li>Material and labor estimates</li>
-          <li>Contingency budgeting</li>
-          <li>Value engineering</li>
-          <li>Financial tracking</li>
-        </ul>
-      </div>
-
-      <div class="page-break"></div>
-
-      <div class="service-item" id="expert-witness">
-        <h3>Expert Witness & Dispute Resolution</h3>
-        <p>Offering forensic insight and expert testimony for construction disputes.</p>
-        <ul>
-          <li>Forensic investigation of defects</li>
-          <li>Expert reporting for litigation</li>
-          <li>Mediation and arbitration support</li>
-          <li>Contract compliance assessments</li>
-          <li>Trusted by legal firms</li>
-        </ul>
-      </div>
-
-      <div class="service-item" id="procurement">
-        <h3>Commercial Procurement</h3>
-        <p>Streamlining supply chains for quality materials at competitive prices.</p>
-        <ul>
-          <li>Competitive tendering</li>
-          <li>Material and equipment sourcing</li>
-          <li>Supply chain optimization</li>
-          <li>Contract management</li>
-          <li>Sustainable procurement</li>
-        </ul>
-      </div>
-
-      <div class="page-break"></div>
-
-      <div class="service-item" id="surveying">
-        <h3>Building Surveying & Compliance</h3>
-        <p>Ensuring structures meet Australian standards through precise inspections.</p>
-        <ul>
-          <li>Pre-purchase and defect inspections</li>
-          <li>Code audits</li>
-          <li>Dilapidation reports</li>
-          <li>Certification support</li>
-          <li>Heritage assessments</li>
-        </ul>
-      </div>
-
-      <div class="service-item" id="quantity-surveying">
-        <h3>Quantity Surveying & Cost Management</h3>
-        <p>Maintaining budgetary discipline without compromising quality.</p>
-        <ul>
-          <li>Bills of quantities</li>
-          <li>Cost-benefit analysis</li>
-          <li>Change order management</li>
-          <li>Cash flow forecasting</li>
-          <li>Post-completion audits</li>
-        </ul>
-      </div>
-
-      <div class="page-break"></div>
-
-      <div class="service-item" id="project-management">
-        <h3>Project Management</h3>
-        <p>Overseeing every phase for a seamless build from concept to completion.</p>
-        <ul>
-          <li>Project scheduling</li>
-          <li>Stakeholder reporting</li>
-          <li>Quality assurance</li>
-          <li>Risk mitigation</li>
-          <li>Post-construction support</li>
-        </ul>
-      </div>
-
-      <div class="service-item" id="sustainability">
-        <h3>Sustainability Consulting</h3>
-        <p>Guiding eco-conscious construction for lasting benefits.</p>
-        <ul>
-          <li>Green building certifications</li>
-          <li>Renewable energy solutions</li>
-          <li>Smart building systems</li>
-          <li>Material life-cycle analysis</li>
-          <li>Net Zero advisory</li>
-        </ul>
-      </div>
+    <!-- Cover Page -->
+    <div id="cover" class="cover-page">
+      <img src="logo.png" alt="CALDON™ Logo" class="logo" />
+      <h1>Capability Statement</h1>
+      <p>Your Partner for Residential & Commercial Construction and Expert Consultancy Across New South Wales</p>
     </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Details</h2>
-    <p>
-      Connect with CALDON™ for your construction and consultancy needs across New South Wales.
-    </p>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <div class="contact-label">Email</div>
-        <div class="contact-value">admin@caldon.com.au</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">Phone</div>
-        <div class="contact-value">(02) 6550 1924</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">Location</div>
-        <div class="contact-value">Taree, NSW 2430, Australia</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">Building Practitioner</div>
-        <div class="contact-value credential">BUP0002873</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">Builders Licence</div>
-        <div class="contact-value credential">377088C</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">Membership</div>
-        <div class="contact-value"><img src="hialogo.png" alt="HIA Member" /></div>
-      </div>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about">
+      <h2>About CALDON™</h2>
+      <p>
+        CALDON™ is a leading building consultancy and construction firm in New South Wales, offering bespoke residential and commercial solutions alongside expert advisory services. Based in Taree, we serve Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, Forster Tuncurry, and beyond.
+      </p>
+      <p>
+        With Building Practitioner Number BUP0002873, Builders Licence 377088C, and Housing Industry Association (HIA) membership, we uphold excellence and compliance in all endeavors.
+      </p>
+    </section>
 
-  <!-- Footer -->
-  <div class="footer">
-    © 2025 CALDON™ – All Rights Reserved
+    <div class="page-break"></div>
+
+    <!-- Capabilities and Services -->
+    <section id="capabilities">
+      <h2>Capabilities and Services</h2>
+      <p>
+        CALDON™ provides a comprehensive suite of construction and consultancy services, ensuring quality and efficiency across all projects.
+      </p>
+      <div class="service-list">
+        <div class="service-item" id="residential">
+          <h3>Residential Design & Construction</h3>
+          <p>Creating custom homes with precision and sustainability.</p>
+          <ul>
+            <li>Architectural design and 3D modeling</li>
+            <li>Bespoke single and multi-storey builds</li>
+            <li>Sustainable material integration</li>
+            <li>NSW Building Code compliance</li>
+            <li>Renovations and extensions</li>
+          </ul>
+        </div>
+
+        <div class="service-item" id="multi-residential">
+          <h3>Class 2 & Multi-Residential</h3>
+          <p>Expertise in multi-unit developments with full compliance.</p>
+          <ul>
+            <li>Multi-unit complex construction</li>
+            <li>Fire safety and accessibility compliance</li>
+            <li>Coordination with architects and engineers</li>
+            <li>Mid-rise and high-rise capabilities</li>
+            <li>Maintenance planning</li>
+          </ul>
+        </div>
+
+        <div class="page-break"></div>
+
+        <div class="service-item" id="commercial">
+          <h3>Commercial Construction</h3>
+          <p>Building functional commercial spaces with precision.</p>
+          <ul>
+            <li>Offices, retail, and industrial facilities</li>
+            <li>Turnkey fit-outs and refurbishments</li>
+            <li>Subcontractor coordination</li>
+            <li>Safety and compliance adherence</li>
+            <li>Timely delivery</li>
+          </ul>
+        </div>
+
+        <div class="service-item" id="estimating">
+          <h3>Estimating & Cost Consulting</h3>
+          <p>Ensuring budgetary control throughout projects.</p>
+          <ul>
+            <li>Feasibility analyses</li>
+            <li>Material and labor estimates</li>
+            <li>Contingency budgeting</li>
+            <li>Value engineering</li>
+            <li>Financial tracking</li>
+          </ul>
+        </div>
+
+        <div class="page-break"></div>
+
+        <div class="service-item" id="expert-witness">
+          <h3>Expert Witness & Dispute Resolution</h3>
+          <p>Providing forensic insight for construction disputes.</p>
+          <ul>
+            <li>Defect investigations</li>
+            <li>Expert litigation reports</li>
+            <li>Mediation support</li>
+            <li>Contract assessments</li>
+            <li>Trusted by legal firms</li>
+          </ul>
+        </div>
+
+        <div class="service-item" id="procurement">
+          <h3>Commercial Procurement</h3>
+          <p>Streamlining supply chains for efficiency.</p>
+          <ul>
+            <li>Competitive tendering</li>
+            <li>Material sourcing</li>
+            <li>Supply chain optimization</li>
+            <li>Contract management</li>
+            <li>Sustainable options</li>
+          </ul>
+        </div>
+
+        <div class="page-break"></div>
+
+        <div class="service-item" id="surveying">
+          <h3>Building Surveying & Compliance</h3>
+          <p>Ensuring compliance with Australian standards.</p>
+          <ul>
+            <li>Pre-purchase inspections</li>
+            <li>Code audits</li>
+            <li>Dilapidation reports</li>
+            <li>Certification support</li>
+            <li>Heritage assessments</li>
+          </ul>
+        </div>
+
+        <div class="service-item" id="quantity-surveying">
+          <h3>Quantity Surveying & Cost Management</h3>
+          <p>Maintaining budget discipline.</p>
+          <ul>
+            <li>Bills of quantities</li>
+            <li>Cost-benefit analysis</li>
+            <li>Change order management</li>
+            <li>Cash flow forecasting</li>
+            <li>Post-completion audits</li>
+          </ul>
+        </div>
+
+        <div class="page-break"></div>
+
+        <div class="service-item" id="project-management">
+          <h3>Project Management</h3>
+          <p>Overseeing projects from concept to completion.</p>
+          <ul>
+            <li>Project scheduling</li>
+            <li>Stakeholder reporting</li>
+            <li>Quality assurance</li>
+            <li>Risk mitigation</li>
+            <li>Post-construction support</li>
+          </ul>
+        </div>
+
+        <div class="service-item" id="sustainability">
+          <h3>Sustainability Consulting</h3>
+          <p>Promoting eco-friendly construction.</p>
+          <ul>
+            <li>Green certifications</li>
+            <li>Renewable energy solutions</li>
+            <li>Smart building systems</li>
+            <li>Material analysis</li>
+            <li>Net Zero advisory</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Details</h2>
+      <p>
+        Reach CALDON™ for construction and consultancy across NSW.
+      </p>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">admin@caldon.com.au</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">(02) 6550 1924</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Taree, NSW 2430, Australia</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Building Practitioner</div>
+          <div class="contact-value credential">BUP0002873</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Builders Licence</div>
+          <div class="contact-value credential">377088C</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Membership</div>
+          <div class="contact-value"><img src="hialogo.png" alt="HIA Member" /></div>
+        </div>
+      </div>
+    </section>
   </div>
 </body>
 </html>
