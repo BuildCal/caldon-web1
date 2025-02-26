@@ -87,11 +87,18 @@
       --subtle-accent: #f7f7f7;
       --border: #e0e0e0;
       --highlight: #2a2a2a;
-      --sidebar-width: 240px;
+      --button-primary: #2a2a2a;
+      --button-hover: #444444;
+      --button-secondary: #f0f0f0;
+      --button-secondary-hover: #e0e0e0;
+      --sidebar-width: 250px;
       --header-height: 70px;
       --footer-height: 50px;
       --active-nav: #eeeeee;
       --hover-nav: #f0f0f0;
+      /* A4 dimensions in pixels at 96 DPI */
+      --a4-width: 794px;  /* 210mm at 96 DPI */
+      --a4-height: 1123px; /* 297mm at 96 DPI */
     }
     
     * {
@@ -129,7 +136,7 @@
       height: var(--header-height);
       background-color: var(--background);
       border-bottom: 1px solid var(--border);
-      padding: 0 30px;
+      padding: 0 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -154,6 +161,50 @@
       color: var(--highlight);
       margin-left: 20px;
       letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    
+    .header-actions {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      font-size: 14px;
+      border: none;
+    }
+    
+    .btn-primary {
+      background-color: var(--button-primary);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--button-hover);
+    }
+    
+    .btn-secondary {
+      background-color: var(--button-secondary);
+      color: var(--text-primary);
+    }
+    
+    .btn-secondary:hover {
+      background-color: var(--button-secondary-hover);
+    }
+    
+    .btn svg {
+      margin-right: 8px;
+      width: 16px;
+      height: 16px;
     }
     
     .menu-toggle {
@@ -263,6 +314,7 @@
       padding: 80px 0 60px;
       margin-bottom: 60px;
       border-bottom: 2px solid var(--highlight);
+      page-break-after: always;
     }
     
     .cover-page .logo {
@@ -296,6 +348,7 @@
       border-bottom: 1px solid var(--border);
       margin-bottom: 20px;
       scroll-margin-top: var(--header-height);
+      page-break-inside: avoid;
     }
     
     section:last-child {
@@ -330,7 +383,7 @@
       line-height: 1.7;
     }
     
-    /* Service List (Now Single Column) */
+    /* Service List (now with page-break considerations) */
     .service-list {
       display: flex;
       flex-direction: column;
@@ -343,6 +396,7 @@
       border-radius: 6px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
       border-left: 4px solid var(--highlight);
+      page-break-inside: avoid;
     }
     
     .service-item h3 {
@@ -384,8 +438,9 @@
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      gap: 25px;
       margin-top: 30px;
+      page-break-inside: avoid;
     }
     
     .contact-item {
@@ -423,17 +478,6 @@
       height: auto;
     }
     
-    /* Download Note */
-    .download-note {
-      font-size: 11pt;
-      font-style: italic;
-      color: var(--text-secondary);
-      text-align: center;
-      padding: 30px 0;
-      border-top: 1px solid var(--border);
-      margin-top: 40px;
-    }
-    
     /* Back to Top Button */
     .back-to-top {
       position: fixed;
@@ -463,9 +507,31 @@
       height: 20px;
     }
     
+    /* Download Note (hidden in print) */
+    .download-note {
+      font-size: 11pt;
+      font-style: italic;
+      color: var(--text-secondary);
+      text-align: center;
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+    
     /* Active Navigation Highlighting */
     .highlight-section {
       scroll-margin-top: var(--header-height);
+    }
+    
+    /* Page break controls */
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+      height: 1px;
+      background: transparent;
+      margin: 0;
+      padding: 0;
+      visibility: hidden;
     }
     
     /* Responsive Styles */
@@ -480,6 +546,23 @@
       
       .contact-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .header-actions {
+        gap: 5px;
+      }
+      
+      .btn {
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+      
+      .btn svg {
+        margin-right: 5px;
+      }
+      
+      .doc-header .title {
+        font-size: 18px;
       }
     }
     
@@ -530,6 +613,37 @@
       .cover-page .tagline {
         font-size: 16px;
       }
+      
+      .header-actions {
+        display: none;
+      }
+      
+      .mobile-actions {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 80;
+        gap: 10px;
+      }
+      
+      .mobile-action-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--highlight);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      .mobile-action-btn svg {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+      }
     }
     
     @media (max-width: 576px) {
@@ -542,7 +656,7 @@
       }
       
       .doc-header .title {
-        font-size: 18px;
+        font-size: 16px;
         margin-left: 10px;
       }
       
@@ -555,27 +669,33 @@
       }
     }
     
-    /* Print Styles */
+    /* Print Styles - Optimized for A4 */
     @media print {
-      :root {
-        --sidebar-width: 0;
-        --header-height: 0;
-        --footer-height: 0;
-      }
-      
       @page {
         size: A4;
-        margin: 2cm;
+        margin: 2cm 1.5cm;
       }
       
       html, body {
         width: 100%;
+        height: 100%;
         margin: 0;
         padding: 0;
+        background-color: white;
       }
       
-      .doc-header, .sidebar, .menu-toggle, .back-to-top, .download-note {
+      body {
+        font-size: 11pt;
+      }
+      
+      .doc-header, .sidebar, .menu-toggle, .back-to-top, .mobile-actions, .download-note {
         display: none !important;
+      }
+      
+      .main-container {
+        display: block;
+        margin-top: 0;
+        min-height: auto;
       }
       
       .content {
@@ -584,28 +704,77 @@
         max-width: 100%;
       }
       
-      .main-container {
-        margin-top: 0;
+      /* Force page breaks */
+      .page-break {
+        display: block;
+        page-break-before: always;
+      }
+      
+      /* Header for each printed page */
+      .print-header {
+        position: running(header);
+        text-align: center;
+        font-size: 9pt;
+        color: var(--text-secondary);
+        border-bottom: 1pt solid var(--border);
+        padding-bottom: 5pt;
+      }
+      
+      /* Footer for each printed page */
+      .print-footer {
+        position: running(footer);
+        display: flex;
+        justify-content: space-between;
+        font-size: 9pt;
+        color: var(--text-secondary);
+        border-top: 1pt solid var(--border);
+        padding-top: 5pt;
+      }
+      
+      .pagenumber:before {
+        content: counter(page);
+      }
+      
+      .pagecount:before {
+        content: counter(pages);
+      }
+      
+      @page {
+        @top-center {
+          content: element(header);
+        }
+        @bottom-left {
+          content: "© 2025 CALDON™ – All Rights Reserved";
+        }
+        @bottom-right {
+          content: "Page " counter(page) " of " counter(pages);
+        }
+      }
+      
+      /* Cover page should not have headers or footers */
+      .cover-page {
+        page-break-after: always;
       }
       
       section {
-        page-break-inside: avoid;
+        padding: 20px 0;
         break-inside: avoid;
+        page-break-inside: avoid;
       }
       
-      .cover-page {
-        page-break-after: always;
-        break-after: page;
+      h2 {
+        break-after: avoid;
+        page-break-after: avoid;
       }
       
       .service-item {
         break-inside: avoid;
         page-break-inside: avoid;
         box-shadow: none;
-        border-left: 3px solid #333;
       }
       
       .contact-grid {
+        grid-template-columns: repeat(3, 1fr);
         break-inside: avoid;
         page-break-inside: avoid;
       }
@@ -615,18 +784,7 @@
       }
       
       .doc-footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        border-top: 1pt solid #ddd;
-        padding: 10pt;
-        font-size: 9pt;
-      }
-      
-      .doc-footer::after {
-        content: "Page " counter(page) " of " counter(pages);
-        position: absolute;
-        right: 10pt;
+        display: none;
       }
     }
   </style>
@@ -636,12 +794,50 @@
   <div class="doc-header">
     <div class="logo-container">
       <img src="logo.png" alt="CALDON™ Logo" class="logo">
-      <span class="title">Enterprise Capability Statement</span>
+      <span class="title">Capability Statement</span>
     </div>
+    
+    <div class="header-actions">
+      <button class="btn btn-secondary" id="printBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        Print
+      </button>
+      <button class="btn btn-primary" id="downloadBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download PDF
+      </button>
+    </div>
+    
     <button class="menu-toggle" aria-label="Toggle navigation menu">
       <span></span>
       <span></span>
       <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Action Buttons -->
+  <div class="mobile-actions">
+    <button class="mobile-action-btn" id="mobilePrintBtn" aria-label="Print document">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+        <rect x="6" y="14" width="12" height="8"></rect>
+      </svg>
+    </button>
+    <button class="mobile-action-btn" id="mobileDownloadBtn" aria-label="Download PDF">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
     </button>
   </div>
 
@@ -672,10 +868,17 @@
 
     <!-- Main Content -->
     <div class="content">
+      <!-- Print Elements (Only visible when printing) -->
+      <div class="print-header">CALDON™ Capability Statement</div>
+      <div class="print-footer">
+        <span>© 2025 CALDON™ – All Rights Reserved</span>
+        <span>Page <span class="pagenumber"></span> of <span class="pagecount"></span></span>
+      </div>
+
       <!-- Cover Page -->
       <div id="cover" class="cover-page highlight-section">
         <img src="logo.png" alt="CALDON™ Logo" class="logo">
-        <h1>Enterprise Capability Statement</h1>
+        <h1>Capability Statement</h1>
         <p class="tagline">Delivering Excellence in Residential Construction and Commercial Consultancy Across New South Wales</p>
       </div>
 
@@ -685,6 +888,9 @@
         <p>CALDON™ is a leading New South Wales firm specialising in high-quality residential construction and advanced commercial building consultancy services. Based in Taree, our expertise extends across key regions including Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, and Forster Tuncurry, as well as surrounding areas. We are committed to delivering precision-crafted homes and strategic commercial solutions tailored to client needs.</p>
         <p>With Building Practitioner Number BUP0002873, Builders Licence 377088C, and membership in the Housing Industry Association (HIA), CALDON™ upholds the highest standards of professionalism, compliance, and innovation in every project.</p>
       </section>
+
+      <!-- Page break for print layout -->
+      <div class="page-break"></div>
 
       <!-- Capabilities and Services -->
       <section id="capabilities" class="highlight-section">
@@ -716,6 +922,9 @@
             </ul>
           </div>
           
+          <!-- Page break for print layout -->
+          <div class="page-break"></div>
+          
           <div id="commercial" class="service-item highlight-section">
             <h3>Commercial Construction Management</h3>
             <p>We manage commercial construction projects, from retail spaces in Coffs Harbour to office builds in Sydney, ensuring timely and cost-effective delivery.</p>
@@ -739,6 +948,9 @@
               <li>Real-time cost tracking and reporting</li>
             </ul>
           </div>
+          
+          <!-- Page break for print layout -->
+          <div class="page-break"></div>
           
           <div id="expert-witness" class="service-item highlight-section">
             <h3>Expert Witness & Dispute Resolution</h3>
@@ -764,6 +976,9 @@
             </ul>
           </div>
           
+          <!-- Page break for print layout -->
+          <div class="page-break"></div>
+          
           <div id="surveying" class="service-item highlight-section">
             <h3>Building Surveying & Compliance</h3>
             <p>Our surveying services ensure compliance and safety for properties in Taree, Port Macquarie, and Sydney, with thorough inspections and recommendations.</p>
@@ -787,6 +1002,9 @@
               <li>Post-completion cost audits</li>
             </ul>
           </div>
+          
+          <!-- Page break for print layout -->
+          <div class="page-break"></div>
           
           <div id="project-management" class="service-item highlight-section">
             <h3>Project Management & Delivery</h3>
@@ -813,6 +1031,9 @@
           </div>
         </div>
       </section>
+
+      <!-- Page break for print layout -->
+      <div class="page-break"></div>
 
       <!-- Contact Information -->
       <section id="contact" class="highlight-section">
@@ -847,7 +1068,7 @@
       </section>
 
       <!-- Download Note -->
-      <div class="download-note">To download this capability statement as a PDF, use your browser's Print function (Ctrl+P or Cmd+P) and select "Save as PDF".</div>
+      <div class="download-note">To download this capability statement as a PDF, use the Download PDF button in the header or press Ctrl+P (Cmd+P on Mac) and select "Save as PDF".</div>
     </div>
   </div>
 
@@ -945,6 +1166,49 @@
         }
       });
     });
+    
+    // Print functionality
+    document.getElementById('printBtn').addEventListener('click', function() {
+      window.print();
+    });
+    
+    document.getElementById('mobilePrintBtn').addEventListener('click', function() {
+      window.print();
+    });
+    
+    // Download as PDF functionality
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+      const printEvent = window.print();
+      // The browser's print dialog will open, and the user can save as PDF
+    });
+    
+    document.getElementById('mobileDownloadBtn').addEventListener('click', function() {
+      const printEvent = window.print();
+      // The browser's print dialog will open, and the user can save as PDF
+    });
+    
+    // Handle page breaks dynamically based on content height
+    function optimizePageBreaks() {
+      // This is a simple implementation - a more sophisticated one would
+      // calculate actual content heights and insert page breaks at optimal positions
+      const serviceItems = document.querySelectorAll('.service-item');
+      
+      // Insert page breaks at specific intervals for better print layout
+      // This is simplified - in a real implementation you'd measure actual heights
+      serviceItems.forEach((item, index) => {
+        if (index > 0 && index % 2 === 0) {
+          const pageBreak = document.createElement('div');
+          pageBreak.className = 'page-break';
+          if (!item.previousElementSibling.classList.contains('page-break')) {
+            item.parentNode.insertBefore(pageBreak, item);
+          }
+        }
+      });
+    }
+    
+    // Run page break optimization on load and resize
+    window.addEventListener('load', optimizePageBreaks);
+    window.addEventListener('resize', optimizePageBreaks);
   </script>
 </body>
 </html>
