@@ -240,7 +240,7 @@
       height: var(--footer-height);
       margin-top: auto;
       background-color: var(--background);
-      /* Added margin and adjusted width so footer content isn’t hidden behind the sidebar */
+      /* Adjusted to ensure the footer is not hidden behind the sidebar */
       margin-left: var(--sidebar-width);
       width: calc(100% - var(--sidebar-width));
     }
@@ -426,6 +426,55 @@
       left: 0;
       font-weight: 600;
     }
+
+    /* Expanded Service Content */
+
+    /* Residential Construction */
+    #residential-construction p:first-of-type::after {
+      content: " Our residential construction services are designed to deliver custom-built homes that reflect each client’s unique vision. We manage every stage from concept to completion, utilising locally sourced materials and industry-leading techniques to ensure quality, durability, and compliance with regional building codes. Our approach is collaborative, working closely with homeowners and local architects to achieve innovative, energy-efficient designs.";
+    }
+
+    /* Class 2 & Multi-Residential */
+    #multi-residential p:first-of-type::after {
+      content: " Our Class 2 and multi-residential services provide comprehensive solutions for high-density residential developments. We focus on robust design coordination, strict adherence to regulatory standards, and efficient construction practices to deliver projects that are safe, functional, and cost-effective. We work closely with architects, engineers, and local councils to ensure every development meets rigorous quality and safety criteria.";
+    }
+
+    /* Commercial Construction */
+    #commercial p:first-of-type::after {
+      content: " Our commercial construction services cater to offices, retail spaces, industrial facilities, and mixed-use developments. By combining innovative design with meticulous project management, we ensure that each build is delivered on time, within budget, and to the highest standards of quality and compliance.";
+    }
+
+    /* Estimating & Cost Consulting */
+    #estimating p:first-of-type::after {
+      content: " Our estimating and cost consulting services provide the financial clarity and control needed for successful project delivery. We perform detailed feasibility studies, cost analyses, and risk assessments using advanced techniques, ensuring that projects are accurately budgeted and optimised through value engineering.";
+    }
+
+    /* Expert Witness Services */
+    #expert-witness p:first-of-type::after {
+      content: " In disputes and legal proceedings, our expert witness services offer impartial, in-depth technical analysis. With extensive industry experience, our experts prepare detailed reports, perform rigorous investigations, and provide objective testimony to support mediation, arbitration, or court proceedings.";
+    }
+
+    /* Commercial Procurement */
+    #procurement p:first-of-type::after {
+      content: " Our commercial procurement services streamline your supply chain by leveraging our extensive network of suppliers and contractors. We manage competitive tendering, supplier evaluation, and contract negotiations to secure high-quality materials and specialised equipment at competitive prices.";
+    }
+
+    /* Building Surveying & Compliance */
+    #surveying p:first-of-type::after {
+      content: " Our building surveying and compliance services ensure that every project meets Australian Standards and local council regulations. Through detailed inspections and comprehensive condition reports, we help mitigate risk and protect your investment, offering expert advice on necessary corrective measures.";
+    }
+
+    /* Quantity Surveying & Cost Management */
+    #quantity-surveying p:first-of-type::after {
+      content: " Our quantity surveying services deliver precise measurement and cost planning throughout your project lifecycle. Using advanced forecasting tools and methodologies, we produce detailed bills of quantities, manage change orders, and provide ongoing financial oversight to optimise project performance.";
+    }
+
+    /* Project Management */
+    #project-management p:first-of-type::after {
+      content: " Our project management services provide end-to-end oversight from initial planning through to final handover. We focus on transparent communication, rigorous scheduling, and proactive risk management to ensure projects are delivered on time, within budget, and to the highest quality standards.";
+    }
+
+    /* Contact Details, Back to Top, Download Note, etc. remain as before */
 
     /* Contact Details */
     .contact-grid {
@@ -763,13 +812,13 @@
         <li class="nav-header">Services &amp; Capabilities</li>
         <li><a href="#capabilities">Overview</a></li>
         <li><a href="#residential-construction">Residential Construction</a></li>
-        <li><a href="#multi-residential">Class 2 &amp; Multi-Residential</a></li>
+        <li><a href="#multi-residential">Class 2 &amp; Multi‐Residential</a></li>
         <li><a href="#commercial">Commercial Construction</a></li>
         <li><a href="#estimating">Estimating &amp; Cost Consulting</a></li>
         <li><a href="#expert-witness">Expert Witness Services</a></li>
         <li><a href="#procurement">Commercial Procurement</a></li>
-        <li><a href="#surveying">Building Surveying</a></li>
-        <li><a href="#quantity-surveying">Quantity Surveying</a></li>
+        <li><a href="#surveying">Building Surveying &amp; Compliance</a></li>
+        <li><a href="#quantity-surveying">Quantity Surveying &amp; Cost Management</a></li>
         <li><a href="#project-management">Project Management</a></li>
         
         <li class="nav-header">Contact Information</li>
@@ -820,138 +869,147 @@
         </p>
         
         <div class="service-list">
+          <!-- Residential Construction -->
           <div id="residential-construction" class="service-item highlight-section">
             <h3>Residential Construction</h3>
             <p>
-              We offer select residential builds in our local region, ensuring high‐quality craftsmanship, adherence to building codes, and timely completion.
+              <!-- The appended text is added via CSS for clarity -->
             </p>
             <ul>
-              <li>Custom home construction</li>
-              <li>Renovations and extensions</li>
-              <li>Local coverage from Port Macquarie to Buladelah, west to Gloucester, and east to Forster Tuncurry</li>
-              <li>Energy‐efficient materials and design</li>
-              <li>Dedicated project supervision and quality checks</li>
+              <li>Bespoke design and tailored construction solutions</li>
+              <li>Strict adherence to local building codes and regulations</li>
+              <li>Integration of energy‐efficient and sustainable practices</li>
+              <li>Collaborative approach with homeowners and local architects</li>
+              <li>Dedicated project management and quality assurance</li>
             </ul>
           </div>
 
+          <!-- Class 2 & Multi-Residential -->
           <div id="multi-residential" class="service-item highlight-section">
             <h3>Class 2 &amp; Multi‐Residential</h3>
             <p>
-              Our multi‐residential capabilities cover everything from design coordination to final handover, ensuring strict compliance with Class 2 regulations.
+              <!-- The appended text is added via CSS for clarity -->
             </p>
             <ul>
-              <li>Multi‐unit residential complexes</li>
-              <li>Fire safety and accessibility compliance</li>
-              <li>Collaboration with architects and strata managers</li>
-              <li>Structural integrity and quality assurance</li>
-              <li>Maintenance planning for long‐term value</li>
+              <li>Comprehensive design coordination and planning</li>
+              <li>Robust fire safety, accessibility, and structural compliance</li>
+              <li>Collaboration with architects, engineers and strata managers</li>
+              <li>Efficient construction processes with quality control</li>
+              <li>Long‐term maintenance and asset management planning</li>
             </ul>
           </div>
           
           <!-- Page break -->
           <div class="page-break"></div>
           
+          <!-- Commercial Construction -->
           <div id="commercial" class="service-item highlight-section">
             <h3>Commercial Construction</h3>
             <p>
-              We handle commercial projects—offices, retail, industrial—within our local service area, managing each phase with precision and cost efficiency.
+              <!-- The appended text is added via CSS for clarity -->
             </p>
             <ul>
-              <li>Construction of offices, retail spaces, industrial facilities</li>
-              <li>Fit‐outs, refurbishments, and specialised builds</li>
-              <li>Workplace health and safety adherence</li>
-              <li>On‐time and on‐budget delivery</li>
-              <li>Comprehensive project oversight</li>
+              <li>Customised design and build solutions for offices, retail and industrial facilities</li>
+              <li>Detailed project scheduling and resource management</li>
+              <li>Strict adherence to health and safety standards</li>
+              <li>High‐quality craftsmanship and precision execution</li>
+              <li>Comprehensive post‐construction support and maintenance planning</li>
             </ul>
           </div>
           
+          <!-- Estimating & Cost Consulting -->
           <div id="estimating" class="service-item highlight-section">
             <h3>Estimating &amp; Cost Consulting</h3>
             <p>
-              Our state‐wide consultancy supports robust budgeting, feasibility studies, and value management for projects of all sizes.
+              <!-- The appended text is added via CSS for clarity -->
             </p>
             <ul>
-              <li>Feasibility analyses and cost breakdowns</li>
-              <li>Risk assessment and contingency planning</li>
-              <li>Material take‐offs and labour estimates</li>
-              <li>Real‐time cost tracking</li>
-              <li>Value engineering for optimal ROI</li>
+              <li>Comprehensive feasibility analyses and cost breakdowns</li>
+              <li>Detailed material take‐offs and labour estimates</li>
+              <li>Risk assessments and contingency planning</li>
+              <li>Advanced value engineering for optimal ROI</li>
+              <li>Continuous cost tracking and financial reporting</li>
             </ul>
           </div>
           
           <!-- Page break -->
           <div class="page-break"></div>
           
+          <!-- Expert Witness Services -->
           <div id="expert-witness" class="service-item highlight-section">
             <h3>Expert Witness Services</h3>
             <p>
-              CALDON™ provides trusted expert witness support and dispute resolution across NSW, backed by in‐depth technical knowledge and forensic analysis.
+              <!-- The appended text is added via CSS for clarity -->
             </p>
             <ul>
-              <li>Investigation of construction defects and delays</li>
-              <li>Preparation of expert reports for mediation or court</li>
-              <li>Contract compliance and breach analysis</li>
-              <li>Mediation and arbitration assistance</li>
-              <li>References from legal firms and insurers</li>
+              <li>In‐depth forensic analysis of construction defects and delays</li>
+              <li>Preparation of comprehensive expert reports</li>
+              <li>Objective evaluation of contractual and compliance issues</li>
+              <li>Mediation, arbitration and court support</li>
+              <li>Trusted by legal firms, developers and insurers</li>
             </ul>
           </div>
           
+          <!-- Commercial Procurement -->
           <div id="procurement" class="service-item highlight-section">
             <h3>Commercial Procurement</h3>
             <p>
-              For commercial clients, we streamline supply chains through strategic sourcing, contract management, and performance tracking.
+              <!-- The appended text is added via CSS for clarity -->
             </p>
             <ul>
-              <li>Competitive tendering and supplier selection</li>
-              <li>Equipment and material procurement</li>
-              <li>Cost optimisation and vendor oversight</li>
-              <li>Contract negotiation and monitoring</li>
-              <li>Timely, cost‐effective deliveries</li>
+              <li>Strategic tendering and supplier evaluation</li>
+              <li>Efficient contract negotiation and management</li>
+              <li>Rigorous quality control of sourced materials</li>
+              <li>Timely and cost‐effective procurement processes</li>
+              <li>Continuous vendor performance monitoring</li>
             </ul>
           </div>
           
           <!-- Page break -->
           <div class="page-break"></div>
 
+          <!-- Building Surveying & Compliance -->
           <div id="surveying" class="service-item highlight-section">
             <h3>Building Surveying &amp; Compliance</h3>
             <p>
-              Our surveying services ensure each project meets NSW codes and Australian Standards, protecting your investment and meeting regulatory demands.
+              <!-- The appended text is added via CSS for clarity -->
             </p>
             <ul>
-              <li>Pre‐purchase, PCI, and defect inspections</li>
-              <li>Code and standards audits</li>
-              <li>Dilapidation and condition reports</li>
-              <li>Occupancy and construction certification support</li>
-              <li>Heritage building assessments</li>
+              <li>Comprehensive pre‐purchase and defect inspections</li>
+              <li>Detailed audits of building codes and Australian Standards</li>
+              <li>Thorough dilapidation and condition assessments</li>
+              <li>Certification support for occupancy and construction approvals</li>
+              <li>Expert recommendations to ensure regulatory compliance</li>
             </ul>
           </div>
           
+          <!-- Quantity Surveying & Cost Management -->
           <div id="quantity-surveying" class="service-item highlight-section">
             <h3>Quantity Surveying &amp; Cost Management</h3>
             <p>
-              Our quantity surveyors ensure accurate budgeting and cost control, delivering clarity throughout the project lifecycle.
+              <!-- The appended text is added via CSS for clarity -->
             </p>
             <ul>
-              <li>Bills of quantities and cost breakdowns</li>
-              <li>Change order management and cost tracking</li>
-              <li>Cash flow forecasting</li>
-              <li>Post‐completion cost audits</li>
-              <li>Value engineering and cost‐benefit analysis</li>
+              <li>Accurate measurement and cost forecasting using advanced tools</li>
+              <li>Detailed bills of quantities and budget breakdowns</li>
+              <li>Effective change order management and cost tracking</li>
+              <li>Ongoing monitoring of cash flow and expenses</li>
+              <li>Comprehensive post‐completion cost audits</li>
             </ul>
           </div>
           
+          <!-- Project Management -->
           <div id="project-management" class="service-item highlight-section">
             <h3>Project Management</h3>
             <p>
-              With proven processes and stakeholder collaboration, we oversee projects of varying complexity to completion, state‐wide or locally.
+              <!-- The appended text is added via CSS for clarity -->
             </p>
             <ul>
-              <li>Scheduling and resource allocation</li>
-              <li>Transparent stakeholder engagement</li>
-              <li>Quality assurance and defect control</li>
-              <li>Risk identification and mitigation</li>
-              <li>Post‐construction support</li>
+              <li>End‐to‐end project planning and scheduling</li>
+              <li>Transparent communication and stakeholder engagement</li>
+              <li>Proactive risk management and quality assurance</li>
+              <li>Coordination of multiple contractors and suppliers</li>
+              <li>Post‐construction support and performance evaluation</li>
             </ul>
           </div>
         </div>
@@ -1137,6 +1195,7 @@
   </script>
 </body>
 </html>
+
 
 
 
