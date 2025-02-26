@@ -87,18 +87,22 @@
       --subtle-accent: #f7f7f7;
       --border: #e0e0e0;
       --highlight: #2a2a2a;
-      --accent: #2a2a2a;
-      --accent-light: #f0f0f0;
-      --sidebar-width: 280px;
+      --sidebar-width: 240px;
       --header-height: 70px;
       --footer-height: 50px;
-      --page-number-color: #888;
+      --active-nav: #eeeeee;
+      --hover-nav: #f0f0f0;
     }
     
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-height) + 20px);
     }
     
     body {
@@ -110,19 +114,10 @@
       font-size: 11pt;
       margin: 0;
       padding: 0;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
-    }
-    
-    /* Document Layout */
-    .doc-layout {
-      display: flex;
-      flex: 1;
-      overflow: hidden;
-      margin-top: var(--header-height);
-      margin-bottom: var(--footer-height);
+      overflow-x: hidden;
     }
     
     /* Document Header */
@@ -132,377 +127,210 @@
       left: 0;
       width: 100%;
       height: var(--header-height);
-      background-color: var(--subtle-accent);
+      background-color: var(--background);
       border-bottom: 1px solid var(--border);
-      padding: 0 25px;
+      padding: 0 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
     
-    .doc-header .header-left {
+    .doc-header .logo-container {
       display: flex;
       align-items: center;
     }
     
-    .doc-header .menu-toggle {
-      display: none;
-      margin-right: 15px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 5px;
-    }
-    
-    .doc-header .menu-toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background-color: var(--text-primary);
-      margin: 4px 0;
-      transition: all 0.3s ease;
-    }
-    
     .doc-header .logo {
-      height: 45px;
+      height: 40px;
       width: auto;
     }
     
     .doc-header .title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 18pt;
-      font-weight: 500;
+      font-size: 20px;
+      font-weight: 600;
       color: var(--highlight);
       margin-left: 20px;
       letter-spacing: 0.5px;
     }
     
-    .doc-header .doc-controls {
-      display: flex;
-      gap: 15px;
-    }
-    
-    .doc-header .control-btn {
+    .menu-toggle {
+      display: none;
       background: none;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 8px 16px;
-      font-size: 10pt;
-      font-weight: 500;
+      border: none;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.2s ease;
+      padding: 10px;
     }
     
-    .doc-header .control-btn:hover {
-      background-color: var(--accent);
-      border-color: var(--accent);
-      color: white;
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: var(--text-primary);
+      margin: 5px 0;
+      transition: transform 0.3s, opacity 0.3s;
     }
     
     /* Document Footer */
     .doc-footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: var(--footer-height);
       background-color: var(--subtle-accent);
       border-top: 1px solid var(--border);
-      padding: 0 25px;
-      font-size: 9pt;
+      padding: 15px 30px;
+      font-size: 10pt;
       color: var(--text-secondary);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
-    }
-    
-    .page-number {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    .page-number::before {
-      content: "";
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      background-color: var(--accent);
-      border-radius: 50%;
+      width: 100%;
+      height: var(--footer-height);
+      margin-top: auto;
     }
     
     /* Sidebar Navigation */
-    .doc-sidebar {
+    .sidebar {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
       width: var(--sidebar-width);
-      height: 100%;
+      height: calc(100vh - var(--header-height));
       background-color: var(--subtle-accent);
       border-right: 1px solid var(--border);
+      padding: 30px 0;
       overflow-y: auto;
-      position: relative;
+      z-index: 90;
       transition: transform 0.3s ease;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.02);
     }
     
-    .sidebar-header {
-      padding: 20px;
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-    }
-    
-    .sidebar-logo {
-      max-width: 120px;
-      margin-bottom: 10px;
-    }
-    
-    .sidebar-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 14pt;
-      font-weight: 500;
-      color: var(--highlight);
-    }
-    
-    .sidebar-content {
-      padding: 20px 0;
-    }
-    
-    .nav-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 13pt;
-      padding: 12px 20px;
-      color: var(--highlight);
-      margin-bottom: 10px;
-      letter-spacing: 0.5px;
-    }
-    
-    .nav-list {
+    .sidebar-nav {
       list-style: none;
     }
     
-    .nav-item {
-      margin: 2px 0;
+    .sidebar-nav li {
+      margin-bottom: 2px;
     }
     
-    .nav-link {
+    .sidebar-nav a {
       display: block;
-      padding: 10px 20px;
-      font-size: 10pt;
+      padding: 10px 25px;
       color: var(--text-secondary);
       text-decoration: none;
-      transition: all 0.2s ease;
-      border-left: 4px solid transparent;
+      font-size: 11pt;
+      transition: background-color 0.2s, color 0.2s;
+      border-left: 3px solid transparent;
     }
     
-    .nav-link:hover {
-      background-color: rgba(0, 0, 0, 0.03);
+    .sidebar-nav a:hover {
+      background-color: var(--hover-nav);
       color: var(--text-primary);
     }
     
-    .nav-link.active {
-      border-left-color: var(--accent);
-      background-color: rgba(0, 0, 0, 0.03);
+    .sidebar-nav a.active {
+      background-color: var(--active-nav);
       color: var(--highlight);
+      border-left-color: var(--highlight);
       font-weight: 500;
     }
     
-    .nav-section {
-      margin-bottom: 15px;
-    }
-    
-    .nav-section-title {
-      font-weight: 600;
-      font-size: 11pt;
+    .sidebar-nav .nav-header {
+      padding: 10px 25px 5px;
       color: var(--text-primary);
-      padding: 12px 20px 8px;
-      letter-spacing: 0.5px;
-    }
-    
-    .nav-subsection {
-      padding-left: 15px;
-    }
-    
-    .sidebar-footer {
-      padding: 20px;
-      border-top: 1px solid var(--border);
       font-size: 9pt;
-      color: var(--text-secondary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 15px;
     }
     
-    .sidebar-footer .credentials {
-      margin-top: 12px;
-      font-size: 8pt;
-      line-height: 1.6;
+    /* Main Container */
+    .main-container {
+      display: flex;
+      margin-top: var(--header-height);
+      min-height: calc(100vh - var(--header-height) - var(--footer-height));
     }
     
-    /* Main Content */
-    .doc-content {
+    .content {
       flex: 1;
-      height: 100%;
-      overflow-y: auto;
-      padding: 0;
-      background-color: var(--background);
-      position: relative;
+      padding: 40px 50px;
+      margin-left: var(--sidebar-width);
+      max-width: 1000px;
     }
     
-    .content-wrapper {
-      max-width: 900px;
+    /* Cover Page */
+    .cover-page {
+      text-align: center;
+      padding: 80px 0 60px;
+      margin-bottom: 60px;
+      border-bottom: 2px solid var(--highlight);
+    }
+    
+    .cover-page .logo {
+      max-width: 180px;
+      height: auto;
+      margin-bottom: 40px;
+    }
+    
+    .cover-page h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--highlight);
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+    }
+    
+    .cover-page .tagline {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      letter-spacing: 0.5px;
+      max-width: 700px;
       margin: 0 auto;
-      padding: 40px 30px;
-      position: relative;
-    }
-    
-    /* Page Numbers */
-    .page-indicator {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--subtle-accent);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 5px 15px;
-      font-size: 9pt;
-      color: var(--page-number-color);
-      z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      line-height: 1.6;
     }
     
     /* Sections */
     section {
       padding: 40px 0;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      scroll-margin-top: var(--header-height);
     }
     
     section:last-child {
       border-bottom: none;
     }
     
-    .section-id {
-      font-size: 9pt;
-      color: var(--text-secondary);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      font-weight: 500;
-    }
-    
     h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 24pt;
-      font-weight: 500;
+      font-size: 32px;
+      font-weight: 400;
       color: var(--highlight);
       margin-bottom: 25px;
       padding-bottom: 15px;
       border-bottom: 1px solid var(--border);
-      letter-spacing: 0.5px;
+      position: relative;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background-color: var(--highlight);
     }
     
     p {
       font-size: 11pt;
       color: var(--text-secondary);
       margin-bottom: 20px;
-      line-height: 1.8;
+      line-height: 1.7;
     }
     
-    /* Main Header (Cover Page) */
-    .main-header {
-      text-align: center;
-      padding: 60px 0 50px;
-      margin-bottom: 30px;
-      border-bottom: 2px solid var(--highlight);
-      background-color: var(--accent-light);
-      border-radius: 8px;
-    }
-    
-    .main-header .logo {
-      max-width: 180px;
-      height: auto;
-      margin-bottom: 35px;
-    }
-    
-    .main-header .doc-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 32pt;
-      font-weight: 500;
-      color: var(--highlight);
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-    }
-    
-    .main-header .doc-subtitle {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18pt;
-      font-weight: 400;
-      color: var(--text-secondary);
-      margin-bottom: 25px;
-    }
-    
-    .main-header .tagline {
-      font-size: 14pt;
-      font-weight: 300;
-      color: var(--text-secondary);
-      letter-spacing: 0.5pt;
-      line-height: 1.6;
-      max-width: 80%;
-      margin: 25px auto 0;
-    }
-    
-    .main-header .doc-date {
-      margin-top: 40px;
-      font-size: 12pt;
-      color: var(--text-secondary);
-    }
-    
-    /* Introduction Box */
-    .intro-box {
-      background-color: var(--accent-light);
-      padding: 25px;
-      border-radius: 8px;
-      margin: 30px 0;
-      border-left: 4px solid var(--accent);
-    }
-    
-    .intro-box p:last-child {
-      margin-bottom: 0;
-    }
-    
-    /* Key Facts */
-    .key-facts {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 30px 0;
-    }
-    
-    .fact-item {
-      flex: 1;
-      min-width: 200px;
-      background-color: var(--accent-light);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    
-    .fact-number {
-      font-size: 24pt;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-    
-    .fact-label {
-      font-size: 10pt;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    /* Service Items - Single Column */
+    /* Service List (Now Single Column) */
     .service-list {
       display: flex;
       flex-direction: column;
@@ -511,132 +339,83 @@
     
     .service-item {
       background: var(--subtle-accent);
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      border-left: 5px solid var(--accent);
-    }
-    
-    .service-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      padding: 25px 30px;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      border-left: 4px solid var(--highlight);
     }
     
     .service-item h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 18pt;
+      font-size: 20px;
       font-weight: 500;
-      color: var(--text-primary);
+      color: var(--highlight);
       margin-bottom: 15px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
     
     .service-item p {
       font-size: 11pt;
       color: var(--text-secondary);
-      margin-bottom: 20px;
-      line-height: 1.7;
+      margin-bottom: 15px;
     }
     
     .service-item ul {
       list-style: none;
-      margin-left: 5px;
+      margin-left: 15px;
     }
     
     .service-item ul li {
-      font-size: 10pt;
+      font-size: 11pt;
       color: var(--text-secondary);
       position: relative;
-      margin-bottom: 10px;
-      padding-left: 22px;
+      margin-bottom: 8px;
+      padding-left: 20px;
     }
     
     .service-item ul li::before {
-      content: '■';
-      color: var(--accent);
+      content: '•';
+      color: var(--highlight);
       position: absolute;
       left: 0;
-      font-size: 9pt;
-    }
-    
-    /* Service Item Icons */
-    .service-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      margin-bottom: 15px;
-    }
-    
-    .service-icon {
-      flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--accent);
-      border-radius: 8px;
-      color: white;
-    }
-    
-    .service-icon svg {
-      width: 22px;
-      height: 22px;
-    }
-    
-    .service-title {
-      flex-grow: 1;
+      font-weight: 600;
     }
     
     /* Contact Details */
-    .contact-section {
-      background-color: var(--accent-light);
-      padding: 30px;
-      border-radius: 8px;
-      margin-top: 30px;
-    }
-    
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      margin-top: 25px;
+      gap: 30px;
+      margin-top: 30px;
     }
     
     .contact-item {
-      text-align: center;
+      background-color: var(--subtle-accent);
       padding: 20px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
-    }
-    
-    .contact-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      border-radius: 6px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
     
     .contact-label {
-      font-size: 9pt;
-      letter-spacing: 1.2px;
+      font-size: 10pt;
+      letter-spacing: 1px;
       text-transform: uppercase;
       color: var(--text-secondary);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       font-weight: 500;
     }
     
     .contact-value {
-      font-size: 12pt;
+      font-size: 14px;
       color: var(--text-primary);
-      font-weight: 500;
+      font-weight: 400;
     }
     
     .contact-value.credential {
-      font-size: 11pt;
+      font-size: 13px;
       color: var(--text-secondary);
+      font-weight: 500;
+      letter-spacing: 0.5px;
     }
     
     .contact-value img {
@@ -644,97 +423,59 @@
       height: auto;
     }
     
-    /* Certifications Section */
-    .certifications {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin: 30px 0;
-      flex-wrap: wrap;
-    }
-    
-    .certification-item {
-      text-align: center;
-      padding: 15px;
-      width: 120px;
-    }
-    
-    .certification-img {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 10px;
-      object-fit: contain;
-    }
-    
-    .certification-name {
-      font-size: 9pt;
-      color: var(--text-secondary);
-    }
-    
-    /* Document Tools */
-    .document-tools {
-      position: fixed;
-      right: 25px;
-      bottom: 70px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      z-index: 900;
-    }
-    
-    .tool-button {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background-color: var(--accent);
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-      color: white;
-    }
-    
-    .tool-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-    
-    .tool-icon {
-      width: 20px;
-      height: 20px;
-    }
-    
     /* Download Note */
     .download-note {
-      font-size: 10pt;
+      font-size: 11pt;
       font-style: italic;
       color: var(--text-secondary);
       text-align: center;
-      padding: 40px 0 20px;
+      padding: 30px 0;
       border-top: 1px solid var(--border);
       margin-top: 40px;
     }
     
-    /* Media Queries */
-    @media screen and (max-width: 992px) {
-      .doc-sidebar {
-        transform: translateX(-100%);
-        position: fixed;
-        top: var(--header-height);
-        bottom: var(--footer-height);
-        z-index: 990;
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--highlight);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      z-index: 80;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+    }
+    
+    .back-to-top svg {
+      width: 20px;
+      height: 20px;
+    }
+    
+    /* Active Navigation Highlighting */
+    .highlight-section {
+      scroll-margin-top: var(--header-height);
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      :root {
+        --sidebar-width: 220px;
       }
       
-      .doc-header .menu-toggle {
-        display: block;
-      }
-      
-      body.sidebar-open .doc-sidebar {
-        transform: translateX(0);
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      .content {
+        padding: 30px;
       }
       
       .contact-grid {
@@ -742,94 +483,109 @@
       }
     }
     
-    @media screen and (max-width: 768px) {
-      .doc-header .title {
-        font-size: 16pt;
+    @media (max-width: 768px) {
+      :root {
+        --sidebar-width: 0;
       }
       
-      .main-header .doc-title {
-        font-size: 26pt;
+      .menu-toggle {
+        display: block;
       }
       
-      .main-header .tagline {
-        font-size: 12pt;
-        max-width: 95%;
+      .sidebar {
+        transform: translateX(-100%);
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+        width: 280px;
+      }
+      
+      .sidebar.open {
+        transform: translateX(0);
+      }
+      
+      .content {
+        margin-left: 0;
+        padding: 20px;
+      }
+      
+      .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+      }
+      
+      .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
       }
       
       h2 {
-        font-size: 20pt;
+        font-size: 28px;
       }
       
-      .service-item h3 {
-        font-size: 16pt;
+      .cover-page h1 {
+        font-size: 32px;
       }
       
-      .content-wrapper {
-        padding: 30px 20px;
+      .cover-page .tagline {
+        font-size: 16px;
       }
     }
     
-    @media screen and (max-width: 576px) {
-      .doc-header .title {
-        display: none;
-      }
-      
+    @media (max-width: 576px) {
       .contact-grid {
         grid-template-columns: 1fr;
       }
       
-      .doc-controls {
-        display: none;
+      .doc-header {
+        padding: 0 15px;
       }
       
-      .key-facts {
-        flex-direction: column;
+      .doc-header .title {
+        font-size: 18px;
+        margin-left: 10px;
       }
       
-      .document-tools {
-        right: 15px;
-        bottom: 70px;
+      .service-item {
+        padding: 20px;
       }
       
-      .service-header {
-        flex-direction: column;
-      }
-      
-      .service-icon {
-        margin-bottom: 10px;
+      .cover-page {
+        padding: 50px 0;
       }
     }
     
-    /* Print Styles for PDF */
+    /* Print Styles */
     @media print {
-      body, html {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: auto;
-        overflow: visible;
+      :root {
+        --sidebar-width: 0;
+        --header-height: 0;
+        --footer-height: 0;
       }
       
-      .doc-header, .doc-footer, .doc-sidebar, .document-tools, .menu-toggle {
+      @page {
+        size: A4;
+        margin: 2cm;
+      }
+      
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .doc-header, .sidebar, .menu-toggle, .back-to-top, .download-note {
         display: none !important;
       }
       
-      .doc-layout {
-        display: block;
-        margin: 0;
-        overflow: visible;
+      .content {
+        margin-left: 0;
+        padding: 0;
+        max-width: 100%;
       }
       
-      .doc-content {
-        margin: 0;
-        padding: 0;
-        overflow: visible;
-      }
-      
-      .content-wrapper {
-        max-width: none;
-        padding: 0;
-        margin: 0;
+      .main-container {
+        margin-top: 0;
       }
       
       section {
@@ -837,15 +593,16 @@
         break-inside: avoid;
       }
       
-      .main-header {
-        margin-top: 0;
+      .cover-page {
         page-break-after: always;
+        break-after: page;
       }
       
       .service-item {
         break-inside: avoid;
         page-break-inside: avoid;
         box-shadow: none;
+        border-left: 3px solid #333;
       }
       
       .contact-grid {
@@ -853,122 +610,341 @@
         page-break-inside: avoid;
       }
       
-      .download-note {
-        display: none;
+      .contact-item {
+        box-shadow: none;
       }
       
-      @page {
-        size: A4;
-        margin: 2cm;
+      .doc-footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        border-top: 1pt solid #ddd;
+        padding: 10pt;
+        font-size: 9pt;
+      }
+      
+      .doc-footer::after {
+        content: "Page " counter(page) " of " counter(pages);
+        position: absolute;
+        right: 10pt;
       }
     }
   </style>
-  
-  <!-- Script for interactive elements -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Toggle sidebar on mobile
-      const menuToggle = document.getElementById('menuToggle');
-      const body = document.body;
-      
-      if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-          body.classList.toggle('sidebar-open');
-        });
-      }
-      
-      // Print button functionality
-      const printBtn = document.getElementById('printBtn');
-      if (printBtn) {
-        printBtn.addEventListener('click', function() {
-          window.print();
-        });
-      }
-      
-      // Scroll to section when clicking on navigation
-      const navLinks = document.querySelectorAll('.nav-link');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          // Remove active class from all links
-          navLinks.forEach(l => l.classList.remove('active'));
-          
-          // Add active class to clicked link
-          this.classList.add('active');
-          
-          // Get the target section
-          const targetId = this.getAttribute('href').substring(1);
-          const targetSection = document.getElementById(targetId);
-          
-          if (targetSection) {
-            // Scroll to the section
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-            
-            // Close sidebar on mobile
-            if (window.innerWidth < 992) {
-              body.classList.remove('sidebar-open');
-            }
-          }
-        });
-      });
-      
-      // Update active navigation based on scroll position
-      const contentSections = document.querySelectorAll('section[id], header[id]');
-      
-      function setActiveNavItem() {
-        let currentSection = '';
-        
-        contentSections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          
-          if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
-            currentSection = section.getAttribute('id');
-          }
-        });
-        
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${currentSection}`) {
-            link.classList.add('active');
-          }
-        });
-      }
-      
-      window.addEventListener('scroll', setActiveNavItem);
-      
-      // Set active nav item on page load
-      setActiveNavItem();
-    });
-  </script>
 </head>
 <body>
   <!-- Document Header -->
-  <header class="doc-header">
-    <div class="header-left">
-      <button class="menu-toggle" id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <img src="/api/placeholder/120/40" alt="CALDON™ Logo" class="logo">
+  <div class="doc-header">
+    <div class="logo-container">
+      <img src="logo.png" alt="CALDON™ Logo" class="logo">
       <span class="title">Enterprise Capability Statement</span>
     </div>
-    <div class="doc-controls">
-      <button class="control-btn" id="printBtn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 6 2 18 2 18 9"></polyline>
-          <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path>
-          <rect x="6" y="14" width="12" height="8"></rect>
-        </svg>
-        Print/Save PDF
-      </button>
-      <button class="control-btn" id="downloadBtn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path>
-          <polyline points="7 10 12 15 17 10"></polyline>
-          <line x1="12" y1="15" x2="12" y2="3"></line>
-        </svg>
-        Download
-      </button>
+    <button class="menu-toggle" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="main-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <ul class="sidebar-nav">
+        <li><a href="#cover" class="active">Cover Page</a></li>
+        <li><a href="#about">About CALDON™</a></li>
+        
+        <li class="nav-header">Services & Capabilities</li>
+        <li><a href="#capabilities">Overview</a></li>
+        <li><a href="#residential">Residential Design & Construction</a></li>
+        <li><a href="#multi-residential">Class 2 & Multi-Residential</a></li>
+        <li><a href="#commercial">Commercial Construction</a></li>
+        <li><a href="#estimating">Estimating & Cost Consulting</a></li>
+        <li><a href="#expert-witness">Expert Witness Services</a></li>
+        <li><a href="#procurement">Commercial Procurement</a></li>
+        <li><a href="#surveying">Building Surveying</a></li>
+        <li><a href="#quantity-surveying">Quantity Surveying</a></li>
+        <li><a href="#project-management">Project Management</a></li>
+        <li><a href="#sustainability">Sustainability Consulting</a></li>
+        
+        <li class="nav-header">Contact Information</li>
+        <li><a href="#contact">Contact Details</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="content">
+      <!-- Cover Page -->
+      <div id="cover" class="cover-page highlight-section">
+        <img src="logo.png" alt="CALDON™ Logo" class="logo">
+        <h1>Enterprise Capability Statement</h1>
+        <p class="tagline">Delivering Excellence in Residential Construction and Commercial Consultancy Across New South Wales</p>
+      </div>
+
+      <!-- Introduction -->
+      <section id="about" class="highlight-section">
+        <h2>About CALDON™</h2>
+        <p>CALDON™ is a leading New South Wales firm specialising in high-quality residential construction and advanced commercial building consultancy services. Based in Taree, our expertise extends across key regions including Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, and Forster Tuncurry, as well as surrounding areas. We are committed to delivering precision-crafted homes and strategic commercial solutions tailored to client needs.</p>
+        <p>With Building Practitioner Number BUP0002873, Builders Licence 377088C, and membership in the Housing Industry Association (HIA), CALDON™ upholds the highest standards of professionalism, compliance, and innovation in every project.</p>
+      </section>
+
+      <!-- Capabilities and Services -->
+      <section id="capabilities" class="highlight-section">
+        <h2>Capabilities and Services</h2>
+        <p>CALDON™ provides a comprehensive range of services to residential and commercial clients throughout New South Wales. Our capabilities span bespoke home construction and sophisticated consultancy for complex developments, ensuring excellence in delivery and value. Below is an overview of our core offerings:</p>
+        
+        <div class="service-list">
+          <div id="residential" class="service-item highlight-section">
+            <h3>Residential Design & Construction</h3>
+            <p>We design and build custom homes that combine aesthetic excellence with durability, serving clients from Taree to Sydney with a focus on quality and sustainability.</p>
+            <ul>
+              <li>Architectural design and 3D modelling for bespoke homes</li>
+              <li>Construction of single-storey, multi-storey, and luxury residences</li>
+              <li>Use of energy-efficient and sustainable materials</li>
+              <li>Full compliance with NSW Building Codes and local regulations</li>
+              <li>Renovations and extensions with minimal disruption</li>
+            </ul>
+          </div>
+          
+          <div id="multi-residential" class="service-item highlight-section">
+            <h3>Class 2 & Multi-Residential Construction</h3>
+            <p>We specialise in Class 2 building projects, delivering multi-residential developments across Newcastle, Sydney, and the Mid North Coast to exacting standards.</p>
+            <ul>
+              <li>Design and construction of multi-unit residential complexes</li>
+              <li>Management of fire safety, accessibility, and structural compliance</li>
+              <li>Collaboration with architects, engineers, and strata managers</li>
+              <li>High-rise and medium-density development expertise</li>
+              <li>Post-construction maintenance planning</li>
+            </ul>
+          </div>
+          
+          <div id="commercial" class="service-item highlight-section">
+            <h3>Commercial Construction Management</h3>
+            <p>We manage commercial construction projects, from retail spaces in Coffs Harbour to office builds in Sydney, ensuring timely and cost-effective delivery.</p>
+            <ul>
+              <li>Construction of offices, retail spaces, and industrial facilities</li>
+              <li>Fit-out and refurbishment of business premises</li>
+              <li>Coordination of large-scale trades and subcontractors</li>
+              <li>Adherence to workplace health and safety standards</li>
+              <li>Turnkey solutions from planning to occupancy</li>
+            </ul>
+          </div>
+          
+          <div id="estimating" class="service-item highlight-section">
+            <h3>Estimating & Cost Consulting</h3>
+            <p>Our estimating services offer financial precision for projects in Port Macquarie, Tamworth, and beyond, supporting clients with robust budgeting and cost strategies.</p>
+            <ul>
+              <li>Comprehensive cost estimates and feasibility analyses</li>
+              <li>Material take-offs and labour cost projections</li>
+              <li>Risk assessment and contingency budgeting</li>
+              <li>Value management to optimise project economics</li>
+              <li>Real-time cost tracking and reporting</li>
+            </ul>
+          </div>
+          
+          <div id="expert-witness" class="service-item highlight-section">
+            <h3>Expert Witness & Dispute Resolution</h3>
+            <p>We provide expert witness services for construction disputes across NSW, offering technical insights and testimony in Sydney, Newcastle, and regional areas.</p>
+            <ul>
+              <li>Forensic analysis of defects and delays</li>
+              <li>Expert reports for courts and tribunals</li>
+              <li>Mediation and arbitration support</li>
+              <li>Consultation on contract breaches and compliance</li>
+              <li>Trusted by legal firms, developers, and insurers</li>
+            </ul>
+          </div>
+          
+          <div id="procurement" class="service-item highlight-section">
+            <h3>Commercial Procurement & Supply Chain Management</h3>
+            <p>We streamline procurement for commercial projects in Forster Tuncurry, Sydney, and regional NSW, securing resources through established networks.</p>
+            <ul>
+              <li>Competitive tendering and supplier selection</li>
+              <li>Procurement of specialised materials and equipment</li>
+              <li>Supply chain optimisation for cost and efficiency</li>
+              <li>Contract management and performance monitoring</li>
+              <li>Sustainable sourcing options</li>
+            </ul>
+          </div>
+          
+          <div id="surveying" class="service-item highlight-section">
+            <h3>Building Surveying & Compliance</h3>
+            <p>Our surveying services ensure compliance and safety for properties in Taree, Port Macquarie, and Sydney, with thorough inspections and recommendations.</p>
+            <ul>
+              <li>Pre-purchase, PCI, and defect inspections</li>
+              <li>Building code and Australian Standards audits</li>
+              <li>Dilapidation reports and condition assessments</li>
+              <li>Certification support for occupancy and construction</li>
+              <li>Heritage building assessments</li>
+            </ul>
+          </div>
+          
+          <div id="quantity-surveying" class="service-item highlight-section">
+            <h3>Quantity Surveying & Cost Management</h3>
+            <p>We provide advanced quantity surveying to maximise value, serving clients from Coffs Harbour to Tamworth with financial oversight and planning.</p>
+            <ul>
+              <li>Bills of quantities and cost breakdowns</li>
+              <li>Value engineering and cost-benefit analysis</li>
+              <li>Change order management and cost control</li>
+              <li>Cash flow forecasting and risk mitigation</li>
+              <li>Post-completion cost audits</li>
+            </ul>
+          </div>
+          
+          <div id="project-management" class="service-item highlight-section">
+            <h3>Project Management & Delivery</h3>
+            <p>Our project management ensures seamless delivery of builds across NSW, from planning in Newcastle to handover in Sydney.</p>
+            <ul>
+              <li>Project scheduling and resource allocation</li>
+              <li>Stakeholder engagement and communication</li>
+              <li>Quality assurance and defect management</li>
+              <li>Risk identification and mitigation</li>
+              <li>Post-construction support and training</li>
+            </ul>
+          </div>
+          
+          <div id="sustainability" class="service-item highlight-section">
+            <h3>Sustainability & Innovation Consulting</h3>
+            <p>We integrate sustainable practices and innovation into projects, offering consultancy in Sydney, Port Macquarie, and beyond for future-ready builds.</p>
+            <ul>
+              <li>Green building design and certification (e.g., BASIX, NatHERS)</li>
+              <li>Smart home and building management systems</li>
+              <li>Renewable energy solutions (solar, geothermal)</li>
+              <li>Life-cycle cost analysis for sustainable materials</li>
+              <li>Consulting on Net Zero and carbon-neutral goals</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Information -->
+      <section id="contact" class="highlight-section">
+        <h2>Contact Details</h2>
+        <p>Contact CALDON™ to discuss your residential or commercial project needs. We provide tailored solutions across Taree, Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, Forster Tuncurry, and throughout NSW.</p>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">admin@caldon.com.au</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">(02) 6550 1924</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Taree, NSW 2430<br>Australia</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Building Practitioner</div>
+            <div class="contact-value credential">BUP0002873</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Builders Licence</div>
+            <div class="contact-value credential">377088C</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Membership</div>
+            <div class="contact-value"><img src="hialogo.png" alt="HIA Member"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Download Note -->
+      <div class="download-note">To download this capability statement as a PDF, use your browser's Print function (Ctrl+P or Cmd+P) and select "Save as PDF".</div>
+    </div>
+  </div>
+
+  <!-- Document Footer -->
+  <div class="doc-footer">
+    <span>© 2025 CALDON™ – All Rights Reserved</span>
+    <span class="page-number"></span>
+  </div>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </div>
+
+  <!-- JavaScript for Interactive Elements -->
+  <script>
+    // Mobile Navigation Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    
+    menuToggle.addEventListener('click', function() {
+      sidebar.classList.toggle('open');
+      menuToggle.classList.toggle('active');
+    });
+    
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+      if (!sidebar.contains(event.target) && !menuToggle.contains(event.target) && sidebar.classList.contains('open')) {
+        sidebar.classList.remove('open');
+        menuToggle.classList.remove('active');
+      }
+    });
+    
+    // Back to Top Button
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Active Navigation Highlighting
+    const sections = document.querySelectorAll('.highlight-section');
+    const navLinks = document.querySelectorAll('.sidebar-nav a');
+    
+    window.addEventListener('scroll', function() {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (pageYOffset >= (sectionTop - 100)) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+    
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('.sidebar-nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+        
+        // Close sidebar on mobile after clicking a link
+        if (window.innerWidth <= 768) {
+          sidebar.classList.remove('open');
+          menuToggle.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
