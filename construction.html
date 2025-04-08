@@ -443,68 +443,6 @@
       margin-bottom: 20px;
     }
     
-    /* Project Gallery Section */
-    .projects {
-      background-color: var(--subtle-accent);
-    }
-    
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .project-item {
-      position: relative;
-      overflow: hidden;
-      height: 0;
-      padding-bottom: 75%; /* 4:3 aspect ratio */
-      background-color: #eee;
-    }
-    
-    .project-item img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    
-    .project-item:hover img {
-      transform: scale(1.05);
-    }
-    
-    .project-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px;
-      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
-      color: white;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .project-item:hover .project-overlay {
-      opacity: 1;
-    }
-    
-    .project-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-    }
-    
-    .project-location {
-      font-size: 0.8rem;
-      opacity: 0.8;
-    }
-    
     /* Process Section */
     .process-container {
       max-width: 900px;
@@ -632,6 +570,19 @@
     .contact-value img {
       max-width: 120px;
       height: auto;
+    }
+    
+    /* Projects Section (text-only style) */
+    .projects {
+      background-color: var(--subtle-accent);
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     
     /* Condensed Footer */
@@ -1063,53 +1014,35 @@
     </div>
   </section>
 
-  <!-- Project Gallery -->
+  <!-- Project Gallery (Text Only) -->
   <section id="projects" class="projects">
     <div class="container">
       <div class="section-subtitle">Our Work</div>
       <h2 class="section-title">Recent Projects</h2>
       <div class="projects-grid">
-        <div class="project-item">
-          <img src="/api/placeholder/600/450" alt="Custom Home in Taree">
-          <div class="project-overlay">
-            <h3 class="project-title">Riverside Residence</h3>
-            <p class="project-location">Taree, NSW</p>
-          </div>
+        <div class="service-item">
+          <h3>Riverside Residence</h3>
+          <p>Luxury custom home in Taree featuring modern design with premium finishes, spacious living areas, and seamless indoor-outdoor connectivity with riverside views.</p>
         </div>
-        <div class="project-item">
-          <img src="/api/placeholder/600/450" alt="Luxury Home in Port Macquarie">
-          <div class="project-overlay">
-            <h3 class="project-title">Coastal Retreat</h3>
-            <p class="project-location">Port Macquarie, NSW</p>
-          </div>
+        <div class="service-item">
+          <h3>Coastal Retreat</h3>
+          <p>Contemporary beachfront property in Port Macquarie designed to maximize ocean views with durable, weather-resistant materials and high-end sustainable features.</p>
         </div>
-        <div class="project-item">
-          <img src="/api/placeholder/600/450" alt="Duplex in Forster">
-          <div class="project-overlay">
-            <h3 class="project-title">Ocean View Duplex</h3>
-            <p class="project-location">Forster, NSW</p>
-          </div>
+        <div class="service-item">
+          <h3>Ocean View Duplex</h3>
+          <p>Sophisticated dual-occupancy development in Forster with separate entrances, shared outdoor spaces, and carefully designed floor plans for both privacy and investment value.</p>
         </div>
-        <div class="project-item">
-          <img src="/api/placeholder/600/450" alt="Commercial Building in Newcastle">
-          <div class="project-overlay">
-            <h3 class="project-title">Harbourside Office</h3>
-            <p class="project-location">Newcastle, NSW</p>
-          </div>
+        <div class="service-item">
+          <h3>Harbourside Office</h3>
+          <p>Boutique commercial building in Newcastle featuring flexible workspaces, energy-efficient design, and premium facilities with attention to both functionality and aesthetics.</p>
         </div>
-        <div class="project-item">
-          <img src="/api/placeholder/600/450" alt="Renovation in Coffs Harbour">
-          <div class="project-overlay">
-            <h3 class="project-title">Heritage Renovation</h3>
-            <p class="project-location">Coffs Harbour, NSW</p>
-          </div>
+        <div class="service-item">
+          <h3>Heritage Renovation</h3>
+          <p>Thoughtful renovation of a historic property in Coffs Harbour, preserving original character while integrating modern amenities and structural improvements.</p>
         </div>
-        <div class="project-item">
-          <img src="/api/placeholder/600/450" alt="Modern Home in Taree">
-          <div class="project-overlay">
-            <h3 class="project-title">Contemporary Haven</h3>
-            <p class="project-location">Taree, NSW</p>
-          </div>
+        <div class="service-item">
+          <h3>Contemporary Haven</h3>
+          <p>Architecturally designed family home in Taree featuring open plan living, custom joinery throughout, energy-efficient systems, and premium quality construction.</p>
         </div>
       </div>
     </div>
