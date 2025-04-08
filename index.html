@@ -41,7 +41,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Structured Data / JSON-LD -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -70,13 +70,7 @@
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
           "opens": "07:00",
           "closes": "17:00"
         }
@@ -90,14 +84,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  
   <!-- Styles -->
   <style>
-    /* Modern, Sophisticated Typography */
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
-    
     :root {
       --text-primary: #111111;
       --text-secondary: #555555;
@@ -106,366 +94,316 @@
       --border: #e0e0e0;
       --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
-    
-    /* Reset & Base */
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--background);
       color: var(--text-primary);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      overflow-x: hidden;
     }
-    
-    /* Main Layout */
-    .landing-container {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 2rem;
-    }
-    
-    /* Logo & Intro */
-    .logo-container {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-    
-    .logo {
-      max-width: 220px;
-      height: auto;
-      opacity: 0;
-      animation: fadeIn 1.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-    }
-    
-    .tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: 1.8rem;
-      letter-spacing: 1px;
-      margin-top: 1.5rem;
-      color: var(--text-primary);
-      opacity: 0;
-      animation: fadeUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-      animation-delay: 0.3s;
-    }
-    
-    .subtext {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin: 1.5rem auto 0;
-      text-align: center;
-      opacity: 0;
-      animation: fadeUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-      animation-delay: 0.5s;
-      line-height: 1.7;
-    }
-    
-    /* Division Cards */
-    .divisions-container {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      width: 100%;
-      max-width: 1000px;
-      opacity: 0;
-      animation: fadeUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-      animation-delay: 0.7s;
-    }
-    
-    .division-card {
-      flex: 1;
-      max-width: 450px;
-      height: 350px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      text-decoration: none;
-      color: var(--text-primary);
-      border: 1px solid #e0e0e0;
-      transition: var(--transition);
-      padding: 3rem 2.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .division-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.03);
-      transform: translateY(100%);
-      transition: var(--transition);
-      z-index: -1;
-    }
-    
-    .division-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
-    }
-    
-    .division-card:hover::before {
-      transform: translateY(0);
-    }
-    
-    .division-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-    }
-    
-    .division-description {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      margin-bottom: 2rem;
-      line-height: 1.7;
-    }
-    
-    .division-link {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 500;
-      position: relative;
-      padding-bottom: 5px;
-    }
-    
-    .division-link::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      bottom: 0;
-      left: 0;
-      background-color: var(--text-primary);
-      transform: scaleX(0);
-      transform-origin: bottom right;
-      transition: transform 0.3s;
-    }
-    
-    .division-card:hover .division-link::after {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-    }
-    
-    /* Footer */
-    .footer {
-      padding: 2rem 0;
-      text-align: center;
-      background-color: var(--subtle-accent);
-      border-top: 1px solid var(--border);
-    }
-    
-    .footer-container {
+
+    .container {
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 20px;
     }
-    
-    .credentials {
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 25px 0;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      padding: 15px 0;
+      box-shadow: 0 1px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      height: 30px;
+      max-width: 120px;
+      width: auto;
+      opacity: 0;
+      transform: translateY(-5px);
+      transition: var(--transition);
+    }
+
+    header.scrolled .nav-logo {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 400;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--text-primary);
+      transition: var(--transition);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Main Content */
+    .landing-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    .hero-logo {
+      max-width: 180px;
+      height: auto;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeIn 1.8s forwards;
+    }
+
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 1.2s forwards 0.3s;
+    }
+
+    .hero-subtext {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      opacity: 0;
+      animation: fadeUp 1.2s forwards 0.5s;
+    }
+
+    .divisions {
+      display: flex;
+      gap: 40px;
+      max-width: 800px;
+      margin: 40px auto 0;
+      opacity: 0;
+      animation: fadeUp 1.2s forwards 0.7s;
+    }
+
+    .division-item {
+      flex: 1;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .division-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .division-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .division-link {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-primary);
+      text-decoration: none;
+      position: relative;
+    }
+
+    .division-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--text-primary);
+      transition: var(--transition);
+    }
+
+    .division-item:hover .division-link::after {
+      width: 100%;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      background-color: var(--subtle-accent);
+    }
+
+    .footer-content {
+      display: grid;
+      gap: 20px;
+    }
+
+    .footer-credentials {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
+      gap: 20px;
       flex-wrap: wrap;
     }
-    
+
     .credential-item {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: var(--text-secondary);
     }
-    
-    .credential-label {
-      color: var(--text-secondary);
-    }
-    
+
     .credential-value {
       color: var(--text-primary);
     }
-    
-    .contact-info {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
-    }
-    
-    .contact-item {
-      display: inline-block;
-      margin: 0 1rem;
-    }
-    
+
     .copyright {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: var(--text-secondary);
       letter-spacing: 1.2px;
       text-transform: uppercase;
     }
-    
+
     /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    
+
     @keyframes fadeUp {
-      from { 
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to { 
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    
+
     /* Media Queries */
-    @media (max-width: 992px) {
-      .divisions-container {
-        gap: 2rem;
-      }
-      
-      .division-card {
-        padding: 2.5rem 2rem;
-      }
-    }
-    
     @media (max-width: 768px) {
-      .divisions-container {
+      .divisions {
         flex-direction: column;
-        align-items: center;
-        max-width: 500px;
+        gap: 20px;
+        margin-top: 30px;
       }
-      
-      .division-card {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/9;
-      }
-      
-      .tagline {
-        font-size: 1.6rem;
-      }
-      
-      .subtext {
-        font-size: 0.95rem;
-      }
-      
-      .division-title {
+
+      .hero-tagline {
         font-size: 1.8rem;
       }
-      
-      .credentials {
-        flex-direction: column;
-        gap: 0.5rem;
+
+      .division-title {
+        font-size: 1.3rem;
       }
-      
-      .contact-info {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      
-      .contact-item {
-        margin: 0;
+
+      nav ul {
+        display: none; /* Simplified for mobile; add toggle if needed */
       }
     }
-    
+
     @media (max-width: 480px) {
-      .landing-container {
-        padding: 1.5rem;
+      .hero-logo {
+        max-width: 150px;
       }
-      
-      .logo {
-        max-width: 180px;
+
+      .hero-tagline {
+        font-size: 1.5rem;
       }
-      
-      .tagline {
-        font-size: 1.4rem;
-      }
-      
-      .division-title {
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
-      }
-      
-      .division-description {
+
+      .hero-subtext {
         font-size: 0.9rem;
-        margin-bottom: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <main class="landing-container">
-    <div class="logo-container">
-      <img src="logo.png" alt="CALDON™ Logo" class="logo">
-      <p class="tagline">Exceptional Building. Expert Consultancy.</p>
-      <p class="subtext">Crafting bespoke residences and delivering comprehensive consultancy solutions with precision and expertise across New South Wales.</p>
+  <header>
+    <div class="container">
+      <nav>
+        <img src="logo.png" alt="CALDON™ Logo" class="nav-logo">
+        <ul>
+          <li><a href="construction.html">Construction</a></li>
+          <li><a href="consultancy.html">Consultancy</a></li>
+        </ul>
+      </nav>
     </div>
-    
-    <div class="divisions-container">
-      <a href="construction.html" class="division-card">
+  </header>
+
+  <main class="landing-hero">
+    <img src="logo.png" alt="CALDON™ Logo" class="hero-logo">
+    <h1 class="hero-tagline">Building Excellence</h1>
+    <p class="hero-subtext">Expert construction and consultancy services across NSW.</p>
+    <div class="divisions">
+      <div class="division-item">
         <h2 class="division-title">Construction</h2>
-        <p class="division-description">Premium custom homes and commercial buildings with quality craftsmanship and attention to detail.</p>
-        <span class="division-link">Explore Construction</span>
-      </a>
-      
-      <a href="consultancy.html" class="division-card">
+        <a href="construction.html" class="division-link">Explore</a>
+      </div>
+      <div class="division-item">
         <h2 class="division-title">Consultancy</h2>
-        <p class="division-description">Expert building advice, inspections, and project management services across NSW.</p>
-        <span class="division-link">Explore Consultancy</span>
-      </a>
+        <a href="consultancy.html" class="division-link">Explore</a>
+      </div>
     </div>
   </main>
-  
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="credentials">
-        <span class="credential-item"><span class="credential-label">Building Practitioner:</span> <span class="credential-value">BUP0002873</span></span>
-        <span class="credential-item"><span class="credential-label">Builders Licence:</span> <span class="credential-value">377088C</span></span>
-        <span class="credential-item"><span class="credential-label">HIA Member:</span> <span class="credential-value">1376011</span></span>
-      </div>
-      <div class="contact-info">
-        <span class="contact-item">(02) 6550 1924</span>
-        <span class="contact-item">admin@caldon.com.au</span>
-        <span class="contact-item">Taree, NSW 2430</span>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-credentials">
+        <span class="credential-item">Practitioner: <span class="credential-value">BUP0002873</span></span>
+        <span class="credential-item">Licence: <span class="credential-value">377088C</span></span>
+        <span class="credential-item">HIA Member: <span class="credential-value">1376011</span></span>
       </div>
       <p class="copyright">© 2025 CALDON Homes Pty Limited · All Rights Reserved</p>
     </div>
   </footer>
 
-  <!-- Simple script for smooth animations -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const divisionCards = document.querySelectorAll('.division-card');
-      
-      divisionCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-          this.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-          this.style.transition = 'transform 0.5s ease, box-shadow 0.5s ease';
-        });
-      });
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
     });
   </script>
 </body>
