@@ -86,6 +86,8 @@
 
   <!-- Styles -->
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
+
     :root {
       --text-primary: #111111;
       --text-secondary: #555555;
@@ -139,6 +141,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
     }
 
     .nav-logo {
@@ -148,11 +151,30 @@
       opacity: 0;
       transform: translateY(-5px);
       transition: var(--transition);
+      z-index: 2;
     }
 
     header.scrolled .nav-logo {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 2;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: 5px 0;
+      background-color: var(--text-primary);
+      transition: var(--transition);
     }
 
     nav ul {
@@ -187,54 +209,30 @@
       width: 100%;
     }
 
-    /* Main Content */
-    .landing-hero {
+    /* Hero Section */
+    .hero {
       position: relative;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 0 20px;
       text-align: center;
-      padding: 80px 20px 40px;
       overflow: hidden;
     }
 
-    /* Geometric Line Animation */
-    .logo-wrapper {
+    .hero-content {
+      max-width: 700px;
       position: relative;
-      display: inline-block;
+      z-index: 2;
     }
 
     .hero-logo {
       max-width: 180px;
       height: auto;
-      opacity: 0;
-      animation: fadeIn 1s forwards 1.2s;
-    }
-
-    .line-frame {
-      position: absolute;
-      top: -20px;
-      left: -20px;
-      width: calc(100% + 40px);
-      height: calc(100% + 40px);
-      z-index: -1;
-    }
-
-    .line-frame-svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    .line-frame-path {
-      fill: none;
-      stroke: var(--text-secondary);
-      stroke-width: 1;
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      opacity: 0.3;
-      animation: drawFrame 2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      margin-bottom: 40px;
+      transition: transform 0.1s ease-out;
     }
 
     .hero-tagline {
@@ -242,68 +240,91 @@
       font-weight: 300;
       font-size: 2rem;
       letter-spacing: 1px;
-      margin: 20px 0;
-      opacity: 0;
-      animation: fadeUp 0.8s forwards 1.4s;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      line-height: 1.4;
+      transition: transform 0.1s ease-out;
     }
 
     .hero-subtext {
       font-size: 1rem;
       color: var(--text-secondary);
-      max-width: 600px;
-      opacity: 0;
-      animation: fadeUp 0.8s forwards 1.6s;
+      max-width: 500px;
+      margin: 0 auto 30px;
+      opacity: 0.9;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 36px;
+      background-color: var(--text-primary);
+      color: var(--background);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background-color: var(--text-secondary);
     }
 
     .divisions {
       display: flex;
-      gap: 60px;
-      max-width: 800px;
-      margin: 40px auto 0;
-    }
-
-    .division-item {
-      text-align: center;
-      opacity: 0;
-      animation: fadeUp 0.8s forwards;
-    }
-
-    .division-item:nth-child(1) { animation-delay: 1.8s; }
-    .division-item:nth-child(2) { animation-delay: 2s; }
-
-    .division-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 10px;
+      gap: 40px;
+      margin-top: 20px;
     }
 
     .division-link {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--text-primary);
       text-decoration: none;
+      transition: var(--transition);
       position: relative;
-      padding-bottom: 2px;
+    }
+
+    .division-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--text-primary);
       transition: var(--transition);
     }
 
-    .division-link::before {
-      content: '';
-      position: absolute;
+    .division-link:hover::after {
       width: 100%;
-      height: 1px;
-      bottom: 0;
-      left: 0;
-      background-color: var(--text-primary);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
     }
 
-    .division-link:hover::before {
-      transform: scaleX(1);
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      opacity: 0.7;
+    }
+
+    .scroll-indicator::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background-color: var(--text-secondary);
+      margin: 10px auto 0;
+      opacity: 0.3;
     }
 
     /* Footer */
@@ -316,26 +337,75 @@
 
     .footer-content {
       display: grid;
+      grid-template-areas: 
+        "nav"
+        "logo"
+        "credentials"
+        "copyright";
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-nav {
+      grid-area: nav;
+    }
+
+    .footer-nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
       gap: 20px;
+    }
+
+    .footer-nav a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.7rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      transition: var(--transition);
+    }
+
+    .footer-nav a:hover {
+      color: var(--text-primary);
+    }
+
+    .footer-logo {
+      grid-area: logo;
+      max-height: 24px;
+      margin: 0 auto;
     }
 
     .footer-credentials {
+      grid-area: credentials;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      flex-wrap: wrap;
     }
 
     .credential-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .credential-label {
       font-size: 0.7rem;
       color: var(--text-secondary);
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .credential-value {
+      font-size: 0.7rem;
       color: var(--text-primary);
     }
 
     .copyright {
+      grid-area: copyright;
       font-size: 0.7rem;
       color: var(--text-secondary);
       letter-spacing: 1.2px;
@@ -349,47 +419,145 @@
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(15px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes drawFrame {
-      0% { stroke-dashoffset: 1000; }
-      100% { stroke-dashoffset: 0; }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     }
 
     /* Media Queries */
     @media (max-width: 768px) {
-      .divisions {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-logo {
+        height: 25px;
+        max-width: 100px;
+      }
+
+      nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: var(--background);
         flex-direction: column;
-        gap: 30px;
-        margin-top: 30px;
+        gap: 0;
+        justify-content: flex-start;
+        padding-top: 80px;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+
+      nav.menu-open ul {
+        right: 0;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 15px 25px;
+        font-size: 1rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      nav a::after {
+        display: none;
+      }
+
+      nav.menu-open .menu-toggle span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+      }
+
+      nav.menu-open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+      }
+
+      nav.menu-open .menu-toggle span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
       }
 
       .hero-tagline {
         font-size: 1.8rem;
       }
 
-      .division-title {
-        font-size: 1.3rem;
+      .hero-subtext {
+        font-size: 0.9rem;
       }
 
-      nav ul {
-        display: none; /* Simplified for mobile; add toggle if needed */
+      .divisions {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .footer-content {
+        grid-template-areas: 
+          "logo"
+          "nav"
+          "credentials"
+          "copyright";
+        gap: 20px;
+      }
+
+      .footer-nav ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px 10px;
+      }
+
+      .footer-credentials {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 576px) {
+      .hero {
+        height: 80vh;
+        padding-top: 80px;
+      }
+
       .hero-logo {
         max-width: 150px;
+        margin-bottom: 30px;
       }
 
       .hero-tagline {
         font-size: 1.5rem;
       }
 
-      .hero-subtext {
-        font-size: 0.9rem;
+      .nav-logo {
+        height: 20px;
+        max-width: 90px;
+      }
+
+      .footer-nav ul {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-credentials {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .credential-item {
+        justify-content: center;
       }
     }
   </style>
@@ -399,6 +567,11 @@
     <div class="container">
       <nav>
         <img src="logo.png" alt="CALDON™ Logo" class="nav-logo">
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <ul>
           <li><a href="construction.html">Construction</a></li>
           <li><a href="consultancy.html">Consultancy</a></li>
@@ -407,42 +580,86 @@
     </div>
   </header>
 
-  <main class="landing-hero">
-    <div class="logo-wrapper">
-      <img src="logo.png" alt="CALDON™ Logo" class="hero-logo">
-      <svg class="line-frame-svg" viewBox="0 0 220 100">
-        <path class="line-frame-path" d="M10,10 H210 V90 H10 Z" />
-      </svg>
-    </div>
-    <h1 class="hero-tagline">Building Excellence</h1>
-    <p class="hero-subtext">Expert construction and consultancy services across NSW.</p>
-    <div class="divisions">
-      <div class="division-item">
-        <h2 class="division-title">Construction</h2>
-        <a href="construction.html" class="division-link">Explore</a>
-      </div>
-      <div class="division-item">
-        <h2 class="division-title">Consultancy</h2>
-        <a href="consultancy.html" class="division-link">Explore</a>
+  <div class="hero">
+    <div class="hero-content">
+      <img src="logo.png" alt="CALDON™ Logo" class="hero-logo fade-in">
+      <p class="hero-tagline fade-up">Building Excellence</p>
+      <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Expert construction and consultancy services across NSW.</p>
+      <div class="divisions fade-up" style="animation-delay: 0.6s;">
+        <a href="construction.html" class="division-link">Construction</a>
+        <a href="consultancy.html" class="division-link">Consultancy</a>
       </div>
     </div>
-  </main>
+    <div class="scroll-indicator">Discover</div>
+  </div>
 
   <footer>
     <div class="container footer-content">
+      <div class="footer-nav">
+        <ul>
+          <li><a href="construction.html">Construction</a></li>
+          <li><a href="consultancy.html">Consultancy</a></li>
+        </ul>
+      </div>
+      <img src="logo.png" alt="CALDON™ Logo" class="footer-logo">
       <div class="footer-credentials">
-        <span class="credential-item">Practitioner: <span class="credential-value">BUP0002873</span></span>
-        <span class="credential-item">Licence: <span class="credential-value">377088C</span></span>
-        <span class="credential-item">HIA Member: <span class="credential-value">1376011</span></span>
+        <div class="credential-item">
+          <span class="credential-label">Practitioner:</span>
+          <span class="credential-value">BUP0002873</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">HIA Member:</span>
+          <span class="credential-value">1376011</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">Licence:</span>
+          <span class="credential-value">377088C</span>
+        </div>
       </div>
       <p class="copyright">© 2025 CALDON Homes Pty Limited · All Rights Reserved</p>
     </div>
   </footer>
 
   <script>
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', function() {
       const header = document.querySelector('header');
-      header.classList.toggle('scrolled', window.scrollY > 50);
+      const heroLogo = document.querySelector('.hero-logo');
+      const heroTagline = document.querySelector('.hero-tagline');
+      const heroSubtext = document.querySelector('.hero-subtext');
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+
+      const maxScroll = window.innerHeight * 0.5;
+      if (scrollPosition <= maxScroll) {
+        const translateFactor = scrollPosition * 0.2;
+        heroLogo.style.transform = `translateY(${translateFactor}px)`;
+        heroTagline.style.transform = `translateY(${translateFactor * 0.8}px)`;
+        heroSubtext.style.opacity = Math.max(0.9 - scrollPosition / maxScroll, 0);
+      }
+    });
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', function() {
+        nav.classList.toggle('menu-open');
+        document.body.classList.toggle('menu-active');
+      });
+    }
+
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function() {
+        if (nav.classList.contains('menu-open')) {
+          nav.classList.remove('menu-open');
+          document.body.classList.remove('menu-active');
+        }
+      });
     });
   </script>
 </body>
