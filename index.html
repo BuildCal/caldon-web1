@@ -255,54 +255,31 @@
       transition: opacity 0.3s ease-out;
     }
 
-    .cta-button {
+    .divisions {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .division-button {
       display: inline-block;
-      padding: 12px 36px;
-      background-color: var(--text-primary);
-      color: var(--background);
+      padding: 10px 24px;
+      border: 1px solid var(--border);
+      background-color: transparent;
+      color: var(--text-primary);
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 2px;
       transition: var(--transition);
-      border: none;
       cursor: pointer;
     }
 
-    .cta-button:hover {
-      background-color: var(--text-secondary);
-    }
-
-    .divisions {
-      display: flex;
-      gap: 40px;
-      margin-top: 20px;
-    }
-
-    .division-link {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--text-primary);
-      text-decoration: none;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .division-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 1px;
-      bottom: -4px;
-      left: 0;
-      background-color: var(--text-primary);
-      transition: var(--transition);
-    }
-
-    .division-link:hover::after {
-      width: 100%;
+    .division-button:hover {
+      border-color: var(--text-primary);
+      background-color: rgba(17, 17, 17, 0.05);
     }
 
     .scroll-indicator {
@@ -586,8 +563,8 @@
       <p class="hero-tagline fade-up">Building Excellence</p>
       <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Expert construction and consultancy services across NSW.</p>
       <div class="divisions fade-up" style="animation-delay: 0.6s;">
-        <a href="construction.html" class="division-link">Construction</a>
-        <a href="consultancy.html" class="division-link">Consultancy</a>
+        <a href="construction.html" class="division-button">Construction</a>
+        <a href="consultancy.html" class="division-button">Consultancy</a>
       </div>
     </div>
     <div class="scroll-indicator">Discover</div>
