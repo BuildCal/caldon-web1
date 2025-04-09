@@ -256,40 +256,6 @@
       opacity: 0.9;
       transition: opacity 0.3s ease-out;
     }
-    
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 30px;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
-    
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    .contact-icon {
-      font-size: 1.1rem;
-      color: var(--text-primary);
-    }
-    
-    .contact-text {
-      font-weight: 400;
-    }
-    
-    .contact-text a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    
-    .contact-text a:hover {
-      color: var(--text-primary);
-    }
 
     .divisions {
       display: flex;
@@ -299,10 +265,7 @@
     }
 
     .division-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
+      display: inline-block;
       padding: 12px 30px;
       border: 1px solid var(--border);
       background-color: transparent;
@@ -335,8 +298,38 @@
       color: white;
     }
     
-    .button-icon {
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .contact-icon {
       font-size: 1.1rem;
+      color: var(--text-primary);
+    }
+    
+    .contact-text {
+      font-weight: 400;
+    }
+    
+    .contact-text a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .contact-text a:hover {
+      color: var(--text-primary);
     }
 
     /* Footer */
@@ -614,7 +607,16 @@
       <p class="hero-tagline fade-up">Building Excellence</p>
       <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Expert construction and consultancy services across NSW.</p>
       
-      <div class="contact-info fade-up" style="animation-delay: 0.4s;">
+      <div class="divisions fade-up" style="animation-delay: 0.5s;">
+        <a href="construction.html" class="division-button construction">
+          Construction
+        </a>
+        <a href="consultancy.html" class="division-button consultancy">
+          Consultancy
+        </a>
+      </div>
+      
+      <div class="contact-info fade-up" style="animation-delay: 0.7s;">
         <div class="contact-item">
           <i class="fas fa-phone contact-icon"></i>
           <span class="contact-text"><a href="tel:0265501924">(02) 6550 1924</a></span>
@@ -623,17 +625,6 @@
           <i class="fas fa-envelope contact-icon"></i>
           <span class="contact-text"><a href="mailto:admin@caldon.com.au">admin@caldon.com.au</a></span>
         </div>
-      </div>
-      
-      <div class="divisions fade-up" style="animation-delay: 0.6s;">
-        <a href="construction.html" class="division-button construction">
-          <i class="fas fa-hard-hat button-icon"></i>
-          <span>Construction</span>
-        </a>
-        <a href="consultancy.html" class="division-button consultancy">
-          <i class="fas fa-chart-line button-icon"></i>
-          <span>Consultancy</span>
-        </a>
       </div>
     </div>
   </div>
