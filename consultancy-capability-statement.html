@@ -610,7 +610,7 @@
 
     @media print {
       @page {
-        size: A4;
+        size: A4 portrait;
         margin: 1.5cm;
       }
       
@@ -635,11 +635,22 @@
       
       .content {
         padding: 0;
+        max-width: 100%;
       }
       
       section {
         page-break-inside: avoid;
         break-inside: avoid;
+      }
+      
+      h2, h3, h4 {
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+      
+      p, ul, ol {
+        orphans: 3;
+        widows: 3;
       }
       
       .service-item, 
@@ -652,11 +663,18 @@
       
       .service-list {
         grid-template-columns: 1fr 1fr;
+        page-break-inside: auto; /* Allow page breaks between items but not within items */
+      }
+      
+      .projects-grid,
+      .testimonial-grid {
+        page-break-inside: auto;
       }
       
       .page-break {
         display: block;
         page-break-before: always;
+        break-before: page;
       }
       
       .doc-footer {
@@ -734,7 +752,7 @@
   <!-- Document Header -->
   <div class="doc-header">
     <div class="logo-container">
-      <img src="/api/placeholder/120/35" alt="CALDON™ Logo" class="logo">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='35' viewBox='0 0 120 35'%3E%3Crect width='120' height='35' fill='%23f8f8f8'/%3E%3Ctext x='60' y='20' font-family='Arial' font-size='14' text-anchor='middle' fill='%23333333'%3ECALDON™%3C/text%3E%3C/svg%3E" alt="CALDON™ Logo" class="logo">
       <span class="title">Consultancy Capability Statement</span>
     </div>
     
@@ -764,7 +782,7 @@
     <div class="content">
       <!-- Cover Page -->
       <div class="cover-page">
-        <img src="/api/placeholder/180/50" alt="CALDON™ Logo" class="logo">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='50' viewBox='0 0 180 50'%3E%3Crect width='180' height='50' fill='%23f8f8f8'/%3E%3Ctext x='90' y='30' font-family='Arial' font-size='18' font-weight='bold' text-anchor='middle' fill='%23333333'%3ECALDON™%3C/text%3E%3C/svg%3E" alt="CALDON™ Logo" class="logo">
         <h1>Consultancy Capability Statement</h1>
         <p class="tagline">
           Expert Building & Development Consultancy Services Throughout New South Wales
@@ -1207,8 +1225,8 @@
         <ul>
           <li><strong>Housing Industry Association (HIA):</strong> Member #1376011</li>
           <li><strong>Australian Institute of Quantity Surveyors (AIQS):</strong> Corporate Member</li>
-          <li><strong>Property Council of Australia:</strong> Associate Member</li>
-          <li><strong>Australian Institute of Project Management (AIPM):</strong> Corporate Member</li>
+          <li><strong>Australian Institute of Building (AIB):</strong> Member</li>
+          <li><strong>Construction Law Society:</strong> Member</li>
         </ul>
         
         <h3>Team Qualifications</h3>
@@ -1231,83 +1249,20 @@
         
         <div class="accreditations">
           <div class="accreditation-item">
-            <div class="accreditation-logo">HIA</div>
-            <div class="accreditation-name">Housing Industry Association</div>
+            <div class="accreditation-logo">AIB</div>
+            <div class="accreditation-name">Australian Institute of Building</div>
           </div>
           <div class="accreditation-item">
             <div class="accreditation-logo">AIQS</div>
             <div class="accreditation-name">Australian Institute of Quantity Surveyors</div>
           </div>
           <div class="accreditation-item">
-            <div class="accreditation-logo">PCA</div>
-            <div class="accreditation-name">Property Council of Australia</div>
+            <div class="accreditation-logo">HIA</div>
+            <div class="accreditation-name">Housing Industry Association</div>
           </div>
           <div class="accreditation-item">
-            <div class="accreditation-logo">AIPM</div>
-            <div class="accreditation-name">Australian Institute of Project Management</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Page Break -->
-      <div class="page-break"></div>
-      
-      <!-- Client Testimonials Section -->
-      <section id="testimonials">
-        <h2>Client Testimonials</h2>
-        <p>
-          Our clients' experiences reflect our commitment to excellence, integrity, and results-driven service. Here's what some of our valued clients have to say about working with CALDON™ Consultancy:
-        </p>
-        
-        <div class="testimonials">
-          <div class="testimonial-grid">
-            <div class="testimonial-item">
-              <p class="testimonial-text">
-                CALDON™'s quantity surveying services were instrumental in keeping our project within budget while maintaining quality standards. Their detailed cost planning and proactive approach to value engineering identified substantial savings without compromising our design vision.
-              </p>
-              <div class="testimonial-author">
-                <div>
-                  <div class="testimonial-author-name">David Mitchell</div>
-                  <div class="testimonial-author-title">Development Manager, Coastal Properties Group</div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="testimonial-item">
-              <p class="testimonial-text">
-                The feasibility studies provided by CALDON™ Consultancy were comprehensive and insightful, giving us the confidence to proceed with our development. Their thorough analysis and clear recommendations were invaluable in securing financing and optimizing our investment strategy.
-              </p>
-              <div class="testimonial-author">
-                <div>
-                  <div class="testimonial-author-name">Sarah Williams</div>
-                  <div class="testimonial-author-title">Director, Williams Investment Partners</div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="testimonial-item">
-              <p class="testimonial-text">
-                When we needed expert witness services for a complex construction dispute, CALDON™ provided exceptional technical analysis and compelling testimony that significantly strengthened our position. Their professionalism and thoroughness were evident throughout the process.
-              </p>
-              <div class="testimonial-author">
-                <div>
-                  <div class="testimonial-author-name">Michael Thompson</div>
-                  <div class="testimonial-author-title">Principal, Thompson Legal & Associates</div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="testimonial-item">
-              <p class="testimonial-text">
-                The project management office established by CALDON™ transformed our approach to multi-site developments. Their governance frameworks, reporting systems, and quality control protocols have become the standard for all our projects, improving both efficiency and outcomes.
-              </p>
-              <div class="testimonial-author">
-                <div>
-                  <div class="testimonial-author-name">Jennifer Chen</div>
-                  <div class="testimonial-author-title">CEO, Regional Healthcare Group</div>
-                </div>
-              </div>
-            </div>
+            <div class="accreditation-logo">CLS</div>
+            <div class="accreditation-name">Construction Law Society</div>
           </div>
         </div>
       </section>
@@ -1346,7 +1301,9 @@
           <div class="contact-item">
             <div class="contact-label">Membership</div>
             <div class="contact-value">
-              <img src="/api/placeholder/90/50" alt="HIA Member Logo">
+              <div class="contact-value">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='50' viewBox='0 0 90 50'%3E%3Crect width='90' height='50' fill='%23f8f8f8'/%3E%3Ctext x='45' y='30' font-family='Arial' font-size='12' font-weight='bold' text-anchor='middle' fill='%23333333'%3EHIA Member%3C/text%3E%3C/svg%3E" alt="HIA Member Logo">
+              </div>
             </div>
           </div>
         </div>
@@ -1390,6 +1347,30 @@
       });
     });
     
+    // Check for any content that might overflow and cause print issues
+    function checkForOverflow() {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        // Add page breaks before sections that are too tall to fit on a page
+        const sectionHeight = section.offsetHeight;
+        if (sectionHeight > 900) { // rough estimate of what fits on an A4 page with margins
+          const childElements = Array.from(section.children);
+          let currentHeight = 0;
+          
+          childElements.forEach((element, index) => {
+            currentHeight += element.offsetHeight;
+            if (currentHeight > 800 && index > 0) {
+              // Add a soft page break by adding a special div
+              const pageBreakDiv = document.createElement('div');
+              pageBreakDiv.className = 'page-break';
+              section.insertBefore(pageBreakDiv, element);
+              currentHeight = element.offsetHeight;
+            }
+          });
+        }
+      });
+    }
+    
     // Simple page numbering for print
     function setupPageNumbers() {
       const style = document.createElement('style');
@@ -1403,7 +1384,10 @@
       document.head.appendChild(style);
     }
     
-    window.addEventListener('load', setupPageNumbers);
+    window.addEventListener('load', function() {
+      setupPageNumbers();
+      setTimeout(checkForOverflow, 500); // Give time for content to render
+    });
   </script>
 </body>
 </html>
