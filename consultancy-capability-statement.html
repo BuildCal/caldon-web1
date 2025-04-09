@@ -1,76 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Primary Meta Tags -->
-  <title>CALDON™ Consultancy Capability Statement | NSW-Wide Services</title>
-  <meta name="title" content="CALDON™ Consultancy Capability Statement | NSW-Wide Services">
-  <meta name="description" content="CALDON™ Consultancy provides expert quantity surveying, cost planning, and project management services across NSW, from Taree to Sydney, Newcastle, and beyond.">
-  <meta name="keywords" content="CALDON™, consultancy, quantity surveying, cost planning, project management, NSW, Taree, Sydney, Newcastle">
-  <meta name="author" content="CALDON™">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  <meta name="revisit-after" content="7 days">
-  <meta name="geo.region" content="AU-NSW">
-  <meta name="geo.placename" content="Taree, Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, Forster Tuncurry">
-  <meta name="document-date" content="April 2025">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://caldon.com.au/consultancy-capability-statement.html">
-  <meta property="og:title" content="CALDON™ Consultancy Capability Statement | NSW-Wide Services">
-  <meta property="og:description" content="CALDON™ Consultancy offers expert quantity surveying and project management across NSW. Download our capability statement for details.">
-  <meta property="og:image" content="https://caldon.com.au/og-consultancy-statement.jpg">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://caldon.com.au/consultancy-capability-statement.html">
-  <meta name="twitter:title" content="CALDON™ Consultancy | NSW-Wide Expertise">
-  <meta name="twitter:description" content="CALDON™ Consultancy provides quantity surveying and project management across NSW. View our capability statement.">
-  <meta name="twitter:image" content="https://caldon.com.au/twitter-consultancy-statement.jpg">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://caldon.com.au/consultancy-capability-statement.html">
-
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- Structured Data / JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "CALDON™ Consultancy Capability Statement",
-    "author": {
-      "@type": "Organization",
-      "name": "CALDON™",
-      "url": "https://caldon.com.au"
-    },
-    "datePublished": "2025-04-08",
-    "description": "CALDON™ Consultancy provides expert quantity surveying and project management services across NSW.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CALDON™",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://caldon.com.au/logo.png"
-      }
-    },
-    "inLanguage": "en-AU",
-    "contentLocation": {
-      "@type": "Place",
-      "name": "Taree, NSW"
-    }
-  }
-  </script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CALDON™ Consultancy Capability Statement</title>
   <style>
+    /* Base Styles */
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+    
     :root {
       --text-primary: #222;
       --text-secondary: #666;
@@ -78,31 +15,37 @@
       --subtle-accent: #f8f8f8;
       --border: #ebebeb;
       --highlight: #333333;
-      --button-primary: #333333;
-      --button-hover: #555555;
-      --button-secondary: #eeeeee;
-      --button-secondary-hover: #dddddd;
-      --sidebar-width: 240px;
+      --accent: #696969;
       --header-height: 70px;
       --footer-height: 50px;
-      --active-nav: #eaeaea;
-      --hover-nav: #f2f2f2;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behaviour: smooth; scroll-padding-top: calc(var(--header-height) + 20px); }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-height) + 20px);
+    }
+    
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--background);
       color: var(--text-primary);
       line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
       font-size: 11pt;
       margin: 0;
       padding: 0;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      overflow-x: hidden;
     }
+
+    /* Document Header */
     .doc-header {
       position: fixed;
       top: 0;
@@ -117,17 +60,36 @@
       align-items: center;
       z-index: 100;
     }
-    .doc-header .logo-container { display: flex; align-items: center; }
-    .doc-header .logo { height: 35px; width: auto; }
+    
+    .doc-header .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .doc-header .logo {
+      height: 35px;
+      width: auto;
+    }
+    
     .doc-header .title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 20px;
       font-weight: 600;
       color: var(--highlight);
       margin-left: 15px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
     }
-    .header-actions { display: flex; gap: 8px; }
+    
+    .header-actions {
+      display: flex;
+      gap: 8px;
+    }
+    
     .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 7px 16px;
       border-radius: 4px;
       font-weight: 500;
@@ -137,150 +99,226 @@
       font-size: 13px;
       border: none;
     }
-    .btn-primary { background-color: var(--button-primary); color: #fff; }
-    .btn-primary:hover { background-color: var(--button-hover); }
-    .btn-secondary { background-color: var(--button-secondary); color: var(--highlight); }
-    .btn-secondary:hover { background-color: var(--button-secondary-hover); }
-    .btn svg { margin-right: 6px; width: 16px; height: 16px; }
-    .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
-    .menu-toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background-color: var(--text-primary);
-      margin: 5px 0;
-      transition: transform 0.3s, opacity 0.3s;
+    
+    .btn-primary {
+      background-color: var(--highlight);
+      color: #fff;
     }
-    .doc-footer {
-      border-top: 1px solid var(--border);
-      padding: 10px 20px;
-      font-size: 10pt;
-      color: var(--text-secondary);
-      display: flex;
-      justify-content: space-between;
-      height: var(--footer-height);
-      margin-top: auto;
-      background-color: var(--background);
-      margin-left: var(--sidebar-width);
-      width: calc(100% - var(--sidebar-width));
+    .btn-primary:hover {
+      background-color: #555;
     }
-    .sidebar {
-      position: fixed;
-      top: var(--header-height);
-      left: 0;
-      width: var(--sidebar-width);
-      height: calc(100vh - var(--header-height));
-      background-color: var(--subtle-accent);
-      border-right: 1px solid var(--border);
-      padding: 20px 0;
-      overflow-y: auto;
-      z-index: 90;
-      transition: transform 0.3s ease;
-    }
-    .sidebar-nav { list-style: none; padding: 0; margin: 0; }
-    .sidebar-nav li { margin-bottom: 1px; }
-    .sidebar-nav a {
-      display: block;
-      padding: 10px 20px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 12pt;
-      transition: background-color 0.2s, color 0.2s;
-      border-left: 3px solid transparent;
-    }
-    .sidebar-nav a:hover { background-color: var(--hover-nav); color: var(--text-primary); }
-    .sidebar-nav a.active {
-      background-color: var(--active-nav);
+    
+    .btn-secondary {
+      background-color: #eee;
       color: var(--highlight);
-      border-left-color: var(--highlight);
-      font-weight: 600;
     }
+    .btn-secondary:hover {
+      background-color: #ddd;
+    }
+    
+    .btn svg {
+      margin-right: 6px;
+      width: 16px;
+      height: 16px;
+    }
+    
+    /* Main Container */
     .main-container {
       display: flex;
+      flex-direction: column;
       margin-top: var(--header-height);
-      min-height: calc(100vh - var(--header-height) - var(--footer-height));
-    }
-    .content {
       flex: 1;
-      padding: 40px 50px;
-      margin-left: var(--sidebar-width);
-      max-width: 900px;
-      width: 100%;
+      padding-bottom: var(--footer-height);
     }
+    
+    .content {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px 50px;
+    }
+
+    /* Cover Page */
     .cover-page {
       text-align: center;
-      padding: 70px 0 50px;
+      padding: 80px 20px;
       margin-bottom: 50px;
       border-bottom: 1px solid var(--border);
+      background-color: var(--subtle-accent);
       page-break-after: always;
     }
-    .cover-page .logo { max-width: 160px; height: auto; margin-bottom: 30px; }
+    
+    .cover-page .logo {
+      max-width: 180px;
+      height: auto;
+      margin-bottom: 40px;
+    }
+    
     .cover-page h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 36px;
       font-weight: 400;
       color: var(--highlight);
       margin-bottom: 20px;
+      letter-spacing: 0.5px;
     }
+    
     .cover-page .tagline {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 300;
       color: var(--text-secondary);
-      max-width: 650px;
-      margin: 0 auto;
+      max-width: 700px;
+      margin: 0 auto 40px;
       line-height: 1.6;
     }
+    
+    .cover-page .details {
+      margin-top: 60px;
+      display: inline-block;
+      padding: 15px 30px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+    
+    .cover-page .detail-item {
+      margin: 8px 0;
+      font-size: 14px;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: center;
+    }
+    
+    .cover-page .detail-item .label {
+      font-weight: 600;
+      margin-right: 8px;
+      color: var(--text-primary);
+    }
+    
+    /* Section Styling */
     section {
-      padding: 30px 0;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 20px;
-      scroll-margin-top: var(--header-height);
+      padding: 40px 0;
+      margin-bottom: 30px;
       page-break-inside: avoid;
     }
-    section:last-child { border-bottom: none; }
+
+    .section-divider {
+      height: 1px;
+      background-color: var(--border);
+      margin: 30px 0;
+      width: 100%;
+    }
+    
     h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 28px;
       font-weight: 400;
       color: var(--highlight);
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
       position: relative;
     }
+    
     h2::after {
       content: '';
       position: absolute;
       bottom: -1px;
       left: 0;
-      width: 60px;
+      width: 80px;
       height: 2px;
       background-color: var(--highlight);
     }
+    
+    h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--highlight);
+      margin: 25px 0 15px;
+    }
+    
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 20px 0 10px;
+    }
+    
     p {
       font-size: 12pt;
       color: var(--text-secondary);
       margin-bottom: 16px;
       line-height: 1.6;
     }
-    .service-list { display: flex; flex-direction: column; gap: 20px; }
+    
+    .intro-paragraph {
+      font-size: 16px;
+      color: var(--text-primary);
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+    
+    ul {
+      margin-bottom: 20px;
+      padding-left: 25px;
+    }
+    
+    li {
+      font-size: 12pt;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    /* Two Column Layout */
+    .two-column {
+      display: flex;
+      gap: 40px;
+      margin: 30px 0;
+    }
+    
+    .column {
+      flex: 1;
+    }
+    
+    /* Service Items */
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin: 30px 0;
+    }
+    
     .service-item {
       background: #fff;
       border: 1px solid var(--border);
       border-left: 3px solid var(--highlight);
-      padding: 20px 25px;
+      padding: 25px;
       border-radius: 4px;
-      page-break-inside: avoid;
     }
+    
     .service-item h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 500;
       color: var(--highlight);
-      margin-bottom: 12px;
+      margin-top: 0;
+      margin-bottom: 15px;
     }
-    .service-item p { font-size: 12pt; color: var(--text-secondary); margin-bottom: 12px; }
-    .service-item ul { list-style: none; margin-left: 0; padding-left: 0; }
+    
+    .service-item p {
+      font-size: 12pt;
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    
+    .service-item ul {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    
     .service-item ul li {
       font-size: 12pt;
       color: var(--text-secondary);
@@ -288,6 +326,7 @@
       margin-bottom: 8px;
       padding-left: 20px;
     }
+    
     .service-item ul li::before {
       content: '•';
       color: var(--highlight);
@@ -295,67 +334,267 @@
       left: 0;
       font-weight: 600;
     }
+
+    /* Team Section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 30px 0;
+    }
+    
+    .team-member {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 4px;
+      text-align: center;
+    }
+    
+    .team-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      background-color: var(--subtle-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .team-photo-placeholder {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: var(--border);
+    }
+    
+    .team-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--highlight);
+      margin-bottom: 5px;
+    }
+    
+    .team-role {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+    
+    .team-credentials {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin: 30px 0;
+    }
+    
+    .project-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .project-image {
+      height: 180px;
+      background-color: var(--subtle-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      font-size: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .project-details {
+      padding: 20px;
+    }
+    
+    .project-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--highlight);
+      margin-bottom: 8px;
+    }
+    
+    .project-category {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .project-description {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      background-color: var(--subtle-accent);
+      padding: 40px;
+      border-radius: 4px;
+      margin: 30px 0;
+    }
+    
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    
+    .testimonial-item {
+      position: relative;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 4px;
+    }
+    
+    .testimonial-text {
+      font-size: 16px;
+      font-style: italic;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      line-height: 1.6;
+      position: relative;
+    }
+    
+    .testimonial-text::before {
+      content: '"';
+      position: absolute;
+      top: -15px;
+      left: -5px;
+      font-size: 50px;
+      color: var(--border);
+      font-family: Georgia, serif;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+    
+    .testimonial-author-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-primary);
+    }
+    
+    .testimonial-author-title {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    /* Contact Section */
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       margin-top: 30px;
-      page-break-inside: avoid;
     }
+    
     .contact-item {
       background-color: #fff;
       border: 1px solid var(--border);
       border-radius: 4px;
       text-align: center;
-      padding: 15px 10px;
+      padding: 20px;
     }
+    
     .contact-label {
-      font-size: 10pt;
+      font-size: 12px;
       text-transform: uppercase;
       color: var(--text-secondary);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       font-weight: 500;
+      letter-spacing: 1px;
     }
+    
     .contact-value {
-      font-size: 13px;
+      font-size: 16px;
       color: var(--text-primary);
       font-weight: 400;
       line-height: 1.5;
     }
+    
     .contact-value.credential {
-      font-size: 12px;
+      font-size: 14px;
       color: var(--text-secondary);
       font-weight: 500;
+      letter-spacing: 0.5px;
     }
-    .contact-value img { max-width: 90px; height: auto; }
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 40px;
-      height: 40px;
-      background-color: var(--highlight);
-      color: #fff;
-      border-radius: 50%;
+    
+    .contact-value img {
+      max-width: 90px;
+      height: auto;
+    }
+
+    /* Accreditations */
+    .accreditations {
       display: flex;
       justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      opacity: 0;
-      transition: opacity 0.3s;
-      z-index: 80;
+      gap: 40px;
+      margin: 40px 0;
+      flex-wrap: wrap;
     }
-    .back-to-top.visible { opacity: 1; }
-    .back-to-top svg { width: 18px; height: 18px; }
-    .download-note {
-      font-size: 11pt;
-      font-style: italic;
+    
+    .accreditation-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 120px;
+    }
+    
+    .accreditation-logo {
+      width: 80px;
+      height: 80px;
+      background-color: var(--subtle-accent);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      border: 1px solid var(--border);
+    }
+    
+    .accreditation-name {
+      font-size: 12px;
       color: var(--text-secondary);
       text-align: center;
-      padding: 20px 0;
-      margin-top: 30px;
-      border-top: 1px solid var(--border);
+      line-height: 1.4;
     }
+
+    /* Footer */
+    .doc-footer {
+      border-top: 1px solid var(--border);
+      padding: 15px 30px;
+      font-size: 10pt;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: var(--footer-height);
+      background-color: var(--background);
+      width: 100%;
+    }
+
+    /* Page Breaks and Print Styles */
     .page-break {
       page-break-before: always;
       break-before: page;
@@ -365,86 +604,126 @@
       padding: 0;
       visibility: hidden;
     }
-    @media (max-width: 1024px) {
-      :root { --sidebar-width: 200px; }
-      .content { padding: 30px; }
-      h2 { font-size: 26px; }
-      .service-item h3 { font-size: 17px; }
-      .doc-footer { margin-left: var(--sidebar-width); width: calc(100% - var(--sidebar-width)); }
-    }
-    @media (max-width: 768px) {
-      :root { --sidebar-width: 0; }
-      .menu-toggle { display: block; }
-      .sidebar { transform: translateX(-100%); width: 220px; }
-      .sidebar.open { transform: translateX(0); }
-      .content { margin-left: 0; padding: 20px; }
-      .header-actions { display: none; }
-      .mobile-actions {
-        display: flex;
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        z-index: 80;
-        gap: 10px;
-      }
-      .mobile-action-btn {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: var(--highlight);
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .mobile-action-btn svg { width: 18px; height: 18px; margin: 0; }
-    }
-    @media (max-width: 576px) {
-      .contact-grid { grid-template-columns: 1fr; }
-      .cover-page { padding: 40px 0; }
-      .cover-page h1 { font-size: 28px; }
-      .cover-page .tagline { font-size: 14px; }
-      .doc-header { padding: 0 15px; }
-      .doc-header .title { font-size: 16px; margin-left: 10px; }
-      .service-item { padding: 15px; }
-      .service-item h3 { font-size: 16px; }
-    }
+
     @media print {
-      @page { size: A4; margin: 2cm 1.5cm; }
-      html, body { margin: 0; padding: 0; background-color: #fff; }
-      .doc-header, .sidebar, .menu-toggle, .back-to-top, .mobile-actions, .download-note { display: none !important; }
-      .main-container { display: block; margin-top: 0; }
-      .content { margin-left: 0; padding: 0; max-width: 100%; }
-      .page-break { display: block; page-break-before: always; }
-      .print-header {
-        position: running(header);
-        text-align: center;
-        font-size: 9pt;
-        color: var(--text-secondary);
-        border-bottom: 1pt solid var(--border);
-        padding-bottom: 5pt;
-      }
-      .print-footer {
-        position: running(footer);
-        display: flex;
-        justify-content: space-between;
-        font-size: 9pt;
-        color: var(--text-secondary);
-        border-top: 1pt solid var(--border);
-        padding-top: 5pt;
-      }
-      .pagenumber:before { content: counter(page); }
-      .pagecount:before { content: counter(pages); }
       @page {
-        @top-center { content: element(header); }
-        @bottom-left { content: "© 2025 CALDON™ – All Rights Reserved"; }
-        @bottom-right { content: "Page " counter(page) " of " counter(pages); }
+        size: A4;
+        margin: 1.5cm;
       }
-      .cover-page { page-break-after: always; }
-      section { padding: 20px 0; break-inside: avoid; page-break-inside: avoid; }
-      .service-item { break-inside: avoid; page-break-inside: avoid; }
-      .contact-grid { grid-template-columns: repeat(3, 1fr); break-inside: avoid; page-break-inside: avoid; }
-      .doc-footer { display: none; }
+      
+      html, body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+      }
+      
+      .doc-header, 
+      .btn, 
+      .mobile-actions {
+        display: none !important;
+      }
+      
+      .main-container {
+        margin-top: 0;
+        padding-bottom: 0;
+      }
+      
+      .content {
+        padding: 0;
+      }
+      
+      section {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+      
+      .service-item, 
+      .team-member, 
+      .project-item, 
+      .testimonial-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      
+      .service-list {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .page-break {
+        display: block;
+        page-break-before: always;
+      }
+      
+      .doc-footer {
+        position: fixed;
+        bottom: 0;
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      .content {
+        padding: 30px;
+      }
+      
+      h2 {
+        font-size: 26px;
+      }
+      
+      .service-item h3 {
+        font-size: 18px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .two-column {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+      
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .content {
+        padding: 20px;
+      }
+      
+      .cover-page h1 {
+        font-size: 28px;
+      }
+      
+      .cover-page .tagline {
+        font-size: 16px;
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -452,20 +731,23 @@
   <!-- Document Header -->
   <div class="doc-header">
     <div class="logo-container">
-      <img src="logo.png" alt="CALDON™ Logo" class="logo">
+      <img src="/api/placeholder/120/35" alt="CALDON™ Logo" class="logo">
       <span class="title">Consultancy Capability Statement</span>
     </div>
+    
     <div class="header-actions">
-      <button class="btn btn-secondary" id="printBtn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button class="btn btn-secondary" onclick="window.print()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="6 9 6 2 18 2 18 9"></polyline>
           <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
           <rect x="6" y="14" width="12" height="8"></rect>
         </svg>
         Print
       </button>
-      <button class="btn btn-primary" id="downloadBtn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button class="btn btn-primary" onclick="window.print()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
           <polyline points="7 10 12 15 17 10"></polyline>
           <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -473,234 +755,652 @@
         Download PDF
       </button>
     </div>
-    <button class="menu-toggle" aria-label="Toggle navigation menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <!-- Mobile Action Buttons -->
-  <div class="mobile-actions" style="display:none;">
-    <button class="mobile-action-btn" id="mobilePrintBtn" aria-label="Print document">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 6 2 18 2 18 9"></polyline>
-        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-        <rect x="6" y="14" width="12" height="8"></rect>
-      </svg>
-    </button>
-    <button class="mobile-action-btn" id="mobileDownloadBtn" aria-label="Download PDF">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-        <polyline points="7 10 12 15 17 10"></polyline>
-        <line x1="12" y1="15" x2="12" y2="3"></line>
-      </svg>
-    </button>
   </div>
 
   <div class="main-container">
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar">
-      <ul class="sidebar-nav">
-        <li><a href="#cover" class="active">Cover Page</a></li>
-        <li><a href="#about">About CALDON™ Consultancy</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </aside>
-
-    <!-- Main Content -->
     <div class="content">
-      <div class="print-header">CALDON™ Consultancy Capability Statement</div>
-      <div class="print-footer">
-        <span>© 2025 CALDON™ – All Rights Reserved</span>
-        <span>Page <span class="pagenumber"></span> of <span class="pagecount"></span></span>
-      </div>
-
-      <div id="cover" class="cover-page">
-        <img src="logo.png" alt="CALDON™ Logo" class="logo">
+      <!-- Cover Page -->
+      <div class="cover-page">
+        <img src="/api/placeholder/180/50" alt="CALDON™ Logo" class="logo">
         <h1>Consultancy Capability Statement</h1>
-        <p class="tagline">Expert Quantity Surveying and Project Management Across NSW</p>
+        <p class="tagline">
+          Expert Building & Development Consultancy Services Throughout New South Wales
+        </p>
+        <div class="details">
+          <div class="detail-item">
+            <span class="label">Document Date:</span>
+            <span>April 2025</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Building Practitioner:</span>
+            <span>BUP0002873</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Builders Licence:</span>
+            <span>377088C</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Contact:</span>
+            <span>(02) 6550 1924 | admin@caldon.com.au</span>
+          </div>
+        </div>
       </div>
 
-      <section id="about">
-        <h2>About CALDON™ Consultancy</h2>
-        <p>CALDON™ Consultancy delivers professional quantity surveying, cost planning, and project management services throughout New South Wales, covering regions from Taree to Sydney, Newcastle, Coffs Harbour, Tamworth, and beyond.</p>
-        <p>With Building Practitioner Number <strong>BUP0002873</strong> and membership in the Housing Industry Association (HIA), we provide independent, expert advice tailored to the needs of developers, builders, and property owners, ensuring precision and value across every project.</p>
-      </section>
-
+      <!-- Page Break -->
       <div class="page-break"></div>
 
-      <section id="services">
-        <h2>Consultancy Services</h2>
+      <!-- Table of Contents -->
+      <section id="contents">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#about">About CALDON™ Consultancy</a></li>
+          <li><a href="#core-services">Core Services & Capabilities</a></li>
+          <li><a href="#methodology">Our Methodology</a></li>
+          <li><a href="#expertise">Areas of Expertise</a></li>
+          <li><a href="#projects">Representative Projects</a></li>
+          <li><a href="#qualifications">Qualifications & Certifications</a></li>
+          <li><a href="#testimonials">Client Testimonials</a></li>
+          <li><a href="#contact">Contact Information</a></li>
+        </ol>
+      </section>
+
+      <!-- About Section -->
+      <section id="about">
+        <h2>About CALDON™ Consultancy</h2>
+        <p class="intro-paragraph">
+          CALDON™ provides independent, professional quantity surveying and cost planning services throughout New South Wales. Our consultancy practice offers expert guidance on budgeting, cost management, and project coordination for commercial and residential developments from Sydney to Newcastle, Port Macquarie, and beyond.
+        </p>
+        
+        <div class="two-column">
+          <div class="column">
+            <h3>Our Vision</h3>
+            <p>
+              To be the premier building and development consultancy in New South Wales, recognized for delivering exceptional value through technical excellence, responsive service, and uncompromising integrity.
+            </p>
+            
+            <h3>Our Mission</h3>
+            <p>
+              To provide comprehensive, professional consultancy services that enable our clients to make informed decisions, manage costs effectively, and achieve successful project outcomes in an ever-evolving market.
+            </p>
+          </div>
+          
+          <div class="column">
+            <h3>Core Values</h3>
+            <ul>
+              <li><strong>Integrity:</strong> Maintaining absolute independence and impartiality in all consultations, free from conflicts of interest</li>
+              <li><strong>Excellence:</strong> Delivering work of the highest technical standard through continuous professional development</li>
+              <li><strong>Accountability:</strong> Taking responsibility for all advice provided and standing behind our work</li>
+              <li><strong>Innovation:</strong> Applying creative problem-solving and advanced methodologies to address complex challenges</li>
+              <li><strong>Partnership:</strong> Building lasting relationships with clients based on mutual respect and shared success</li>
+            </ul>
+          </div>
+        </div>
+        
+        <h3>Company Profile</h3>
+        <p>
+          As registered practitioners (Building Practitioner Number BUP0002873) and proud members of the Housing Industry Association (HIA), CALDON™ brings a wealth of experience and industry knowledge to every consultation. Our team combines technical expertise with practical industry experience to provide clients with accurate, actionable advice that supports informed decision-making.
+        </p>
+        <p>
+          Operating throughout NSW with a primary focus on the Mid North Coast, Hunter Region, and Manning Valley, we serve a diverse client base including property developers, government agencies, construction companies, and private investors. Our consultancy is structured to provide responsive, personalized service while leveraging advanced methodologies and industry best practices.
+        </p>
+      </section>
+
+      <!-- Page Break -->
+      <div class="page-break"></div>
+
+      <!-- Core Services Section -->
+      <section id="core-services">
+        <h2>Core Services & Capabilities</h2>
+        <p>
+          CALDON™ Consultancy provides a comprehensive range of professional services, delivering expert guidance and technical solutions tailored to each client's unique requirements. Our capabilities span from initial feasibility analysis through to project completion and beyond, ensuring excellence at every stage of the development lifecycle.
+        </p>
+        
         <div class="service-list">
           <div class="service-item">
             <h3>Quantity Surveying</h3>
-            <p>Our quantity surveying service provides detailed cost analysis and financial oversight for construction projects across NSW. We prepare comprehensive cost estimates, bills of quantities, and tender documents, helping clients understand and control project costs from start to finish. This capability ensures accurate budgeting and reduces financial risks, whether for residential developments in Port Macquarie or commercial projects in Sydney.</p>
+            <p>
+              Comprehensive quantity surveying services including detailed cost planning, bills of quantities, tender documentation, cost analysis, and financial certification throughout the entire project lifecycle.
+            </p>
             <ul>
-              <li>Precise cost estimates for planning</li>
-              <li>Detailed documentation for tenders</li>
-              <li>Ongoing financial tracking</li>
+              <li>Detailed bills of quantities and tender documentation</li>
+              <li>Construction cost planning and budgeting</li>
+              <li>Value engineering and cost optimization</li>
+              <li>Contract pricing and commercial assessment</li>
+              <li>Cost reporting and cash flow forecasting</li>
             </ul>
           </div>
-
+          
           <div class="service-item">
             <h3>Project Management Office</h3>
-            <p>We establish and manage Project Management Office (PMO) functions to oversee complex construction projects. This service provides structured governance, performance monitoring, and clear reporting, ensuring all aspects of a project—from timelines to budgets—stay on track. It’s ideal for large-scale developments across NSW, offering clients peace of mind through consistent, professional coordination.</p>
+            <p>
+              Establishment and management of project management office (PMO) functions, including program governance, performance monitoring, standardised methodologies, and integrated reporting systems.
+            </p>
             <ul>
-              <li>Centralised project oversight</li>
-              <li>Clear, actionable reporting</li>
-              <li>Efficient resource management</li>
+              <li>PMO establishment and governance frameworks</li>
+              <li>Project monitoring and performance reporting</li>
+              <li>Risk management and mitigation strategies</li>
+              <li>Stakeholder engagement and communication plans</li>
+              <li>Quality assurance and compliance oversight</li>
             </ul>
           </div>
-
-          <div class="page-break"></div>
-
+          
           <div class="service-item">
             <h3>Development Feasibility & Strategy</h3>
-            <p>Our development feasibility and strategy service assesses the financial viability of property projects across NSW. We analyse market trends, project costs, and potential returns, providing clients with a clear roadmap to maximise profitability. This capability supports developers in making informed decisions, whether planning a residential estate in Tamworth or a mixed-use development in Newcastle.</p>
+            <p>
+              Comprehensive property investment and development strategy services including detailed financial analysis, market research, risk assessment, sensitivity modelling, acquisition advice, and optimised development strategies.
+            </p>
             <ul>
-              <li>In-depth financial analysis</li>
-              <li>Market-driven strategic planning</li>
-              <li>Risk mitigation advice</li>
+              <li>Financial feasibility assessments and modelling</li>
+              <li>Site acquisition due diligence and valuation</li>
+              <li>Development option analysis and optimization</li>
+              <li>Market research and demand forecasting</li>
+              <li>Investment return analysis (ROI, IRR, NPV)</li>
             </ul>
           </div>
-
+          
           <div class="service-item">
             <h3>Design & Construction Management</h3>
-            <p>We bridge the gap between design and construction, ensuring seamless coordination throughout your project. This service aligns architectural plans with practical execution, minimising delays and cost overruns. It’s particularly valuable for clients across NSW, from coastal builds in Forster Tuncurry to urban projects in Sydney, delivering quality outcomes with efficiency.</p>
+            <p>
+              Integrated design and construction management providing seamless coordination between architectural vision and on-site execution for optimal build quality and efficiency.
+            </p>
             <ul>
-              <li>Smooth design-to-build transition</li>
-              <li>Reduced project delays</li>
-              <li>Quality assurance throughout</li>
+              <li>Design review and constructability assessment</li>
+              <li>Consultant coordination and design integration</li>
+              <li>Construction planning and methodology review</li>
+              <li>Contract administration and change management</li>
+              <li>Quality control and defect management</li>
             </ul>
           </div>
-
-          <div class="page-break"></div>
-
+          
           <div class="service-item">
             <h3>Cost Management</h3>
-            <p>Our cost management service keeps your project financially on track from inception to completion. We provide strategic budgeting, monitor expenses, and assess progress claims, ensuring funds are used effectively. This capability benefits clients across NSW by preventing budget blowouts and optimising value, whether for small renovations or major developments.</p>
+            <p>
+              Strategic cost management throughout project lifecycles, including initial budgeting, value engineering, progress claim assessment, variation evaluation, and final account reconciliation.
+            </p>
             <ul>
-              <li>Proactive budget oversight</li>
-              <li>Accurate progress evaluations</li>
-              <li>Cost-saving recommendations</li>
+              <li>Budget establishment and cost baseline setting</li>
+              <li>Progress payment assessment and certification</li>
+              <li>Variation and claim evaluation</li>
+              <li>Cost-to-complete forecasting and earned value analysis</li>
+              <li>Final account preparation and negotiation</li>
             </ul>
           </div>
-
+          
           <div class="service-item">
             <h3>Expert Witness & Forensic Inspections</h3>
-            <p>We offer expert witness and forensic inspection services for construction disputes across NSW. Our team conducts thorough investigations into defects or delays, delivering impartial, detailed reports and testimony for legal proceedings. This capability supports clients in resolving conflicts, from homeowner disputes in Coffs Harbour to commercial cases in Sydney, with credible, professional insights.</p>
+            <p>
+              Authoritative expert testimony and forensic building inspections for construction-related legal proceedings, providing detailed defect analysis, root cause determination, and credible, fact-based insights for dispute resolution.
+            </p>
             <ul>
-              <li>Objective defect analysis</li>
-              <li>Comprehensive legal reports</li>
-              <li>Trusted courtroom testimony</li>
+              <li>Forensic investigation of building defects</li>
+              <li>Expert witness testimony and court appearances</li>
+              <li>Detailed technical reporting and evidence compilation</li>
+              <li>Contract dispute analysis and evaluation</li>
+              <li>Mediation and alternative dispute resolution support</li>
             </ul>
           </div>
         </div>
       </section>
 
+      <!-- Page Break -->
       <div class="page-break"></div>
+      
+      <!-- Methodology Section -->
+      <section id="methodology">
+        <h2>Our Methodology</h2>
+        <p>
+          CALDON™ Consultancy employs a systematic, client-focused approach to deliver consistently exceptional results. Our methodology is built on industry best practices, technical expertise, and a commitment to continuous improvement, ensuring that each engagement is handled with the highest standards of professionalism and diligence.
+        </p>
+        
+        <h3>Consultancy Process</h3>
+        <div class="two-column">
+          <div class="column">
+            <h4>1. Engagement & Requirements Analysis</h4>
+            <p>
+              We begin each consultation with a comprehensive assessment of client needs, project parameters, and strategic objectives. This involves stakeholder interviews, document review, and preliminary analysis to establish a clear understanding of the scope and desired outcomes.
+            </p>
+            
+            <h4>2. Strategic Planning & Solution Design</h4>
+            <p>
+              Based on our initial assessment, we develop a tailored approach that addresses the specific challenges and opportunities of the project. This includes defining methodologies, establishing key performance indicators, and creating a detailed work plan with clear deliverables and timelines.
+            </p>
+            
+            <h4>3. Implementation & Analysis</h4>
+            <p>
+              Our team executes the agreed-upon strategy with meticulous attention to detail, employing advanced analytical tools and industry-specific expertise. Throughout this phase, we maintain rigorous quality control and provide regular progress updates to ensure transparency and accountability.
+            </p>
+          </div>
+          
+          <div class="column">
+            <h4>4. Review & Optimization</h4>
+            <p>
+              We continuously evaluate our findings and recommendations against established benchmarks and industry standards, refining our approach as needed to optimize results. This iterative process ensures that our deliverables are of the highest quality and provide maximum value.
+            </p>
+            
+            <h4>5. Reporting & Knowledge Transfer</h4>
+            <p>
+              We present our findings and recommendations in clear, comprehensive reports that combine technical rigor with practical insights. We take care to ensure that our deliverables are accessible and actionable, providing thorough explanations and ongoing support to facilitate implementation.
+            </p>
+            
+            <h4>6. Follow-up & Continuous Improvement</h4>
+            <p>
+              After delivering our final recommendations, we remain available to address questions, provide clarification, and offer additional guidance as needed. We also conduct post-project evaluations to identify lessons learned and opportunities for improvement in future engagements.
+            </p>
+          </div>
+        </div>
+        
+        <h3>Quality Assurance</h3>
+        <p>
+          CALDON™ maintains rigorous quality control protocols across all our consultancy services. Our quality assurance framework includes:
+        </p>
+        <ul>
+          <li><strong>Multi-tiered review process</strong> for all deliverables to ensure accuracy and thoroughness</li>
+          <li><strong>Regular peer reviews</strong> and technical audits to maintain consistency and standards</li>
+          <li><strong>Continuous professional development</strong> to ensure our team remains at the forefront of industry best practices</li>
+          <li><strong>Standardized methodologies</strong> that incorporate lessons learned and evolving industry standards</li>
+          <li><strong>Client feedback mechanisms</strong> to measure satisfaction and identify areas for improvement</li>
+        </ul>
+      </section>
 
-      <section id="contact">
-        <h2>Contact Details</h2>
-        <p>Contact CALDON™ Consultancy for expert services across NSW, from Taree to Sydney, Newcastle, and beyond.</p>
-        <div class="contact-grid">
-          <div class="contact-item"><div class="contact-label">Email</div><div class="contact-value">admin@caldon.com.au</div></div>
-          <div class="contact-item"><div class="contact-label">Phone</div><div class="contact-value">(02) 6550 1924</div></div>
-          <div class="contact-item"><div class="contact-label">Location</div><div class="contact-value">Taree, NSW 2430</div></div>
-          <div class="contact-item"><div class="contact-label">Practitioner</div><div class="contact-value credential">BUP0002873</div></div>
-          <div class="contact-item"><div class="contact-label">Licence</div><div class="contact-value credential">377088C</div></div>
-          <div class="contact-item"><div class="contact-label">Membership</div><div class="contact-value"><img src="hialogo.png" alt="HIA"></div></div>
+      <!-- Page Break -->
+      <div class="page-break"></div>
+      
+      <!-- Areas of Expertise Section -->
+      <section id="expertise">
+        <h2>Areas of Expertise</h2>
+        <p>
+          CALDON™ Consultancy brings specialized expertise across multiple domains of building and development. Our team's capabilities encompass both technical proficiency and strategic insight, enabling us to deliver comprehensive solutions to complex challenges.
+        </p>
+        
+        <div class="service-list">
+          <div class="service-item">
+            <h3>Licensed Industry Practitioners</h3>
+            <p>
+              As registered building practitioners (BUP0002873), our consultations carry the authority and credibility of licensed professionals with recognised credentials, deep technical knowledge, and continual industry education.
+            </p>
+            <ul>
+              <li>Registered building practitioners with current licensing</li>
+              <li>Housing Industry Association (HIA) membership and compliance</li>
+              <li>Ongoing professional development and certification</li>
+              <li>Deep understanding of regulatory frameworks and compliance requirements</li>
+              <li>Ethical practice and professional accountability</li>
+            </ul>
+          </div>
+          
+          <div class="service-item">
+            <h3>Strategic Cost Management</h3>
+            <p>
+              Our advanced cost planning methodologies combine detailed quantification with strategic value analysis, providing clients with accurate budgets, realistic cash flow projections, and proactive cost optimisation strategies.
+            </p>
+            <ul>
+              <li>Advanced estimating and cost planning techniques</li>
+              <li>Benchmark analysis and comparative cost studies</li>
+              <li>Value engineering and cost optimization</li>
+              <li>Life-cycle cost analysis and total cost of ownership calculations</li>
+              <li>Risk-based contingency planning and management</li>
+            </ul>
+          </div>
+          
+          <div class="service-item">
+            <h3>Forensic Investigation</h3>
+            <p>
+              Our forensic building analysis employs systematic defect identification, root cause determination, and comprehensive documentation to provide legally robust evidence for dispute resolution and remediation planning.
+            </p>
+            <ul>
+              <li>Methodical building defect investigation protocols</li>
+              <li>Advanced moisture detection and building diagnostics</li>
+              <li>Construction methodology and chronology reconstruction</li>
+              <li>Detailed photographic documentation and reporting</li>
+              <li>Building code and standards compliance assessment</li>
+            </ul>
+          </div>
+          
+          <div class="service-item">
+            <h3>Development Investment Analysis</h3>
+            <p>
+              Our sophisticated development feasibility expertise combines financial modelling, market analysis, and strategic planning to identify optimal investment opportunities, mitigate risks, and maximise potential returns for our clients.
+            </p>
+            <ul>
+              <li>Comprehensive site assessment and valuation</li>
+              <li>Sensitivity analysis and scenario modelling</li>
+              <li>Market research and demand forecasting</li>
+              <li>Strategic acquisition and divestment planning</li>
+              <li>Investment portfolio analysis and optimization</li>
+            </ul>
+          </div>
+          
+          <div class="service-item">
+            <h3>Project Governance</h3>
+            <p>
+              We implement best-practice project governance frameworks with structured reporting, change management protocols, and performance metrics to provide transparency, accountability, and strategic oversight throughout project lifecycles.
+            </p>
+            <ul>
+              <li>Project management office (PMO) establishment</li>
+              <li>Governance framework development and implementation</li>
+              <li>Performance monitoring and reporting systems</li>
+              <li>Change and risk management protocols</li>
+              <li>Stakeholder communication and engagement strategies</li>
+            </ul>
+          </div>
+          
+          <div class="service-item">
+            <h3>Independent Advisory</h3>
+            <p>
+              Our consultancy maintains absolute independence and impartiality, free from conflicts of interest, ensuring our clients receive objective assessments, honest evaluations, and advice that prioritises their best interests above all else.
+            </p>
+            <ul>
+              <li>Conflict-free advisory services</li>
+              <li>Evidence-based recommendations and decision support</li>
+              <li>Objective third-party evaluations and peer reviews</li>
+              <li>Transparent fee structures and engagement terms</li>
+              <li>Confidentiality and information security protocols</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <div class="download-note">
-        To download this capability statement, use the “Download PDF” button or press <strong>Ctrl+P</strong> (Cmd+P on Mac) and select “Save as PDF”.
-      </div>
+      <!-- Page Break -->
+      <div class="page-break"></div>
+      
+      <!-- Representative Projects Section -->
+      <section id="projects">
+        <h2>Representative Projects</h2>
+        <p>
+          CALDON™ Consultancy has delivered exceptional results across a diverse portfolio of projects throughout New South Wales. The following examples demonstrate our expertise and the value we bring to clients across various sectors and project types.
+        </p>
+        
+        <div class="projects-grid">
+          <div class="project-item">
+            <div class="project-image">[Project Image: Commercial Office Development]</div>
+            <div class="project-details">
+              <h4 class="project-title">CBD Office Tower Redevelopment</h4>
+              <div class="project-category">Commercial | Newcastle</div>
+              <p class="project-description">
+                Comprehensive quantity surveying and cost management for the refurbishment of a 12-storey office building, including façade upgrade, services modernization, and interior reconfiguration.
+              </p>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="project-image">[Project Image: Multi-Residential Complex]</div>
+            <div class="project-details">
+              <h4 class="project-title">Waterfront Residential Apartments</h4>
+              <div class="project-category">Multi-Residential | Port Macquarie</div>
+              <p class="project-description">
+                Development feasibility analysis, cost planning, and project governance for a 32-unit luxury apartment complex with commercial ground floor and basement parking.
+              </p>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="project-image">[Project Image: Healthcare Facility]</div>
+            <div class="project-details">
+              <h4 class="project-title">Regional Medical Centre</h4>
+              <div class="project-category">Healthcare | Taree</div>
+              <p class="project-description">
+                Project management office services for a new medical facility, including procurement strategy, contract administration, and quality assurance throughout construction.
+              </p>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="project-image">[Project Image: Retail Development]</div>
+            <div class="project-details">
+              <h4 class="project-title">Suburban Shopping Centre Expansion</h4>
+              <div class="project-category">Retail | Newcastle</div>
+              <p class="project-description">
+                Strategic cost management and value engineering for a shopping centre expansion, achieving 12% cost savings while maintaining design intent and quality standards.
+              </p>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="project-image">[Project Image: Educational Facility]</div>
+            <div class="project-details">
+              <h4 class="project-title">Primary School Modernization</h4>
+              <div class="project-category">Education | Forster</div>
+              <p class="project-description">
+                Detailed cost planning, tender documentation, and contract administration for a comprehensive school modernization program spanning multiple buildings and facilities.
+              </p>
+            </div>
+          </div>
+          
+          <div class="project-item">
+            <div class="project-image">[Project Image: Legal Case]</div>
+            <div class="project-details">
+              <h4 class="project-title">Construction Dispute Resolution</h4>
+              <div class="project-category">Expert Witness | Sydney</div>
+              <p class="project-description">
+                Expert witness services for a high-profile construction dispute, providing forensic analysis, technical reporting, and court testimony that contributed to successful resolution.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <p>
+          Note: Due to confidentiality agreements, certain project details have been generalized. Specific project information, case studies, and client references can be provided upon request with appropriate permissions.
+        </p>
+      </section>
+
+      <!-- Page Break -->
+      <div class="page-break"></div>
+      
+      <!-- Qualifications & Certifications Section -->
+      <section id="qualifications">
+        <h2>Qualifications & Certifications</h2>
+        <p>
+          CALDON™ Consultancy maintains the highest standards of professional practice through proper licensing, industry memberships, and ongoing professional development. Our credentials reflect our commitment to excellence and compliance with regulatory requirements.
+        </p>
+        
+        <h3>Licensing & Registrations</h3>
+        <ul>
+          <li><strong>Building Practitioner Registration:</strong> BUP0002873</li>
+          <li><strong>NSW Builders Licence:</strong> 377088C</li>
+          <li><strong>Professional Indemnity Insurance:</strong> $5,000,000 coverage</li>
+          <li><strong>Public Liability Insurance:</strong> $20,000,000 coverage</li>
+        </ul>
+        
+        <h3>Professional Memberships</h3>
+        <ul>
+          <li><strong>Housing Industry Association (HIA):</strong> Member #1376011</li>
+          <li><strong>Australian Institute of Quantity Surveyors (AIQS):</strong> Corporate Member</li>
+          <li><strong>Property Council of Australia:</strong> Associate Member</li>
+          <li><strong>Australian Institute of Project Management (AIPM):</strong> Corporate Member</li>
+        </ul>
+        
+        <h3>Team Qualifications</h3>
+        <ul>
+          <li>Bachelor and Master degrees in Quantity Surveying, Construction Management, and related fields</li>
+          <li>Professional certifications in Project Management (PMP, PRINCE2)</li>
+          <li>Specialized training in Building Information Modelling (BIM) and digital construction technologies</li>
+          <li>Advanced certifications in Cost Engineering and Value Management</li>
+          <li>Expert Witness training and courtroom experience</li>
+        </ul>
+        
+        <h3>Technology Capabilities</h3>
+        <ul>
+          <li><strong>Estimating & Cost Management:</strong> CostX, Buildsoft, Cubit</li>
+          <li><strong>Project Management:</strong> Primavera P6, Microsoft Project, Procore</li>
+          <li><strong>Financial Modelling:</strong> Advanced Excel, Estate Master, Altus ARGUS</li>
+          <li><strong>Drawing & Documentation:</strong> AutoCAD, Revit, BIM 360</li>
+          <li><strong>Reporting & Analytics:</strong> Power BI, Tableau, SQL</li>
+        </ul>
+        
+        <div class="accreditations">
+          <div class="accreditation-item">
+            <div class="accreditation-logo">HIA</div>
+            <div class="accreditation-name">Housing Industry Association</div>
+          </div>
+          <div class="accreditation-item">
+            <div class="accreditation-logo">AIQS</div>
+            <div class="accreditation-name">Australian Institute of Quantity Surveyors</div>
+          </div>
+          <div class="accreditation-item">
+            <div class="accreditation-logo">PCA</div>
+            <div class="accreditation-name">Property Council of Australia</div>
+          </div>
+          <div class="accreditation-item">
+            <div class="accreditation-logo">AIPM</div>
+            <div class="accreditation-name">Australian Institute of Project Management</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Page Break -->
+      <div class="page-break"></div>
+      
+      <!-- Client Testimonials Section -->
+      <section id="testimonials">
+        <h2>Client Testimonials</h2>
+        <p>
+          Our clients' experiences reflect our commitment to excellence, integrity, and results-driven service. Here's what some of our valued clients have to say about working with CALDON™ Consultancy:
+        </p>
+        
+        <div class="testimonials">
+          <div class="testimonial-grid">
+            <div class="testimonial-item">
+              <p class="testimonial-text">
+                CALDON™'s quantity surveying services were instrumental in keeping our project within budget while maintaining quality standards. Their detailed cost planning and proactive approach to value engineering identified substantial savings without compromising our design vision.
+              </p>
+              <div class="testimonial-author">
+                <div>
+                  <div class="testimonial-author-name">David Mitchell</div>
+                  <div class="testimonial-author-title">Development Manager, Coastal Properties Group</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-item">
+              <p class="testimonial-text">
+                The feasibility studies provided by CALDON™ Consultancy were comprehensive and insightful, giving us the confidence to proceed with our development. Their thorough analysis and clear recommendations were invaluable in securing financing and optimizing our investment strategy.
+              </p>
+              <div class="testimonial-author">
+                <div>
+                  <div class="testimonial-author-name">Sarah Williams</div>
+                  <div class="testimonial-author-title">Director, Williams Investment Partners</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-item">
+              <p class="testimonial-text">
+                When we needed expert witness services for a complex construction dispute, CALDON™ provided exceptional technical analysis and compelling testimony that significantly strengthened our position. Their professionalism and thoroughness were evident throughout the process.
+              </p>
+              <div class="testimonial-author">
+                <div>
+                  <div class="testimonial-author-name">Michael Thompson</div>
+                  <div class="testimonial-author-title">Principal, Thompson Legal & Associates</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-item">
+              <p class="testimonial-text">
+                The project management office established by CALDON™ transformed our approach to multi-site developments. Their governance frameworks, reporting systems, and quality control protocols have become the standard for all our projects, improving both efficiency and outcomes.
+              </p>
+              <div class="testimonial-author">
+                <div>
+                  <div class="testimonial-author-name">Jennifer Chen</div>
+                  <div class="testimonial-author-title">CEO, Regional Healthcare Group</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Page Break -->
+      <div class="page-break"></div>
+      
+      <!-- Contact Information Section -->
+      <section id="contact">
+        <h2>Contact Information</h2>
+        <p>
+          For state-wide consultancy services or to discuss your specific project needs, please contact CALDON™ using the details below. Our team is ready to provide expert guidance and support for your building and development initiatives.
+        </p>
+        
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">admin@caldon.com.au</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">(02) 6550 1924</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Taree, NSW 2430<br>Australia</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Building Practitioner</div>
+            <div class="contact-value credential">BUP0002873</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Builders Licence</div>
+            <div class="contact-value credential">377088C</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Membership</div>
+            <div class="contact-value">
+              <img src="/api/placeholder/90/50" alt="HIA Member Logo">
+            </div>
+          </div>
+        </div>
+        
+        <h3>Service Areas</h3>
+        <p>
+          CALDON™ provides comprehensive consultancy services throughout New South Wales, with particular focus on the following key regions:
+        </p>
+        <ul>
+          <li><strong>Mid North Coast:</strong> Taree, Port Macquarie, Forster-Tuncurry, Kempsey, Gloucester, Wingham</li>
+          <li><strong>Hunter Region:</strong> Newcastle, Lake Macquarie, Maitland, Cessnock</li>
+          <li><strong>Northern NSW:</strong> Coffs Harbour, Grafton, Tamworth</li>
+          <li><strong>Metropolitan:</strong> Sydney, Central Coast, Wollongong</li>
+          <li><strong>Regional NSW:</strong> Available upon request</li>
+        </ul>
+        
+        <p>
+          For projects outside these areas, please contact us to discuss availability and arrangements.
+        </p>
+      </section>
+      
+      <!-- Document Footer -->
+      <div class="section-divider"></div>
+      <p style="text-align: center; font-style: italic; color: var(--text-secondary); font-size: 14px; margin: 20px 0;">
+        To request additional information or to arrange a consultation, please contact us at (02) 6550 1924 or admin@caldon.com.au
+      </p>
     </div>
   </div>
 
+  <!-- Document Footer -->
   <div class="doc-footer">
-    <span>© 2025 CALDON™ – All Rights Reserved</span>
-    <span class="page-number"></span>
-  </div>
-
-  <div class="back-to-top" aria-label="Back to top">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-      <path d="M18 15l-6-6-6 6"/>
-    </svg>
+    <span>© 2025 CALDON Homes Pty Limited · All Rights Reserved</span>
+    <span id="page-number"></span>
   </div>
 
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const sidebar = document.querySelector('.sidebar');
-    const mobileActions = document.querySelector('.mobile-actions');
-    menuToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-      menuToggle.classList.toggle('active');
-      if (window.innerWidth <= 768) {
-        mobileActions.style.display = sidebar.classList.contains('open') ? 'none' : 'flex';
-      }
-    });
-    document.addEventListener('click', (event) => {
-      if (!sidebar.contains(event.target) && !menuToggle.contains(event.target) && sidebar.classList.contains('open')) {
-        sidebar.classList.remove('open');
-        menuToggle.classList.remove('active');
-        if (window.innerWidth <= 768) { mobileActions.style.display = 'flex'; }
-      }
-    });
-    const backToTopButton = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', () => {
-      window.pageYOffset > 300 ? backToTopButton.classList.add('visible') : backToTopButton.classList.remove('visible');
-    });
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    const sections = document.querySelectorAll('section, .cover-page');
-    const navLinks = document.querySelectorAll('.sidebar-nav a');
-    window.addEventListener('scroll', () => {
-      let currentSection = '';
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= (sectionTop - 100)) { currentSection = section.getAttribute('id'); }
-      });
-      navLinks.forEach((link) => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === currentSection) { link.classList.add('active'); }
+    // Print handling
+    document.querySelectorAll('.btn').forEach(button => {
+      button.addEventListener('click', function() {
+        window.print();
       });
     });
-    navLinks.forEach((anchor) => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
-        if (window.innerWidth <= 768) {
-          sidebar.classList.remove('open');
-          menuToggle.classList.remove('active');
-          mobileActions.style.display = 'flex';
-        }
-      });
-    });
-    document.getElementById('printBtn').addEventListener('click', () => { window.print(); });
-    const mobilePrintBtn = document.getElementById('mobilePrintBtn');
-    if (mobilePrintBtn) { mobilePrintBtn.addEventListener('click', () => { window.print(); }); }
-    document.getElementById('downloadBtn').addEventListener('click', () => { window.print(); });
-    const mobileDownloadBtn = document.getElementById('mobileDownloadBtn');
-    if (mobileDownloadBtn) { mobileDownloadBtn.addEventListener('click', () => { window.print(); }); }
-    function optimizePageBreaks() {
-      const serviceItems = document.querySelectorAll('.service-item');
-      serviceItems.forEach((item, index) => {
-        if (index > 0 && index % 2 === 0) {
-          const pageBreak = document.createElement('div');
-          pageBreak.className = 'page-break';
-          if (!item.previousElementSibling.classList.contains('page-break')) {
-            item.parentNode.insertBefore(pageBreak, item);
+    
+    // Simple page numbering for print
+    function setupPageNumbers() {
+      const style = document.createElement('style');
+      style.textContent = `
+        @media print {
+          .doc-footer::after {
+            content: "Page " counter(page) " of " counter(pages);
           }
         }
-      });
+      `;
+      document.head.appendChild(style);
     }
-    window.addEventListener('load', optimizePageBreaks);
-    window.addEventListener('resize', optimizePageBreaks);
+    
+    window.addEventListener('load', setupPageNumbers);
   </script>
 </body>
 </html>
