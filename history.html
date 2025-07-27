@@ -69,20 +69,17 @@
 
   <!-- Styles -->
   <style>
-    /* Modern Corporate Typography */
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+    /* Modern, Sophisticated Typography - Original Style Maintained */
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
     
     :root {
-      --primary-dark: #1a1a1a;
-      --secondary-dark: #2c2c2c;
       --text-primary: #111111;
       --text-secondary: #555555;
-      --text-light: #888888;
       --background: #ffffff;
-      --subtle-accent: #f8f8f8;
+      --subtle-accent: #f7f7f7;
       --border: #e0e0e0;
+      --timeline-accent: #8a8a8a;
       --accent-gold: #d4af37;
-      --accent-blue: #2c5282;
       --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     
@@ -101,47 +98,47 @@
       overflow-x: hidden;
     }
     
-    /* Corporate Container */
+    /* Refined Container */
     .container {
       width: 90%;
-      max-width: 1400px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
     
-    /* Executive Header */
+    /* Sophisticated Header - Original Style */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background-color: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(20px);
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
       z-index: 1000;
-      padding: 20px 0;
+      padding: 25px 0;
       transition: var(--transition);
-      border-bottom: 1px solid transparent;
     }
     
     header.scrolled {
       padding: 15px 0;
-      border-bottom-color: var(--border);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 1px 15px rgba(0, 0, 0, 0.03);
     }
     
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
     }
     
     .nav-logo {
-      height: 32px;
-      max-width: 140px;
+      height: 30px;
+      max-width: 120px;
       width: auto;
       opacity: 0;
       transform: translateY(-5px);
       transition: var(--transition);
+      z-index: 2;
     }
     
     header.scrolled .nav-logo {
@@ -149,16 +146,36 @@
       transform: translateY(0);
     }
     
+    /* Mobile Menu Button */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 2;
+    }
+    
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: 5px 0;
+      background-color: var(--text-primary);
+      transition: var(--transition);
+    }
+    
+    /* Desktop menu */
     nav ul {
       display: flex;
       list-style: none;
-      gap: 45px;
+      gap: 40px;
     }
     
     nav a {
       text-decoration: none;
       color: var(--text-primary);
-      font-weight: 500;
+      font-weight: 400;
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 1.5px;
@@ -170,10 +187,10 @@
       content: '';
       position: absolute;
       width: 0;
-      height: 2px;
-      bottom: -6px;
+      height: 1px;
+      bottom: -4px;
       left: 0;
-      background-color: var(--accent-gold);
+      background-color: var(--text-primary);
       transition: var(--transition);
     }
     
@@ -181,7 +198,7 @@
       width: 100%;
     }
     
-    /* Powerful Hero Section */
+    /* Elegant Hero Section with Animation - Original Style */
     .hero {
       position: relative;
       display: flex;
@@ -189,69 +206,52 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
-      color: white;
+      padding: 0 20px;
       text-align: center;
       overflow: hidden;
     }
     
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-      opacity: 0.5;
-    }
-    
     .hero-content {
-      max-width: 900px;
+      max-width: 700px;
       position: relative;
       z-index: 2;
     }
     
     .hero-logo {
-      max-width: 200px;
+      max-width: 180px;
       height: auto;
-      margin-bottom: 50px;
-      filter: brightness(0) invert(1);
-    }
-    
-    .hero-headline {
-      font-family: 'Playfair Display', serif;
-      font-weight: 300;
-      font-size: 3.5rem;
-      letter-spacing: -1px;
-      margin-bottom: 25px;
-      line-height: 1.2;
-    }
-    
-    .hero-subheadline {
-      font-size: 1.4rem;
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 20px;
-      letter-spacing: 0.5px;
+      margin-bottom: 40px;
+      transition: transform 0.1s ease-out;
     }
     
     .hero-tagline {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.8);
-      max-width: 600px;
-      margin: 0 auto 40px;
-      line-height: 1.6;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      line-height: 1.4;
+      transition: transform 0.1s ease-out;
     }
     
-    .cta-primary {
+    .hero-subtext {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 0 auto 30px;
+      opacity: 0.9;
+      transition: opacity 0.3s ease-out;
+    }
+    
+    .cta-button {
       display: inline-block;
-      padding: 16px 40px;
-      background-color: var(--accent-gold);
-      color: var(--primary-dark);
+      padding: 12px 36px;
+      background-color: var(--text-primary);
+      color: var(--background);
       text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 0.85rem;
+      font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 2px;
       transition: var(--transition);
@@ -259,452 +259,452 @@
       cursor: pointer;
     }
     
-    .cta-primary:hover {
-      background-color: #f4d03f;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    .cta-button:hover {
+      background-color: var(--text-secondary);
     }
     
-    /* Heritage Stats Section */
-    .heritage-stats {
-      padding: 100px 0;
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      opacity: 0.7;
+    }
+    
+    .scroll-indicator::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background-color: var(--text-secondary);
+      margin: 10px auto 0;
+      opacity: 0.3;
+    }
+    
+    /* Refined Section Styling - Original Style */
+    section {
+      padding: 120px 0;
+    }
+    
+    section:nth-child(even) {
+      background-color: var(--subtle-accent);
+    }
+    
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      margin-bottom: 60px;
+      text-align: center;
+      color: var(--text-primary);
+    }
+    
+    .section-subtitle {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+    
+    /* Heritage Story - Enhanced for Corporate */
+    .heritage-story {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .heritage-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      color: var(--text-primary);
+    }
+    
+    .heritage-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    
+    /* Statistics Grid - New Addition */
+    .stats-section {
+      padding: 80px 0;
       background-color: var(--background);
     }
     
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 60px;
-      max-width: 1200px;
+      gap: 50px;
+      max-width: 1000px;
       margin: 0 auto;
       text-align: center;
     }
     
     .stat-item {
-      padding: 40px 20px;
+      padding: 30px 20px;
     }
     
     .stat-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
       font-weight: 300;
       color: var(--accent-gold);
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       line-height: 1;
     }
     
     .stat-label {
-      font-size: 0.85rem;
-      font-weight: 500;
+      font-size: 0.75rem;
+      font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--text-secondary);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     
     .stat-description {
-      font-size: 0.9rem;
-      color: var(--text-light);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
       line-height: 1.5;
     }
     
-    /* Corporate Excellence Section */
-    .excellence {
-      padding: 120px 0;
-      background-color: var(--subtle-accent);
-    }
-    
-    .section-header {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 80px;
-    }
-    
-    .section-subtitle {
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--accent-gold);
-      margin-bottom: 20px;
-    }
-    
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      font-weight: 300;
-      margin-bottom: 30px;
-      color: var(--text-primary);
-      line-height: 1.2;
-    }
-    
-    .section-description {
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-    
-    .excellence-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 60px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .excellence-item {
-      background: white;
-      padding: 50px 40px;
-      text-align: center;
-      transition: var(--transition);
+    /* Timeline Styling - Original Style Enhanced */
+    .timeline {
       position: relative;
-      border: 1px solid var(--border);
-    }
-    
-    .excellence-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: var(--accent-gold);
-      transform: scaleX(0);
-      transition: var(--transition);
-    }
-    
-    .excellence-item:hover::before {
-      transform: scaleX(1);
-    }
-    
-    .excellence-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    }
-    
-    .excellence-icon {
-      width: 60px;
-      height: 60px;
-      background: var(--accent-gold);
-      border-radius: 50%;
-      margin: 0 auto 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: white;
-    }
-    
-    .excellence-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 20px;
-      color: var(--text-primary);
-    }
-    
-    .excellence-description {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-    
-    /* Corporate Timeline */
-    .timeline-section {
-      padding: 120px 0;
-      background-color: var(--background);
-    }
-    
-    .timeline-container {
       max-width: 1000px;
       margin: 0 auto;
-      position: relative;
+      padding: 40px 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--timeline-accent), var(--border));
+      transform: translateX(-50%);
     }
     
     .timeline-item {
-      display: grid;
-      grid-template-columns: 1fr 120px 1fr;
-      gap: 40px;
-      margin-bottom: 80px;
-      align-items: center;
+      position: relative;
+      margin: 60px 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
     }
     
-    .timeline-item:nth-child(even) .timeline-content {
-      order: 3;
-      text-align: left;
-    }
-    
-    .timeline-item:nth-child(even) .timeline-year {
-      order: 2;
-    }
-    
-    .timeline-item:nth-child(even) .timeline-placeholder {
-      order: 1;
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     
     .timeline-item:nth-child(odd) .timeline-content {
-      order: 1;
+      margin-left: 0;
+      margin-right: calc(50% + 30px);
       text-align: right;
     }
     
-    .timeline-item:nth-child(odd) .timeline-year {
-      order: 2;
+    .timeline-item:nth-child(even) .timeline-content {
+      margin-left: calc(50% + 30px);
+      margin-right: 0;
+      text-align: left;
     }
     
-    .timeline-item:nth-child(odd) .timeline-placeholder {
-      order: 3;
-    }
-    
-    .timeline-year {
-      text-align: center;
-      padding: 20px;
-      background: var(--accent-gold);
-      color: white;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      font-weight: 500;
-      border-radius: 8px;
+    .timeline-marker {
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      width: 16px;
+      height: 16px;
+      background-color: var(--timeline-accent);
+      border: 3px solid var(--background);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      box-shadow: 0 0 20px rgba(138, 138, 138, 0.3);
     }
     
     .timeline-content {
+      background-color: var(--background);
       padding: 30px;
-      background: white;
-      border: 1px solid var(--border);
       border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+      position: relative;
       transition: var(--transition);
     }
     
     .timeline-content:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+    }
+    
+    .timeline-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--timeline-accent);
+      margin-bottom: 15px;
     }
     
     .timeline-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 500;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
       margin-bottom: 15px;
       color: var(--text-primary);
     }
     
     .timeline-description {
       font-size: 0.95rem;
+      line-height: 1.7;
       color: var(--text-secondary);
-      line-height: 1.6;
     }
     
-    .timeline-placeholder {
-      height: 1px;
-    }
-    
-    /* Trust & Credentials */
-    .credentials {
-      padding: 100px 0;
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
-      color: white;
-      text-align: center;
-    }
-    
-    .credentials-grid {
+    /* Sophisticated Legacy Layout - Original Style */
+    .legacy-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 60px;
+      gap: 50px;
       max-width: 1000px;
-      margin: 60px auto 0;
-    }
-    
-    .credential-item {
-      padding: 40px 20px;
-    }
-    
-    .credential-icon {
-      width: 80px;
-      height: 80px;
-      background: rgba(212, 175, 55, 0.2);
-      border: 2px solid var(--accent-gold);
-      border-radius: 50%;
-      margin: 0 auto 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      color: var(--accent-gold);
-    }
-    
-    .credential-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-bottom: 15px;
-    }
-    
-    .credential-description {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.6;
-    }
-    
-    /* Contact Section */
-    .contact {
-      padding: 100px 0;
-      background-color: var(--subtle-accent);
-      text-align: center;
-    }
-    
-    .contact-content {
-      max-width: 700px;
       margin: 0 auto;
     }
     
-    .contact-grid {
+    .legacy-item {
+      text-align: center;
+      padding: 40px 20px;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .legacy-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid transparent;
+      transition: var(--transition);
+    }
+    
+    .legacy-item:hover::before {
+      border-color: var(--border);
+    }
+    
+    .legacy-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
+    }
+    
+    .legacy-item p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    
+    /* Contact Section - Original Style */
+    .contact {
+      padding-bottom: 80px;
+    }
+    
+    .contact-content {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .contact-note {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      font-style: italic;
+    }
+    
+    .contact-details {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      margin-top: 60px;
+      gap: 30px;
+      max-width: 800px;
+      margin: 40px auto 0;
     }
     
     .contact-item {
-      padding: 30px 20px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100px;
     }
     
     .contact-label {
       font-size: 0.75rem;
-      font-weight: 500;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--text-secondary);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     
     .contact-value {
-      font-size: 1rem;
-      font-weight: 500;
+      font-size: 0.95rem;
+      line-height: 1.5;
       color: var(--text-primary);
     }
     
-    /* Corporate Footer */
+    /* Footer - Original Style */
     footer {
-      padding: 60px 0 40px;
-      background-color: var(--primary-dark);
-      color: white;
+      padding: 40px 0;
       text-align: center;
+      border-top: 1px solid var(--border);
+      background-color: var(--subtle-accent);
     }
     
     .footer-content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     
     .footer-nav ul {
       display: flex;
       justify-content: center;
       list-style: none;
-      gap: 40px;
+      gap: 30px;
     }
     
     .footer-nav a {
       text-decoration: none;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-size: 0.75rem;
       font-weight: 400;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       transition: var(--transition);
     }
     
     .footer-nav a:hover {
-      color: var(--accent-gold);
+      color: var(--text-primary);
     }
     
     .footer-logo {
-      max-height: 28px;
-      filter: brightness(0) invert(1);
+      max-height: 24px;
     }
     
     .copyright {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.6);
-      letter-spacing: 1px;
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      letter-spacing: 1.2px;
     }
     
     /* Responsive Design */
     @media (max-width: 768px) {
-      .hero-headline {
-        font-size: 2.5rem;
-      }
-      
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-      }
-      
-      .excellence-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      
-      .timeline-item {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      
-      .timeline-content {
-        order: 2 !important;
-        text-align: center !important;
-      }
-      
-      .timeline-year {
-        order: 1 !important;
-      }
-      
-      .timeline-placeholder {
-        display: none;
-      }
-      
-      .credentials-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+      .menu-toggle {
+        display: block;
       }
       
       nav ul {
         display: none;
       }
+      
+      .hero-tagline {
+        font-size: 1.5rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      
+      .timeline::before {
+        left: 20px;
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 40px;
+        margin-right: 0;
+        text-align: left;
+      }
+      
+      .timeline-marker {
+        left: 20px;
+      }
+      
+      .legacy-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-details {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
     }
     
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
+    /* Animations - Original Style */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeUp {
+      from { 
         opacity: 0;
         transform: translateY(30px);
       }
-      to {
+      to { 
         opacity: 1;
         transform: translateY(0);
       }
     }
     
-    .animate-in {
+    .fade-in {
       opacity: 0;
-      animation: fadeInUp 0.8s ease forwards;
+      animation: fadeIn 1.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+    
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     }
   </style>
 </head>
 <body>
-  <!-- Executive Header -->
+  <!-- Sophisticated Header -->
   <header>
     <div class="container">
       <nav>
         <img src="logo.png" alt="CALDON™ Logo" class="nav-logo">
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="development.html">Development</a></li>
@@ -716,169 +716,159 @@
     </div>
   </header>
 
-  <!-- Powerful Hero Section -->
-  <section class="hero">
+  <!-- Elegant Hero -->
+  <div class="hero">
     <div class="hero-content">
-      <img src="logo.png" alt="CALDON™ Logo" class="hero-logo">
-      <h1 class="hero-headline">Seven Decades of Excellence</h1>
-      <p class="hero-subheadline">Built on Heritage. Focused on the Future.</p>
-      <p class="hero-tagline">CALDON™ represents the evolution of generational expertise in construction and property development, delivering uncompromising quality and innovative solutions across New South Wales.</p>
-      <a href="#heritage" class="cta-primary">Discover Our Legacy</a>
+      <img src="logo.png" alt="CALDON™ Logo" class="hero-logo fade-in">
+      <p class="hero-tagline fade-up">Seven Decades of Excellence</p>
+      <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Built on heritage, focused on the future. CALDON™ represents generational expertise in construction and property development across New South Wales.</p>
+      <a href="#heritage" class="cta-button fade-up" style="animation-delay: 0.6s;">Discover Our Legacy</a>
     </div>
-  </section>
+    <div class="scroll-indicator">Discover</div>
+  </div>
 
   <!-- Heritage Statistics -->
-  <section class="heritage-stats">
+  <section class="stats-section">
     <div class="container">
       <div class="stats-grid">
         <div class="stat-item">
           <div class="stat-number">70+</div>
-          <div class="stat-label">Years Experience</div>
-          <div class="stat-description">Combined construction and development expertise</div>
+          <div class="stat-label">Years Combined Experience</div>
+          <div class="stat-description">Generational construction and development expertise</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">1000+</div>
           <div class="stat-label">Projects Delivered</div>
-          <div class="stat-description">Residential and commercial developments</div>
+          <div class="stat-description">Residential and commercial developments across NSW</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">15+</div>
           <div class="stat-label">Industry Awards</div>
-          <div class="stat-description">Recognition for excellence and innovation</div>
+          <div class="stat-description">Recognition for construction excellence and innovation</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">5</div>
           <div class="stat-label">Consecutive MBA Awards</div>
-          <div class="stat-description">Master Builders Association excellence</div>
+          <div class="stat-description">Master Builders Association Excellence Awards</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Corporate Excellence -->
-  <section id="heritage" class="excellence">
+  <!-- Heritage Section -->
+  <section id="heritage" class="heritage">
     <div class="container">
-      <div class="section-header">
-        <div class="section-subtitle">Corporate Excellence</div>
-        <h2 class="section-title">Uncompromising Standards</h2>
-        <p class="section-description">CALDON™ delivers exceptional property development and construction solutions backed by generational expertise, industry-leading practices, and an unwavering commitment to excellence that spans seven decades.</p>
-      </div>
-      
-      <div class="excellence-grid">
-        <div class="excellence-item">
-          <div class="excellence-icon">🏗️</div>
-          <h3 class="excellence-title">Construction Mastery</h3>
-          <p class="excellence-description">From residential developments to complex commercial projects, our construction heritage encompasses expertise in challenging builds, hospital redevelopments, and award-winning designs across NSW.</p>
-        </div>
-        
-        <div class="excellence-item">
-          <div class="excellence-icon">🏢</div>
-          <h3 class="excellence-title">Property Development</h3>
-          <p class="excellence-description">Strategic property development and investment solutions backed by decades of market insight, combining traditional craftsmanship with modern business acumen and contemporary market analysis.</p>
-        </div>
-        
-        <div class="excellence-item">
-          <div class="excellence-icon">⭐</div>
-          <h3 class="excellence-title">Industry Leadership</h3>
-          <p class="excellence-description">Recognized expertise spanning from Master Builders Association awards to national media recognition, establishing CALDON™ as a trusted leader in construction and property development.</p>
-        </div>
+      <div class="section-subtitle">Our Foundation</div>
+      <h2 class="section-title">Corporate Heritage</h2>
+      <div class="heritage-story">
+        <p class="heritage-quote">"Excellence in construction and property development is built through decades of dedication, expertise, and an unwavering commitment to quality."</p>
+        <p class="heritage-text">CALDON™ represents the evolution of seven decades of construction excellence and property development expertise across New South Wales. Our corporate foundation is built upon a rich heritage of construction mastery, spanning from residential developments to complex commercial projects including hospital redevelopments and large-scale infrastructure.</p>
+        <p class="heritage-text">From award-winning construction achievements—including over 1,000 homes delivered and five consecutive Master Builders Association Excellence Awards—through to modern property development and investment solutions, CALDON™ combines generational expertise with contemporary market insight and innovative business practices.</p>
+        <p class="heritage-text">Today's CALDON™ is positioned as a premier property development and investment company, leveraging this accumulated knowledge and industry recognition to deliver exceptional results across residential, commercial, and investment sectors throughout New South Wales.</p>
       </div>
     </div>
   </section>
 
-  <!-- Corporate Timeline -->
+  <!-- Timeline Section -->
   <section class="timeline-section">
     <div class="container">
-      <div class="section-header">
-        <div class="section-subtitle">Corporate Heritage</div>
-        <h2 class="section-title">Legacy of Excellence</h2>
-        <p class="section-description">A chronology of achievement, innovation, and industry leadership that forms the foundation of CALDON™'s reputation for excellence in construction and property development.</p>
-      </div>
-      
-      <div class="timeline-container">
+      <div class="section-subtitle">Our Journey</div>
+      <h2 class="section-title">Legacy of Achievement</h2>
+      <div class="timeline">
+        
         <div class="timeline-item">
+          <div class="timeline-marker"></div>
           <div class="timeline-content">
+            <div class="timeline-year">1950s</div>
             <h3 class="timeline-title">Foundation Era</h3>
             <p class="timeline-description">Establishment of construction excellence and quality craftsmanship standards that would define decades of industry leadership across New South Wales.</p>
           </div>
-          <div class="timeline-year">1950s</div>
-          <div class="timeline-placeholder"></div>
         </div>
-        
+
         <div class="timeline-item">
+          <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <h3 class="timeline-title">Corporate Expansion</h3>
-            <p class="timeline-description">Strategic business development and regional expansion establishing market presence across Mid North Coast, with recognition for innovative construction solutions.</p>
+            <div class="timeline-year">1988</div>
+            <h3 class="timeline-title">Corporate Establishment</h3>
+            <p class="timeline-description">Formation of Sorensen & Caldon Builders, pioneering custom construction solutions in the Manning Valley and establishing the foundation for decades of industry recognition.</p>
           </div>
-          <div class="timeline-year">1980s-90s</div>
-          <div class="timeline-placeholder"></div>
         </div>
-        
+
         <div class="timeline-item">
+          <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <h3 class="timeline-title">Industry Recognition</h3>
-            <p class="timeline-description">Achievement of consecutive Master Builders Association Excellence Awards and delivery of over 1,000 residential and commercial projects across NSW regions.</p>
+            <div class="timeline-year">1990s</div>
+            <h3 class="timeline-title">Regional Expansion</h3>
+            <p class="timeline-description">Strategic expansion across Mid North Coast regions from Taree to Port Macquarie, Coffs Harbour, and Newcastle, earning multiple HIA and MBA awards for construction innovation.</p>
           </div>
-          <div class="timeline-year">1990s-2000s</div>
-          <div class="timeline-placeholder"></div>
         </div>
-        
+
         <div class="timeline-item">
+          <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <h3 class="timeline-title">Market Leadership</h3>
-            <p class="timeline-description">Expansion into complex commercial projects including hospital redevelopments and large-scale infrastructure, demonstrating capability across diverse construction sectors.</p>
+            <div class="timeline-year">2000s</div>
+            <h3 class="timeline-title">Industry Leadership</h3>
+            <p class="timeline-description">Achievement of over 1,000 residential projects delivered and five consecutive Master Builders Association Excellence Awards, establishing market leadership in construction quality.</p>
           </div>
-          <div class="timeline-year">2000s-2010s</div>
-          <div class="timeline-placeholder"></div>
         </div>
-        
+
         <div class="timeline-item">
+          <div class="timeline-marker"></div>
           <div class="timeline-content">
+            <div class="timeline-year">2010s</div>
+            <h3 class="timeline-title">Diversification & Innovation</h3>
+            <p class="timeline-description">Expansion into complex commercial construction including hospital redevelopments and large-scale infrastructure projects, demonstrating capabilities across diverse construction sectors.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2015</div>
             <h3 class="timeline-title">CALDON™ Evolution</h3>
-            <p class="timeline-description">Strategic brand evolution combining generational construction expertise with modern property development and investment solutions, maintaining excellence while embracing innovation.</p>
+            <p class="timeline-description">Strategic evolution into dedicated property development and investment, combining seven decades of construction expertise with modern development and investment strategies.</p>
           </div>
-          <div class="timeline-year">2015-Present</div>
-          <div class="timeline-placeholder"></div>
         </div>
-        
+
         <div class="timeline-item">
+          <div class="timeline-marker"></div>
           <div class="timeline-content">
+            <div class="timeline-year">2019</div>
             <h3 class="timeline-title">National Recognition</h3>
-            <p class="timeline-description">Achievement of national media recognition and industry acclaim, establishing CALDON™ as a premier property development and construction enterprise with uncompromising standards.</p>
+            <p class="timeline-description">Achievement of national media recognition and industry acclaim through exceptional craftsmanship, establishing CALDON™ as a premier development enterprise with uncompromising standards.</p>
           </div>
-          <div class="timeline-year">2019-Present</div>
-          <div class="timeline-placeholder"></div>
         </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2021-Present</div>
+            <h3 class="timeline-title">Market Leadership</h3>
+            <p class="timeline-description">Continued evolution as a leading property development and investment company, maintaining construction excellence while embracing modern market strategies across New South Wales.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Trust & Credentials -->
-  <section class="credentials">
+  <!-- Legacy Section -->
+  <section class="legacy">
     <div class="container">
-      <div class="section-header">
-        <div class="section-subtitle" style="color: var(--accent-gold);">Trust & Reliability</div>
-        <h2 class="section-title" style="color: white;">Proven Excellence</h2>
-        <p class="section-description" style="color: rgba(255, 255, 255, 0.9);">CALDON™'s reputation is built on decades of consistent delivery, industry recognition, and unwavering commitment to excellence that clients and partners trust.</p>
-      </div>
-      
-      <div class="credentials-grid">
-        <div class="credential-item">
-          <div class="credential-icon">🏆</div>
-          <h3 class="credential-title">Award-Winning Excellence</h3>
-          <p class="credential-description">Multiple industry awards including five consecutive Master Builders Association Excellence Awards and national media recognition for exceptional craftsmanship.</p>
+      <div class="section-subtitle">Our Expertise</div>
+      <h2 class="section-title">Corporate Excellence</h2>
+      <div class="legacy-grid">
+        <div class="legacy-item">
+          <h3>Construction Mastery</h3>
+          <p>Seven decades of construction excellence spanning residential developments, commercial projects, hospital redevelopments, and complex infrastructure across NSW.</p>
         </div>
-        
-        <div class="credential-item">
-          <div class="credential-icon">🔧</div>
-          <h3 class="credential-title">Technical Expertise</h3>
-          <p class="credential-description">Comprehensive capabilities spanning residential development, commercial construction, hospital redevelopments, and complex infrastructure projects.</p>
+        <div class="legacy-item">
+          <h3>Property Development</h3>
+          <p>Strategic property development and investment solutions backed by generational market insight, award-winning construction capability, and modern business acumen.</p>
         </div>
-        
-        <div class="credential-item">
-          <div class="credential-icon">📈</div>
-          <h3 class="credential-title">Market Leadership</h3>
-          <p class="credential-description">Established market presence across NSW with proven track record of successful project delivery, client satisfaction, and industry partnership.</p>
+        <div class="legacy-item">
+          <h3>Industry Recognition</h3>
+          <p>Established market leadership with 15+ industry awards, 5 consecutive MBA Excellence Awards, and national recognition for exceptional quality and innovation.</p>
         </div>
       </div>
     </div>
@@ -887,12 +877,12 @@
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="container">
+      <div class="section-subtitle">Partnership Opportunities</div>
+      <h2 class="section-title">Connect with CALDON™</h2>
       <div class="contact-content">
-        <div class="section-subtitle">Partnership Opportunities</div>
-        <h2 class="section-title">Connect with CALDON™</h2>
-        <p class="section-description">Discover how seven decades of construction excellence and property development expertise can deliver exceptional results for your next project.</p>
+        <p class="contact-note">Discover how seven decades of construction excellence and property development expertise can deliver exceptional results for your next project or investment opportunity.</p>
         
-        <div class="contact-grid">
+        <div class="contact-details">
           <div class="contact-item">
             <div class="contact-label">Corporate Office</div>
             <div class="contact-value">(02) 6550 1924</div>
@@ -910,7 +900,7 @@
     </div>
   </section>
 
-  <!-- Corporate Footer -->
+  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-content">
@@ -930,7 +920,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript for Corporate Interactions -->
+  <!-- JavaScript for Scroll Effects and Timeline Animation -->
   <script>
     // Header scroll effect
     window.addEventListener('scroll', function() {
@@ -941,6 +931,24 @@
         header.classList.remove('scrolled');
       }
     });
+
+    // Timeline animation on scroll
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    function checkScroll() {
+      timelineItems.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        const itemBottom = item.getBoundingClientRect().bottom;
+        const windowHeight = window.innerHeight;
+        
+        if (itemTop < windowHeight * 0.8 && itemBottom > 0) {
+          item.classList.add('visible');
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -956,24 +964,15 @@
       });
     });
 
-    // Animation on scroll
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-        }
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+    
+    if (menuToggle) {
+      menuToggle.addEventListener('click', function() {
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
       });
-    }, observerOptions);
-
-    // Observe elements for animation
-    document.querySelectorAll('.excellence-item, .timeline-item, .credential-item').forEach(el => {
-      observer.observe(el);
-    });
+    }
   </script>
 </body>
 </html>
