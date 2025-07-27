@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+.timeline::before {
+        left: 30px;
+      }
+      
+      .timeline-marker {
+        left: 30px;
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 60px;
+        margin-right: 0;
+        text-align: left;
+      }<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -290,6 +303,100 @@
     
     section:nth-child(even) {
       background-color: var(--subtle-accent);
+    }
+    
+    /* Timeline Styling */
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--text-secondary), var(--border));
+      transform: translateX(-50%);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin: 60px 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content {
+      margin-left: 0;
+      margin-right: calc(50% + 30px);
+      text-align: right;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+      margin-left: calc(50% + 30px);
+      margin-right: 0;
+      text-align: left;
+    }
+    
+    .timeline-marker {
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      width: 16px;
+      height: 16px;
+      background-color: var(--text-secondary);
+      border: 3px solid var(--background);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      box-shadow: 0 0 20px rgba(85, 85, 85, 0.3);
+    }
+    
+    .timeline-content {
+      background-color: var(--background);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .timeline-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+    }
+    
+    .timeline-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+    }
+    
+    .timeline-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 15px;
+      color: var(--text-primary);
+    }
+    
+    .timeline-description {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
     }
     
     .section-title {
@@ -828,6 +935,28 @@
     </div>
   </section>
 
+  <!-- Timeline Section -->
+  <section class="timeline-section">
+    <div class="container">
+      <div class="section-subtitle">Our Journey</div>
+      <h2 class="section-title">Historical Timeline</h2>
+      <div class="timeline">
+        
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">1982</div>
+            <h3 class="timeline-title">Foundation Years</h3>
+            <p class="timeline-description">Early involvement in construction and building projects across NSW. Beginning of what would become decades of experience in quality construction and property development.</p>
+          </div>
+        </div>
+
+        <!-- Additional timeline items will be added here as your family history develops -->
+
+      </div>
+    </div>
+  </section>
+
   <!-- Legacy Areas Section -->
   <section id="legacy" class="legacy">
     <div class="container">
@@ -973,6 +1102,22 @@
       }
     });
   
+    // Timeline scroll animation
+    function animateTimeline() {
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      const windowHeight = window.innerHeight;
+
+      timelineItems.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        if (itemTop < windowHeight * 0.8) {
+          item.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', animateTimeline);
+    window.addEventListener('load', animateTimeline);
+
     // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
