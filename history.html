@@ -427,8 +427,34 @@
     }
     
     .excellence-icon {
-      font-size: 48px;
-      margin-bottom: 25px;
+      width: 60px;
+      height: 60px;
+      background: var(--subtle-accent);
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .excellence-icon::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: var(--text-secondary);
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+    
+    .excellence-item:hover .excellence-icon {
+      border-color: var(--accent-gold);
+    }
+    
+    .excellence-item:hover .excellence-icon::before {
+      background: var(--accent-gold);
     }
     
     .excellence-title {
@@ -815,37 +841,37 @@
       
       <div class="excellence-grid">
         <div class="excellence-item">
-          <div class="excellence-icon">🏗️</div>
+          <div class="excellence-icon"></div>
           <h3 class="excellence-title">Construction Mastery</h3>
           <p class="excellence-description">Seven decades of successful construction ventures, from residential developments to complex commercial projects. The Caldon family has owned and operated successful construction companies delivering exceptional results across diverse sectors.</p>
         </div>
         
         <div class="excellence-item">
-          <div class="excellence-icon">🏢</div>
+          <div class="excellence-icon"></div>
           <h3 class="excellence-title">Business Ownership</h3>
           <p class="excellence-description">Family-owned and operated successful enterprises across multiple sectors. CALDON™ demonstrates proven ability to build, acquire, and manage profitable businesses while maintaining operational excellence and market leadership.</p>
         </div>
         
         <div class="excellence-item">
-          <div class="excellence-icon">💼</div>
+          <div class="excellence-icon"></div>
           <h3 class="excellence-title">Strategic Investment</h3>
           <p class="excellence-description">Sophisticated property investment capabilities backed by generations of market insight and capital management. CALDON™ strategically invests in property markets and identifies value-creation opportunities across NSW.</p>
         </div>
 
         <div class="excellence-item">
-          <div class="excellence-icon">🏘️</div>
+          <div class="excellence-icon"></div>
           <h3 class="excellence-title">Community Development</h3>
           <p class="excellence-description">Commitment to developing thriving communities through thoughtful planning, quality construction, and sustainable development practices. Creating lasting value that benefits both investors and local communities.</p>
         </div>
         
         <div class="excellence-item">
-          <div class="excellence-icon">⭐</div>
+          <div class="excellence-icon"></div>
           <h3 class="excellence-title">Industry Experience</h3>
           <p class="excellence-description">Established market presence with proven track record of successful business ownership, operational excellence, and consistent delivery across construction, development, and investment sectors.</p>
         </div>
         
         <div class="excellence-item">
-          <div class="excellence-icon">📈</div>
+          <div class="excellence-icon"></div>
           <h3 class="excellence-title">Portfolio Management</h3>
           <p class="excellence-description">Diversified business portfolio spanning construction, property development, investment, and asset management. Proven ability to scale operations while maintaining family values and operational control.</p>
         </div>
