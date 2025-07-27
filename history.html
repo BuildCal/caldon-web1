@@ -380,97 +380,133 @@
       line-height: 1.5;
     }
     
-    /* Timeline Styling - Original Style Enhanced */
-    .timeline {
-      position: relative;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 0;
+    /* Business Excellence Showcase */
+    .excellence-showcase {
+      padding: 120px 0;
+      background-color: var(--subtle-accent);
     }
     
-    .timeline::before {
+    .excellence-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .excellence-item {
+      background: white;
+      padding: 40px 30px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    
+    .excellence-item::before {
       content: '';
       position: absolute;
-      left: 50%;
       top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--timeline-accent), var(--border));
-      transform: translateX(-50%);
-    }
-    
-    .timeline-item {
-      position: relative;
-      margin: 60px 0;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-    }
-    
-    .timeline-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .timeline-item:nth-child(odd) .timeline-content {
-      margin-left: 0;
-      margin-right: calc(50% + 30px);
-      text-align: right;
-    }
-    
-    .timeline-item:nth-child(even) .timeline-content {
-      margin-left: calc(50% + 30px);
-      margin-right: 0;
-      text-align: left;
-    }
-    
-    .timeline-marker {
-      position: absolute;
-      left: 50%;
-      top: 20px;
-      width: 16px;
-      height: 16px;
-      background-color: var(--timeline-accent);
-      border: 3px solid var(--background);
-      border-radius: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      box-shadow: 0 0 20px rgba(138, 138, 138, 0.3);
-    }
-    
-    .timeline-content {
-      background-color: var(--background);
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
-      position: relative;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--accent-gold);
+      transform: scaleX(0);
       transition: var(--transition);
+      border-radius: 8px 8px 0 0;
     }
     
-    .timeline-content:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+    .excellence-item:hover::before {
+      transform: scaleX(1);
     }
     
-    .timeline-year {
+    .excellence-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .excellence-icon {
+      font-size: 48px;
+      margin-bottom: 25px;
+    }
+    
+    .excellence-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: var(--timeline-accent);
-      margin-bottom: 15px;
-    }
-    
-    .timeline-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 400;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       color: var(--text-primary);
     }
     
-    .timeline-description {
-      font-size: 0.95rem;
+    .excellence-description {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
       line-height: 1.7;
+    }
+    
+    /* Market Leadership Section */
+    .market-leadership {
+      padding: 120px 0;
+      background-color: var(--background);
+    }
+    
+    .leadership-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    
+    .leadership-text h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      margin-top: 40px;
+      color: var(--text-primary);
+    }
+    
+    .leadership-text h3:first-child {
+      margin-top: 0;
+    }
+    
+    .leadership-text p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    
+    .leadership-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    
+    .leadership-stat {
+      text-align: center;
+      padding: 30px 20px;
+      background: var(--subtle-accent);
+      border-radius: 8px;
+    }
+    
+    .stat-large {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--accent-gold);
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+    
+    .stat-text {
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
       color: var(--text-secondary);
     }
     
@@ -637,19 +673,21 @@
         gap: 30px;
       }
       
-      .timeline::before {
-        left: 20px;
+      .excellence-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
       }
       
-      .timeline-item:nth-child(odd) .timeline-content,
-      .timeline-item:nth-child(even) .timeline-content {
-        margin-left: 40px;
-        margin-right: 0;
-        text-align: left;
+      .leadership-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
       }
       
-      .timeline-marker {
-        left: 20px;
+      .leadership-stats {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
       }
       
       .legacy-grid {
@@ -769,85 +807,84 @@
     </div>
   </section>
 
-  <!-- Timeline Section -->
-  <section class="timeline-section">
+  <!-- Business Excellence Showcase -->
+  <section class="excellence-showcase">
     <div class="container">
-      <div class="section-subtitle">Our Journey</div>
-      <h2 class="section-title">Legacy of Achievement</h2>
-      <div class="timeline">
+      <div class="section-subtitle">Business Excellence</div>
+      <h2 class="section-title">Proven Success Across Decades</h2>
+      
+      <div class="excellence-grid">
+        <div class="excellence-item">
+          <div class="excellence-icon">🏗️</div>
+          <h3 class="excellence-title">Construction Mastery</h3>
+          <p class="excellence-description">Seven decades of successful construction ventures, from residential developments to complex commercial projects including hospital redevelopments. The Caldon family has owned and operated award-winning construction companies delivering exceptional results.</p>
+        </div>
         
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-year">1950s</div>
-            <h3 class="timeline-title">Family Business Foundation</h3>
-            <p class="timeline-description">The Caldon family establishes the foundation for successful business ownership and operation in the construction industry, setting standards for entrepreneurial excellence across New South Wales.</p>
-          </div>
+        <div class="excellence-item">
+          <div class="excellence-icon">🏢</div>
+          <h3 class="excellence-title">Business Ownership</h3>
+          <p class="excellence-description">Family-owned and operated successful enterprises across multiple sectors. CALDON™ demonstrates proven ability to build, acquire, and manage profitable businesses while maintaining operational excellence and market leadership.</p>
+        </div>
+        
+        <div class="excellence-item">
+          <div class="excellence-icon">💼</div>
+          <h3 class="excellence-title">Strategic Investment</h3>
+          <p class="excellence-description">Sophisticated property investment capabilities backed by generations of market insight and capital management. CALDON™ strategically invests in property markets and identifies value-creation opportunities across NSW.</p>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-year">1988</div>
-            <h3 class="timeline-title">Successful Business Ownership</h3>
-            <p class="timeline-description">The Caldon family owns and operates Sorensen & Caldon Builders, demonstrating successful business leadership and establishing a reputation for excellence in construction and project delivery.</p>
+        <div class="excellence-item">
+          <div class="excellence-icon">🏘️</div>
+          <h3 class="excellence-title">Community Development</h3>
+          <p class="excellence-description">Commitment to developing thriving communities through thoughtful planning, quality construction, and sustainable development practices. Creating lasting value that benefits both investors and local communities.</p>
+        </div>
+        
+        <div class="excellence-item">
+          <div class="excellence-icon">⭐</div>
+          <h3 class="excellence-title">Industry Recognition</h3>
+          <p class="excellence-description">Established market leadership with 15+ industry awards, 5 consecutive MBA Excellence Awards, and national recognition for exceptional quality, innovation, and business excellence across all ventures.</p>
+        </div>
+        
+        <div class="excellence-item">
+          <div class="excellence-icon">📈</div>
+          <h3 class="excellence-title">Portfolio Management</h3>
+          <p class="excellence-description">Diversified business portfolio spanning construction, property development, investment, and asset management. Proven ability to scale operations while maintaining family values and operational control.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Leadership -->
+  <section class="market-leadership">
+    <div class="container">
+      <div class="section-subtitle">Market Position</div>
+      <h2 class="section-title">Industry Leadership</h2>
+      
+      <div class="leadership-content">
+        <div class="leadership-text">
+          <h3>Established Market Presence</h3>
+          <p>CALDON™ leverages seven decades of successful business ownership to maintain market leadership across construction, property development, and investment sectors. Our family-owned enterprise has consistently demonstrated the ability to identify opportunities, execute successfully, and create long-term value.</p>
+          
+          <h3>Proven Track Record</h3>
+          <p>With over 1,000 projects delivered and multiple industry awards, the Caldon family has established a reputation for excellence that spans generations. This proven success forms the foundation for CALDON™'s continued growth and diversification across multiple business sectors.</p>
+          
+          <h3>Strategic Vision</h3>
+          <p>CALDON™ combines traditional business values with contemporary market insight to identify and capitalize on emerging opportunities. Our strategic approach to business ownership, property investment, and community development ensures sustainable growth and value creation.</p>
+        </div>
+        
+        <div class="leadership-stats">
+          <div class="leadership-stat">
+            <div class="stat-large">1000+</div>
+            <div class="stat-text">Successful Projects</div>
+          </div>
+          <div class="leadership-stat">
+            <div class="stat-large">15+</div>
+            <div class="stat-text">Industry Awards</div>
+          </div>
+          <div class="leadership-stat">
+            <div class="stat-large">5</div>
+            <div class="stat-text">Consecutive MBA Awards</div>
           </div>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-year">1990s</div>
-            <h3 class="timeline-title">Business Empire Expansion</h3>
-            <p class="timeline-description">Family-owned construction ventures expand operations across multiple regions, demonstrating successful business scaling and market leadership while maintaining family ownership and operational control.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-year">2000s</div>
-            <h3 class="timeline-title">Proven Business Success</h3>
-            <p class="timeline-description">Family-owned construction ventures achieve over 1,000 successful projects and five consecutive Master Builders Association Excellence Awards, demonstrating sustained business excellence and market leadership.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-year">2010s</div>
-            <h3 class="timeline-title">Diversified Business Portfolio</h3>
-            <p class="timeline-description">Family enterprises expand into complex commercial construction, hospital redevelopments, and diverse construction sectors, demonstrating successful business diversification and portfolio management.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-year">2015</div>
-            <h3 class="timeline-title">CALDON™ Business Empire</h3>
-            <p class="timeline-description">Evolution into CALDON™, a sophisticated family-owned enterprise that owns businesses, invests in property, develops communities, and manages a diversified portfolio of assets and investments.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-year">2019</div>
-            <h3 class="timeline-title">National Recognition</h3>
-            <p class="timeline-description">Achievement of national media recognition and industry acclaim through exceptional craftsmanship, establishing CALDON™ as a premier development enterprise with uncompromising standards.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-year">2021-Present</div>
-            <h3 class="timeline-title">Contemporary Business Leadership</h3>
-            <p class="timeline-description">CALDON™ operates as a modern family-owned business empire, owning multiple enterprises, investing strategically in property markets, and developing communities while maintaining the family tradition of business excellence.</p>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -933,10 +970,10 @@
     });
 
     // Timeline animation on scroll
-    const timelineItems = document.querySelectorAll('.timeline-item');
+    const excellenceItems = document.querySelectorAll('.excellence-item');
     
     function checkScroll() {
-      timelineItems.forEach(item => {
+      excellenceItems.forEach(item => {
         const itemTop = item.getBoundingClientRect().top;
         const itemBottom = item.getBoundingClientRect().bottom;
         const windowHeight = window.innerHeight;
