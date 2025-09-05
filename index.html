@@ -30,7 +30,7 @@
   <meta name="twitter:url" content="https://caldon.com.au/">
   <meta name="twitter:title" content="CALDON™ | Property Development NSW">
   <meta name="twitter:description" content="CALDON™ offers private property development in Taree, Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, and Forster Tuncurry.">
-  <meta property="twitter:image" content="https://caldon.com.au/twitter-image.jpg">
+  <meta name="twitter:image" content="https://caldon.com.au/twitter-image.jpg">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://caldon.com.au/">
@@ -282,28 +282,26 @@
       transform: translateY(-2px);
     }
 
-    .secondary-links {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      opacity: 0.7;
     }
 
-    .secondary-link {
-      display: inline-block;
-      padding: 8px 0;
-      border-bottom: 1px solid transparent;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      transition: var(--transition);
-    }
-    
-    .secondary-link:hover {
-      color: var(--text-primary);
-      border-bottom-color: var(--text-primary);
+    .scroll-indicator::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background-color: var(--text-secondary);
+      margin: 10px auto 0;
+      opacity: 0.3;
     }
 
     /* Partnership Section */
@@ -540,11 +538,6 @@
         font-size: 0.9rem;
       }
 
-      .secondary-links {
-        flex-direction: column;
-        gap: 15px;
-      }
-
       .primary-button {
         width: 100%;
         max-width: 300px;
@@ -648,9 +641,9 @@
           <span></span>
         </button>
         <ul>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="development.html">Development</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="news.html">News</a></li>
         </ul>
       </nav>
     </div>
@@ -666,13 +659,9 @@
         <a href="projects.html" class="primary-button">
           Enter Site
         </a>
-        
-        <div class="secondary-links">
-          <a href="about.html" class="secondary-link">About Us</a>
-          <a href="contact.html" class="secondary-link">Contact</a>
-        </div>
       </div>
     </div>
+    <div class="scroll-indicator">Discover</div>
   </div>
 
   <!-- Partnership Section -->
@@ -682,7 +671,7 @@
         <div class="partnership-text">
           <p class="partnership-subtitle">Strategic Partnership</p>
           <h2 class="partnership-title">Building Excellence</h2>
-          <p class="partnership-description">CALDON Homes Pty Limited has partnered with Wattle Court and is now building homes as Wattle Court Mid-Coast, bringing together strategic development expertise and quality home construction.</p>
+          <p class="partnership-description">CALDON™ previously built homes under our own brand but has now partnered with Wattle Court to deliver quality construction as <a href="https://wattlecourt.com.au/builder/mid-coast/" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: underline;">Wattle Court Mid-Coast</a>. Our experienced local construction team continues building homes in Taree, Port Macquarie, Forster, Wauchope, Gloucester and surrounds.</p>
         </div>
         <div class="partnership-logo">
           <a href="https://wattlecourt.com.au/builder/mid-coast/" target="_blank" rel="noopener noreferrer">
@@ -699,7 +688,7 @@
         <ul>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="news.html">News</a></li>
         </ul>
       </div>
       <img src="logo.png" alt="CALDON™ Logo" class="footer-logo">
