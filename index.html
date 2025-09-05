@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- Primary Meta Tags -->
-  <title>CALDON™ | Property Development & Building Consultancy NSW</title>
-  <meta name="title" content="CALDON™ | Property Development & Building Consultancy NSW">
-  <meta name="description" content="CALDON™: Private property development and expert building consultancy across NSW. Serving Taree, Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, Forster Tuncurry, and more.">
-  <meta name="keywords" content="property development NSW, building consultancy Port Macquarie, building inspections Sydney, Taree property developer, Port Macquarie consultancy, Newcastle property development, Sydney building consultant, Tamworth building inspections, Forster Tuncurry development, Mid North Coast property, Manning Valley development, Coffs Harbour consultancy">
+  <title>CALDON™ | Property Development NSW</title>
+  <meta name="title" content="CALDON™ | Property Development NSW">
+  <meta name="description" content="CALDON™: Private property development across NSW. Serving Taree, Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, Forster Tuncurry, and more.">
+  <meta name="keywords" content="property development NSW, Taree property developer, Port Macquarie property, Newcastle property development, Sydney property development, Tamworth property, Forster Tuncurry development, Mid North Coast property, Manning Valley development, Coffs Harbour property">
   <meta name="author" content="CALDON™">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="language" content="English">
@@ -19,8 +19,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://caldon.com.au/">
-  <meta property="og:title" content="CALDON™ | Property Development & Building Consultancy NSW">
-  <meta property="og:description" content="CALDON™ delivers private property development and expert consultancy in Taree, Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, and Forster Tuncurry.">
+  <meta property="og:title" content="CALDON™ | Property Development NSW">
+  <meta property="og:description" content="CALDON™ delivers private property development across NSW including Taree, Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, and Forster Tuncurry.">
   <meta property="og:image" content="https://caldon.com.au/og-image.jpg">
   <meta property="og:locale" content="en_AU">
   <meta property="og:site_name" content="CALDON™">
@@ -28,8 +28,8 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://caldon.com.au/">
-  <meta name="twitter:title" content="CALDON™ | Property Development & Building Consultancy NSW">
-  <meta name="twitter:description" content="CALDON™ offers private property development and building consultancy in Taree, Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, and Forster Tuncurry.">
+  <meta name="twitter:title" content="CALDON™ | Property Development NSW">
+  <meta name="twitter:description" content="CALDON™ offers private property development in Taree, Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, and Forster Tuncurry.">
   <meta property="twitter:image" content="https://caldon.com.au/twitter-image.jpg">
 
   <!-- Canonical URL -->
@@ -51,8 +51,7 @@
       "logo": "https://caldon.com.au/logo.png",
       "@id": "https://caldon.com.au/",
       "url": "https://caldon.com.au/",
-      "telephone": "(02) 6550 1924",
-      "email": "admin@caldon.com.au",
+
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Taree",
@@ -76,7 +75,7 @@
         }
       ],
       "priceRange": "$$",
-      "description": "CALDON™: Private property development and expert building consultancy serving Taree, Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, Forster Tuncurry, and surrounding NSW regions."
+      "description": "CALDON™: Private property development serving Taree, Port Macquarie, Coffs Harbour, Newcastle, Sydney, Tamworth, Forster Tuncurry, and surrounding NSW regions."
     }
   </script>
 
@@ -95,7 +94,6 @@
       --subtle-accent: #f7f7f7;
       --border: #e0e0e0;
       --development-accent: #2c3e50;
-      --consultancy-accent: #34495e;
       --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
@@ -257,19 +255,19 @@
       transition: opacity 0.3s ease-out;
     }
 
-    .divisions {
+    .cta-section {
       display: flex;
-      justify-content: center;
-      gap: 40px;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
       margin-top: 20px;
     }
 
-    .division-button {
+    .primary-button {
       display: inline-block;
-      padding: 12px 30px;
-      border: 1px solid var(--border);
-      background-color: transparent;
-      color: var(--text-primary);
+      padding: 15px 40px;
+      background-color: var(--development-accent);
+      color: white;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 400;
@@ -277,25 +275,36 @@
       letter-spacing: 2px;
       transition: var(--transition);
       cursor: pointer;
-      min-width: 200px;
+      min-width: 250px;
     }
     
-    .division-button.development {
-      border-color: var(--development-accent);
+    .primary-button:hover {
+      background-color: #1a252f;
+      transform: translateY(-2px);
+    }
+
+    .secondary-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .secondary-link {
+      display: inline-block;
+      padding: 8px 0;
+      border-bottom: 1px solid transparent;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: var(--transition);
     }
     
-    .division-button.development:hover {
-      background-color: var(--development-accent);
-      color: white;
-    }
-    
-    .division-button.consultancy {
-      border-color: var(--consultancy-accent);
-    }
-    
-    .division-button.consultancy:hover {
-      background-color: var(--consultancy-accent);
-      color: white;
+    .secondary-link:hover {
+      color: var(--text-primary);
+      border-bottom-color: var(--text-primary);
     }
     
     .contact-info {
@@ -513,13 +522,14 @@
         justify-content: center;
       }
 
-      .divisions {
+      .secondary-links {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
       }
       
-      .division-button {
+      .primary-button {
         width: 100%;
+        max-width: 300px;
       }
 
       .footer-content {
@@ -564,12 +574,8 @@
         max-width: 90px;
       }
 
-      .division-button {
-        padding: 35px 25px;
-      }
-
-      .contact-info {
-        gap: 15px;
+      .primary-button {
+        padding: 12px 30px;
       }
 
       .footer-nav ul {
@@ -602,8 +608,9 @@
           <span></span>
         </button>
         <ul>
-          <li><a href="development.html">Property Development</a></li>
-          <li><a href="consultancy.html">Consultancy</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -612,16 +619,18 @@
   <div class="hero">
     <div class="hero-content">
       <img src="logo.png" alt="CALDON™ Logo" class="hero-logo fade-in">
-      <p class="hero-tagline fade-up">Property Intelligence</p>
-      <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Strategic property solutions and building consultancy services across New South Wales.</p>
+      <p class="hero-tagline fade-up">Property Development</p>
+      <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Strategic property development and investment solutions across New South Wales.</p>
       
-      <div class="divisions fade-up" style="animation-delay: 0.5s;">
-        <a href="development.html" class="division-button development">
-          Development
+      <div class="cta-section fade-up" style="animation-delay: 0.5s;">
+        <a href="projects.html" class="primary-button">
+          Enter Site
         </a>
-        <a href="consultancy.html" class="division-button consultancy">
-          Consultancy
-        </a>
+        
+        <div class="secondary-links">
+          <a href="about.html" class="secondary-link">About Us</a>
+          <a href="contact.html" class="secondary-link">Contact</a>
+        </div>
       </div>
       
       <div class="contact-info fade-up" style="animation-delay: 0.7s;">
@@ -637,8 +646,9 @@
     <div class="container footer-content">
       <div class="footer-nav">
         <ul>
-          <li><a href="development.html">Property Development</a></li>
-          <li><a href="consultancy.html">Consultancy</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <img src="logo.png" alt="CALDON™ Logo" class="footer-logo">
@@ -648,12 +658,12 @@
           <span class="credential-value">2015</span>
         </div>
         <div class="credential-item">
-          <span class="credential-label">Divisions:</span>
-          <span class="credential-value">Development & Consultancy</span>
+          <span class="credential-label">Focus:</span>
+          <span class="credential-value">NSW Property Development</span>
         </div>
         <div class="credential-item">
-          <span class="credential-label">Focus:</span>
-          <span class="credential-value">NSW Markets</span>
+          <span class="credential-label">Markets:</span>
+          <span class="credential-value">Regional & Metro NSW</span>
         </div>
       </div>
       <p class="copyright">© 2025 CALDON Homes Pty Limited · All Rights Reserved</p>
