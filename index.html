@@ -366,6 +366,34 @@
       transform: translateY(-2px);
     }
 
+    .partnership-read-more {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-decoration: none;
+      border-bottom: 1px solid var(--text-primary);
+      padding-bottom: 2px;
+      transition: var(--transition);
+    }
+
+    .partnership-read-more:hover {
+      opacity: 0.7;
+    }
+
+    .partnership-read-more.external::after {
+      content: '↗';
+      font-size: 0.8em;
+      margin-left: 5px;
+    }
+
+    .partnership-links {
+      display: flex;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
     /* Footer */
     footer {
       padding: 40px 0;
@@ -557,6 +585,11 @@
         max-width: 250px;
       }
 
+      .partnership-links {
+        flex-direction: column;
+        gap: 15px;
+      }
+
       .footer-content {
         grid-template-areas: 
           "logo"
@@ -671,7 +704,11 @@
         <div class="partnership-text">
           <p class="partnership-subtitle">Strategic Partnership</p>
           <h2 class="partnership-title">Building Excellence</h2>
-          <p class="partnership-description">CALDON™ previously built homes under our own brand but has now partnered with the national boutiquie home builder Wattle Court to deliver quality construction as <a href="https://wattlecourt.com.au/builder/mid-coast/" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: underline;">Wattle Court Mid-Coast</a>. Our experienced local construction team continues building homes in Taree, Port Macquarie, Forster, Wauchope, Gloucester and surrounds.</p>
+          <p class="partnership-description">CALDON™ previously built homes under our own brand but has now partnered with Wattle Court to deliver quality construction as <a href="https://wattlecourt.com.au/builder/mid-coast/" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: underline;">Wattle Court Mid-Coast</a>. Our experienced local construction team continues building homes in Taree, Port Macquarie, Forster, Wauchope, Gloucester and surrounds.</p>
+          <div class="partnership-links">
+            <a href="news.html#wattle-court-article" class="partnership-read-more">Read Our Coverage</a>
+            <a href="https://www.myaustraliannews.com.au/news-releases.html?id=1032129&headline=wattle-court-plants-roots-in-nsw-mid-coast&pageNumber=7" target="_blank" rel="noopener noreferrer" class="partnership-read-more external">Read Full Article</a>
+          </div>
         </div>
         <div class="partnership-logo">
           <a href="https://wattlecourt.com.au/builder/mid-coast/" target="_blank" rel="noopener noreferrer">
