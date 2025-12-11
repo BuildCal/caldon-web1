@@ -499,6 +499,91 @@
       margin: 0 auto;
     }
     
+    /* Track Record Section */
+    .track-record {
+      text-align: center;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto 40px;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+    
+    .track-record-note {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Contact Section */
+    .contact {
+      text-align: center;
+    }
+    
+    .contact-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .contact-intro {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+    }
+    
+    .contact-details {
+      margin-bottom: 30px;
+    }
+    
+    .contact-link {
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      text-decoration: none;
+      padding: 15px 40px;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    
+    .contact-link:hover {
+      background-color: var(--accent);
+      color: var(--background);
+      border-color: var(--accent);
+    }
+    
+    .contact-note {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+    
     .approach-items {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -652,6 +737,10 @@
         gap: 40px;
       }
       .brokerage-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      .stats-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
       }
@@ -834,7 +923,7 @@
           <li><a href="#activities">Development</a></li>
           <li><a href="#brokerage">Brokerage</a></li>
           <li><a href="#approach">Approach</a></li>
-          <li><a href="news.html">News</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -845,7 +934,7 @@
     <div class="hero-content">
       <img src="logo.png" alt="CALDON™ Logo" class="hero-logo fade-in">
       <p class="hero-tagline fade-up">Property Development & Brokerage</p>
-      <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Principal investment, strategic development, and turnkey opportunities for qualified investors across New South Wales.</p>
+      <p class="hero-subtext fade-up" style="animation-delay: 0.3s;">Principal investment, strategic development, and end-to-end development services for qualified investors across New South Wales.</p>
       <a href="#activities" class="cta-button fade-up" style="animation-delay: 0.6s;">Learn More</a>
     </div>
     <div class="scroll-indicator">Discover</div>
@@ -880,7 +969,7 @@
       <h2 class="section-title">Strategic Vision</h2>
       <div class="philosophy-content">
         <p class="philosophy-quote">"Discretion, precision, and strategic thinking drive exceptional property outcomes."</p>
-        <p class="philosophy-text">CALDON™ operates as a private property development and investment company with deep roots in the NSW market. Our focus spans the Mid North Coast from Port Macquarie to Buladelah, extending west to Gloucester and east to Forster Tuncurry, with selective opportunities in major metropolitan centres.</p>
+        <p class="philosophy-text">CALDON™ operates as a private property development and investment company with deep roots in the NSW market. Our focus spans regional and metropolitan New South Wales, with particular expertise across the Mid North Coast and Hunter regions, and selective opportunities in Sydney and surrounds.</p>
         <p class="philosophy-text">We maintain a reserved approach to business, working primarily with established real estate professionals, qualified investors, and strategic partners. Our operations are built on discretion, market intelligence, and the pursuit of exceptional property opportunities.</p>
         <p class="philosophy-text">Through careful site selection, strategic timing, and meticulous execution, we have built a reputation for delivering quality developments and maintaining a strong portfolio of investment assets across diverse property sectors.</p>
       </div>
@@ -894,8 +983,8 @@
       <h2 class="section-title">Development Brokerage</h2>
       
       <div class="brokerage-intro">
-        <p>For qualified investors seeking property development exposure, CALDON™ provides end-to-end development management—from initial site sourcing through to construction completion. You provide the investment criteria and capital; we handle everything else.</p>
-        <p>Our fee is earned on deal value, aligning our interests with yours throughout the entire process.</p>
+        <p>For qualified investors seeking property development exposure, CALDON™ provides end-to-end development services—from initial site sourcing through to construction completion. You provide the investment criteria and capital; we handle the procurement, design, approvals, and project delivery.</p>
+        <p>We co-invest in every project we manage, aligning our interests directly with yours. Our fee is 2% of deal value plus design and planning costs, with no hidden charges.</p>
       </div>
       
       <div class="brokerage-features">
@@ -926,8 +1015,8 @@
         </div>
         <div class="brokerage-feature">
           <div class="brokerage-number">06</div>
-          <h3 class="brokerage-title">Local Market Intelligence</h3>
-          <p class="brokerage-description">Deep knowledge of the Mid North Coast and regional NSW markets. We understand council nuances, builder capabilities, and market dynamics that interstate investors cannot easily access.</p>
+          <h3 class="brokerage-title">NSW-Wide Capability</h3>
+          <p class="brokerage-description">Deep expertise across regional and metropolitan NSW, with established networks from the Mid North Coast to Sydney. Currently expanding our capability nationally to serve investors across Australia.</p>
         </div>
       </div>
       
@@ -945,6 +1034,33 @@
         </div>
       </div>
       
+    </div>
+  </section>
+
+  <!-- Track Record Section -->
+  <section id="track-record" class="track-record">
+    <div class="container">
+      <div class="section-subtitle">Our Experience</div>
+      <h2 class="section-title">Track Record</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">[X]</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">$[X]M</div>
+          <div class="stat-label">Development Value</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">[X]+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">[X]</div>
+          <div class="stat-label">Active Projects</div>
+        </div>
+      </div>
+      <p class="track-record-note">Exposed to residential, commercial, and mixed-use developments across regional and metropolitan NSW.</p>
     </div>
   </section>
   
@@ -980,6 +1096,21 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-subtitle">Get In Touch</div>
+      <h2 class="section-title">Investor Enquiries</h2>
+      <div class="contact-content">
+        <p class="contact-intro">We work with qualified investors deploying capital into NSW property development. If you're seeking development exposure with professional end-to-end management, we'd like to hear from you.</p>
+        <div class="contact-details">
+          <a href="mailto:invest@caldon.com.au" class="contact-link">invest@caldon.com.au</a>
+        </div>
+        <p class="contact-note">All enquiries are treated with discretion. We respond to qualified investor enquiries within 48 hours.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="container footer-content">
@@ -989,7 +1120,7 @@
           <li><a href="#activities">Development</a></li>
           <li><a href="#brokerage">Brokerage</a></li>
           <li><a href="#approach">Approach</a></li>
-          <li><a href="news.html">News</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <img src="logo.png" alt="CALDON™ Logo" class="footer-logo">
@@ -1004,7 +1135,7 @@
         </div>
         <div class="credential-item">
           <span class="credential-label">Markets:</span>
-          <span class="credential-value">Regional & Metro NSW</span>
+          <span class="credential-value">NSW & Expanding Nationally</span>
         </div>
       </div>
       <p class="copyright">© 2025 CALDON Homes Pty Limited · All Rights Reserved</p>
