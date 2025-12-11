@@ -12,7 +12,7 @@
   <style>
     @page {
       size: A4;
-      margin: 15mm;
+      margin: 12mm;
     }
     
     * {
@@ -23,16 +23,18 @@
     
     :root {
       --text-primary: #000000;
-      --text-secondary: #666666;
+      --text-secondary: #555555;
+      --text-light: #777777;
       --background: #ffffff;
       --border: #e0e0e0;
+      --accent-light: #f8f8f8;
     }
     
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--background);
       color: var(--text-primary);
-      line-height: 1.5;
+      line-height: 1.45;
       -webkit-font-smoothing: antialiased;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
@@ -78,7 +80,7 @@
     .page {
       width: 210mm;
       height: 297mm;
-      padding: 15mm;
+      padding: 12mm;
       margin: 0 auto;
       background: white;
       position: relative;
@@ -90,179 +92,314 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 12px;
+      padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
     
     .header-logo {
-      height: 28px;
+      height: 26px;
       width: auto;
+    }
+    
+    .header-right {
+      text-align: right;
     }
     
     .header-tagline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 400;
-      color: var(--text-secondary);
+      color: var(--text-primary);
       letter-spacing: 1px;
     }
     
-    /* Section Styling */
-    .section {
-      margin-bottom: 18px;
+    .header-sub {
+      font-size: 7px;
+      color: var(--text-light);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 2px;
     }
     
+    /* Section Titles */
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
+      font-size: 13px;
       font-weight: 400;
       color: var(--text-primary);
-      margin-bottom: 8px;
-      padding-bottom: 5px;
+      margin-bottom: 6px;
+      padding-bottom: 4px;
       border-bottom: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
     
-    .section-content {
+    /* Intro Section */
+    .intro {
+      margin-bottom: 12px;
+    }
+    
+    .intro-text {
       font-size: 9px;
       color: var(--text-secondary);
       line-height: 1.6;
+      margin-bottom: 8px;
     }
     
-    /* Intro */
-    .intro {
-      font-size: 10px;
+    .intro-highlight {
+      background: var(--accent-light);
+      padding: 10px 12px;
+      border-left: 2px solid var(--text-primary);
+    }
+    
+    .intro-highlight p {
+      font-size: 9px;
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    
+    /* Main Content Grid */
+    .main-content {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 15px;
+    }
+    
+    /* Process Section */
+    .process-section {
+      margin-bottom: 10px;
+    }
+    
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    
+    .process-item {
+      padding: 8px;
+      background: var(--accent-light);
+      border-radius: 2px;
+    }
+    
+    .process-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    
+    .process-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: #bbb;
+      line-height: 1;
+    }
+    
+    .process-title {
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    
+    .process-desc {
+      font-size: 7.5px;
       color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 18px;
+      line-height: 1.5;
     }
     
-    /* Two Column Layout */
-    .two-col {
+    .process-deliverables {
+      margin-top: 4px;
+      padding-top: 4px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .process-deliverables span {
+      font-size: 7px;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .process-deliverables ul {
+      list-style: none;
+      margin-top: 2px;
+    }
+    
+    .process-deliverables li {
+      font-size: 7px;
+      color: var(--text-secondary);
+      padding-left: 8px;
+      position: relative;
+      line-height: 1.5;
+    }
+    
+    .process-deliverables li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #ccc;
+    }
+    
+    /* Right Column */
+    .right-column section {
+      margin-bottom: 10px;
+    }
+    
+    /* Why CALDON */
+    .why-list {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
+      gap: 6px;
     }
     
-    /* Services List */
-    .services-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px 20px;
-    }
-    
-    .service-item {
+    .why-item {
       display: flex;
       gap: 8px;
       align-items: flex-start;
     }
     
-    .service-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-weight: 300;
-      color: #ccc;
-      line-height: 1;
-      min-width: 20px;
-    }
-    
-    .service-content h4 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 11px;
-      font-weight: 400;
-      color: var(--text-primary);
-      margin-bottom: 3px;
-    }
-    
-    .service-content p {
+    .why-icon {
+      width: 14px;
+      height: 14px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 8px;
+      color: var(--text-primary);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    
+    .why-content h4 {
+      font-size: 8px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 1px;
+    }
+    
+    .why-content p {
+      font-size: 7.5px;
       color: var(--text-secondary);
       line-height: 1.5;
     }
     
-    /* Deliverables */
-    .deliverables-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px 20px;
+    /* Investment Criteria */
+    .criteria-box {
+      background: var(--accent-light);
+      padding: 10px;
+      border-radius: 2px;
     }
     
-    .deliverable {
-      font-size: 9px;
+    .criteria-box h4 {
+      font-size: 8px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .criteria-list {
+      display: grid;
+      gap: 3px;
+    }
+    
+    .criteria-item {
+      font-size: 7.5px;
       color: var(--text-secondary);
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
     
-    .deliverable::before {
+    .criteria-item::before {
       content: '✓';
       color: var(--text-primary);
+      font-size: 7px;
+    }
+    
+    /* Geographic Focus */
+    .geo-section p {
+      font-size: 7.5px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    
+    .geo-regions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 6px;
+    }
+    
+    .geo-tag {
+      font-size: 7px;
+      color: var(--text-secondary);
+      background: var(--accent-light);
+      padding: 3px 6px;
+      border-radius: 2px;
+    }
+    
+    /* Post-Construction */
+    .post-construction {
+      background: var(--text-primary);
+      color: white;
+      padding: 10px;
+      border-radius: 2px;
+    }
+    
+    .post-construction h4 {
       font-size: 8px;
-    }
-    
-    /* Fee Box */
-    .fee-box {
-      background: var(--background);
-      border: 1px solid var(--border);
-      padding: 15px 20px;
-      text-align: center;
-      margin: 15px 0;
-    }
-    
-    .fee-amount {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--text-primary);
+      font-weight: 500;
       margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     
-    .fee-detail {
-      font-size: 10px;
-      color: var(--text-secondary);
-      margin-bottom: 8px;
-    }
-    
-    .fee-note {
-      font-size: 8px;
-      font-style: italic;
-      color: var(--text-secondary);
+    .post-construction p {
+      font-size: 7.5px;
+      line-height: 1.5;
+      opacity: 0.9;
     }
     
     /* Contact Footer */
     .contact-footer {
       position: absolute;
-      bottom: 15mm;
-      left: 15mm;
-      right: 15mm;
+      bottom: 12mm;
+      left: 12mm;
+      right: 12mm;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding-top: 12px;
+      align-items: flex-end;
+      padding-top: 10px;
       border-top: 1px solid var(--border);
     }
     
-    .contact-info {
+    .contact-left {
       display: flex;
-      gap: 25px;
+      gap: 20px;
     }
     
     .contact-item {
-      font-size: 9px;
+      font-size: 8px;
     }
     
     .contact-label {
-      color: var(--text-secondary);
+      color: var(--text-light);
       text-transform: uppercase;
       letter-spacing: 1px;
-      font-size: 7px;
+      font-size: 6px;
       margin-bottom: 2px;
     }
     
     .contact-value {
       color: var(--text-primary);
-      font-size: 10px;
+      font-size: 9px;
     }
     
     .contact-value a {
@@ -270,11 +407,15 @@
       text-decoration: none;
     }
     
-    .credentials {
-      font-size: 8px;
-      color: var(--text-secondary);
+    .contact-right {
       text-align: right;
-      letter-spacing: 1px;
+    }
+    
+    .credentials {
+      font-size: 7px;
+      color: var(--text-light);
+      letter-spacing: 0.5px;
+      line-height: 1.5;
     }
     
     /* Print Styles */
@@ -299,12 +440,12 @@
     /* Screen preview */
     @media screen {
       body {
-        background: #f0f0f0;
+        background: #e0e0e0;
         padding: 70px 20px 20px;
       }
       
       .page {
-        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        box-shadow: 0 0 30px rgba(0,0,0,0.15);
       }
     }
   </style>
@@ -321,106 +462,213 @@
     <!-- Header -->
     <div class="header">
       <img src="logo.png" alt="CALDON™" class="header-logo">
-      <span class="header-tagline">Property Development & Brokerage</span>
+      <div class="header-right">
+        <div class="header-tagline">Property Development & Brokerage</div>
+        <div class="header-sub">Investor Information Pack</div>
+      </div>
     </div>
     
-    <!-- Intro -->
-    <p class="intro">CALDON™ is a private property development and investment company operating across New South Wales. Beyond our principal activities, we provide end-to-end development services for qualified investors—from site sourcing through to construction completion. You provide the investment criteria and capital; we handle procurement, design, approvals, and project delivery.</p>
-    
-    <div class="two-col">
+    <!-- Intro Section -->
+    <div class="intro">
+      <p class="intro-text">CALDON™ is a private property development and investment company established in 2015, operating across New South Wales. Beyond our principal development activities, we provide comprehensive development brokerage services for qualified investors seeking exposure to the NSW property market without the complexity of managing the development process themselves.</p>
       
-      <!-- Left Column -->
-      <div>
-        
-        <!-- Services -->
-        <div class="section">
-          <h2 class="section-title">What We Do</h2>
-          <div class="services-list">
-            <div class="service-item">
-              <span class="service-number">01</span>
-              <div class="service-content">
-                <h4>Site Sourcing & Feasibility</h4>
-                <p>Identify opportunities matching your criteria with detailed financial analysis</p>
+      <div class="intro-highlight">
+        <p><strong>Our model is simple:</strong> You provide the investment criteria and capital. We handle site sourcing, feasibility analysis, design, approvals, land acquisition, builder procurement, contract negotiation, construction management, and post-completion services. You own the asset — we deliver the project.</p>
+      </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+      
+      <!-- Left Column: Process -->
+      <div class="left-column">
+        <section class="process-section">
+          <h2 class="section-title">Our Process</h2>
+          
+          <div class="process-grid">
+            
+            <div class="process-item">
+              <div class="process-header">
+                <span class="process-number">01</span>
+                <span class="process-title">Site Sourcing & Feasibility</span>
+              </div>
+              <p class="process-desc">We identify development opportunities matching your investment criteria across NSW. Each site undergoes rigorous feasibility analysis including market assessment, planning pathway review, preliminary design testing, and financial modelling.</p>
+              <div class="process-deliverables">
+                <span>You receive:</span>
+                <ul>
+                  <li>Qualified site options with option terms</li>
+                  <li>Detailed feasibility study with financial projections</li>
+                  <li>Risk assessment and planning pathway analysis</li>
+                </ul>
               </div>
             </div>
-            <div class="service-item">
-              <span class="service-number">02</span>
-              <div class="service-content">
-                <h4>Design & Approvals</h4>
-                <p>Complete design, town planning, and DA management through to consent</p>
+            
+            <div class="process-item">
+              <div class="process-header">
+                <span class="process-number">02</span>
+                <span class="process-title">Design & Development Approval</span>
+              </div>
+              <p class="process-desc">Our team manages the complete design process, engaging architects and consultants, developing the optimal scheme, and navigating the DA process through council. We handle all consultant coordination, council negotiations, and approval conditions.</p>
+              <div class="process-deliverables">
+                <span>You receive:</span>
+                <ul>
+                  <li>Full architectural documentation</li>
+                  <li>Development Approval (DA) consent</li>
+                  <li>Conditions assessment and compliance pathway</li>
+                </ul>
               </div>
             </div>
-            <div class="service-item">
-              <span class="service-number">03</span>
-              <div class="service-content">
-                <h4>Acquisition Management</h4>
-                <p>Negotiate terms and connect you to purchase with approvals in place</p>
+            
+            <div class="process-item">
+              <div class="process-header">
+                <span class="process-number">03</span>
+                <span class="process-title">Acquisition & Due Diligence</span>
+              </div>
+              <p class="process-desc">We negotiate purchase terms with vendors, coordinate legal due diligence, manage the contract process, and connect you to acquire the site. You purchase with DA approval in place and construction costs verified — significantly de-risking your investment.</p>
+              <div class="process-deliverables">
+                <span>You receive:</span>
+                <ul>
+                  <li>Negotiated purchase contract</li>
+                  <li>Complete due diligence package</li>
+                  <li>Settlement coordination</li>
+                </ul>
               </div>
             </div>
-            <div class="service-item">
-              <span class="service-number">04</span>
-              <div class="service-content">
-                <h4>Tender & Contracts</h4>
-                <p>Manage builder tendering and negotiate contracts on your behalf</p>
+            
+            <div class="process-item">
+              <div class="process-header">
+                <span class="process-number">04</span>
+                <span class="process-title">Tender & Contract Management</span>
+              </div>
+              <p class="process-desc">We prepare tender documentation, manage the builder selection process, evaluate submissions, and negotiate building contracts on your behalf. Our quantity surveying ensures accurate cost verification and appropriate risk allocation in contract terms.</p>
+              <div class="process-deliverables">
+                <span>You receive:</span>
+                <ul>
+                  <li>Competitive builder tender pricing</li>
+                  <li>QS cost verification report</li>
+                  <li>Negotiated building contract</li>
+                </ul>
               </div>
             </div>
-            <div class="service-item">
-              <span class="service-number">05</span>
-              <div class="service-content">
-                <h4>Construction Management</h4>
-                <p>Client-side project management through to practical completion</p>
+            
+            <div class="process-item">
+              <div class="process-header">
+                <span class="process-number">05</span>
+                <span class="process-title">Construction Management</span>
+              </div>
+              <p class="process-desc">Client-side project management throughout the construction phase. We monitor progress, review claims, manage variations, coordinate consultants, and protect your interests from site establishment through to practical completion and defects liability.</p>
+              <div class="process-deliverables">
+                <span>You receive:</span>
+                <ul>
+                  <li>Regular progress reporting</li>
+                  <li>Claims and variation management</li>
+                  <li>Practical completion and handover</li>
+                </ul>
               </div>
             </div>
-            <div class="service-item">
-              <span class="service-number">06</span>
-              <div class="service-content">
-                <h4>NSW-Wide Capability</h4>
-                <p>Regional and metro expertise, currently expanding nationally</p>
+            
+            <div class="process-item">
+              <div class="process-header">
+                <span class="process-number">06</span>
+                <span class="process-title">Post-Construction Services</span>
+              </div>
+              <p class="process-desc">Upon completion, we provide a comprehensive quantity surveyor's depreciation schedule, maximising your tax benefits through capital works deductions and plant & equipment allowances. We also coordinate defect rectification during the liability period.</p>
+              <div class="process-deliverables">
+                <span>You receive:</span>
+                <ul>
+                  <li>Tax depreciation schedule (QS prepared)</li>
+                  <li>Defects liability management</li>
+                  <li>Final documentation package</li>
+                </ul>
               </div>
             </div>
+            
           </div>
-        </div>
-        
+        </section>
       </div>
       
       <!-- Right Column -->
-      <div>
-        
-        <!-- What You Receive -->
-        <div class="section">
-          <h2 class="section-title">What You Receive</h2>
-          <div class="deliverables-grid">
-            <div class="deliverable">Site identification and feasibility</div>
-            <div class="deliverable">Quantity surveying and costing</div>
-            <div class="deliverable">Development design and documentation</div>
-            <div class="deliverable">Builder tendering and evaluation</div>
-            <div class="deliverable">DA lodgement and approval</div>
-            <div class="deliverable">Contract negotiation and execution</div>
-            <div class="deliverable">Land acquisition negotiation</div>
-            <div class="deliverable">Client-side construction management</div>
-          </div>
-        </div>
-        
-        <!-- Fee Structure -->
-        <div class="section">
-          <h2 class="section-title">Fee Structure</h2>
-          <div class="fee-box">
-            <div class="fee-amount">2% of deal value</div>
-            <div class="fee-detail">plus design and planning costs</div>
-            <div class="fee-note">Open to alternative arrangements for the right projects and partners</div>
-          </div>
-        </div>
+      <div class="right-column">
         
         <!-- Why CALDON -->
-        <div class="section">
+        <section>
           <h2 class="section-title">Why CALDON™</h2>
-          <div class="section-content">
-            <p><strong>De-risked opportunities</strong> — Acquire with DA approval and verified construction costs in place.</p>
-            <p style="margin-top: 6px;"><strong>Local expertise</strong> — Deep knowledge of NSW markets, councils, and builder networks.</p>
-            <p style="margin-top: 6px;"><strong>End-to-end delivery</strong> — Single point of contact from site sourcing to practical completion.</p>
-            <p style="margin-top: 6px;"><strong>Aligned interests</strong> — Transparent fee structure focused on successful project delivery.</p>
+          <div class="why-list">
+            <div class="why-item">
+              <div class="why-icon">1</div>
+              <div class="why-content">
+                <h4>De-Risked Investment</h4>
+                <p>Acquire sites with DA approval and verified construction costs already in place. The major planning and feasibility risks are resolved before you commit significant capital.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon">2</div>
+              <div class="why-content">
+                <h4>Local Market Expertise</h4>
+                <p>Deep knowledge of NSW councils, planning frameworks, builder capabilities, and market dynamics. We navigate local complexities that interstate investors cannot easily access.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon">3</div>
+              <div class="why-content">
+                <h4>Single Point of Contact</h4>
+                <p>End-to-end project delivery through one experienced team. No need to coordinate multiple consultants, contractors, and advisors yourself.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon">4</div>
+              <div class="why-content">
+                <h4>Transparent Process</h4>
+                <p>Clear communication throughout every stage. You maintain full visibility and control over your investment while we handle the execution complexity.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon">5</div>
+              <div class="why-content">
+                <h4>Tax-Optimised Completion</h4>
+                <p>Every project includes a professional depreciation schedule, ensuring you maximise available tax deductions from your completed development.</p>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
+        
+        <!-- Project Types -->
+        <section>
+          <h2 class="section-title">Project Types</h2>
+          <div class="criteria-box">
+            <div class="criteria-list">
+              <div class="criteria-item">Residential subdivisions (2-20+ lots)</div>
+              <div class="criteria-item">Multi-dwelling housing and townhouses</div>
+              <div class="criteria-item">Dual occupancy and secondary dwellings</div>
+              <div class="criteria-item">Small-scale residential flat buildings</div>
+              <div class="criteria-item">Mixed-use developments</div>
+              <div class="criteria-item">Commercial and retail projects</div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Geographic Focus -->
+        <section>
+          <h2 class="section-title">Geographic Focus</h2>
+          <div class="geo-section">
+            <p>Currently operating across New South Wales with particular expertise in regional growth markets. Our established networks span councils, builders, and professional consultants throughout our focus regions. We are actively expanding our capability nationally.</p>
+            <div class="geo-regions">
+              <span class="geo-tag">Mid North Coast</span>
+              <span class="geo-tag">Hunter Region</span>
+              <span class="geo-tag">Central Coast</span>
+              <span class="geo-tag">Sydney Metro</span>
+              <span class="geo-tag">Regional NSW</span>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Post-Construction Highlight -->
+        <section>
+          <div class="post-construction">
+            <h4>Included: Tax Depreciation Schedule</h4>
+            <p>Every completed project includes a quantity surveyor-prepared depreciation schedule, identifying all capital works deductions and plant & equipment allowances. This typically unlocks significant annual tax benefits for investors over the asset's effective life.</p>
+          </div>
+        </section>
         
       </div>
       
@@ -428,7 +676,7 @@
     
     <!-- Contact Footer -->
     <div class="contact-footer">
-      <div class="contact-info">
+      <div class="contact-left">
         <div class="contact-item">
           <div class="contact-label">Email</div>
           <div class="contact-value"><a href="mailto:invest@caldon.com.au">invest@caldon.com.au</a></div>
@@ -438,9 +686,12 @@
           <div class="contact-value"><a href="https://caldon.com.au">caldon.com.au</a></div>
         </div>
       </div>
-      <div class="credentials">
-        Est. 2015 · NSW & Expanding Nationally<br>
-        © 2025 CALDON Homes Pty Limited
+      <div class="contact-right">
+        <div class="credentials">
+          Est. 2015 · NSW & Expanding Nationally<br>
+          © 2025 CALDON Homes Pty Limited<br>
+          All enquiries treated with discretion
+        </div>
       </div>
     </div>
     
