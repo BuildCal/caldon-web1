@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CALDON™ Investor Information Pack</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --text-primary: #000000;
+      --text-secondary: #666666;
+      --background: #ffffff;
+      --border: #e0e0e0;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    /* Print/Save Button */
+    .print-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #000;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    
+    .print-bar p {
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+    
+    .print-button {
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 10px 25px;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .print-button:hover {
+      background: #f0f0f0;
+    }
+    
+    .page {
+      width: 210mm;
+      height: 297mm;
+      padding: 15mm;
+      margin: 0 auto;
+      background: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 15px;
+    }
+    
+    .header-logo {
+      height: 28px;
+      width: auto;
+    }
+    
+    .header-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      letter-spacing: 1px;
+    }
+    
+    /* Section Styling */
+    .section {
+      margin-bottom: 18px;
+    }
+    
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .section-content {
+      font-size: 9px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    
+    /* Intro */
+    .intro {
+      font-size: 10px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+    
+    /* Two Column Layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+    
+    /* Services List */
+    .services-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 20px;
+    }
+    
+    .service-item {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    
+    .service-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 300;
+      color: #ccc;
+      line-height: 1;
+      min-width: 20px;
+    }
+    
+    .service-content h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+    }
+    
+    .service-content p {
+      font-size: 8px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    
+    /* Deliverables */
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 20px;
+    }
+    
+    .deliverable {
+      font-size: 9px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .deliverable::before {
+      content: '✓';
+      color: var(--text-primary);
+      font-size: 8px;
+    }
+    
+    /* Fee Box */
+    .fee-box {
+      background: var(--background);
+      border: 1px solid var(--border);
+      padding: 15px 20px;
+      text-align: center;
+      margin: 15px 0;
+    }
+    
+    .fee-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    
+    .fee-detail {
+      font-size: 10px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    
+    .fee-note {
+      font-size: 8px;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+    
+    /* Contact Footer */
+    .contact-footer {
+      position: absolute;
+      bottom: 15mm;
+      left: 15mm;
+      right: 15mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .contact-info {
+      display: flex;
+      gap: 25px;
+    }
+    
+    .contact-item {
+      font-size: 9px;
+    }
+    
+    .contact-label {
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 7px;
+      margin-bottom: 2px;
+    }
+    
+    .contact-value {
+      color: var(--text-primary);
+      font-size: 10px;
+    }
+    
+    .contact-value a {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    
+    .credentials {
+      font-size: 8px;
+      color: var(--text-secondary);
+      text-align: right;
+      letter-spacing: 1px;
+    }
+    
+    /* Print Styles */
+    @media print {
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      
+      .print-bar {
+        display: none !important;
+      }
+      
+      .page {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    
+    /* Screen preview */
+    @media screen {
+      body {
+        background: #f0f0f0;
+        padding: 70px 20px 20px;
+      }
+      
+      .page {
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <p>CALDON™ Investor Information Pack</p>
+    <button class="print-button" onclick="window.print()">Save as PDF</button>
+  </div>
+
+  <div class="page">
+    
+    <!-- Header -->
+    <div class="header">
+      <img src="logo.png" alt="CALDON™" class="header-logo">
+      <span class="header-tagline">Property Development & Brokerage</span>
+    </div>
+    
+    <!-- Intro -->
+    <p class="intro">CALDON™ is a private property development and investment company operating across New South Wales. Beyond our principal activities, we provide end-to-end development services for qualified investors—from site sourcing through to construction completion. You provide the investment criteria and capital; we handle procurement, design, approvals, and project delivery.</p>
+    
+    <div class="two-col">
+      
+      <!-- Left Column -->
+      <div>
+        
+        <!-- Services -->
+        <div class="section">
+          <h2 class="section-title">What We Do</h2>
+          <div class="services-list">
+            <div class="service-item">
+              <span class="service-number">01</span>
+              <div class="service-content">
+                <h4>Site Sourcing & Feasibility</h4>
+                <p>Identify opportunities matching your criteria with detailed financial analysis</p>
+              </div>
+            </div>
+            <div class="service-item">
+              <span class="service-number">02</span>
+              <div class="service-content">
+                <h4>Design & Approvals</h4>
+                <p>Complete design, town planning, and DA management through to consent</p>
+              </div>
+            </div>
+            <div class="service-item">
+              <span class="service-number">03</span>
+              <div class="service-content">
+                <h4>Acquisition Management</h4>
+                <p>Negotiate terms and connect you to purchase with approvals in place</p>
+              </div>
+            </div>
+            <div class="service-item">
+              <span class="service-number">04</span>
+              <div class="service-content">
+                <h4>Tender & Contracts</h4>
+                <p>Manage builder tendering and negotiate contracts on your behalf</p>
+              </div>
+            </div>
+            <div class="service-item">
+              <span class="service-number">05</span>
+              <div class="service-content">
+                <h4>Construction Management</h4>
+                <p>Client-side project management through to practical completion</p>
+              </div>
+            </div>
+            <div class="service-item">
+              <span class="service-number">06</span>
+              <div class="service-content">
+                <h4>NSW-Wide Capability</h4>
+                <p>Regional and metro expertise, currently expanding nationally</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Right Column -->
+      <div>
+        
+        <!-- What You Receive -->
+        <div class="section">
+          <h2 class="section-title">What You Receive</h2>
+          <div class="deliverables-grid">
+            <div class="deliverable">Site identification and feasibility</div>
+            <div class="deliverable">Quantity surveying and costing</div>
+            <div class="deliverable">Development design and documentation</div>
+            <div class="deliverable">Builder tendering and evaluation</div>
+            <div class="deliverable">DA lodgement and approval</div>
+            <div class="deliverable">Contract negotiation and execution</div>
+            <div class="deliverable">Land acquisition negotiation</div>
+            <div class="deliverable">Client-side construction management</div>
+          </div>
+        </div>
+        
+        <!-- Fee Structure -->
+        <div class="section">
+          <h2 class="section-title">Fee Structure</h2>
+          <div class="fee-box">
+            <div class="fee-amount">2% of deal value</div>
+            <div class="fee-detail">plus design and planning costs</div>
+            <div class="fee-note">Open to alternative arrangements for the right projects and partners</div>
+          </div>
+        </div>
+        
+        <!-- Why CALDON -->
+        <div class="section">
+          <h2 class="section-title">Why CALDON™</h2>
+          <div class="section-content">
+            <p><strong>De-risked opportunities</strong> — Acquire with DA approval and verified construction costs in place.</p>
+            <p style="margin-top: 6px;"><strong>Local expertise</strong> — Deep knowledge of NSW markets, councils, and builder networks.</p>
+            <p style="margin-top: 6px;"><strong>End-to-end delivery</strong> — Single point of contact from site sourcing to practical completion.</p>
+            <p style="margin-top: 6px;"><strong>Aligned interests</strong> — Transparent fee structure focused on successful project delivery.</p>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <!-- Contact Footer -->
+    <div class="contact-footer">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:invest@caldon.com.au">invest@caldon.com.au</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Web</div>
+          <div class="contact-value"><a href="https://caldon.com.au">caldon.com.au</a></div>
+        </div>
+      </div>
+      <div class="credentials">
+        Est. 2015 · NSW & Expanding Nationally<br>
+        © 2025 CALDON Homes Pty Limited
+      </div>
+    </div>
+    
+  </div>
+
+</body>
+</html>
