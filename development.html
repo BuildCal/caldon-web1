@@ -516,18 +516,41 @@
       margin-bottom: 40px;
     }
     
-    .contact-details {
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
       margin-bottom: 30px;
+    }
+    
+    .download-button {
+      display: inline-block;
+      padding: 14px 40px;
+      background-color: var(--accent);
+      color: var(--background);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: var(--transition);
+      border: 1px solid var(--accent);
+    }
+    
+    .download-button:hover {
+      background-color: var(--background);
+      color: var(--accent);
     }
     
     .contact-link {
       display: inline-block;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 400;
       color: var(--text-primary);
       text-decoration: none;
-      padding: 15px 40px;
+      padding: 12px 36px;
       border: 1px solid var(--border);
       transition: var(--transition);
     }
@@ -1033,7 +1056,8 @@
       <h2 class="section-title">Investor Enquiries</h2>
       <div class="contact-content">
         <p class="contact-intro">We work with qualified investors deploying capital into NSW property development. If you're seeking development exposure with professional end-to-end management, we'd like to hear from you.</p>
-        <div class="contact-details">
+        <div class="contact-actions">
+          <a href="caldon-information-pack.pdf" download class="download-button">Download Information Pack</a>
           <a href="mailto:invest@caldon.com.au" class="contact-link">invest@caldon.com.au</a>
         </div>
         <p class="contact-note">All enquiries are treated with discretion. We respond to qualified investor enquiries within 48 hours.</p>
